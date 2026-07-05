@@ -1,8 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import {
+  FileSpreadsheet,
+  FileText,
+  MessagesSquare,
+  BrainCircuit,
+  RotateCcw,
+  PhoneIncoming,
+  Package,
+  CalendarDays,
+  LayoutGrid,
+  Warehouse,
+  Smartphone,
+  RefreshCcw,
+  History,
+  Sofa,
+  BedDouble,
+  Tv,
+  Wrench,
+  HardHat,
+  Building2,
+  Boxes,
+  Bike,
+  Lightbulb,
+  ShoppingCart,
+  Briefcase,
+  ClipboardList,
+  Truck,
+  Users,
+  Check,
+  ChevronDown,
+} from "lucide-react";
 import { Reveal, Counter } from "@/components/Reveal";
 import { DashboardMockup } from "@/components/DashboardMockup";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { RouteMap, RouteConnector } from "@/components/RouteMotif";
+import { MiniBoard, PhoneDelivery } from "@/components/ProductVisuals";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -17,56 +50,70 @@ const NAV = [
 ] as const;
 
 const PROBLEMS = [
-  ["📊", "Los pedidos viven en un Excel que solo entiende una persona."],
-  ["📄", "Remitos en papel que se pierden o se traspapelan."],
-  ["💬", "Las entregas se coordinan por WhatsApp y llamadas todo el día."],
-  ["🧠", "Si el encargado falta un día, nadie sabe qué sale, qué está preparado ni con qué vehículo."],
-  ["🔁", "Las reprogramaciones se anotan 'en algún lado' y se olvidan."],
-  ["😤", "Los clientes llaman preguntando por su entrega y nadie sabe qué responder."],
+  { icon: FileSpreadsheet, text: "Los pedidos viven en un Excel que solo entiende una persona." },
+  { icon: FileText, text: "Remitos en papel que se pierden o se traspapelan." },
+  { icon: MessagesSquare, text: "Las entregas se coordinan por WhatsApp y llamadas todo el día." },
+  { icon: BrainCircuit, text: "Si el encargado falta un día, nadie sabe qué sale, qué está preparado ni con qué vehículo." },
+  { icon: RotateCcw, text: "Las reprogramaciones se anotan 'en algún lado' y se olvidan." },
+  { icon: PhoneIncoming, text: "Los clientes llaman preguntando por su entrega y nadie sabe qué responder." },
 ];
 
-const FEATURES = [
+const FEATURES: {
+  icon: React.ElementType;
+  title: string;
+  text: string;
+  visual?: "board" | "phone";
+}[] = [
   {
+    icon: Package,
     title: "Pedidos",
     text: "Cargá cada pedido a mano o importalo desde tu Excel con nuestra plantilla. Cliente, dirección, teléfono, qué se entrega y cuándo. Buscá y filtrá en segundos. Nunca más un pedido olvidado.",
   },
   {
+    icon: CalendarDays,
     title: "Calendario de entregas",
     text: "Mirá cuántas entregas tenés cada día y detectá los días sobrecargados antes de que sean un problema.",
   },
   {
+    icon: LayoutGrid,
     title: "Armado del día",
     text: "Asigná cada entrega a tu camión, camioneta, moto o al flete que contrataste, arrastrando y soltando. En minutos tenés el día armado y todos saben qué sale, con quién y en qué orden.",
+    visual: "board",
   },
   {
+    icon: Warehouse,
     title: "Depósito y preparación",
     text: "El depósito ve qué hay que preparar y marca cada pedido como listo. Nada sale a la calle sin estar preparado, y vos lo ves sin llamar a nadie.",
   },
   {
+    icon: Smartphone,
     title: "Entrega desde el celular",
     text: "El que reparte —chofer propio, cadete o flete— recibe sus entregas en el celular que ya tiene: dirección, teléfono, observaciones. Marca entregada, parcial o fallida con un toque. Sin apps, sin capacitación.",
+    visual: "phone",
   },
   {
+    icon: RefreshCcw,
     title: "Incidencias y reprogramaciones",
     text: "¿Cliente ausente? ¿Dirección incorrecta? Queda registrado con su motivo, y la reprogramación se agenda en el momento. Nada se pierde, nada queda 'en el aire'.",
   },
   {
+    icon: History,
     title: "Historial de todo lo que pasó",
     text: "Cada entrega tiene su historia completa: quién la cargó, quién la preparó, quién la llevó, qué pasó y cuándo. Si un cliente reclama, la respuesta está a un clic.",
   },
 ];
 
 const RUBROS = [
-  ["🛋️", "Mueblerías"],
-  ["🛏️", "Colchonerías"],
-  ["📺", "Electrodomésticos"],
-  ["🔧", "Ferreterías"],
-  ["🧱", "Corralones y sanitarios"],
-  ["🏗️", "Casas de materiales"],
-  ["📦", "Distribuidoras"],
-  ["🚴", "Bicicleterías y deportes"],
-  ["💡", "Iluminación"],
-  ["🛒", "E-commerce con reparto propio"],
+  { icon: Sofa, name: "Mueblerías" },
+  { icon: BedDouble, name: "Colchonerías" },
+  { icon: Tv, name: "Electrodomésticos" },
+  { icon: Wrench, name: "Ferreterías" },
+  { icon: HardHat, name: "Corralones y sanitarios" },
+  { icon: Building2, name: "Casas de materiales" },
+  { icon: Boxes, name: "Distribuidoras" },
+  { icon: Bike, name: "Bicicleterías y deportes" },
+  { icon: Lightbulb, name: "Iluminación" },
+  { icon: ShoppingCart, name: "E-commerce con reparto propio" },
 ];
 
 const FAQ = [
@@ -144,8 +191,9 @@ function Navbar() {
           </a>
         </div>
         <button
-          className="lg:hidden rounded-md p-2"
+          className="rounded-md p-2 lg:hidden"
           aria-label="Abrir menú"
+          aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -183,35 +231,34 @@ function Navbar() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-white">
-      {/* Aurora background */}
+      {/* Fondo: un glow controlado + rutas abstractas (firma visual) */}
       <div className="aurora">
-        <div className="absolute inset-0 bg-line-grid opacity-[0.5] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_75%)]" />
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(30_64_175_/_0.18),transparent_60%)] blur-2xl" />
-        <div className="absolute right-[-10%] top-[10%] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgb(120_80_255_/_0.18),transparent_60%)] blur-3xl animate-pulse-glow" />
-        <div className="absolute left-[-8%] bottom-[-10%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgb(30_64_175_/_0.12),transparent_60%)] blur-3xl" />
+        <div className="absolute -top-48 left-1/2 h-[560px] w-[1000px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(30_64_175_/_0.14),transparent_60%)] blur-2xl" />
+        <RouteMap className="absolute -right-24 top-8 hidden h-[560px] w-[840px] text-primary/[0.13] lg:block" />
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 lg:px-8 lg:py-24">
         <div>
-          <Reveal>
+          <div className="animate-enter">
             <Eyebrow>Para empresas que entregan lo que venden</Eyebrow>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="text-gradient">Toda tu operación de entregas,</span>{" "}
-              <span className="text-foreground">bajo control.</span>{" "}
-              <span className="text-muted-foreground">En un solo lugar.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Rutia es el centro de control de tu logística: pedidos, entregas, depósito,
-              vehículos, choferes y fletes, reprogramaciones y todo lo que pasó, registrado
-              y a la vista. Para que la operación deje de vivir en la cabeza de una sola
-              persona.
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
+          </div>
+          <h1
+            className="animate-enter mt-6 text-[2.5rem] font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.6rem]"
+            style={{ animationDelay: "80ms" }}
+          >
+            Toda tu operación de entregas,{" "}
+            <span className="text-primary">bajo control.</span> En un solo lugar.
+          </h1>
+          <p
+            className="animate-enter mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
+            style={{ animationDelay: "160ms" }}
+          >
+            Rutia es el centro de control de tu logística: pedidos, entregas, depósito,
+            vehículos, choferes y fletes, reprogramaciones y todo lo que pasó, registrado
+            y a la vista. Para que la operación deje de vivir en la cabeza de una sola
+            persona.
+          </p>
+          <div className="animate-enter" style={{ animationDelay: "240ms" }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#demo"
@@ -238,29 +285,33 @@ function Hero() {
               Sin tarjeta. Sin instalación. Los que reparten no necesitan descargar
               ninguna app.
             </p>
-          </Reveal>
+          </div>
         </div>
-        <Reveal delay={200} className="relative lg:pl-6">
-          {/* Glow behind mockup */}
-          <div className="pointer-events-none absolute -inset-8 -z-0">
-            <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(ellipse_at_center,rgb(30_64_175_/_0.25),transparent_70%)] blur-2xl" />
+
+        <div className="animate-enter relative lg:pl-6" style={{ animationDelay: "200ms" }}>
+          {/* Glow bajo el producto */}
+          <div className="pointer-events-none absolute -inset-10 -z-0">
+            <div className="absolute inset-0 rounded-[2.5rem] bg-[radial-gradient(ellipse_at_center,rgb(30_64_175_/_0.22),transparent_70%)] blur-2xl" />
           </div>
-          <div className="relative animate-float">
-            <DashboardMockup />
+          {/* Dashboard con leve perspectiva: se endereza al pasar el mouse */}
+          <div className="group relative [perspective:1600px]">
+            <div className="relative transition-transform duration-700 ease-out lg:[transform:rotateX(3deg)_rotateY(-5deg)] lg:group-hover:[transform:rotateX(0deg)_rotateY(0deg)]">
+              <DashboardMockup />
+            </div>
           </div>
-          {/* Floating micro-cards */}
-          <div className="pointer-events-none absolute -left-4 top-1/3 hidden rounded-xl bg-white/95 backdrop-blur-md px-3 py-2 text-xs font-semibold shadow-[var(--shadow-card-hover)] ring-1 ring-border md:flex md:items-center md:gap-2">
+          {/* Micro-tarjetas de estado en vivo */}
+          <div className="pointer-events-none absolute -left-4 top-1/3 hidden rounded-xl bg-white/95 px-3.5 py-2.5 text-xs font-semibold shadow-[var(--shadow-card-hover)] ring-1 ring-border backdrop-blur-md md:flex md:items-center md:gap-2">
             <span className="h-2 w-2 rounded-full bg-success animate-pulse-glow" />
             12 entregadas hoy
           </div>
-          <div className="pointer-events-none absolute -right-2 bottom-8 hidden rounded-xl bg-white/95 backdrop-blur-md px-3 py-2 text-xs font-semibold shadow-[var(--shadow-card-hover)] ring-1 ring-border md:flex md:items-center md:gap-2">
-            <span className="h-2 w-2 rounded-full bg-primary" />
+          <div className="pointer-events-none absolute -right-2 bottom-8 hidden rounded-xl bg-white/95 px-3.5 py-2.5 text-xs font-semibold shadow-[var(--shadow-card-hover)] ring-1 ring-border backdrop-blur-md md:flex md:items-center md:gap-2">
+            <Truck className="h-3.5 w-3.5 text-primary" />
             Camión 01 en camino
           </div>
-        </Reveal>
+        </div>
       </div>
 
-      {/* Metrics strip */}
+      {/* Franja de métricas */}
       <div className="relative border-y border-border/60 bg-gradient-to-b from-surface/60 to-surface">
         <div className="mx-auto grid max-w-7xl gap-6 px-5 py-8 sm:grid-cols-3 lg:px-8">
           {[
@@ -272,7 +323,7 @@ function Hero() {
               key={m.label}
               className={`text-center ${i > 0 ? "sm:border-l sm:border-border/60" : ""}`}
             >
-              <div className="text-3xl font-extrabold text-gradient-primary sm:text-4xl">
+              <div className="text-3xl font-extrabold text-primary sm:text-4xl">
                 <Counter to={m.n} suffix={m.suffix} />
               </div>
               <div className="mt-1 text-sm text-muted-foreground">{m.label}</div>
@@ -304,7 +355,7 @@ function SectionHeader({
       )}
       <Reveal delay={60}>
         <h2
-          className={`mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl ${
+          className={`mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.75rem] ${
             invert ? "text-white" : "text-foreground"
           }`}
         >
@@ -328,7 +379,7 @@ function SectionHeader({
 
 function Problem() {
   return (
-    <section className="relative py-24 lg:py-32" style={{ background: "var(--surface-2)" }}>
+    <section className="relative scroll-mt-24 py-24 lg:py-32" style={{ background: "var(--surface-2)" }}>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeader
@@ -336,19 +387,19 @@ function Problem() {
           title={<>¿Tu logística funciona así?</>}
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {PROBLEMS.map(([icon, text], i) => (
+          {PROBLEMS.map(({ icon: Icon, text }, i) => (
             <Reveal key={i} delay={i * 60}>
               <div className="card-premium card-premium-hover h-full p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-surface to-white text-2xl ring-1 ring-border">
-                  {icon}
+                <div className="icon-chip">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </div>
-                <p className="mt-4 text-[16px] font-medium text-foreground">{text}</p>
+                <p className="mt-4 text-[16px] font-medium leading-relaxed text-foreground">{text}</p>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal>
-          <p className="mx-auto mt-16 max-w-3xl text-center text-xl text-muted-foreground sm:text-2xl">
+          <p className="mx-auto mt-16 max-w-3xl text-center text-xl leading-relaxed text-muted-foreground sm:text-2xl">
             El verdadero problema no es la falta de tecnología. Es la falta de control.{" "}
             <span className="font-bold text-foreground">
               Rutia pasa tu operación de la memoria de una persona a un sistema que ve toda
@@ -363,32 +414,48 @@ function Problem() {
 
 function Features() {
   return (
-    <section id="producto" className="relative bg-white py-24 lg:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40 [mask-image:radial-gradient(ellipse_at_top,black_10%,transparent_60%)]" />
+    <section id="producto" className="relative scroll-mt-24 bg-white py-24 lg:py-32">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeader
           eyebrow="El producto"
           title={<>Un solo lugar para toda tu operación</>}
           desc={<>Del pedido a la entrega, cada paso queda registrado, visible y bajo control. Como una torre de control, pero para tus entregas.</>}
         />
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f, i) => (
-            <Reveal key={f.title} delay={i * 50}>
-              <div className="card-premium card-premium-hover group relative h-full overflow-hidden p-7">
-                <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgb(30_64_175_/_0.08),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="relative flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-[oklch(0.5_0.2_275)] text-primary-foreground text-sm font-bold shadow-sm shadow-primary/30">
-                    {String(i + 1).padStart(2, "0")}
+        <div className="mt-16 grid grid-flow-row-dense gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {FEATURES.map((f, i) => {
+            const featured = Boolean(f.visual);
+            return (
+              <Reveal
+                key={f.title}
+                delay={i * 50}
+                className={featured ? "sm:col-span-2" : ""}
+              >
+                <div
+                  className={`card-premium card-premium-hover group relative h-full overflow-hidden p-7 ${
+                    featured ? "lg:flex lg:items-center lg:gap-8" : ""
+                  }`}
+                >
+                  <div className={featured ? "lg:min-w-0 lg:flex-1" : ""}>
+                    <div className="icon-chip">
+                      <f.icon className="h-5 w-5" strokeWidth={1.75} />
+                    </div>
+                    <h3 className="mt-4 text-xl font-bold tracking-tight">{f.title}</h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{f.text}</p>
                   </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Módulo {i + 1}
-                  </span>
+                  {f.visual === "board" && (
+                    <div className="mt-6 lg:mt-0 lg:w-[46%] lg:flex-none">
+                      <MiniBoard />
+                    </div>
+                  )}
+                  {f.visual === "phone" && (
+                    <div className="mt-6 lg:mt-0 lg:w-[34%] lg:flex-none">
+                      <PhoneDelivery />
+                    </div>
+                  )}
                 </div>
-                <h3 className="mt-4 text-xl font-bold tracking-tight">{f.title}</h3>
-                <p className="mt-2 text-[15.5px] leading-relaxed text-muted-foreground">{f.text}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -405,7 +472,7 @@ function HowItWorks() {
   return (
     <section
       id="como"
-      className="relative py-24 lg:py-32"
+      className="relative scroll-mt-24 py-24 lg:py-32"
       style={{
         background:
           "linear-gradient(180deg, var(--surface) 0%, var(--background) 100%)",
@@ -416,17 +483,15 @@ function HowItWorks() {
           eyebrow="Cómo funciona"
           title={<>Así de simple</>}
         />
-        <div className="relative mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent lg:block" />
+        <div className="relative mt-20 grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {/* Ruta que une los pasos: la entrega recorre un camino */}
+          <RouteConnector className="absolute left-[12%] right-[12%] top-6 hidden h-6 text-primary/40 lg:block" />
           {steps.map(([title, text], i) => (
             <Reveal key={title} delay={i * 100}>
-              <div className="card-premium relative h-full p-7">
-                <div className="relative flex h-[70px] w-[70px] items-center justify-center">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-[oklch(0.35_0.2_270)] shadow-[0_10px_30px_-10px_rgb(30_64_175_/_0.6)]" />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-white/20" />
-                  <span className="relative text-2xl font-extrabold text-white">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+              <div className="relative h-full text-center lg:px-3">
+                <div className="relative mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white text-base font-extrabold text-primary shadow-[var(--shadow-card)] ring-1 ring-primary/25">
+                  <span className="absolute inset-0 rounded-full ring-4 ring-white" />
+                  <span className="relative">{i + 1}</span>
                 </div>
                 <h3 className="mt-5 text-lg font-bold tracking-tight">{title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{text}</p>
@@ -435,11 +500,9 @@ function HowItWorks() {
           ))}
         </div>
         <Reveal>
-          <div className="mx-auto mt-14 flex max-w-2xl items-center justify-center gap-3 rounded-2xl border border-border bg-white/70 px-6 py-4 text-center text-[16px] backdrop-blur">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-success/10 text-success">
-              <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="3">
-                <path d="M4 10l4 4 8-8" />
-              </svg>
+          <div className="mx-auto mt-16 flex max-w-2xl items-center justify-center gap-3 rounded-2xl border border-border bg-white/70 px-6 py-4 text-center text-[16px] backdrop-blur">
+            <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-success/10 text-success">
+              <Check className="h-4 w-4" strokeWidth={3} />
             </span>
             <span>
               <span className="font-bold text-foreground">Sin apps para descargar.</span>{" "}
@@ -456,25 +519,26 @@ function HowItWorks() {
 
 function ForWhom() {
   return (
-    <section id="para-quien" className="relative bg-white py-24 lg:py-32">
+    <section id="para-quien" className="relative scroll-mt-24 bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeader
           eyebrow="Para quién"
           title={<>Hecho para empresas que entregan lo que venden</>}
           desc={<>No importa qué vendés ni con qué repartís: camión propio, camioneta, moto o fletes contratados.</>}
         />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {RUBROS.map(([icon, name], i) => (
-            <Reveal key={name} delay={i * 40}>
-              <div className="card-premium card-premium-hover flex items-center gap-4 p-5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-surface to-white text-2xl ring-1 ring-border">
-                  {icon}
-                </div>
-                <div className="text-[15px] font-semibold">{name}</div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <div className="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-3">
+            {RUBROS.map(({ icon: Icon, name }) => (
+              <span
+                key={name}
+                className="inline-flex items-center gap-2.5 rounded-full border border-border bg-white px-4 py-2.5 text-[15px] font-semibold text-foreground shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[var(--shadow-card-hover)]"
+              >
+                <Icon className="h-4.5 w-4.5 text-primary" strokeWidth={1.75} />
+                {name}
+              </span>
+            ))}
+          </div>
+        </Reveal>
         <Reveal>
           <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-surface via-white to-surface p-8 text-center text-[17px] shadow-[var(--shadow-card)]">
             Si hacés{" "}
@@ -493,6 +557,7 @@ function ForWhom() {
 function Benefits() {
   const cols = [
     {
+      icon: Briefcase,
       title: "Para el dueño",
       items: [
         "Visibilidad total sin llamar a nadie",
@@ -501,6 +566,7 @@ function Benefits() {
       ],
     },
     {
+      icon: ClipboardList,
       title: "Para el encargado de logística",
       items: [
         "El día armado en minutos, no en horas",
@@ -509,6 +575,7 @@ function Benefits() {
       ],
     },
     {
+      icon: Truck,
       title: "Para el depósito y los que reparten",
       items: [
         "El depósito sabe qué preparar sin que nadie se lo grite",
@@ -517,6 +584,7 @@ function Benefits() {
       ],
     },
     {
+      icon: Users,
       title: "Para tus clientes",
       items: [
         "Saben cuándo llega su entrega",
@@ -536,30 +604,36 @@ function Benefits() {
           eyebrow="Beneficios"
           title={<>Cada uno gana algo distinto</>}
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {cols.map((c, i) => (
-            <Reveal key={c.title} delay={i * 80}>
-              <div className="card-premium card-premium-hover h-full p-7">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-1 rounded-full bg-gradient-to-b from-primary to-[oklch(0.35_0.2_270)]" />
-                  <h3 className="text-[17px] font-bold text-foreground">{c.title}</h3>
+        <Reveal>
+          {/* Un solo panel: los roles comparten la misma ruta, separados por líneas punteadas */}
+          <div className="card-premium mt-14 grid overflow-hidden sm:grid-cols-2 lg:grid-cols-4">
+            {cols.map((c, i) => (
+              <div
+                key={c.title}
+                className={`p-7 ${
+                  i > 0
+                    ? "border-t border-dashed border-border sm:border-t-0 sm:[&:nth-child(odd)]:border-l lg:border-l"
+                    : ""
+                } ${i === 2 ? "border-t border-dashed sm:border-t lg:border-t-0" : ""} ${i === 3 ? "sm:border-t lg:border-t-0" : ""}`}
+              >
+                <div className="icon-chip">
+                  <c.icon className="h-5 w-5" strokeWidth={1.75} />
                 </div>
-                <ul className="mt-5 space-y-3">
+                <h3 className="mt-4 text-[16px] font-bold text-foreground">{c.title}</h3>
+                <ul className="mt-4 space-y-3">
                   {c.items.map((it) => (
-                    <li key={it} className="flex gap-3 text-[15px] text-muted-foreground">
-                      <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-success/12 text-success">
-                        <svg viewBox="0 0 20 20" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3">
-                          <path d="M4 10l4 4 8-8" />
-                        </svg>
+                    <li key={it} className="flex gap-2.5 text-[14.5px] leading-relaxed text-muted-foreground">
+                      <span className="mt-1 flex h-4 w-4 flex-none items-center justify-center rounded-full bg-success/12 text-success">
+                        <Check className="h-2.5 w-2.5" strokeWidth={3.5} />
                       </span>
                       <span>{it}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -567,20 +641,18 @@ function Benefits() {
 
 function About() {
   return (
-    <section id="nosotros" className="relative bg-white py-24 lg:py-32">
+    <section id="nosotros" className="relative scroll-mt-24 bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
         <Reveal>
           <Eyebrow>Quiénes somos</Eyebrow>
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
-            <span className="text-gradient">
-              Rutia no se diseñó en una oficina. Se vivió en un depósito.
-            </span>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
+            Rutia no se diseñó en una oficina. Se vivió en un depósito.
           </h2>
         </Reveal>
         <Reveal delay={140}>
-          <p className="mt-8 text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-8 text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Rutia nace adentro de una mueblería de Avenida Belgrano, en Buenos Aires, con
             entre 20 y 50 entregas por día, un camión propio y fletes contratados a diario.
             Creíamos que el problema eran las rutas. Pero vimos de primera mano que el
@@ -602,21 +674,14 @@ function About() {
 
 function Philosophy() {
   return (
-    <section
-      className="relative overflow-hidden py-24 lg:py-32"
-      style={{
-        background:
-          "linear-gradient(135deg, oklch(0.18 0.05 260) 0%, oklch(0.28 0.15 265) 60%, oklch(0.22 0.12 275) 100%)",
-      }}
-    >
-      <div className="aurora">
-        <div className="absolute inset-0 bg-line-grid opacity-[0.15]" />
-        <div className="absolute -top-32 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(120_140_255_/_0.35),transparent_60%)] blur-3xl" />
-        <div className="absolute -bottom-40 right-0 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgb(249_115_22_/_0.15),transparent_60%)] blur-3xl" />
+    <section className="bg-navy-panel relative overflow-hidden py-24 lg:py-32">
+      <div className="aurora text-white/[0.09]">
+        <RouteMap className="absolute -left-24 top-1/2 h-[480px] w-[760px] -translate-y-1/2" animated={false} />
+        <div className="absolute -top-32 left-1/2 h-[460px] w-[860px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgb(120_140_255_/_0.25),transparent_60%)] blur-3xl" />
       </div>
       <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
         <Reveal>
-          <p className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <p className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
             Ninguna empresa puede optimizar una operación que todavía no{" "}
             <span className="text-accent">controla</span>.
           </p>
@@ -671,11 +736,10 @@ function Pricing() {
     },
   ];
   return (
-    <section id="precios" className="relative bg-white py-24 lg:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_60%)]" />
+    <section id="precios" className="relative scroll-mt-24 bg-white py-24 lg:py-32">
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeader
-          eyebrow="🎉 Precio de lanzamiento — congelado para los primeros clientes"
+          eyebrow="Precio de lanzamiento — congelado para los primeros clientes"
           title={<>Precios simples, sin sorpresas</>}
           desc={<>Sin permanencia. Cancelás cuando quieras. Todos los planes incluyen todos los módulos y acceso desde el celular para los que reparten.</>}
         />
@@ -685,17 +749,9 @@ function Pricing() {
               <div
                 className={`relative flex h-full flex-col overflow-hidden rounded-2xl p-8 transition-all hover:-translate-y-1 ${
                   p.featured
-                    ? "text-white ring-1 ring-white/10 shadow-[var(--shadow-premium)] lg:scale-[1.04]"
+                    ? "bg-navy-panel text-white ring-1 ring-white/10 shadow-[var(--shadow-premium)] lg:scale-[1.04]"
                     : "bg-white card-premium card-premium-hover"
                 }`}
-                style={
-                  p.featured
-                    ? {
-                        background:
-                          "linear-gradient(160deg, oklch(0.22 0.12 268) 0%, oklch(0.32 0.18 265) 100%)",
-                      }
-                    : undefined
-                }
               >
                 {p.featured && (
                   <>
@@ -743,9 +799,7 @@ function Pricing() {
                             : "bg-success/12 text-success"
                         }`}
                       >
-                        <svg viewBox="0 0 20 20" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3">
-                          <path d="M4 10l4 4 8-8" />
-                        </svg>
+                        <Check className="h-3 w-3" strokeWidth={3} />
                       </span>
                       <span
                         className={
@@ -810,27 +864,28 @@ function Faq() {
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${i}`}
                     className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
                     <span className="text-[16px] font-semibold">{q}</span>
                     <span
-                      className={`flex h-8 w-8 flex-none items-center justify-center rounded-full text-primary transition-all ${
-                        isOpen
-                          ? "rotate-45 bg-primary/10"
-                          : "bg-surface"
+                      className={`flex h-8 w-8 flex-none items-center justify-center rounded-full text-primary transition-all duration-300 ${
+                        isOpen ? "rotate-180 bg-primary/10" : "bg-surface"
                       }`}
                     >
-                      +
+                      <ChevronDown className="h-4 w-4" />
                     </span>
                   </button>
                   <div
+                    id={`faq-panel-${i}`}
                     className="grid transition-all duration-300 ease-out"
                     style={{
                       gridTemplateRows: isOpen ? "1fr" : "0fr",
                     }}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-6 pb-5 text-[15.5px] leading-relaxed text-muted-foreground">{a}</p>
+                      <p className="px-6 pb-5 text-[15px] leading-relaxed text-muted-foreground">{a}</p>
                     </div>
                   </div>
                 </div>
@@ -848,16 +903,12 @@ function DemoCta() {
   return (
     <section
       id="demo"
-      className="relative overflow-hidden py-24 text-white lg:py-32"
-      style={{
-        background:
-          "linear-gradient(135deg, oklch(0.2 0.06 262) 0%, oklch(0.3 0.16 268) 55%, oklch(0.24 0.14 278) 100%)",
-      }}
+      className="bg-navy-panel relative scroll-mt-24 overflow-hidden py-24 text-white lg:py-32"
     >
       <div className="aurora">
-        <div className="absolute inset-0 bg-line-grid opacity-[0.12]" />
-        <div className="absolute -top-40 -left-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgb(120_140_255_/_0.35),transparent_60%)] blur-3xl" />
-        <div className="absolute -bottom-40 -right-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgb(249_115_22_/_0.2),transparent_60%)] blur-3xl" />
+        <RouteMap className="absolute -right-32 top-0 h-[560px] w-[880px] text-white/[0.08]" />
+        <div className="absolute -top-40 -left-20 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgb(120_140_255_/_0.3),transparent_60%)] blur-3xl" />
+        <div className="absolute -bottom-40 -right-20 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgb(249_115_22_/_0.16),transparent_60%)] blur-3xl" />
       </div>
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:px-8">
         <div>
@@ -868,7 +919,7 @@ function DemoCta() {
             </span>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
               Basta de Excel. Basta de papelitos. Empezá a controlar tu operación.
             </h2>
           </Reveal>
@@ -909,9 +960,7 @@ function DemoCta() {
             {sent ? (
               <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-success text-white shadow-lg shadow-success/30">
-                  <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="3">
-                    <path d="M5 12l5 5L20 7" />
-                  </svg>
+                  <Check className="h-8 w-8" strokeWidth={3} />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold">¡Listo!</h3>
                 <p className="mt-2 text-muted-foreground">
