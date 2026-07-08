@@ -183,7 +183,9 @@ function Hero() {
           </div>
         </div>
         <div className="animate-enter relative lg:col-span-7" style={{ animationDelay: "220ms" }}>
-          <DashboardMockup />
+          <div className="animate-float-slow">
+            <DashboardMockup />
+          </div>
         </div>
       </Shell>
       {/* Cifras de operación */}
@@ -234,7 +236,7 @@ function SectionIntro({ pill, title, desc, dark = false, center = false }: {
 
 function Problem() {
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section className="bg-white py-20 lg:py-28">
       <Shell>
         <SectionIntro pill="El problema" title="¿Tu logística funciona así?" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -263,8 +265,10 @@ function Problem() {
 }
 
 function Features() {
+  const side = FEATURES.slice(0, 3);   // Pedidos, Calendario, Armado del día
+  const below = FEATURES.slice(3);     // Depósito, Celular, Incidencias, Historial
   return (
-    <section id="producto" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-24">
+    <section id="producto" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-28">
       <Glow className="right-[-15%] top-[10%] h-[500px] w-[500px] opacity-60" />
       <Shell className="relative">
         <SectionIntro
@@ -273,11 +277,20 @@ function Features() {
           title="Un solo lugar para toda tu operación"
           desc="Del pedido a la entrega, cada paso queda registrado, visible y bajo control. Como una torre de control, pero para tus entregas."
         />
-        <div className="mt-14 grid gap-10 lg:grid-cols-12">
-          <div className="space-y-2.5 lg:col-span-5">
-            {FEATURES.map((f, i) => (
-              <Reveal key={f.title} delay={i * 40}>
-                <div className={`flex gap-4 rounded-xl p-4 transition-colors ${i === 2 ? "ink-card border-primary/40 bg-primary/10" : "hover:bg-white/[0.04]"}`}>
+        {/* La imagen manda: calendario grande a la izquierda, los módulos que muestra a su lado */}
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-12">
+          <Reveal className="lg:col-span-8">
+            <div>
+              <CalendarMockup />
+              <p className="mt-4 text-center text-[13px] text-white/45">
+                El armado del día: cada entrega asignada a su vehículo, arrastrando y soltando.
+              </p>
+            </div>
+          </Reveal>
+          <div className="space-y-3 lg:col-span-4">
+            {side.map((f, i) => (
+              <Reveal key={f.title} delay={i * 80}>
+                <div className={`flex gap-4 rounded-2xl p-5 ${i === 2 ? "ink-card border-primary/40 bg-primary/10" : "ink-card"}`}>
                   <span className={`grid h-10 w-10 flex-none place-items-center rounded-lg ${i === 2 ? "bg-primary text-white" : "bg-white/8 text-[oklch(0.71_0.16_258)]"}`}>
                     <f.icon className="h-5 w-5" strokeWidth={1.75} />
                   </span>
@@ -289,16 +302,20 @@ function Features() {
               </Reveal>
             ))}
           </div>
-          <div className="lg:col-span-7">
-            <Reveal delay={150}>
-              <div className="lg:sticky lg:top-24">
-                <CalendarMockup />
-                <p className="mt-4 text-center text-[13px] text-white/45">
-                  El armado del día: cada entrega asignada a su vehículo, arrastrando y soltando.
-                </p>
+        </div>
+        {/* El resto de los módulos: franja compacta, sin competir con el producto */}
+        <div className="mt-12 grid gap-x-10 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+          {below.map((f, i) => (
+            <Reveal key={f.title} delay={i * 60}>
+              <div>
+                <span className="grid h-10 w-10 place-items-center rounded-lg bg-white/8 text-[oklch(0.71_0.16_258)]">
+                  <f.icon className="h-5 w-5" strokeWidth={1.75} />
+                </span>
+                <h3 className="mt-3.5 text-[15.5px] font-semibold text-white">{f.title}</h3>
+                <p className="mt-1.5 text-[13.5px] leading-relaxed text-white/55">{f.text}</p>
               </div>
             </Reveal>
-          </div>
+          ))}
         </div>
       </Shell>
     </section>
@@ -313,7 +330,7 @@ function HowItWorks() {
     ["Mirá qué pasó", "Entregadas, fallidas, reprogramadas y por qué. Todo queda registrado para que decidas mejor mañana."],
   ];
   return (
-    <section id="como" className="scroll-mt-24 bg-white py-20 lg:py-24">
+    <section id="como" className="scroll-mt-24 bg-white py-20 lg:py-28">
       <Shell>
         <SectionIntro center pill="Cómo funciona" title="Así de simple" />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -347,7 +364,7 @@ function HowItWorks() {
 
 function ForWhom() {
   return (
-    <section id="para-quien" className="scroll-mt-24 bg-surface py-20 lg:py-24">
+    <section id="para-quien" className="scroll-mt-24 bg-surface py-20 lg:py-28">
       <Shell>
         <SectionIntro
           center
@@ -385,22 +402,33 @@ function Benefits() {
     { icon: Users, title: "Para tus clientes", items: ["Saben cuándo llega su entrega", "Menos reprogramaciones sorpresa", "Si preguntan, tu equipo responde al instante"] },
   ];
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-white lg:py-24">
-      <Glow className="left-[-12%] top-[20%] h-[460px] w-[460px] opacity-50" />
+    <section className="relative overflow-hidden bg-ink py-24 text-white lg:py-32">
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-white/10" />
+      <Glow className="left-[-12%] top-[15%] h-[520px] w-[520px] opacity-60" />
+      <Glow className="bottom-[-30%] right-[-10%] h-[460px] w-[460px] opacity-40" />
       <Shell className="relative">
-        <SectionIntro dark center pill="Beneficios" title="Cada uno gana algo distinto" />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal><span className="pill pill-dark">Beneficios</span></Reveal>
+          <Reveal delay={60}>
+            <h2 className="mt-5 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl">
+              Cada uno gana algo distinto
+            </h2>
+          </Reveal>
+        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {cols.map((c, i) => (
-            <Reveal key={c.title} delay={i * 60}>
-              <div className="ink-card h-full p-6">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/15 text-[oklch(0.71_0.16_258)]">
-                  <c.icon className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <h3 className="mt-4 text-[15px] font-bold text-white">{c.title}</h3>
-                <ul className="mt-4 space-y-3">
+            <Reveal key={c.title} delay={i * 70}>
+              <div className="ink-card group h-full p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.06] lg:p-9">
+                <div className="flex items-center gap-4">
+                  <span className="grid h-13 w-13 flex-none place-items-center rounded-2xl bg-primary/15 text-[oklch(0.71_0.16_258)] transition-colors group-hover:bg-primary group-hover:text-white">
+                    <c.icon className="h-6 w-6" strokeWidth={1.75} />
+                  </span>
+                  <h3 className="text-[19px] font-bold text-white">{c.title}</h3>
+                </div>
+                <ul className="mt-6 space-y-3.5">
                   {c.items.map((it) => (
-                    <li key={it} className="flex gap-2.5 text-[13.5px] leading-relaxed text-white/60">
-                      <CircleCheck className="mt-0.5 h-4 w-4 flex-none text-[oklch(0.78_0.15_152)]" />
+                    <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-white/65">
+                      <CircleCheck className="mt-0.5 h-5 w-5 flex-none text-[oklch(0.78_0.15_152)]" />
                       <span>{it}</span>
                     </li>
                   ))}
@@ -416,7 +444,7 @@ function Benefits() {
 
 function About() {
   return (
-    <section id="nosotros" className="scroll-mt-24 bg-white py-20 lg:py-24">
+    <section id="nosotros" className="scroll-mt-24 bg-white py-20 lg:py-28">
       <Shell>
         <div className="mx-auto max-w-3xl text-center">
           <Reveal><span className="pill">Quiénes somos</span></Reveal>
@@ -447,11 +475,11 @@ function About() {
 
 function Philosophy() {
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-white lg:py-24">
+    <section className="relative overflow-hidden bg-ink py-28 text-white lg:py-40">
       <Glow className="right-[10%] top-[-40%] h-[420px] w-[420px] opacity-60" />
       <Shell className="relative text-center">
         <Reveal>
-          <p className="mx-auto max-w-4xl text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[2.7rem]">
+          <p className="mx-auto max-w-4xl text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[3rem]">
             Ninguna empresa puede optimizar una operación que todavía no{" "}
             <span className="text-[oklch(0.71_0.16_258)]">controla</span>.
           </p>
@@ -473,7 +501,7 @@ function Pricing() {
     { name: "Empresa", price: "USD 229", limit: "Hasta 2.000 entregas por mes", items: ["Todo lo de PyME", "Reportes e indicadores", "Varios depósitos", "Soporte prioritario"], featured: false },
   ];
   return (
-    <section id="precios" className="scroll-mt-24 bg-white py-20 lg:py-24">
+    <section id="precios" className="scroll-mt-24 bg-surface py-20 lg:py-28">
       <Shell>
         <SectionIntro
           center
@@ -481,22 +509,25 @@ function Pricing() {
           title="Precios simples, sin sorpresas"
           desc="Sin permanencia. Cancelás cuando quieras. Todos los planes incluyen todos los módulos y acceso desde el celular para los que reparten."
         />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:items-stretch">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-center">
           {plans.map((p, i) => (
             <Reveal key={p.name} delay={i * 80}>
-              <div className={`relative flex h-full flex-col rounded-2xl p-8 ${
+              <div className={`group relative flex flex-col rounded-2xl p-8 transition-all duration-300 ${
                 p.featured
-                  ? "bg-ink text-white shadow-[var(--shadow-pop)] ring-1 ring-primary/50"
+                  ? "bg-ink py-10 text-white shadow-[0_30px_70px_-20px_rgb(37_99_235/0.45)] ring-2 ring-primary lg:-my-4 lg:scale-[1.03] hover:lg:scale-[1.05]"
                   : "block-card block-card-hover"
               }`}>
                 {p.featured && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white">
-                    Más elegido
-                  </span>
+                  <>
+                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white shadow-lg shadow-primary/40">
+                      Más elegido
+                    </span>
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-px bg-white/25" />
+                  </>
                 )}
-                <div className={`text-sm font-semibold ${p.featured ? "text-white/60" : "text-muted-foreground"}`}>{p.name}</div>
+                <div className={`text-sm font-semibold ${p.featured ? "text-[oklch(0.71_0.16_258)]" : "text-muted-foreground"}`}>{p.name}</div>
                 <div className="mt-3 flex items-baseline gap-1.5">
-                  <span className="text-4xl font-extrabold tracking-tight">{p.price}</span>
+                  <span className={`font-extrabold tracking-tight ${p.featured ? "text-5xl" : "text-4xl"}`}>{p.price}</span>
                   <span className={p.featured ? "text-white/60" : "text-muted-foreground"}>/mes</span>
                 </div>
                 <div className={`mt-1.5 text-[13.5px] font-medium ${p.featured ? "text-white/80" : "text-foreground"}`}>{p.limit}</div>
@@ -505,21 +536,24 @@ function Pricing() {
                   {p.items.map((it) => (
                     <li key={it} className="flex gap-2.5 text-[14px] leading-relaxed">
                       <CircleCheck className={`mt-0.5 h-4 w-4 flex-none ${p.featured ? "text-[oklch(0.71_0.16_258)]" : "text-success"}`} />
-                      <span className={p.featured ? "text-white/80" : "text-muted-foreground"}>{it}</span>
+                      <span className={p.featured ? "text-white/85" : "text-muted-foreground"}>{it}</span>
                     </li>
                   ))}
                 </ul>
-                <a href="#demo" className={`mt-8 block rounded-xl py-3 text-center font-semibold transition-colors ${
-                  p.featured ? "bg-primary text-white hover:bg-[oklch(0.49_0.21_262)]" : "border border-border hover:border-primary hover:text-primary"
+                <a href="#demo" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all ${
+                  p.featured
+                    ? "bg-primary text-white hover:bg-[oklch(0.49_0.21_262)]"
+                    : "border border-border hover:border-primary hover:text-primary"
                 }`}>
                   Pedí una demo
+                  <ArrowRight className={`h-4 w-4 transition-transform group-hover:translate-x-0.5 ${p.featured ? "" : "opacity-0 group-hover:opacity-100"}`} />
                 </a>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal>
-          <p className="mt-9 text-center text-[14.5px] text-muted-foreground">
+          <p className="mt-12 text-center text-[14.5px] text-muted-foreground">
             ¿Más de 2.000 entregas por mes o varias sucursales?{" "}
             <a href="#demo" className="font-semibold text-primary hover:underline">Escribinos y armamos un plan a medida.</a>
           </p>
@@ -532,7 +566,7 @@ function Pricing() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="bg-surface py-20 lg:py-24">
+    <section className="bg-white py-20 lg:py-28">
       <Shell className="max-w-3xl">
         <SectionIntro center pill="Preguntas" title="Preguntas frecuentes" />
         <div className="mt-10 space-y-3">
@@ -570,7 +604,7 @@ function Faq() {
 function DemoCta() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="demo" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-24">
+    <section id="demo" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-28">
       <Glow className="left-[-10%] top-[-25%] h-[520px] w-[520px]" />
       <Glow className="bottom-[-35%] right-[-8%] h-[480px] w-[480px] opacity-60" />
       <Shell className="relative grid gap-12 lg:grid-cols-12">

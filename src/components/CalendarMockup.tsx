@@ -34,7 +34,7 @@ export function CalendarMockup() {
     sky: "border-[oklch(0.71_0.16_258)]/50 bg-[oklch(0.71_0.16_258)]/15 text-white",
     green: "border-success/50 bg-success/15 text-white",
   };
-  const ROW = 30;
+  const ROW = 36;
   return (
     <div className="relative">
       <div className="overflow-hidden rounded-2xl border border-white/12 bg-[oklch(0.15_0.028_262)] shadow-[var(--shadow-pop)]">
@@ -42,7 +42,7 @@ export function CalendarMockup() {
           <span className="text-[12px] font-semibold text-white/90">Calendario de entregas</span>
           <span className="font-mono text-[10px] text-white/45">hoy · día</span>
         </div>
-        <div className="grid grid-cols-[44px_1fr_1fr_1fr] gap-px bg-white/8 p-px text-[10px]">
+        <div className="grid grid-cols-[48px_1fr_1fr_1fr] gap-px bg-white/10 p-px text-[10.5px]">
           {/* header row */}
           <div className="bg-[oklch(0.15_0.028_262)]" />
           {cols.map((c) => (
@@ -70,8 +70,8 @@ export function CalendarMockup() {
                   className={`absolute inset-x-1 rounded-md border px-1.5 py-1 ${tone[b.tone]}`}
                   style={{ top: b.top * ROW + 2, height: b.span * ROW - 4 }}
                 >
-                  <div className="truncate text-[9.5px] font-semibold">{b.title}</div>
-                  <div className="truncate text-[8.5px] opacity-70">{b.sub}</div>
+                  <div className="truncate text-[10.5px] font-semibold">{b.title}</div>
+                  <div className="truncate text-[9.5px] opacity-70">{b.sub}</div>
                 </div>
               ))}
               {c.drop && (
@@ -87,7 +87,7 @@ export function CalendarMockup() {
       <div className="absolute -right-3 top-16 hidden w-48 rounded-xl border border-border bg-white p-3 text-[11px] shadow-[var(--shadow-pop)] lg:block">
         <div className="font-semibold text-foreground">Juan Pérez</div>
         <div className="text-muted-foreground">Sofá 3 cuerpos</div>
-        <span className="mt-1.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[9.5px] font-semibold text-primary">
+        <span className="mt-1.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10.5px] font-semibold text-primary">
           En camino
         </span>
         <div className="mt-2 space-y-1 text-[10px] text-muted-foreground">
