@@ -64,17 +64,10 @@ const FAQ_ITEMS = [
   ["¿Qué pasa si no me sirve?", "No hay permanencia. Cancelás cuando quieras y listo, sin letra chica."],
 ];
 
-function Logo({ dark = false }: { dark?: boolean }) {
-  return (
-    <span className="inline-flex items-center gap-2">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-[15px] font-extrabold text-white">
-        R
-      </span>
-      <span className={`text-xl font-bold tracking-tight ${dark ? "text-white" : "text-foreground"}`}>
-        Rutia
-      </span>
-    </span>
-  );
+function Logo({ dark = false, className = "h-8" }: { dark?: boolean; className?: string }) {
+  // El lockup oficial lleva el wordmark en blanco: pensado para fondos navy.
+  void dark;
+  return <img src="/rutia-logo.svg" alt="Rutia" className={`w-auto ${className}`} />;
 }
 
 function Shell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -86,7 +79,7 @@ function Glow({ className = "" }: { className?: string }) {
     <div
       aria-hidden="true"
       className={`pointer-events-none absolute rounded-full ${className}`}
-      style={{ background: "radial-gradient(circle, oklch(0.546 0.215 262 / 0.22), transparent 65%)" }}
+      style={{ background: "radial-gradient(circle, rgba(47,107,255,.20), transparent 65%)" }}
     />
   );
 }
@@ -131,12 +124,12 @@ function Navbar() {
                 key={href}
                 href={href}
                 className={`group relative rounded-lg px-3.5 py-2 text-[13.5px] font-medium transition-colors duration-200 ${
-                  isActive ? "text-white" : "text-white/60 hover:text-white"
+                  isActive ? "text-white" : "text-[#9CA9C0] hover:text-white"
                 }`}
               >
                 {label}
                 <span
-                  className={`absolute inset-x-3.5 -bottom-px h-px origin-left bg-primary transition-transform duration-300 ease-out ${
+                  className={`absolute inset-x-3.5 -bottom-px h-px origin-left bg-brand transition-transform duration-300 ease-out ${
                     isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
                 />
@@ -148,7 +141,7 @@ function Navbar() {
           <a href="#" className="rounded-lg px-4 py-2 text-[13.5px] font-semibold text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white">
             Ingresar
           </a>
-          <a href="#demo" className="rounded-lg bg-primary px-4 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgb(37_99_235/0.5)] transition-all duration-200 hover:-translate-y-px hover:bg-[oklch(0.49_0.21_262)] active:translate-y-0 active:scale-[0.98]">
+          <a href="#demo" className="bg-brand rounded-lg px-4 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
             Solicitar demo
           </a>
         </div>
@@ -183,16 +176,16 @@ function Hero() {
             <span className="pill pill-dark">Para empresas que entregan lo que venden</span>
           </div>
           <h1 className="animate-enter mt-6 text-4xl font-extrabold leading-[1.06] sm:text-5xl lg:text-[3.3rem]" style={{ animationDelay: "80ms" }}>
-            Toda tu operación de entregas, <span className="text-[oklch(0.71_0.16_258)]">bajo control.</span> En un solo lugar.
+            Toda tu operación de entregas, <span className="text-[cyan]">bajo control.</span> En un solo lugar.
           </h1>
-          <p className="animate-enter mt-6 max-w-xl text-[17px] leading-relaxed text-white/65" style={{ animationDelay: "160ms" }}>
+          <p className="animate-enter mt-6 max-w-xl text-[17px] leading-relaxed text-[#9CA9C0]" style={{ animationDelay: "160ms" }}>
             Rutia es el centro de control de tu logística: pedidos, entregas, depósito,
             vehículos, choferes y fletes, reprogramaciones y todo lo que pasó, registrado
             y a la vista. Para que la operación deje de vivir en la cabeza de una sola persona.
           </p>
           <div className="animate-enter" style={{ animationDelay: "240ms" }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_-8px_rgb(37_99_235/0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)] active:translate-y-0 active:scale-[0.98]">
+              <a href="#demo" className="bg-brand inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
                 Solicitar demo
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -204,7 +197,7 @@ function Hero() {
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-white/60">
               {["Sin tarjeta", "Sin instalación", "Los que reparten no necesitan descargar ninguna app"].map((t) => (
                 <span key={t} className="inline-flex items-center gap-1.5">
-                  <CircleCheck className="h-4 w-4 text-[oklch(0.71_0.16_258)]" />
+                  <CircleCheck className="h-4 w-4 text-[cyan]" />
                   {t}
                 </span>
               ))}
@@ -227,10 +220,11 @@ function Hero() {
           ].map((m, i) => (
             <Reveal key={m.label} delay={i * 120}>
               <div className={`py-4 sm:py-0 ${i > 0 ? "sm:pl-12" : ""} ${i < 2 ? "sm:pr-12" : ""}`}>
-                <div className="text-5xl font-extrabold tracking-tight text-white lg:text-[3.5rem]">
+                <div className="font-mono text-5xl font-semibold tracking-tight text-white lg:text-[3.4rem]">
                   <Counter to={m.n} suffix={m.suffix} />
                 </div>
-                <div className="mt-2.5 max-w-[26ch] text-[13.5px] leading-snug text-white/50">{m.label}</div>
+                <div className="bg-brand mt-3 h-[3px] w-10 rounded-full" />
+                <div className="mt-3 max-w-[26ch] text-[13.5px] leading-snug text-[#9CA9C0]">{m.label}</div>
               </div>
             </Reveal>
           ))}
@@ -309,7 +303,7 @@ function Features() {
             {side.map((f, i) => (
               <Reveal key={f.title} delay={i * 80}>
                 <div className={`flex gap-4 rounded-2xl p-5 ${i === 2 ? "ink-card border-primary/40 bg-primary/10" : "ink-card"}`}>
-                  <span className={`grid h-10 w-10 flex-none place-items-center rounded-lg ${i === 2 ? "bg-primary text-white" : "bg-white/8 text-[oklch(0.71_0.16_258)]"}`}>
+                  <span className={`grid h-10 w-10 flex-none place-items-center rounded-lg ${i === 2 ? "bg-primary text-white" : "bg-white/8 text-[cyan]"}`}>
                     <f.icon className="h-5 w-5" strokeWidth={1.75} />
                   </span>
                   <div>
@@ -334,7 +328,7 @@ function Features() {
           {below.map((f, i) => (
             <Reveal key={f.title} delay={i * 60}>
               <div>
-                <span className="grid h-10 w-10 place-items-center rounded-lg bg-white/8 text-[oklch(0.71_0.16_258)]">
+                <span className="grid h-10 w-10 place-items-center rounded-lg bg-white/8 text-[cyan]">
                   <f.icon className="h-5 w-5" strokeWidth={1.75} />
                 </span>
                 <h3 className="mt-3.5 text-[15.5px] font-semibold text-white">{f.title}</h3>
@@ -444,16 +438,16 @@ function Benefits() {
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {cols.map((c, i) => (
             <Reveal key={c.title} delay={i * 70}>
-              <div className="ink-card group h-full p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.06] hover:shadow-[0_20px_50px_-20px_rgb(37_99_235/0.35)] lg:p-9">
+              <div className="ink-card ink-card-hover group h-full p-8 lg:p-9">
                 <div className="flex items-center gap-4">
-                  <span className="grid h-13 w-13 flex-none place-items-center rounded-2xl bg-primary/15 text-[oklch(0.71_0.16_258)] transition-colors group-hover:bg-primary group-hover:text-white">
+                  <span className="grid h-13 w-13 flex-none place-items-center rounded-2xl bg-primary/15 text-[cyan] transition-colors group-hover:bg-primary group-hover:text-white">
                     <c.icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
                   <h3 className="text-xl font-bold tracking-tight text-white">{c.title}</h3>
                 </div>
                 <ul className="mt-6 space-y-3.5">
                   {c.items.map((it) => (
-                    <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-white/65">
+                    <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-[#9CA9C0]">
                       <CircleCheck className="mt-0.5 h-5 w-5 flex-none text-[oklch(0.78_0.15_152)]" />
                       <span>{it}</span>
                     </li>
@@ -507,7 +501,7 @@ function Philosophy() {
         <Reveal>
           <p className="mx-auto max-w-4xl text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[3rem]">
             Ninguna empresa puede optimizar una operación que todavía no{" "}
-            <span className="text-[oklch(0.71_0.16_258)]">controla</span>.
+            <span className="text-brand">controla</span>.
           </p>
         </Reveal>
         <Reveal delay={100}>
@@ -540,20 +534,20 @@ function Pricing() {
             <Reveal key={p.name} delay={i * 80}>
               <div className={`group relative flex flex-col rounded-2xl p-8 transition-all duration-300 ${
                 p.featured
-                  ? "bg-ink py-10 text-white shadow-[0_30px_70px_-20px_rgb(37_99_235/0.45)] ring-2 ring-primary lg:-my-4 lg:scale-[1.03] hover:lg:scale-[1.05]"
+                  ? "bg-ink-2 py-10 text-white shadow-[0_30px_70px_-20px_rgba(47,107,255,.45)] ring-2 ring-primary/70 lg:-my-4 lg:scale-[1.03] hover:lg:scale-[1.05]"
                   : "block-card block-card-hover"
               }`}>
                 {p.featured && (
                   <>
-                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white shadow-lg shadow-primary/40">
+                    <span className="bg-brand absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold text-white shadow-lg shadow-primary/40">
                       Más elegido
                     </span>
-                    <div aria-hidden="true" className="pointer-events-none absolute inset-x-8 top-0 h-px bg-white/25" />
+                    <div aria-hidden="true" className="bg-brand pointer-events-none absolute inset-x-0 top-0 h-[2px] rounded-t-2xl opacity-80" />
                   </>
                 )}
-                <div className={`text-sm font-semibold ${p.featured ? "text-[oklch(0.71_0.16_258)]" : "text-muted-foreground"}`}>{p.name}</div>
+                <div className={`text-sm font-semibold ${p.featured ? "text-[cyan]" : "text-muted-foreground"}`}>{p.name}</div>
                 <div className="mt-3 flex items-baseline gap-1.5">
-                  <span className={`font-extrabold tracking-tight ${p.featured ? "text-5xl" : "text-4xl"}`}>{p.price}</span>
+                  <span className={`font-mono font-semibold tracking-tight ${p.featured ? "text-5xl" : "text-4xl"}`}>{p.price}</span>
                   <span className={p.featured ? "text-white/60" : "text-muted-foreground"}>/mes</span>
                 </div>
                 <div className={`mt-1.5 text-[13.5px] font-medium ${p.featured ? "text-white/80" : "text-foreground"}`}>{p.limit}</div>
@@ -561,14 +555,14 @@ function Pricing() {
                 <ul className="flex-1 space-y-3">
                   {p.items.map((it) => (
                     <li key={it} className="flex gap-2.5 text-[14px] leading-relaxed">
-                      <CircleCheck className={`mt-0.5 h-4 w-4 flex-none ${p.featured ? "text-[oklch(0.71_0.16_258)]" : "text-success"}`} />
+                      <CircleCheck className={`mt-0.5 h-4 w-4 flex-none ${p.featured ? "text-[cyan]" : "text-success"}`} />
                       <span className={p.featured ? "text-white/85" : "text-muted-foreground"}>{it}</span>
                     </li>
                   ))}
                 </ul>
                 <a href="#demo" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
                   p.featured
-                    ? "bg-primary text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgb(37_99_235/0.6)] hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)] hover:shadow-[0_14px_36px_-8px_rgb(37_99_235/0.7)]"
+                    ? "bg-brand text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.6)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_36px_-8px_rgba(47,107,255,.7)]"
                     : "bg-foreground text-white shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-primary"
                 }`}>
                   Pedí una demo
@@ -642,7 +636,7 @@ function DemoCta() {
             </h2>
           </Reveal>
           <Reveal delay={140}>
-            <p className="mt-5 text-[17px] text-white/65">
+            <p className="mt-5 text-[17px] text-[#9CA9C0]">
               Pedí una demo de 20 minutos y te mostramos Rutia funcionando con entregas como las tuyas.
             </p>
           </Reveal>
@@ -656,7 +650,7 @@ function DemoCta() {
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="mailto:hola@rutia.app" className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/[0.06] px-5 py-3 font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/12 active:scale-[0.98]">
-                  <Mail className="h-4 w-4 text-[oklch(0.71_0.16_258)]" />
+                  <Mail className="h-4 w-4 text-[cyan]" />
                   hola@rutia.app
                 </a>
               </div>
@@ -694,7 +688,7 @@ function DemoCta() {
                     <option>600 a 2.000</option><option>Más de 2.000</option>
                   </select>
                 </Field>
-                <button type="submit" className="mt-2 w-full rounded-xl bg-primary py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgb(37_99_235/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)] active:translate-y-0 active:scale-[0.98]">
+                <button type="submit" className="bg-brand mt-2 w-full rounded-xl py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
                   Quiero mi demo gratis
                 </button>
               </form>
@@ -707,7 +701,7 @@ function DemoCta() {
 }
 
 const inputCls =
-  "w-full rounded-xl border border-border bg-white px-4 py-3 text-[15px] placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10";
+  "w-full rounded-xl border border-border bg-white px-4 py-3 text-[15px] placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-4 focus:ring-[#18D2FF]/15";
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (

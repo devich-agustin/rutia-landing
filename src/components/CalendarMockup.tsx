@@ -31,28 +31,28 @@ export function CalendarMockup() {
   ];
   const tone: Record<string, string> = {
     blue: "border-primary/50 bg-primary/15 text-white",
-    sky: "border-[oklch(0.71_0.16_258)]/50 bg-[oklch(0.71_0.16_258)]/15 text-white",
+    sky: "border-[#18D2FF]/50 bg-[#18D2FF]/12 text-white",
     green: "border-success/50 bg-success/15 text-white",
   };
   const ROW = 36;
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded-2xl border border-white/12 bg-[oklch(0.15_0.028_262)] shadow-[var(--shadow-pop)]">
+      <div className="overflow-hidden rounded-2xl border border-white/12 bg-ink-2 shadow-[var(--shadow-pop)]">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
           <span className="text-[12px] font-semibold text-white/90">Calendario de entregas</span>
           <span className="font-mono text-[10px] text-white/45">hoy · día</span>
         </div>
         <div className="grid grid-cols-[48px_1fr_1fr_1fr] gap-px bg-white/10 p-px text-[10.5px]">
           {/* header row */}
-          <div className="bg-[oklch(0.15_0.028_262)]" />
+          <div className="bg-ink-2" />
           {cols.map((c) => (
-            <div key={c.name} className="bg-[oklch(0.15_0.028_262)] px-2 py-2">
+            <div key={c.name} className="bg-ink-2 px-2 py-2">
               <div className="font-semibold text-white/90">{c.name}</div>
               <div className="font-mono text-[9px] text-white/40">{c.sub}</div>
             </div>
           ))}
           {/* body */}
-          <div className="relative bg-[oklch(0.15_0.028_262)]" style={{ height: ROW * hours.length }}>
+          <div className="relative bg-ink-2" style={{ height: ROW * hours.length }}>
             {hours.map((h, i) => (
               <div key={h} className="absolute left-0 w-full pr-1 text-right font-mono text-[8.5px] text-white/35" style={{ top: i * ROW + 2 }}>
                 {h}
@@ -60,7 +60,7 @@ export function CalendarMockup() {
             ))}
           </div>
           {cols.map((c) => (
-            <div key={c.name} className="relative bg-[oklch(0.155_0.028_262)]" style={{ height: ROW * hours.length }}>
+            <div key={c.name} className="relative bg-ink-3" style={{ height: ROW * hours.length }}>
               {hours.map((_, i) => (
                 <div key={i} className="absolute left-0 w-full border-t border-white/[0.05]" style={{ top: i * ROW }} />
               ))}

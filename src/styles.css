@@ -38,43 +38,47 @@
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-sky: var(--sky);
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --shadow-card: 0 1px 2px rgb(2 8 23 / 0.04), 0 10px 30px -12px rgb(2 8 23 / 0.10);
-  --shadow-pop: 0 20px 50px -12px rgb(2 8 23 / 0.45);
+  --color-ink-3: var(--ink-3);
+  --color-cyan: var(--cyan);
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --shadow-card: 0 1px 2px rgba(7,17,31,.04), 0 10px 28px -14px rgba(7,17,31,.10);
+  --shadow-pop: 0 24px 60px -16px rgba(3,10,20,.55);
 }
 
 :root {
   --radius: 0.75rem;
   --background: oklch(1 0 0);
-  --surface: oklch(0.98 0.006 255);
-  --surface-2: oklch(0.965 0.01 255);
-  --foreground: oklch(0.2 0.03 262);
+  --surface: #F8FAFC;
+  --surface-2: #EEF2F8;
+  --foreground: #07111F;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.03 262);
+  --card-foreground: #07111F;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.03 262);
+  --popover-foreground: #07111F;
   /* Azul protagonista, más brillante (#2563EB) */
-  --primary: oklch(0.546 0.215 262);
+  --primary: #2F6BFF;
   --primary-foreground: oklch(1 0 0);
-  --primary-soft: oklch(0.95 0.035 258);
+  --primary-soft: #EAF1FF;
   --secondary: oklch(0.965 0.008 250);
-  --secondary-foreground: oklch(0.2 0.03 262);
+  --secondary-foreground: #07111F;
   --muted: oklch(0.965 0.008 250);
-  --muted-foreground: oklch(0.5 0.028 258);
-  --accent: oklch(0.546 0.215 262);
+  --muted-foreground: #5B667A;
+  --accent: #2F6BFF;
   --accent-foreground: oklch(1 0 0);
   --success: oklch(0.66 0.17 152);
   --success-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.23 27);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.917 0.01 255);
-  --input: oklch(0.917 0.01 255);
-  --ring: oklch(0.546 0.215 262);
+  --border: rgba(7,17,31,.10);
+  --input: rgba(7,17,31,.10);
+  --ring: #2F6BFF;
   /* Bloques oscuros */
-  --ink: oklch(0.145 0.028 262);   /* fondo de sección oscura */
-  --ink-2: oklch(0.19 0.035 262);  /* paneles sobre oscuro */
-  --sky: oklch(0.71 0.16 258);     /* azul claro para texto/acentos en oscuro */
+  --ink: #07111F;      /* navy principal */
+  --ink-2: #0F1728;    /* superficie oscura */
+  --ink-3: #121C2E;    /* superficie elevada */
+  --cyan: #18D2FF;     /* cian secundario */
+  --sky: #18D2FF;
 }
 
 @layer base {
@@ -137,6 +141,17 @@
 
 /* ---------- Bloques ---------- */
 
+/* Gradiente oficial Rutia: cian → azul. Solo para acentos y CTAs clave. */
+@utility bg-brand {
+  background-image: linear-gradient(90deg, #18D2FF 0%, #2F6BFF 100%);
+}
+@utility text-brand {
+  background-image: linear-gradient(90deg, #18D2FF 0%, #2F6BFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Pill de sección */
 @utility pill {
   display: inline-flex;
@@ -162,21 +177,29 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-card);
-  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, border-color 0.3s;
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s, border-color 0.25s;
 }
 @utility block-card-hover {
   &:hover {
-    transform: translateY(-4px) scale(1.005);
-    border-color: color-mix(in oklab, var(--primary) 30%, var(--border));
-    box-shadow: 0 2px 4px rgb(2 8 23 / 0.05), 0 18px 40px -14px rgb(37 99 235 / 0.22);
+    transform: translateY(-2px);
+    border-color: rgba(47,107,255,.35);
+    box-shadow: 0 2px 4px rgba(7,17,31,.05), 0 14px 34px -14px rgba(47,107,255,.28);
   }
 }
 
 /* Panel sobre fondo oscuro */
 @utility ink-card {
-  background: color-mix(in oklab, white 4%, var(--ink));
-  border: 1px solid color-mix(in oklab, white 10%, transparent);
+  background: var(--ink-2);
+  border: 1px solid rgba(255,255,255,.08);
   border-radius: var(--radius-2xl);
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s, border-color 0.25s, background-color 0.25s;
+}
+@utility ink-card-hover {
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,.16);
+    box-shadow: 0 14px 36px -14px rgba(24,210,255,.18);
+  }
 }
 
 /* Icon chip con tinte */

@@ -7,7 +7,7 @@ import { CircleCheck } from "lucide-react";
 
 function RoutePanel() {
   return (
-    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[oklch(0.2_0.032_262)]">
+    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-ink-3">
       <div className="flex items-center justify-between px-3 py-2 text-[10.5px] text-white/70">
         <span className="font-semibold text-white">Ruta del día — Camión 01</span>
         <span className="font-mono">7 paradas</span>
@@ -19,10 +19,16 @@ function RoutePanel() {
           {[40, 95, 150, 205].map((x) => <path key={x} d={`M${x} 0 V170`} />)}
         </g>
         {/* ruta */}
+        <defs>
+          <linearGradient id="ruta-brand" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor="#18D2FF" />
+            <stop offset="1" stopColor="#2F6BFF" />
+          </linearGradient>
+        </defs>
         <path
           d="M28 140 C 60 120, 70 80, 105 78 S 160 110, 190 84 226 40, 236 34"
           fill="none"
-          stroke="oklch(0.71 0.16 258)"
+          stroke="url(#ruta-brand)"
           strokeWidth="3"
           strokeLinecap="round"
           strokeDasharray="1 9"
@@ -35,7 +41,7 @@ function RoutePanel() {
           [236, 34, "4"],
         ].map(([x, y, n]) => (
           <g key={n as string}>
-            <g><circle cx={x as number} cy={y as number} r="11" fill="oklch(0.546 0.215 262)" opacity="0.25" /><circle cx={x as number} cy={y as number} r="9" fill="oklch(0.546 0.215 262)" /></g>
+            <g><circle cx={x as number} cy={y as number} r="11" fill="#2F6BFF" opacity="0.25" /><circle cx={x as number} cy={y as number} r="9" fill="#2F6BFF" /></g>
             <text x={x as number} y={(y as number) + 3.5} textAnchor="middle" fontSize="9" fontWeight="700" fill="white">
               {n}
             </text>
@@ -59,9 +65,9 @@ function RoutePanel() {
 export function DashboardMockup() {
   const kpis = [
     ["Pedidos hoy", "24", "text-white"],
-    ["Entregados", "12", "text-[oklch(0.78_0.15_152)]"],
-    ["En camino", "9", "text-[oklch(0.75_0.14_258)]"],
-    ["Fallidos", "1", "text-[oklch(0.72_0.19_25)]"],
+    ["Entregados", "12", "text-[#39D98A]"],
+    ["En camino", "9", "text-[#18D2FF]"],
+    ["Fallidos", "1", "text-[#FF6B6B]"],
   ];
   const next = [
     ["10:00", "Juan Pérez", "Sofá 3 cuerpos"],
@@ -70,11 +76,10 @@ export function DashboardMockup() {
     ["15:00", "Ana López", "Sommier 2 plazas"],
   ];
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/12 bg-[oklch(0.15_0.028_262)] shadow-[var(--shadow-pop)]">
+    <div className="overflow-hidden rounded-2xl border border-white/12 bg-ink-2 shadow-[var(--shadow-pop)]">
       {/* Top bar */}
       <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5">
-        <span className="grid h-5 w-5 place-items-center rounded-md bg-primary text-[10px] font-extrabold text-white">R</span>
-        <span className="text-[12px] font-semibold text-white/90">Rutia</span>
+        <img src="/rutia-logo.svg" alt="Rutia" className="h-4 w-auto" />
         <span className="ml-3 text-[12px] text-white/45">Centro de control</span>
         <span className="ml-auto font-mono text-[10px] text-white/40">hoy</span>
       </div>
@@ -116,7 +121,7 @@ export function DashboardMockup() {
               <div className="space-y-1">
                 {next.map(([h, who, what]) => (
                   <div key={h} className="flex items-center gap-2 rounded-md bg-white/[0.07] px-2 py-1.5 ring-1 ring-white/[0.06]">
-                    <span className="font-mono text-[10px] text-[oklch(0.75_0.14_258)]">{h}</span>
+                    <span className="font-mono text-[10px] text-[#18D2FF]">{h}</span>
                     <span className="truncate text-[11px] font-medium text-white/85">{who}</span>
                     <span className="ml-auto truncate text-[10px] text-white/40">{what}</span>
                   </div>
