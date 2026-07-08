@@ -4,7 +4,7 @@ import {
   FileSpreadsheet, FileText, MessagesSquare, BrainCircuit, RotateCcw, PhoneIncoming,
   Package, CalendarDays, LayoutGrid, Warehouse, Smartphone, RefreshCcw, History,
   Sofa, BedDouble, Tv, Wrench, HardHat, Building2, Boxes, Bike, Lightbulb, ShoppingCart,
-  Briefcase, ClipboardList, Truck, Users, Check, CircleCheck, ChevronDown, ArrowRight,
+  Briefcase, ClipboardList, Truck, Users, Check, CircleCheck, ChevronDown, ArrowRight, Mail,
 } from "lucide-react";
 import { Reveal, Counter } from "@/components/Reveal";
 import { DashboardMockup } from "@/components/DashboardMockup";
@@ -31,13 +31,13 @@ const PROBLEMS = [
 ];
 
 const FEATURES = [
-  { icon: Package, title: "Pedidos", text: "Cargá cada pedido a mano o importalo desde tu Excel con nuestra plantilla. Cliente, dirección, teléfono, qué se entrega y cuándo. Buscá y filtrá en segundos. Nunca más un pedido olvidado." },
+  { icon: Package, title: "Pedidos", text: "A mano o importados desde tu Excel con nuestra plantilla: cliente, dirección, teléfono, qué se entrega y cuándo. Buscá y filtrá en segundos." },
   { icon: CalendarDays, title: "Calendario de entregas", text: "Mirá cuántas entregas tenés cada día y detectá los días sobrecargados antes de que sean un problema." },
-  { icon: LayoutGrid, title: "Armado del día", text: "Asigná cada entrega a tu camión, camioneta, moto o al flete que contrataste, arrastrando y soltando. En minutos tenés el día armado y todos saben qué sale, con quién y en qué orden." },
-  { icon: Warehouse, title: "Depósito y preparación", text: "El depósito ve qué hay que preparar y marca cada pedido como listo. Nada sale a la calle sin estar preparado, y vos lo ves sin llamar a nadie." },
-  { icon: Smartphone, title: "Entrega desde el celular", text: "El que reparte —chofer propio, cadete o flete— recibe sus entregas en el celular que ya tiene: dirección, teléfono, observaciones. Marca entregada, parcial o fallida con un toque. Sin apps, sin capacitación." },
-  { icon: RefreshCcw, title: "Incidencias y reprogramaciones", text: "¿Cliente ausente? ¿Dirección incorrecta? Queda registrado con su motivo, y la reprogramación se agenda en el momento. Nada se pierde, nada queda 'en el aire'." },
-  { icon: History, title: "Historial de todo lo que pasó", text: "Cada entrega tiene su historia completa: quién la cargó, quién la preparó, quién la llevó, qué pasó y cuándo. Si un cliente reclama, la respuesta está a un clic." },
+  { icon: LayoutGrid, title: "Armado del día", text: "Arrastrá y soltá cada entrega a tu camión, camioneta, moto o flete. En minutos el día está armado: todos saben qué sale, con quién y en qué orden." },
+  { icon: Warehouse, title: "Depósito y preparación", text: "El depósito ve qué preparar y marca cada pedido como listo. Nada sale a la calle sin preparar, y vos lo ves sin llamar a nadie." },
+  { icon: Smartphone, title: "Entrega desde el celular", text: "Chofer propio, cadete o flete: recibe sus entregas en el celular que ya tiene y marca entregada, parcial o fallida con un toque. Sin apps, sin capacitación." },
+  { icon: RefreshCcw, title: "Incidencias y reprogramaciones", text: "¿Cliente ausente? ¿Dirección incorrecta? Queda registrado con su motivo y la reprogramación se agenda al momento. Nada queda 'en el aire'." },
+  { icon: History, title: "Historial de todo lo que pasó", text: "Cada entrega guarda su historia: quién la cargó, la preparó y la llevó, qué pasó y cuándo. Si un cliente reclama, la respuesta está a un clic." },
 ];
 
 const RUBROS = [
@@ -94,32 +94,61 @@ function Glow({ className = "" }: { className?: string }) {
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    const ids = NAV.map(([, href]) => href.slice(1));
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) setActive(`#${e.target.id}`);
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+    return () => obs.disconnect();
+  }, []);
   return (
     <header
-      className={`sticky top-0 z-40 border-b bg-ink/85 backdrop-blur-xl transition-colors ${
+      className={`sticky top-0 z-40 border-b bg-ink/85 backdrop-blur-xl transition-colors duration-300 ${
         scrolled ? "border-white/10" : "border-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 lg:px-8">
         <a href="#top"><Logo dark /></a>
-        <nav className="hidden items-center gap-7 lg:flex">
-          {NAV.map(([label, href]) => (
-            <a key={href} href={href} className="text-[13.5px] font-medium text-white/65 transition-colors hover:text-white">
-              {label}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-1 lg:flex">
+          {NAV.map(([label, href]) => {
+            const isActive = active === href;
+            return (
+              <a
+                key={href}
+                href={href}
+                className={`group relative rounded-lg px-3.5 py-2 text-[13.5px] font-medium transition-colors duration-200 ${
+                  isActive ? "text-white" : "text-white/60 hover:text-white"
+                }`}
+              >
+                {label}
+                <span
+                  className={`absolute inset-x-3.5 -bottom-px h-px origin-left bg-primary transition-transform duration-300 ease-out ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </a>
+            );
+          })}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
-          <a href="#" className="rounded-lg px-4 py-2 text-[13.5px] font-semibold text-white/80 hover:bg-white/10 hover:text-white">
+          <a href="#" className="rounded-lg px-4 py-2 text-[13.5px] font-semibold text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white">
             Ingresar
           </a>
-          <a href="#demo" className="rounded-lg bg-primary px-4 py-2.5 text-[13.5px] font-semibold text-white transition-colors hover:bg-[oklch(0.49_0.21_262)]">
+          <a href="#demo" className="rounded-lg bg-primary px-4 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgb(37_99_235/0.5)] transition-all duration-200 hover:-translate-y-px hover:bg-[oklch(0.49_0.21_262)] active:translate-y-0 active:scale-[0.98]">
             Solicitar demo
           </a>
         </div>
@@ -163,11 +192,11 @@ function Hero() {
           </p>
           <div className="animate-enter" style={{ animationDelay: "240ms" }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)]">
+              <a href="#demo" className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_-8px_rgb(37_99_235/0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)] active:translate-y-0 active:scale-[0.98]">
                 Solicitar demo
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/5">
+              <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/5 active:translate-y-0 active:scale-[0.98]">
                 <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#25D366]" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z"/></svg>
                 Escribinos por WhatsApp
               </a>
@@ -190,23 +219,20 @@ function Hero() {
       </Shell>
       {/* Cifras de operación */}
       <div className="relative border-t border-white/10">
-        <Shell className="grid gap-6 py-9 sm:grid-cols-3">
+        <Shell className="grid py-12 sm:grid-cols-3 sm:divide-x sm:divide-white/10 lg:py-14">
           {[
-            { n: 2000, suffix: "+", label: "De 20 a 2.000 entregas por mes bajo control", icon: Truck, tone: "text-[oklch(0.71_0.16_258)] bg-[oklch(0.71_0.16_258)]/12" },
-            { n: 1, suffix: "", label: "solo lugar para toda la operación", icon: LayoutGrid, tone: "text-[oklch(0.78_0.15_152)] bg-[oklch(0.78_0.15_152)]/12" },
-            { n: 0, suffix: "", label: "apps que instalar", icon: Smartphone, tone: "text-[oklch(0.8_0.14_85)] bg-[oklch(0.8_0.14_85)]/12" },
-          ].map((m) => (
-            <div key={m.label} className="flex items-center gap-4">
-              <span className={`grid h-11 w-11 flex-none place-items-center rounded-xl ${m.tone}`}>
-                <m.icon className="h-5 w-5" />
-              </span>
-              <div>
-                <div className="font-mono text-2xl font-semibold text-white">
+            { n: 2000, suffix: "+", label: "De 20 a 2.000 entregas por mes bajo control" },
+            { n: 1, suffix: "", label: "solo lugar para toda la operación" },
+            { n: 0, suffix: "", label: "apps que instalar" },
+          ].map((m, i) => (
+            <Reveal key={m.label} delay={i * 120}>
+              <div className={`py-4 sm:py-0 ${i > 0 ? "sm:pl-12" : ""} ${i < 2 ? "sm:pr-12" : ""}`}>
+                <div className="text-5xl font-extrabold tracking-tight text-white lg:text-[3.5rem]">
                   <Counter to={m.n} suffix={m.suffix} />
                 </div>
-                <div className="text-[12.5px] leading-snug text-white/55">{m.label}</div>
+                <div className="mt-2.5 max-w-[26ch] text-[13.5px] leading-snug text-white/50">{m.label}</div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </Shell>
       </div>
@@ -278,16 +304,8 @@ function Features() {
           desc="Del pedido a la entrega, cada paso queda registrado, visible y bajo control. Como una torre de control, pero para tus entregas."
         />
         {/* La imagen manda: calendario grande a la izquierda, los módulos que muestra a su lado */}
-        <div className="mt-14 grid items-center gap-10 lg:grid-cols-12">
-          <Reveal className="lg:col-span-8">
-            <div>
-              <CalendarMockup />
-              <p className="mt-4 text-center text-[13px] text-white/45">
-                El armado del día: cada entrega asignada a su vehículo, arrastrando y soltando.
-              </p>
-            </div>
-          </Reveal>
-          <div className="space-y-3 lg:col-span-4">
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="space-y-3 lg:order-1 lg:col-span-4">
             {side.map((f, i) => (
               <Reveal key={f.title} delay={i * 80}>
                 <div className={`flex gap-4 rounded-2xl p-5 ${i === 2 ? "ink-card border-primary/40 bg-primary/10" : "ink-card"}`}>
@@ -302,6 +320,14 @@ function Features() {
               </Reveal>
             ))}
           </div>
+          <Reveal className="lg:order-2 lg:col-span-8">
+            <div>
+              <CalendarMockup />
+              <p className="mt-4 text-center text-[13px] text-white/45">
+                El armado del día: cada entrega asignada a su vehículo, arrastrando y soltando.
+              </p>
+            </div>
+          </Reveal>
         </div>
         {/* El resto de los módulos: franja compacta, sin competir con el producto */}
         <div className="mt-12 grid gap-x-10 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -418,12 +444,12 @@ function Benefits() {
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {cols.map((c, i) => (
             <Reveal key={c.title} delay={i * 70}>
-              <div className="ink-card group h-full p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.06] lg:p-9">
+              <div className="ink-card group h-full p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/[0.06] hover:shadow-[0_20px_50px_-20px_rgb(37_99_235/0.35)] lg:p-9">
                 <div className="flex items-center gap-4">
                   <span className="grid h-13 w-13 flex-none place-items-center rounded-2xl bg-primary/15 text-[oklch(0.71_0.16_258)] transition-colors group-hover:bg-primary group-hover:text-white">
                     <c.icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
-                  <h3 className="text-[19px] font-bold text-white">{c.title}</h3>
+                  <h3 className="text-xl font-bold tracking-tight text-white">{c.title}</h3>
                 </div>
                 <ul className="mt-6 space-y-3.5">
                   {c.items.map((it) => (
@@ -540,13 +566,13 @@ function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a href="#demo" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all ${
+                <a href="#demo" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
                   p.featured
-                    ? "bg-primary text-white hover:bg-[oklch(0.49_0.21_262)]"
-                    : "border border-border hover:border-primary hover:text-primary"
+                    ? "bg-primary text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgb(37_99_235/0.6)] hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)] hover:shadow-[0_14px_36px_-8px_rgb(37_99_235/0.7)]"
+                    : "bg-foreground text-white shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-primary"
                 }`}>
                   Pedí una demo
-                  <ArrowRight className={`h-4 w-4 transition-transform group-hover:translate-x-0.5 ${p.featured ? "" : "opacity-0 group-hover:opacity-100"}`} />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </a>
               </div>
             </Reveal>
@@ -624,11 +650,13 @@ function DemoCta() {
             <div className="mt-8 rounded-2xl border border-white/12 bg-white/[0.04] p-6">
               <p className="font-semibold">¿Preferís hablar directo?</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white transition-transform hover:-translate-y-0.5">
+                <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white shadow-[0_8px_24px_-6px_rgb(37_211_102/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(37_211_102/0.6)] active:scale-[0.98]">
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z"/></svg>
-                  WhatsApp
+                  Escribinos por WhatsApp
+                  <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="mailto:hola@rutia.app" className="inline-flex items-center rounded-xl border border-white/25 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10">
+                <a href="mailto:hola@rutia.app" className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/[0.06] px-5 py-3 font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/12 active:scale-[0.98]">
+                  <Mail className="h-4 w-4 text-[oklch(0.71_0.16_258)]" />
                   hola@rutia.app
                 </a>
               </div>
@@ -666,7 +694,7 @@ function DemoCta() {
                     <option>600 a 2.000</option><option>Más de 2.000</option>
                   </select>
                 </Field>
-                <button type="submit" className="mt-2 w-full rounded-xl bg-primary py-3.5 text-base font-bold text-white transition-colors hover:bg-[oklch(0.49_0.21_262)]">
+                <button type="submit" className="mt-2 w-full rounded-xl bg-primary py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgb(37_99_235/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[oklch(0.49_0.21_262)] active:translate-y-0 active:scale-[0.98]">
                   Quiero mi demo gratis
                 </button>
               </form>
