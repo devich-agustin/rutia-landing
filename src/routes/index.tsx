@@ -779,9 +779,15 @@ function Footer() {
         </div>
         <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-white/45">
           <span>© 2026 Rutia — Buenos Aires, Argentina</span>
-          <a href="/privacidad" className="transition-colors hover:text-white">
-            Política de privacidad
-          </a>
+          <nav className="flex flex-wrap gap-x-3 gap-y-1" aria-label="Páginas legales">
+            <a href="/privacidad" className="transition-colors hover:text-white">Política de privacidad</a>
+            <span aria-hidden="true">·</span>
+            <a href="/terminos" className="transition-colors hover:text-white">Términos</a>
+            <span aria-hidden="true">·</span>
+            <a href="/cookies" className="transition-colors hover:text-white">Cookies</a>
+            <span aria-hidden="true">·</span>
+            <a href="/aviso-legal" className="transition-colors hover:text-white">Aviso legal</a>
+          </nav>
         </div>
       </Shell>
     </footer>
