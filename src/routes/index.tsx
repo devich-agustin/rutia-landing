@@ -777,8 +777,11 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6 text-[13px] text-white/45">
-          © 2026 Rutia — Buenos Aires, Argentina
+        <div className="mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-6 text-[13px] text-white/45">
+          <span>© 2026 Rutia — Buenos Aires, Argentina</span>
+          <a href="/privacidad" className="transition-colors hover:text-white">
+            Política de privacidad
+          </a>
         </div>
       </Shell>
     </footer>
