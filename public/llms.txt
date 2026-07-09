@@ -1,0 +1,15 @@
+# Rutia
+
+> Software de gestión de entregas para PyMEs de Argentina. Centro de control de logística: pedidos, entregas, depósito, vehículos, choferes y fletes, incidencias y reprogramaciones en un solo lugar. Sin apps para los que reparten: funciona desde el navegador y el celular que ya tienen.
+
+## Información
+- Sitio: https://rutia.com.ar
+- Contacto: contacto@rutia.com.ar
+- WhatsApp: https://wa.me/5491178242630
+- Rubros: mueblerías, colchonerías, electrodomésticos, ferreterías, corralones, distribuidoras, e-commerce con reparto propio.
+- Planes: Inicial (USD 59/mes, hasta 150 entregas), PyME (USD 119/mes, hasta 600), Empresa (USD 229/mes, hasta 2.000). Sin permanencia.
+
+## Redes
+- LinkedIn: https://www.linkedin.com/company/rutia
+- Instagram: https://www.instagram.com/somosrutia
+- Facebook: https://www.facebook.com/profile.php?id=61591624718047

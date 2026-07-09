@@ -1,10 +1,13 @@
+import { trackClickWhatsApp } from "@/lib/analytics";
+
 export function WhatsAppFab() {
   return (
     <a
-      href="https://wa.me/5491100000000"
+      href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribinos por WhatsApp"
+      onClick={trackClickWhatsApp}
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110"
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor">

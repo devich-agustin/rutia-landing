@@ -7,6 +7,7 @@ import {
   Briefcase, ClipboardList, Truck, Users, Check, CircleCheck, ChevronDown, ArrowRight, Mail,
 } from "lucide-react";
 import { Reveal, Counter } from "@/components/Reveal";
+import { trackClickDemo, trackClickWhatsApp, trackContact, trackFormSubmit, trackLead } from "@/lib/analytics";
 import { DashboardMockup } from "@/components/DashboardMockup";
 import { CalendarMockup } from "@/components/CalendarMockup";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -64,10 +65,19 @@ const FAQ_ITEMS = [
   ["¿Qué pasa si no me sirve?", "No hay permanencia. Cancelás cuando quieras y listo, sin letra chica."],
 ];
 
-function Logo({ dark = false, className = "h-8" }: { dark?: boolean; className?: string }) {
+function Logo({ lazy = false, className = "h-8" }: { lazy?: boolean; className?: string }) {
   // El lockup oficial lleva el wordmark en blanco: pensado para fondos navy.
-  void dark;
-  return <img src="/rutia-logo.svg" alt="Rutia" className={`w-auto ${className}`} />;
+  return (
+    <img
+      src="/rutia-logo.svg"
+      alt="Rutia — software de gestión de entregas"
+      width={84}
+      height={32}
+      decoding="async"
+      loading={lazy ? "lazy" : "eager"}
+      className={`w-auto ${className}`}
+    />
+  );
 }
 
 function Shell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -115,7 +125,7 @@ function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 lg:px-8">
-        <a href="#top"><Logo dark /></a>
+        <a href="#top" aria-label="Rutia — inicio"><Logo /></a>
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map(([label, href]) => {
             const isActive = active === href;
@@ -138,10 +148,7 @@ function Navbar() {
           })}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
-          <a href="#" className="rounded-lg px-4 py-2 text-[13.5px] font-semibold text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white">
-            Ingresar
-          </a>
-          <a href="#demo" className="bg-brand rounded-lg px-4 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
+          <a href="#demo" onClick={trackClickDemo} className="bg-brand rounded-lg px-4 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
             Solicitar demo
           </a>
         </div>
@@ -155,7 +162,7 @@ function Navbar() {
             {NAV.map(([label, href]) => (
               <a key={href} href={href} onClick={() => setOpen(false)} className="py-2 text-[16px] font-medium text-white/85">{label}</a>
             ))}
-            <a href="#demo" onClick={() => setOpen(false)} className="mt-2 rounded-lg bg-primary px-5 py-3 text-center font-semibold text-white">
+            <a href="#demo" onClick={() => { setOpen(false); trackClickDemo(); }} className="mt-2 rounded-lg bg-primary px-5 py-3 text-center font-semibold text-white">
               Solicitar demo
             </a>
           </div>
@@ -185,11 +192,11 @@ function Hero() {
           </p>
           <div className="animate-enter" style={{ animationDelay: "240ms" }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#demo" className="bg-brand inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
+              <a href="#demo" onClick={trackClickDemo} className="bg-brand inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
                 Solicitar demo
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/5 active:translate-y-0 active:scale-[0.98]">
+              <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/5 active:translate-y-0 active:scale-[0.98]">
                 <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#25D366]" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z"/></svg>
                 Escribinos por WhatsApp
               </a>
@@ -560,7 +567,7 @@ function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a href="#demo" className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
+                <a href="#demo" onClick={trackClickDemo} className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
                   p.featured
                     ? "bg-brand text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.6)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_36px_-8px_rgba(47,107,255,.7)]"
                     : "bg-foreground text-white shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-primary"
@@ -621,6 +628,11 @@ function Faq() {
   );
 }
 
+// Conexión futura del formulario: pegar aquí la URL del endpoint cuando exista
+// (ej. Formspree: "https://formspree.io/f/XXXXXXXX"). Con el valor vacío, el
+// formulario muestra la confirmación sin enviar datos a ningún servicio externo.
+const FORM_ENDPOINT = "";
+
 function DemoCta() {
   const [sent, setSent] = useState(false);
   return (
@@ -644,14 +656,14 @@ function DemoCta() {
             <div className="mt-8 rounded-2xl border border-white/12 bg-white/[0.04] p-6">
               <p className="font-semibold">¿Preferís hablar directo?</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white shadow-[0_8px_24px_-6px_rgb(37_211_102/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(37_211_102/0.6)] active:scale-[0.98]">
+                <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white shadow-[0_8px_24px_-6px_rgb(37_211_102/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(37_211_102/0.6)] active:scale-[0.98]">
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z"/></svg>
                   Escribinos por WhatsApp
                   <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="mailto:hola@rutia.app" className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/[0.06] px-5 py-3 font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/12 active:scale-[0.98]">
+                <a href="mailto:contacto@rutia.com.ar" onClick={trackContact} className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/[0.06] px-5 py-3 font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/12 active:scale-[0.98]">
                   <Mail className="h-4 w-4 text-[cyan]" />
-                  hola@rutia.app
+                  contacto@rutia.com.ar
                 </a>
               </div>
             </div>
@@ -668,13 +680,29 @@ function DemoCta() {
                 <p className="mt-2 text-muted-foreground">Te contactamos en menos de 24 hs hábiles.</p>
               </div>
             ) : (
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="space-y-4">
+              <form onSubmit={async (e) => {
+                  e.preventDefault();
+                  trackFormSubmit();
+                  trackLead();
+                  if (FORM_ENDPOINT) {
+                    try {
+                      await fetch(FORM_ENDPOINT, {
+                        method: "POST",
+                        body: new FormData(e.currentTarget),
+                        headers: { Accept: "application/json" },
+                      });
+                    } catch (err) {
+                      console.error("Error al enviar el formulario:", err);
+                    }
+                  }
+                  setSent(true);
+                }} className="space-y-4">
                 <h3 className="text-xl font-bold">Pedí tu demo gratis</h3>
-                <Field label="Nombre"><input required className={inputCls} placeholder="Tu nombre" /></Field>
-                <Field label="Empresa"><input required className={inputCls} placeholder="Nombre de tu empresa" /></Field>
-                <Field label="Teléfono / WhatsApp"><input required className={inputCls} placeholder="+54 9 11 ..." /></Field>
+                <Field label="Nombre"><input required name="nombre" type="text" autoComplete="name" className={inputCls} placeholder="Tu nombre" /></Field>
+                <Field label="Empresa"><input required name="empresa" type="text" autoComplete="organization" className={inputCls} placeholder="Nombre de tu empresa" /></Field>
+                <Field label="Teléfono / WhatsApp"><input required name="telefono" type="tel" autoComplete="tel" className={inputCls} placeholder="+54 9 11 ..." /></Field>
                 <Field label="Rubro">
-                  <select required className={inputCls} defaultValue="">
+                  <select required name="rubro" className={inputCls} defaultValue="">
                     <option value="" disabled>Elegí una opción</option>
                     <option>Mueblería</option><option>Colchonería</option><option>Electrodomésticos</option>
                     <option>Ferretería</option><option>Corralón</option><option>Distribuidora</option>
@@ -682,7 +710,7 @@ function DemoCta() {
                   </select>
                 </Field>
                 <Field label="Entregas por mes">
-                  <select required className={inputCls} defaultValue="">
+                  <select required name="entregas_por_mes" className={inputCls} defaultValue="">
                     <option value="" disabled>Elegí una opción</option>
                     <option>Menos de 20</option><option>20 a 150</option><option>150 a 600</option>
                     <option>600 a 2.000</option><option>Más de 2.000</option>
@@ -718,7 +746,7 @@ function Footer() {
       <Shell className="py-14">
         <div className="grid gap-10 lg:grid-cols-3">
           <div>
-            <Logo dark />
+            <Logo lazy />
             <p className="mt-4 max-w-sm text-[14.5px] text-white/55">
               El centro de control de tus entregas. Para empresas que todavía organizan su
               logística con Excel y WhatsApp.
@@ -727,14 +755,22 @@ function Footer() {
           <div className="grid grid-cols-2 gap-8 lg:col-span-2 lg:grid-cols-3">
             {[
               ["Navegación", [["Producto", "#producto"], ["Precios", "#precios"], ["Quiénes somos", "#nosotros"], ["Contacto", "#demo"]]],
-              ["Contacto", [["hola@rutia.app", "mailto:hola@rutia.app"], ["WhatsApp", "https://wa.me/5491100000000"]]],
-              ["Seguinos", [["Instagram", "#"], ["LinkedIn", "#"]]],
+              ["Contacto", [["contacto@rutia.com.ar", "mailto:contacto@rutia.com.ar"], ["WhatsApp", "https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia"]]],
+              ["Seguinos", [["Instagram", "https://www.instagram.com/somosrutia"], ["LinkedIn", "https://www.linkedin.com/company/rutia"], ["Facebook", "https://www.facebook.com/profile.php?id=61591624718047"]]],
             ].map(([title, links]) => (
               <div key={title as string}>
                 <div className="text-sm font-bold">{title as string}</div>
                 <ul className="mt-4 space-y-2 text-[14.5px] text-white/55">
                   {(links as [string, string][]).map(([label, href]) => (
-                    <li key={label}><a href={href} className="hover:text-white">{label}</a></li>
+                    <li key={label}>
+                      <a
+                        href={href}
+                        className="hover:text-white"
+                        {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
+                        {label}
+                      </a>
+                    </li>
                   ))}
                 </ul>
               </div>
