@@ -35,7 +35,10 @@ export function initAnalytics() {
       window.dataLayer!.push(arguments);
     };
     window.gtag("js", new Date());
-    window.gtag("config", GA_MEASUREMENT_ID); // dispara PageView automáticamente
+    window.gtag("config", GA_MEASUREMENT_ID, {
+      // DebugView de GA4 solo en desarrollo; en producción no se envía el flag
+      ...(import.meta.env.DEV ? { debug_mode: true } : {}),
+    }); // dispara page_view automáticamente
   }
 
   if (META_PIXEL_ID) {

@@ -631,10 +631,12 @@ function Faq() {
 // Conexión futura del formulario: pegar aquí la URL del endpoint cuando exista
 // (ej. Formspree: "https://formspree.io/f/XXXXXXXX"). Con el valor vacío, el
 // formulario muestra la confirmación sin enviar datos a ningún servicio externo.
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formspree.io/f/xeebbylg";
 
 function DemoCta() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   return (
     <section id="demo" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-28">
       <Glow className="left-[-10%] top-[-25%] h-[520px] w-[520px]" />
@@ -682,22 +684,32 @@ function DemoCta() {
             ) : (
               <form onSubmit={async (e) => {
                   e.preventDefault();
-                  trackFormSubmit();
-                  trackLead();
-                  if (FORM_ENDPOINT) {
-                    try {
-                      await fetch(FORM_ENDPOINT, {
-                        method: "POST",
-                        body: new FormData(e.currentTarget),
-                        headers: { Accept: "application/json" },
-                      });
-                    } catch (err) {
-                      console.error("Error al enviar el formulario:", err);
-                    }
+                  if (sending) return; // evita doble envío
+                  const form = e.currentTarget;
+                  setSending(true);
+                  setError(false);
+                  try {
+                    const data = new FormData(form);
+                    data.append("page_url", window.location.href);
+                    const res = await fetch(FORM_ENDPOINT, {
+                      method: "POST",
+                      body: data,
+                      headers: { Accept: "application/json" },
+                    });
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    trackFormSubmit();
+                    trackLead();
+                    setSent(true);
+                  } catch (err) {
+                    console.error("Error al enviar el formulario:", err);
+                    setError(true);
+                  } finally {
+                    setSending(false);
                   }
-                  setSent(true);
                 }} className="space-y-4">
                 <h3 className="text-xl font-bold">Pedí tu demo gratis</h3>
+                <input type="hidden" name="_subject" value="Nueva consulta desde rutia.com.ar" />
+                <input type="hidden" name="source" value="rutia.com.ar" />
                 <Field label="Nombre"><input required name="nombre" type="text" autoComplete="name" className={inputCls} placeholder="Tu nombre" /></Field>
                 <Field label="Empresa"><input required name="empresa" type="text" autoComplete="organization" className={inputCls} placeholder="Nombre de tu empresa" /></Field>
                 <Field label="Teléfono / WhatsApp"><input required name="telefono" type="tel" autoComplete="tel" className={inputCls} placeholder="+54 9 11 ..." /></Field>
@@ -716,9 +728,20 @@ function DemoCta() {
                     <option>600 a 2.000</option><option>Más de 2.000</option>
                   </select>
                 </Field>
-                <button type="submit" className="bg-brand mt-2 w-full rounded-xl py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
+                <button
+                  type="submit"
+                  disabled={sending}
+                  aria-busy={sending}
+                  className="bg-brand mt-2 w-full rounded-xl py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60"
+                >
                   Quiero mi demo gratis
                 </button>
+                {error && (
+                  <p role="alert" className="mt-3 text-[13.5px] font-medium text-destructive">
+                    No pudimos enviar tu consulta. Probá de nuevo en unos segundos, o
+                    escribinos directo por WhatsApp.
+                  </p>
+                )}
               </form>
             )}
           </div>
