@@ -214,3 +214,54 @@
   background: color-mix(in oklab, var(--primary) 10%, white);
   border: 1px solid color-mix(in oklab, var(--primary) 16%, var(--border));
 }
+
+/* ---------- Prosa del blog ---------- */
+
+.blog-prose {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+}
+.blog-prose h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  scroll-margin-top: 96px;
+}
+.blog-prose h3 {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--foreground);
+  scroll-margin-top: 96px;
+}
+.blog-prose p { margin-top: 1rem; }
+.blog-prose ul, .blog-prose ol { margin-top: 1rem; padding-left: 1.5rem; }
+.blog-prose ul { list-style: disc; }
+.blog-prose ol { list-style: decimal; }
+.blog-prose li { margin-top: 0.5rem; }
+.blog-prose li::marker { color: var(--primary); }
+.blog-prose strong { color: var(--foreground); font-weight: 600; }
+.blog-prose a { color: var(--primary); font-weight: 500; }
+.blog-prose a:hover { text-decoration: underline; }
+.blog-prose blockquote {
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--primary);
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: var(--foreground);
+}
+.blog-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--surface-2);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+}
+.blog-prose hr { margin-top: 2.5rem; border-color: var(--border); }
+.blog-prose img { margin-top: 1.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); }
+.blog-prose table { margin-top: 1.5rem; width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.blog-prose th, .blog-prose td { border-bottom: 1px solid var(--border); padding: 0.6rem 0.75rem; text-align: left; }
+.blog-prose th { color: var(--foreground); font-weight: 600; }

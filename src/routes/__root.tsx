@@ -119,13 +119,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap",
       },
       { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "alternate", type: "application/rss+xml", title: "Blog de Rutia", href: `${SITE_URL}/rss.xml` },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
-  notFoundComponent: NotFoundComponent,
+  notFoundComponent: NotFoundPage,
   errorComponent: ErrorComponent,
 });
 
@@ -204,6 +205,29 @@ function RootShell({ children }: { children: ReactNode }) {
         <Scripts />
       </body>
     </html>
+  );
+}
+
+function NotFoundPage() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center text-white">
+      <img src="/rutia-logo.svg" alt="Rutia" className="h-9 w-auto" />
+      <p className="mt-8 font-mono text-sm text-[#9CA9C0]">Error 404</p>
+      <h1 className="mt-3 text-3xl font-extrabold sm:text-4xl">
+        Esta página no está en la hoja de ruta
+      </h1>
+      <p className="mt-3 max-w-md text-[15.5px] text-[#9CA9C0]">
+        El enlace no existe o cambió de lugar. Volvé al inicio o pasá por el blog.
+      </p>
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/" className="rounded-xl bg-primary px-6 py-3 font-semibold text-white transition-colors hover:brightness-110">
+          Ir al inicio
+        </a>
+        <a href="/blog" className="rounded-xl border border-white/25 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10">
+          Ver el blog
+        </a>
+      </div>
+    </div>
   );
 }
 

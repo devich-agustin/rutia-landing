@@ -6,6 +6,7 @@ export const getRouter = () => {
   const queryClient = new QueryClient();
 
   const router = createRouter({
+    trailingSlash: 'never',
     routeTree,
     context: { queryClient },
     scrollRestoration: true,

@@ -20,6 +20,7 @@ const NAV = [
   ["Para quién", "#para-quien"],
   ["Precios", "#precios"],
   ["Quiénes somos", "#nosotros"],
+  ["Blog", "/blog"],
 ] as const;
 
 const PROBLEMS = [
@@ -777,7 +778,7 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 lg:col-span-2 lg:grid-cols-3">
             {[
-              ["Navegación", [["Producto", "#producto"], ["Precios", "#precios"], ["Quiénes somos", "#nosotros"], ["Contacto", "#demo"]]],
+              ["Navegación", [["Producto", "#producto"], ["Precios", "#precios"], ["Quiénes somos", "#nosotros"], ["Blog", "/blog"], ["Contacto", "#demo"]]],
               ["Contacto", [["contacto@rutia.com.ar", "mailto:contacto@rutia.com.ar"], ["WhatsApp", "https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia"]]],
               ["Seguinos", [["Instagram", "https://www.instagram.com/somosrutia"], ["LinkedIn", "https://www.linkedin.com/company/rutia"], ["Facebook", "https://www.facebook.com/profile.php?id=61591624718047"]]],
             ].map(([title, links]) => (
