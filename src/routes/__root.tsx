@@ -81,7 +81,7 @@ const SITE_URL = "https://rutia.com.ar";
 const SITE_TITLE = "Rutia — Software de gestión de entregas para PyMEs";
 const SITE_DESCRIPTION =
   "Rutia es el centro de control de la logística de tu PyME: pedidos, entregas, depósito, vehículos, choferes y fletes en un solo lugar. Sin Excel, sin papelitos y sin apps para los que reparten.";
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const OG_IMAGE = `${SITE_URL}/og-image-v2.png`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
