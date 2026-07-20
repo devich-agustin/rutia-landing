@@ -21,7 +21,7 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:url", content: `${SITE_URL}/blog` },
       { property: "og:title", content: "Blog de Rutia — Logística y entregas para PyMEs" },
       { property: "og:description", content: "Guías prácticas sobre organización de entregas, control operativo y logística para PyMEs." },
-      { property: "og:image", content: `${SITE_URL}/og-image.png` },
+      { property: "og:image", content: `${SITE_URL}/og-image-v2.png` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/blog` }],
