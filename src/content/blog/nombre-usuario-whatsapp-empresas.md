@@ -81,29 +81,3 @@ Depende. Reclamar tu nombre de Instagram o Facebook en WhatsApp requiere vincula
 
 **¿El nombre de usuario me ayuda a organizar las entregas de mi PyME?**  
 No. El nombre de usuario mejora cómo te contactan y protege tu número, pero no ordena tu operación logística. Coordinar entregas por WhatsApp —pedidos, cambios y avisos mezclados en chats— sigue siendo un problema aunque tengas un nombre prolijo. Para eso hace falta llevar la coordinación a un lugar único y visible, que es lo que resuelve un centro de control como [Rutia](https://www.rutia.com.ar/).
-
----  
----
-
-## ANEXO EDITORIAL — No publicar (metadata SEO y notas internas)
-
-**Keyword principal:** nombre de usuario whatsapp  
-**Variantes usadas:** reservar nombre whatsapp empresa, username whatsapp pyme, whatsapp business nombre de usuario, arroba tuempresa
-
-**Slug:** /blog/nombre-usuario-whatsapp-empresas  
-**Canonical:** https://www.rutia.com.ar/blog/nombre-usuario-whatsapp-empresas  
-**Meta title:** Nombre de usuario de WhatsApp para empresas: cómo reservarlo | Rutia  
-**Meta description:** WhatsApp permite reservar un nombre de usuario tipo @tuempresa. Qué es, cómo reservarlo paso a paso y qué saber antes de vincularlo con Instagram.  
-**Categoría:** Control y trazabilidad  
-**Etiquetas:** whatsapp, novedades, reparto propio, dueños de PyMEs  
-**Schema:** Article + FAQPage (las 5 preguntas de la sección final)
-
-**Imagen destacada — alt text:** Cómo reservar el nombre de usuario de WhatsApp para una PyME
-
-**Enlaces internos:**  
-- Art. 1 (pilar) "cómo organizar las entregas de una PyME" → desde H2 "Y esto qué tiene que ver con tu operación"  
-- Comercial: home rutia.com.ar → CTA repartidos (intro, vale la pena recordar, para llevar, conclusión) + palabra "Rutia" linkeada en cada aparición
-
-**Enlaces externos:** ninguno.
-
-**Fuentes de los datos (verificar vigencia antes de publicar):** anuncio de WhatsApp del 29 de junio de 2026 sobre reserva de nombres de usuario; función de reclamar nombre de Instagram/Facebook mediante vinculación de cuentas; requisitos de formato (3–35 caracteres) y clave de nombre de usuario de cuatro dígitos.  
