@@ -78,7 +78,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const GOOGLE_SITE_VERIFICATION = "";
 
 const SITE_URL = "https://rutia.com.ar";
-const SITE_TITLE = "Rutia — Software de gestión de entregas para PyMEs";
+const SITE_TITLE = "Rutia — El centro de control de tu logística";
 const SITE_DESCRIPTION =
   "Rutia es el centro de control de la logística de tu PyME: pedidos, entregas, depósito, vehículos, choferes y fletes en un solo lugar. Sin Excel, sin papelitos y sin apps para los que reparten.";
 const OG_IMAGE = `${SITE_URL}/og-image-v2.png`;
@@ -181,11 +181,6 @@ const JSON_LD = {
       operatingSystem: "Web",
       inLanguage: "es-AR",
       provider: { "@id": `${SITE_URL}/#organization` },
-      offers: [
-        { "@type": "Offer", name: "Inicial", price: "59", priceCurrency: "USD", description: "Hasta 150 entregas por mes" },
-        { "@type": "Offer", name: "PyME", price: "119", priceCurrency: "USD", description: "Hasta 600 entregas por mes" },
-        { "@type": "Offer", name: "Empresa", price: "229", priceCurrency: "USD", description: "Hasta 2.000 entregas por mes" },
-      ],
     },
   ],
 };

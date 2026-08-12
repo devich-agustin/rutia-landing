@@ -6,6 +6,33 @@
     <description>Guías prácticas sobre organización de entregas, control operativo y logística para PyMEs.</description>
     <language>es-AR</language>
     <atom:link href="https://rutia.com.ar/rss.xml" rel="self" type="application/rss+xml"/>
-
+    <item>
+      <title>Nombre de usuario de WhatsApp para empresas: cómo reservarlo</title>
+      <link>https://rutia.com.ar/blog/nombre-usuario-whatsapp-empresas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/nombre-usuario-whatsapp-empresas</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
+      <description>WhatsApp permite reservar un nombre de usuario tipo @tuempresa. Qué es, cómo reservarlo y qué saber antes de vincularlo con Instagram.</description>
+    </item>
+    <item>
+      <title>WhatsApp va a cobrar los mensajes de servicio desde octubre de 2026: qué cambia para tu PyME</title>
+      <link>https://rutia.com.ar/blog/whatsapp-cobra-mensajes-servicio-2026</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/whatsapp-cobra-mensajes-servicio-2026</guid>
+      <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Qué cambia con el cobro de los mensajes de servicio de la API de WhatsApp Business desde octubre de 2026, a quién afecta y qué no cambia.</description>
+    </item>
+    <item>
+      <title>10 señales de que tu logística ya quedó chica (aunque todavía funcione)</title>
+      <link>https://rutia.com.ar/blog/senales-logistica-pyme-quedo-chica</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/senales-logistica-pyme-quedo-chica</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+      <description>¿Más llamadas, reprogramaciones y urgencias, pero todo sale? 10 señales de que tu operación creció más rápido que la forma de coordinarla.</description>
+    </item>
+    <item>
+      <title>Cómo organizar las entregas de una PyME: guía completa</title>
+      <link>https://rutia.com.ar/blog/como-organizar-entregas-pyme</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-entregas-pyme</guid>
+      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Guía paso a paso para ordenar las entregas de tu PyME: centralizar pedidos, armar el día, confirmar en la calle y registrar qué pasó. Con método, sin cambiar todo de golpe.</description>
+    </item>
   </channel>
 </rss>
