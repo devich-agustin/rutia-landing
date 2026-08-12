@@ -87,6 +87,7 @@
     scroll-behavior: smooth;
     scroll-padding-top: 88px;
     font-family: var(--font-sans);
+    color-scheme: light;
   }
   body {
     background-color: var(--color-background);

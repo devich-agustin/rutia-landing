@@ -509,7 +509,7 @@ function Philosophy() {
         <Reveal>
           <p className="mx-auto max-w-4xl text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[3rem]">
             Ninguna empresa puede optimizar una operación que todavía no{" "}
-            <span className="text-brand">controla</span>.
+            <span className="text-brand">controla.</span>
           </p>
         </Reveal>
         <Reveal delay={100}>
@@ -650,22 +650,10 @@ function DemoCta() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mt-5 text-[17px] text-[#9CA9C0]">
-              Agendá una reunión de 20 minutos: nos contás cómo trabajás, te mostramos Rutia funcionando con entregas como las tuyas, y vemos juntos si te sirve.
+              Dejanos tus datos y coordinamos una reunión de 20 minutos: nos contás cómo trabajás, te mostramos Rutia funcionando con entregas como las tuyas, y vemos juntos si te sirve.
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={trackClickDemo}
-              className="bg-brand group mt-8 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-base font-bold text-white shadow-[0_12px_34px_-8px_rgba(47,107,255,.6)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_16px_40px_-8px_rgba(47,107,255,.7)] active:translate-y-0 active:scale-[0.98]"
-            >
-              Agendá tu reunión
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
-          </Reveal>
-          <Reveal delay={260}>
             <div className="mt-8 rounded-2xl border border-white/12 bg-white/[0.04] p-6">
               <p className="font-semibold">¿Preferís hablar directo?</p>
               <div className="mt-4 flex flex-wrap gap-3">
@@ -689,8 +677,18 @@ function DemoCta() {
                 <span className="grid h-16 w-16 place-items-center rounded-full bg-success text-white">
                   <Check className="h-8 w-8" strokeWidth={3} />
                 </span>
-                <h3 className="mt-6 text-2xl font-bold">¡Listo!</h3>
-                <p className="mt-2 text-muted-foreground">Te contactamos en menos de 24 hs hábiles.</p>
+                <h3 className="mt-6 text-2xl font-bold">¡Listo! Recibimos tus datos.</h3>
+                <p className="mt-2 text-muted-foreground">Ya que estás, agendá la reunión ahora y elegí el horario que te quede mejor.</p>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={trackClickDemo}
+                  className="bg-brand group mt-6 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]"
+                >
+                  Agendá tu reunión
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </a>
               </div>
             ) : (
               <form onSubmit={async (e) => {
@@ -718,8 +716,8 @@ function DemoCta() {
                     setSending(false);
                   }
                 }} className="space-y-4">
-                <h3 className="text-xl font-bold">¿Preferís que te contactemos?</h3>
-                <p className="-mt-1 text-[13.5px] text-muted-foreground">Dejanos tus datos y coordinamos la reunión con vos.</p>
+                <h3 className="text-xl font-bold">Pedí tu demo gratis</h3>
+                <p className="-mt-1 text-[13.5px] text-muted-foreground">Dejanos tus datos y coordinamos la reunión. Sin costo, sin compromiso.</p>
                 <input type="hidden" name="_subject" value="Nueva consulta desde rutia.com.ar" />
                 <input type="hidden" name="source" value="rutia.com.ar" />
                 <Field label="Nombre"><input required name="nombre" type="text" autoComplete="name" className={inputCls} placeholder="Tu nombre" /></Field>
@@ -746,7 +744,7 @@ function DemoCta() {
                   aria-busy={sending}
                   className="bg-brand mt-2 w-full rounded-xl py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60"
                 >
-                  Quiero que me contacten
+                  Quiero mi demo gratis
                 </button>
                 {error && (
                   <p role="alert" className="mt-3 text-[13.5px] font-medium text-destructive">
