@@ -18,6 +18,7 @@ const NAV = [
   ["Producto", "#producto"],
   ["Cómo funciona", "#como"],
   ["Para quién", "#para-quien"],
+  ["Planes", "#precios"],
   ["Quiénes somos", "#nosotros"],
   ["Blog", "/blog"],
 ] as const;
@@ -522,55 +523,66 @@ function Philosophy() {
 }
 
 function Pricing() {
-  const pasos = [
-    "Agendás una reunión de 20 minutos, el día y horario que te quede cómodo.",
-    "Nos contás cómo trabajás hoy y qué es lo que más se te complica.",
-    "Te mostramos Rutia funcionando con entregas como las tuyas.",
-    "Si te suma, lo dejamos andando en tu operación real — te acompañamos en el arranque.",
+  const plans = [
+    { name: "Inicial", limit: "Hasta 150 entregas por mes", items: ["Pedidos, calendario, armado del día y entrega desde el celular", "Soporte por WhatsApp"], featured: false },
+    { name: "PyME", limit: "Hasta 600 entregas por mes", items: ["Todo lo de Inicial", "Depósito y preparación", "Incidencias y reprogramaciones", "Historial completo", "Tablero para dueños"], featured: true },
+    { name: "Empresa", limit: "Hasta 2.000 entregas por mes", items: ["Todo lo de PyME", "Reportes e indicadores", "Varios depósitos", "Soporte prioritario"], featured: false },
   ];
   return (
-    <section id="empezar" className="scroll-mt-24 bg-surface py-20 lg:py-28">
+    <section id="precios" className="scroll-mt-24 bg-surface py-20 lg:py-28">
       <Shell>
         <SectionIntro
           center
-          pill="Programa de lanzamiento — cupos limitados"
-          title="Sumate como uno de nuestros primeros clientes"
-          desc="Estamos eligiendo un grupo chico de empresas para que usen Rutia en su operación real. Sin costo, sin permanencia y sin tarjeta. Empecemos por conocernos."
+          pill="Un plan para cada tamaño de operación"
+          title="Planes que se adaptan a tu operación"
+          desc="Todos los planes incluyen todos los módulos y acceso desde el celular para los que reparten. Sin permanencia: cancelás cuando quieras."
         />
-        <div className="mx-auto mt-14 max-w-3xl">
-          <Reveal>
-            <div className="block-card p-8 sm:p-10">
-              <div className="text-sm font-semibold text-muted-foreground">Cómo es empezar</div>
-              <ol className="mt-6 space-y-5">
-                {pasos.map((paso, i) => (
-                  <li key={i} className="flex gap-4">
-                    <span className="bg-brand flex h-8 w-8 flex-none items-center justify-center rounded-full text-[15px] font-bold text-white shadow-[0_6px_16px_-6px_rgba(47,107,255,.6)]">
-                      {i + 1}
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-center">
+          {plans.map((p, i) => (
+            <Reveal key={p.name} delay={i * 80}>
+              <div className={`group relative flex flex-col rounded-2xl p-8 transition-all duration-300 ${
+                p.featured
+                  ? "bg-ink-2 py-10 text-white shadow-[0_30px_70px_-20px_rgba(47,107,255,.45)] ring-2 ring-primary/70 lg:-my-4 lg:scale-[1.03] hover:lg:scale-[1.05]"
+                  : "block-card block-card-hover"
+              }`}>
+                {p.featured && (
+                  <>
+                    <span className="bg-brand absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold text-white shadow-lg shadow-primary/40">
+                      Más elegido
                     </span>
-                    <span className="pt-1 text-[15.5px] leading-relaxed text-foreground">{paso}</span>
-                  </li>
-                ))}
-              </ol>
-              <div className="my-8 h-px w-full bg-border" />
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackClickDemo}
-                className="bg-brand group flex w-full items-center justify-center gap-2 rounded-xl py-4 text-base font-bold text-white shadow-[0_12px_34px_-8px_rgba(47,107,255,.6)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_16px_40px_-8px_rgba(47,107,255,.7)] active:translate-y-0 active:scale-[0.98]"
-              >
-                Agendá tu reunión
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </a>
-              <p className="mt-4 text-center text-[13.5px] text-muted-foreground">
-                Sin costo. Sin permanencia.{" "}
-                <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20conocer%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="font-semibold text-primary hover:underline">
-                  ¿Preferís escribirnos por WhatsApp?
+                    <div aria-hidden="true" className="bg-brand pointer-events-none absolute inset-x-0 top-0 h-[2px] rounded-t-2xl opacity-80" />
+                  </>
+                )}
+                <div className={`text-sm font-semibold ${p.featured ? "text-[cyan]" : "text-muted-foreground"}`}>{p.name}</div>
+                <div className={`mt-3 text-2xl font-extrabold tracking-tight ${p.featured ? "text-[cyan]" : "text-primary"}`}>Pedí tu demo gratuita</div>
+                <div className={`mt-1.5 text-[13.5px] font-medium ${p.featured ? "text-white/80" : "text-foreground"}`}>{p.limit}</div>
+                <div className={`my-6 h-px w-full ${p.featured ? "bg-white/15" : "bg-border"}`} />
+                <ul className="flex-1 space-y-3">
+                  {p.items.map((it) => (
+                    <li key={it} className="flex gap-2.5 text-[14px] leading-relaxed">
+                      <CircleCheck className={`mt-0.5 h-4 w-4 flex-none ${p.featured ? "text-[cyan]" : "text-success"}`} />
+                      <span className={p.featured ? "text-white/85" : "text-muted-foreground"}>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a href="#demo" onClick={trackClickDemo} className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
+                  p.featured
+                    ? "bg-brand text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.6)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_36px_-8px_rgba(47,107,255,.7)]"
+                    : "bg-foreground text-white shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-primary"
+                }`}>
+                  Pedí una demo
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </a>
-              </p>
-            </div>
-          </Reveal>
+              </div>
+            </Reveal>
+          ))}
         </div>
+        <Reveal>
+          <p className="mt-12 text-center text-[14.5px] text-muted-foreground">
+            ¿Más de 2.000 entregas por mes o varias sucursales?{" "}
+            <a href="#demo" className="font-semibold text-primary hover:underline">Escribinos y armamos un plan a medida.</a>
+          </p>
+        </Reveal>
       </Shell>
     </section>
   );
@@ -777,7 +789,7 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 lg:col-span-2 lg:grid-cols-3">
             {[
-              ["Navegación", [["Producto", "#producto"], ["Cómo empezar", "#empezar"], ["Quiénes somos", "#nosotros"], ["Blog", "/blog"], ["Contacto", "#demo"]]],
+              ["Navegación", [["Producto", "#producto"], ["Planes", "#precios"], ["Quiénes somos", "#nosotros"], ["Blog", "/blog"], ["Contacto", "#demo"]]],
               ["Contacto", [["contacto@rutia.com.ar", "mailto:contacto@rutia.com.ar"], ["WhatsApp", "https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia"]]],
               ["Seguinos", [["Instagram", "https://www.instagram.com/somosrutia"], ["LinkedIn", "https://www.linkedin.com/company/rutia"], ["Facebook", "https://www.facebook.com/profile.php?id=61591624718047"]]],
             ].map(([title, links]) => (
