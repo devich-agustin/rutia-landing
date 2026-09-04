@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { CookieConsent } from "../components/CookieConsent";
+import { ExitIntentModal } from "../components/ExitIntentModal";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -234,6 +235,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <CookieConsent />
+      <ExitIntentModal />
     </QueryClientProvider>
   );
 }
