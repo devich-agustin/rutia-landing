@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Check, CalendarClock, ArrowRight, X } from "lucide-react";
+import { Check, ArrowRight, X } from "lucide-react";
 import { trackClickDemo } from "@/lib/analytics";
 
 /**
@@ -8,23 +8,20 @@ import { trackClickDemo } from "@/lib/analytics";
  * Qué hace:
  *  - Detecta cuando el visitante mueve el mouse fuera del borde superior de la
  *    ventana (gesto típico de "me voy": ir hacia la X o la barra del navegador)
- *    y, en ese momento, ofrece agendar una demo.
+ *    y, en ese momento, ofrece un mes gratis + demo.
  *  - Solo en escritorio. En móvil no existe el "mouse-out", así que no se activa.
  *  - Se muestra UNA VEZ POR VISITA: si el usuario lo cierra y sigue navegando,
  *    no vuelve a aparecer en esa sesión. Si vuelve otro día (nueva sesión), puede
  *    volver a verlo. Se controla con sessionStorage (se borra al cerrar la pestaña).
- *
- * No usa localStorage para el "una vez por visita" a propósito: sessionStorage
- * es lo que da el comportamiento por-visita en vez de por-siempre.
  */
 
 const SESSION_KEY = "rutia_exit_intent_shown";
 const CALENDLY_URL = "https://calendly.com/rutia-demo/30min";
 
 const BENEFITS = [
-  "Reunión personalizada de 20 minutos",
-  "Te mostramos Rutia con entregas como las tuyas",
-  "Sin compromiso, 100% gratis",
+  "Demo personalizada de 20 minutos",
+  "Lo vemos con entregas reales como las tuyas",
+  "1 mes de Rutia gratis, sin compromiso",
 ];
 
 function alreadyShown(): boolean {
@@ -89,7 +86,7 @@ export function ExitIntentModal() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Agendá una demo de Rutia"
+      aria-label="Probá Rutia gratis durante 1 mes"
       className="fixed inset-0 z-[120] flex items-center justify-center p-4"
     >
       {/* Fondo oscurecido: al hacer clic afuera, cierra */}
@@ -99,7 +96,7 @@ export function ExitIntentModal() {
       />
 
       {/* Tarjeta */}
-      <div className="relative w-full max-w-md overflow-hidden rounded-2xl bg-ink p-7 text-white shadow-2xl sm:p-8">
+      <div className="relative w-full max-w-md overflow-hidden rounded-2xl bg-ink p-7 text-center text-white shadow-2xl sm:p-8">
         <button
           type="button"
           onClick={close}
@@ -109,19 +106,25 @@ export function ExitIntentModal() {
           <X className="h-4 w-4" />
         </button>
 
-        <div className="grid h-14 w-14 place-items-center rounded-full bg-brand/15 text-brand">
-          <CalendarClock className="h-7 w-7" />
-        </div>
+        {/* Logo centrado */}
+        <img
+          src="/rutia-logo.svg"
+          alt="Rutia"
+          className="mx-auto h-6 w-auto"
+        />
 
-        <h2 className="mt-5 text-2xl font-extrabold leading-tight">
-          ¿Te vas sin ver Rutia funcionando?
+        <h2 className="mt-6 text-2xl font-extrabold leading-tight">
+          ¡Esperá! Tenemos algo para vos 🎁
         </h2>
+        <p className="mt-3 text-lg font-bold text-brand">
+          Probá Rutia gratis durante 1 mes
+        </p>
         <p className="mt-2 text-[15px] text-[#9CA9C0]">
-          Antes de irte, agendá una demo gratuita y te mostramos cómo ordenar
-          toda tu operación de entregas en un solo lugar.
+          Agendá una demo de 20 minutos, conocé cómo Rutia puede ordenar tus
+          entregas y te regalamos 1 mes completo para probarlo en tu empresa.
         </p>
 
-        <ul className="mt-6 space-y-3">
+        <ul className="mt-6 space-y-3 text-left">
           {BENEFITS.map((b) => (
             <li
               key={b}
@@ -145,7 +148,7 @@ export function ExitIntentModal() {
           }}
           className="bg-brand group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]"
         >
-          Agendar demo gratis
+          Quiero mi mes gratis
           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
         </a>
 
