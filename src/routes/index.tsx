@@ -819,6 +819,14 @@ function Footer() {
             <span aria-hidden="true">·</span>
             <a href="/cookies" className="transition-colors hover:text-white">Cookies</a>
             <span aria-hidden="true">·</span>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("rutia:open-cookie-preferences"))}
+              className="transition-colors hover:text-white"
+            >
+              Preferencias de cookies
+            </button>
+            <span aria-hidden="true">·</span>
             <a href="/aviso-legal" className="transition-colors hover:text-white">Aviso legal</a>
           </nav>
         </div>
