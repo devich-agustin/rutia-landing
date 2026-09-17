@@ -131,14 +131,38 @@ const RUBROS = [
     name: "Colchonerías",
     href: "/logistica-para-colchonerias",
   },
-  { icon: Tv, name: "Electrodomésticos" },
-  { icon: Wrench, name: "Ferreterías" },
-  { icon: HardHat, name: "Corralones y sanitarios" },
-  { icon: Building2, name: "Casas de materiales" },
-  { icon: Boxes, name: "Distribuidoras" },
-  { icon: Bike, name: "Bicicleterías y deportes" },
-  { icon: Lightbulb, name: "Iluminación" },
-  { icon: ShoppingCart, name: "E-commerce con reparto propio" },
+  {
+    icon: Tv,
+    name: "Electrodomésticos",
+    href: "/logistica-para-electrodomesticos",
+  },
+  { icon: Wrench, name: "Ferreterías", href: "/logistica-para-ferreterias" },
+  {
+    icon: HardHat,
+    name: "Corralones y sanitarios",
+    href: "/logistica-para-corralones",
+  },
+  {
+    icon: Building2,
+    name: "Casas de materiales",
+    href: "/logistica-para-casas-de-materiales",
+  },
+  {
+    icon: Boxes,
+    name: "Distribuidoras",
+    href: "/logistica-para-distribuidoras",
+  },
+  {
+    icon: Bike,
+    name: "Bicicleterías y deportes",
+    href: "/logistica-para-bicicleterias",
+  },
+  { icon: Lightbulb, name: "Iluminación", href: "/logistica-para-iluminacion" },
+  {
+    icon: ShoppingCart,
+    name: "E-commerce con reparto propio",
+    href: "/logistica-para-ecommerce",
+  },
 ];
 
 const FAQ_ITEMS = [
