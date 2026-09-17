@@ -87,7 +87,7 @@
     scroll-behavior: smooth;
     scroll-padding-top: 88px;
     font-family: var(--font-sans);
-    color-scheme: light;
+    color-scheme: only light;
   }
   body {
     background-color: var(--background);
@@ -101,6 +101,21 @@
   ::selection {
     background-color: color-mix(in oklab, var(--primary) 25%, transparent);
   }
+}
+
+/* Mantiene la identidad y el contraste de WhatsApp aun cuando el navegador
+   fuerza colores oscuros o utiliza un modo de alto contraste. */
+.whatsapp-action {
+  background-color: #128c4a !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  forced-color-adjust: none;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.whatsapp-action svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 /* ---------- Motion ---------- */

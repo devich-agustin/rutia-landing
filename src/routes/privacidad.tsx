@@ -101,7 +101,7 @@ function PrivacyPage() {
             <ul className={ulCls}>
               <li>
                 <span className={strongCls}>Formulario de demo:</span> nombre, empresa,
-                teléfono/WhatsApp, rubro y volumen aproximado de entregas mensuales.
+                correo electrónico, teléfono/WhatsApp, rubro y volumen aproximado de entregas mensuales.
               </li>
               <li>
                 <span className={strongCls}>Correo electrónico y WhatsApp:</span> tus

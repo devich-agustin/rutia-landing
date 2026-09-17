@@ -666,8 +666,8 @@ function DemoCta() {
             <div className="mt-8 rounded-2xl border border-border bg-white/70 p-6 text-center shadow-[var(--shadow-card)] lg:text-left">
               <p className="font-semibold">¿Preferís hablar directo?</p>
               <div className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
-                <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20conocer%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white shadow-[0_8px_24px_-6px_rgb(37_211_102/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(37_211_102/0.6)] active:scale-[0.98]">
-                  <WhatsappIcon className="h-5 w-5 text-white" phoneColor="#25D366" />
+                <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20conocer%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="whatsapp-action inline-flex items-center gap-2 rounded-xl px-5 py-3 font-semibold shadow-[0_8px_24px_-6px_rgb(18_140_74/0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(18_140_74/0.65)] active:scale-[0.98]">
+                  <WhatsappIcon className="h-5 w-5" phoneColor="#128C4A" />
                   Escribinos por WhatsApp
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -700,7 +700,7 @@ function DemoCta() {
                 </a>
               </div>
             ) : (
-              <form onSubmit={async (e) => {
+              <form action={FORM_ENDPOINT} method="POST" onSubmit={async (e) => {
                   e.preventDefault();
                   if (sending) return; // evita doble envío
                   const form = e.currentTarget;
@@ -709,11 +709,15 @@ function DemoCta() {
                   try {
                     const data = new FormData(form);
                     data.append("page_url", window.location.href);
+                    const controller = new AbortController();
+                    const timeout = window.setTimeout(() => controller.abort(), 15000);
                     const res = await fetch(FORM_ENDPOINT, {
                       method: "POST",
                       body: data,
                       headers: { Accept: "application/json" },
+                      signal: controller.signal,
                     });
+                    window.clearTimeout(timeout);
                     if (!res.ok) throw new Error(`HTTP ${res.status}`);
                     trackFormSubmit();
                     trackLead();
@@ -729,8 +733,10 @@ function DemoCta() {
                 <p className="-mt-1 text-[13.5px] text-muted-foreground">Dejanos tus datos y coordinamos la reunión. Sin costo, sin compromiso.</p>
                 <input type="hidden" name="_subject" value="Nueva consulta desde rutia.com.ar" />
                 <input type="hidden" name="source" value="rutia.com.ar" />
+                <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                 <Field label="Nombre"><input required name="nombre" type="text" autoComplete="name" className={inputCls} placeholder="Tu nombre" /></Field>
                 <Field label="Empresa"><input required name="empresa" type="text" autoComplete="organization" className={inputCls} placeholder="Nombre de tu empresa" /></Field>
+                <Field label="Correo electrónico"><input required name="email" type="email" inputMode="email" autoComplete="email" className={inputCls} placeholder="tu@empresa.com" /></Field>
                 <Field label="Teléfono / WhatsApp"><input required name="telefono" type="tel" autoComplete="tel" className={inputCls} placeholder="+54 9 11 ..." /></Field>
                 <Field label="Rubro">
                   <select required name="rubro" className={inputCls} defaultValue="">
@@ -757,8 +763,8 @@ function DemoCta() {
                 </button>
                 {error && (
                   <p role="alert" className="mt-3 text-[13.5px] font-medium text-destructive">
-                    No pudimos enviar tu consulta. Probá de nuevo en unos segundos, o
-                    escribinos directo por WhatsApp.
+                    No pudimos enviar tu consulta. Probá nuevamente o escribinos por
+                    WhatsApp o a contacto@rutia.com.ar.
                   </p>
                 )}
               </form>
