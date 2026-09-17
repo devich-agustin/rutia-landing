@@ -7,9 +7,17 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { trackClickDemo } from "@/lib/analytics";
 
 export type VerticalLandingConfig = {
+  breadcrumb: string;
   eyebrow: string;
   title: string;
   intro: string;
+  problemTitle: string;
+  problemIntro: string;
+  coordinationTitle: string;
+  coordinationIntro: string;
+  featuresTitle: string;
+  finalTitle: string;
+  finalText: string;
   problems: Array<{ icon: LucideIcon; title: string; text: string }>;
   flow: Array<{ title: string; text: string }>;
   benefits: Array<{ title: string; text: string }>;
@@ -37,7 +45,7 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
                 Inicio
               </a>
               <ChevronRight className="h-4 w-4" />
-              <span aria-current="page">Mueblerías</span>
+              <span aria-current="page">{config.breadcrumb}</span>
             </nav>
             <div className="max-w-4xl">
               <span className="section-label section-label-dark">
@@ -75,11 +83,10 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
               <div className="mx-auto max-w-3xl text-center">
                 <span className="section-label">El problema cotidiano</span>
                 <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
-                  Entregar muebles exige coordinar mucho más que una dirección
+                  {config.problemTitle}
                 </h2>
                 <p className="mt-5 text-[17px] text-muted-foreground">
-                  Ventas promete una fecha, depósito prepara el pedido y reparto
-                  necesita saber qué sale, con quién y qué pasó al llegar.
+                  {config.problemIntro}
                 </p>
               </div>
             </Reveal>
@@ -144,12 +151,10 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
               <Reveal className="lg:col-span-5">
                 <span className="section-label">Para tu operación</span>
                 <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
-                  Una sola vista para ventas, depósito y reparto
+                  {config.coordinationTitle}
                 </h2>
                 <p className="mt-5 text-[16px] leading-relaxed text-muted-foreground">
-                  Rutia no reemplaza tu sistema de facturación ni tu stock.
-                  Ordena la operación de entregas y deja un historial claro para
-                  que todos trabajen con la misma información.
+                  {config.coordinationIntro}
                 </p>
               </Reveal>
               <div className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
@@ -175,7 +180,7 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
               <div className="mx-auto max-w-3xl text-center">
                 <span className="section-label">Qué podés controlar</span>
                 <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
-                  Funciones útiles para el reparto de una mueblería
+                  {config.featuresTitle}
                 </h2>
               </div>
             </Reveal>
@@ -227,12 +232,10 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
           <RouteMap className="absolute inset-0 h-full w-full text-cyan opacity-[0.06]" />
           <Shell className="relative">
             <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight sm:text-5xl">
-              Tu mueblería puede crecer sin sumar más Excel, llamados y
-              papelitos
+              {config.finalTitle}
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-[#9CA9C0]">
-              Mostranos cómo organizás hoy tus entregas y te enseñamos Rutia con
-              un flujo parecido al tuyo.
+              {config.finalText}
             </p>
             <a
               href="/#demo"
