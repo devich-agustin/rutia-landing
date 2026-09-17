@@ -12,7 +12,15 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TerminosRouteImport } from './routes/terminos'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as LogisticaParaMuebleriasRouteImport } from './routes/logistica-para-mueblerias'
+import { Route as LogisticaParaIluminacionRouteImport } from './routes/logistica-para-iluminacion'
+import { Route as LogisticaParaFerreteriasRouteImport } from './routes/logistica-para-ferreterias'
+import { Route as LogisticaParaElectrodomesticosRouteImport } from './routes/logistica-para-electrodomesticos'
+import { Route as LogisticaParaEcommerceRouteImport } from './routes/logistica-para-ecommerce'
+import { Route as LogisticaParaDistribuidorasRouteImport } from './routes/logistica-para-distribuidoras'
+import { Route as LogisticaParaCorralonesRouteImport } from './routes/logistica-para-corralones'
 import { Route as LogisticaParaColchoneriasRouteImport } from './routes/logistica-para-colchonerias'
+import { Route as LogisticaParaCasasDeMaterialesRouteImport } from './routes/logistica-para-casas-de-materiales'
+import { Route as LogisticaParaBicicleteriasRouteImport } from './routes/logistica-para-bicicleterias'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
@@ -36,10 +44,56 @@ const LogisticaParaMuebleriasRoute = LogisticaParaMuebleriasRouteImport.update({
   path: '/logistica-para-mueblerias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LogisticaParaIluminacionRoute =
+  LogisticaParaIluminacionRouteImport.update({
+    id: '/logistica-para-iluminacion',
+    path: '/logistica-para-iluminacion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaFerreteriasRoute =
+  LogisticaParaFerreteriasRouteImport.update({
+    id: '/logistica-para-ferreterias',
+    path: '/logistica-para-ferreterias',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaElectrodomesticosRoute =
+  LogisticaParaElectrodomesticosRouteImport.update({
+    id: '/logistica-para-electrodomesticos',
+    path: '/logistica-para-electrodomesticos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaEcommerceRoute = LogisticaParaEcommerceRouteImport.update({
+  id: '/logistica-para-ecommerce',
+  path: '/logistica-para-ecommerce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogisticaParaDistribuidorasRoute =
+  LogisticaParaDistribuidorasRouteImport.update({
+    id: '/logistica-para-distribuidoras',
+    path: '/logistica-para-distribuidoras',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaCorralonesRoute = LogisticaParaCorralonesRouteImport.update({
+  id: '/logistica-para-corralones',
+  path: '/logistica-para-corralones',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LogisticaParaColchoneriasRoute =
   LogisticaParaColchoneriasRouteImport.update({
     id: '/logistica-para-colchonerias',
     path: '/logistica-para-colchonerias',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaCasasDeMaterialesRoute =
+  LogisticaParaCasasDeMaterialesRouteImport.update({
+    id: '/logistica-para-casas-de-materiales',
+    path: '/logistica-para-casas-de-materiales',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaBicicleteriasRoute =
+  LogisticaParaBicicleteriasRouteImport.update({
+    id: '/logistica-para-bicicleterias',
+    path: '/logistica-para-bicicleterias',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CookiesRoute = CookiesRouteImport.update({
@@ -82,7 +136,15 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-bicicleterias': typeof LogisticaParaBicicleteriasRoute
+  '/logistica-para-casas-de-materiales': typeof LogisticaParaCasasDeMaterialesRoute
   '/logistica-para-colchonerias': typeof LogisticaParaColchoneriasRoute
+  '/logistica-para-corralones': typeof LogisticaParaCorralonesRoute
+  '/logistica-para-distribuidoras': typeof LogisticaParaDistribuidorasRoute
+  '/logistica-para-ecommerce': typeof LogisticaParaEcommerceRoute
+  '/logistica-para-electrodomesticos': typeof LogisticaParaElectrodomesticosRoute
+  '/logistica-para-ferreterias': typeof LogisticaParaFerreteriasRoute
+  '/logistica-para-iluminacion': typeof LogisticaParaIluminacionRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
@@ -95,7 +157,15 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-bicicleterias': typeof LogisticaParaBicicleteriasRoute
+  '/logistica-para-casas-de-materiales': typeof LogisticaParaCasasDeMaterialesRoute
   '/logistica-para-colchonerias': typeof LogisticaParaColchoneriasRoute
+  '/logistica-para-corralones': typeof LogisticaParaCorralonesRoute
+  '/logistica-para-distribuidoras': typeof LogisticaParaDistribuidorasRoute
+  '/logistica-para-ecommerce': typeof LogisticaParaEcommerceRoute
+  '/logistica-para-electrodomesticos': typeof LogisticaParaElectrodomesticosRoute
+  '/logistica-para-ferreterias': typeof LogisticaParaFerreteriasRoute
+  '/logistica-para-iluminacion': typeof LogisticaParaIluminacionRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
@@ -109,7 +179,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-bicicleterias': typeof LogisticaParaBicicleteriasRoute
+  '/logistica-para-casas-de-materiales': typeof LogisticaParaCasasDeMaterialesRoute
   '/logistica-para-colchonerias': typeof LogisticaParaColchoneriasRoute
+  '/logistica-para-corralones': typeof LogisticaParaCorralonesRoute
+  '/logistica-para-distribuidoras': typeof LogisticaParaDistribuidorasRoute
+  '/logistica-para-ecommerce': typeof LogisticaParaEcommerceRoute
+  '/logistica-para-electrodomesticos': typeof LogisticaParaElectrodomesticosRoute
+  '/logistica-para-ferreterias': typeof LogisticaParaFerreteriasRoute
+  '/logistica-para-iluminacion': typeof LogisticaParaIluminacionRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
@@ -124,7 +202,15 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-bicicleterias'
+    | '/logistica-para-casas-de-materiales'
     | '/logistica-para-colchonerias'
+    | '/logistica-para-corralones'
+    | '/logistica-para-distribuidoras'
+    | '/logistica-para-ecommerce'
+    | '/logistica-para-electrodomesticos'
+    | '/logistica-para-ferreterias'
+    | '/logistica-para-iluminacion'
     | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
@@ -137,7 +223,15 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-bicicleterias'
+    | '/logistica-para-casas-de-materiales'
     | '/logistica-para-colchonerias'
+    | '/logistica-para-corralones'
+    | '/logistica-para-distribuidoras'
+    | '/logistica-para-ecommerce'
+    | '/logistica-para-electrodomesticos'
+    | '/logistica-para-ferreterias'
+    | '/logistica-para-iluminacion'
     | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
@@ -150,7 +244,15 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-bicicleterias'
+    | '/logistica-para-casas-de-materiales'
     | '/logistica-para-colchonerias'
+    | '/logistica-para-corralones'
+    | '/logistica-para-distribuidoras'
+    | '/logistica-para-ecommerce'
+    | '/logistica-para-electrodomesticos'
+    | '/logistica-para-ferreterias'
+    | '/logistica-para-iluminacion'
     | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
@@ -164,7 +266,15 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
   CookiesRoute: typeof CookiesRoute
+  LogisticaParaBicicleteriasRoute: typeof LogisticaParaBicicleteriasRoute
+  LogisticaParaCasasDeMaterialesRoute: typeof LogisticaParaCasasDeMaterialesRoute
   LogisticaParaColchoneriasRoute: typeof LogisticaParaColchoneriasRoute
+  LogisticaParaCorralonesRoute: typeof LogisticaParaCorralonesRoute
+  LogisticaParaDistribuidorasRoute: typeof LogisticaParaDistribuidorasRoute
+  LogisticaParaEcommerceRoute: typeof LogisticaParaEcommerceRoute
+  LogisticaParaElectrodomesticosRoute: typeof LogisticaParaElectrodomesticosRoute
+  LogisticaParaFerreteriasRoute: typeof LogisticaParaFerreteriasRoute
+  LogisticaParaIluminacionRoute: typeof LogisticaParaIluminacionRoute
   LogisticaParaMuebleriasRoute: typeof LogisticaParaMuebleriasRoute
   PrivacidadRoute: typeof PrivacidadRoute
   TerminosRoute: typeof TerminosRoute
@@ -197,11 +307,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LogisticaParaMuebleriasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/logistica-para-iluminacion': {
+      id: '/logistica-para-iluminacion'
+      path: '/logistica-para-iluminacion'
+      fullPath: '/logistica-para-iluminacion'
+      preLoaderRoute: typeof LogisticaParaIluminacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-ferreterias': {
+      id: '/logistica-para-ferreterias'
+      path: '/logistica-para-ferreterias'
+      fullPath: '/logistica-para-ferreterias'
+      preLoaderRoute: typeof LogisticaParaFerreteriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-electrodomesticos': {
+      id: '/logistica-para-electrodomesticos'
+      path: '/logistica-para-electrodomesticos'
+      fullPath: '/logistica-para-electrodomesticos'
+      preLoaderRoute: typeof LogisticaParaElectrodomesticosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-ecommerce': {
+      id: '/logistica-para-ecommerce'
+      path: '/logistica-para-ecommerce'
+      fullPath: '/logistica-para-ecommerce'
+      preLoaderRoute: typeof LogisticaParaEcommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-distribuidoras': {
+      id: '/logistica-para-distribuidoras'
+      path: '/logistica-para-distribuidoras'
+      fullPath: '/logistica-para-distribuidoras'
+      preLoaderRoute: typeof LogisticaParaDistribuidorasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-corralones': {
+      id: '/logistica-para-corralones'
+      path: '/logistica-para-corralones'
+      fullPath: '/logistica-para-corralones'
+      preLoaderRoute: typeof LogisticaParaCorralonesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/logistica-para-colchonerias': {
       id: '/logistica-para-colchonerias'
       path: '/logistica-para-colchonerias'
       fullPath: '/logistica-para-colchonerias'
       preLoaderRoute: typeof LogisticaParaColchoneriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-casas-de-materiales': {
+      id: '/logistica-para-casas-de-materiales'
+      path: '/logistica-para-casas-de-materiales'
+      fullPath: '/logistica-para-casas-de-materiales'
+      preLoaderRoute: typeof LogisticaParaCasasDeMaterialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-bicicleterias': {
+      id: '/logistica-para-bicicleterias'
+      path: '/logistica-para-bicicleterias'
+      fullPath: '/logistica-para-bicicleterias'
+      preLoaderRoute: typeof LogisticaParaBicicleteriasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cookies': {
@@ -260,7 +426,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
   CookiesRoute: CookiesRoute,
+  LogisticaParaBicicleteriasRoute: LogisticaParaBicicleteriasRoute,
+  LogisticaParaCasasDeMaterialesRoute: LogisticaParaCasasDeMaterialesRoute,
   LogisticaParaColchoneriasRoute: LogisticaParaColchoneriasRoute,
+  LogisticaParaCorralonesRoute: LogisticaParaCorralonesRoute,
+  LogisticaParaDistribuidorasRoute: LogisticaParaDistribuidorasRoute,
+  LogisticaParaEcommerceRoute: LogisticaParaEcommerceRoute,
+  LogisticaParaElectrodomesticosRoute: LogisticaParaElectrodomesticosRoute,
+  LogisticaParaFerreteriasRoute: LogisticaParaFerreteriasRoute,
+  LogisticaParaIluminacionRoute: LogisticaParaIluminacionRoute,
   LogisticaParaMuebleriasRoute: LogisticaParaMuebleriasRoute,
   PrivacidadRoute: PrivacidadRoute,
   TerminosRoute: TerminosRoute,
