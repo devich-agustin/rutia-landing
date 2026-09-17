@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TerminosRouteImport } from './routes/terminos'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as LogisticaParaMuebleriasRouteImport } from './routes/logistica-para-mueblerias'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
@@ -27,6 +28,11 @@ const TerminosRoute = TerminosRouteImport.update({
 const PrivacidadRoute = PrivacidadRouteImport.update({
   id: '/privacidad',
   path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogisticaParaMuebleriasRoute = LogisticaParaMuebleriasRouteImport.update({
+  id: '/logistica-para-mueblerias',
+  path: '/logistica-para-mueblerias',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CookiesRoute = CookiesRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
   '/api/contact': typeof ApiContactRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
   '/api/contact': typeof ApiContactRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
   '/api/contact': typeof ApiContactRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
     | '/api/contact'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
     | '/api/contact'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
     | '/api/contact'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
   CookiesRoute: typeof CookiesRoute
+  LogisticaParaMuebleriasRoute: typeof LogisticaParaMuebleriasRoute
   PrivacidadRoute: typeof PrivacidadRoute
   TerminosRoute: typeof TerminosRoute
   ApiContactRoute: typeof ApiContactRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/privacidad'
       fullPath: '/privacidad'
       preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-mueblerias': {
+      id: '/logistica-para-mueblerias'
+      path: '/logistica-para-mueblerias'
+      fullPath: '/logistica-para-mueblerias'
+      preLoaderRoute: typeof LogisticaParaMuebleriasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cookies': {
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
   CookiesRoute: CookiesRoute,
+  LogisticaParaMuebleriasRoute: LogisticaParaMuebleriasRoute,
   PrivacidadRoute: PrivacidadRoute,
   TerminosRoute: TerminosRoute,
   ApiContactRoute: ApiContactRoute,
