@@ -8,9 +8,9 @@ import {
 } from "lucide-react";
 import { Reveal, Counter } from "@/components/Reveal";
 import { trackClickDemo, trackClickWhatsApp, trackContact, trackFormSubmit, trackLead } from "@/lib/analytics";
-import { DashboardMockup } from "@/components/DashboardMockup";
 import { CalendarMockup } from "@/components/CalendarMockup";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { RouteMap, RouteConnector } from "@/components/RouteMotif";
 
 export const Route = createFileRoute("/")({ component: Landing });
 
@@ -81,8 +81,17 @@ function Logo({ lazy = false, className = "h-8" }: { lazy?: boolean; className?:
   );
 }
 
+function WhatsappIcon({ className = "h-5 w-5", phoneColor = "white" }: { className?: string; phoneColor?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      <path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z" />
+      <path fill={phoneColor} d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z" />
+    </svg>
+  );
+}
+
 function Shell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`mx-auto max-w-6xl px-5 lg:px-8 ${className}`}>{children}</div>;
+  return <div className={`mx-auto max-w-[1280px] px-5 sm:px-7 lg:px-10 ${className}`}>{children}</div>;
 }
 
 function Glow({ className = "" }: { className?: string }) {
@@ -121,11 +130,9 @@ function Navbar() {
   }, []);
   return (
     <header
-      className={`sticky top-0 z-40 border-b bg-ink/85 backdrop-blur-xl transition-colors duration-300 ${
-        scrolled ? "border-white/10" : "border-transparent"
-      }`}
+      className="fixed inset-x-0 top-0 z-40 bg-transparent px-3 pt-3"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 lg:px-8">
+      <div className={`mx-auto flex max-w-[1000px] items-center justify-between rounded-full border px-4 py-2.5 backdrop-blur-xl transition-all duration-300 sm:px-5 ${scrolled ? "border-white/15 bg-ink/92 shadow-[0_16px_45px_-20px_rgba(0,0,0,.8)]" : "border-white/10 bg-ink/75"}`}>
         <a href="#top" aria-label="Rutia — inicio"><Logo /></a>
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map(([label, href]) => {
@@ -134,22 +141,17 @@ function Navbar() {
               <a
                 key={href}
                 href={href}
-                className={`group relative rounded-lg px-3.5 py-2 text-[13.5px] font-medium transition-colors duration-200 ${
-                  isActive ? "text-white" : "text-[#9CA9C0] hover:text-white"
+                className={`group relative rounded-full px-3.5 py-2 text-[13.5px] font-medium transition-all duration-200 ${
+                  isActive ? "bg-white/10 text-white" : "text-[#9CA9C0] hover:bg-white/[0.06] hover:text-white"
                 }`}
               >
                 {label}
-                <span
-                  className={`absolute inset-x-3.5 -bottom-px h-px origin-left bg-brand transition-transform duration-300 ease-out ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
               </a>
             );
           })}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
-          <a href="#demo" onClick={trackClickDemo} className="bg-brand rounded-lg px-4 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
+          <a href="#demo" onClick={trackClickDemo} className="bg-brand rounded-full px-5 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
             Solicitar demo
           </a>
         </div>
@@ -158,12 +160,12 @@ function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="border-t border-white/10 bg-ink px-5 py-4 lg:hidden">
-          <div className="flex flex-col gap-3">
-            {NAV.map(([label, href]) => (
-              <a key={href} href={href} onClick={() => setOpen(false)} className="py-2 text-[16px] font-medium text-white/85">{label}</a>
+        <div className="mobile-menu mx-auto mt-2 max-w-[1000px] overflow-hidden rounded-3xl border border-white/10 bg-ink/95 px-5 py-4 shadow-2xl lg:hidden">
+          <div className="flex flex-col gap-1">
+            {NAV.map(([label, href], i) => (
+              <a key={href} href={href} onClick={() => setOpen(false)} className="mobile-menu-link rounded-xl px-4 py-3 text-center text-[16px] font-semibold text-white/85" style={{ animationDelay: `${i * 45}ms` }}>{label}</a>
             ))}
-            <a href="#demo" onClick={() => { setOpen(false); trackClickDemo(); }} className="mt-2 rounded-lg bg-primary px-5 py-3 text-center font-semibold text-white">
+            <a href="#demo" onClick={() => { setOpen(false); trackClickDemo(); }} className="mobile-menu-link bg-brand mt-2 rounded-xl px-5 py-3 text-center font-semibold text-white" style={{ animationDelay: `${NAV.length * 45}ms` }}>
               Solicitar demo
             </a>
           </div>
@@ -175,35 +177,35 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-ink text-white">
-      <Glow className="-top-40 right-[-10%] h-[560px] w-[560px]" />
-      <Glow className="bottom-[-30%] left-[-15%] h-[620px] w-[620px] opacity-70" />
-      <Shell className="relative grid items-center gap-14 py-16 lg:grid-cols-12 lg:gap-10 lg:py-24">
-        <div className="lg:col-span-5">
+    <section id="top" className="hero-stage relative overflow-hidden bg-ink text-white">
+      <img src="/rutia-warehouse-hero.jpg" alt="" aria-hidden="true" width={1600} height={600} fetchPriority="high" decoding="async" className="hero-photo absolute inset-0 h-full w-full object-cover" />
+      <div aria-hidden="true" className="hero-photo-shade absolute inset-0" />
+      <RouteMap className="absolute -right-24 -top-10 h-[680px] w-[1020px] text-cyan opacity-[0.13]" />
+      <div aria-hidden="true" className="hero-grid absolute inset-0 opacity-50" />
+      <Shell className="relative grid items-center gap-12 pb-16 pt-32 lg:min-h-[720px] lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-32">
+        <div className="relative z-10 lg:col-span-7 lg:pr-6">
           <div className="animate-enter">
-            <span className="pill pill-dark">Para empresas que entregan lo que venden</span>
+            <span className="eyebrow-dark"><span className="status-dot" />Para empresas que entregan lo que venden</span>
           </div>
-          <h1 className="animate-enter mt-6 text-4xl font-extrabold leading-[1.06] sm:text-5xl lg:text-[3.3rem]" style={{ animationDelay: "80ms" }}>
-            Toda tu operación de entregas, <span className="text-[cyan]">bajo control.</span> En un solo lugar.
+          <h1 className="animate-enter mt-6 max-w-[12ch] text-[2.85rem] font-black leading-[0.98] tracking-[-0.055em] sm:text-[4.25rem] lg:text-[5.25rem]" style={{ animationDelay: "80ms" }}>
+            Tus entregas. <span className="text-brand">Bajo control.</span>
           </h1>
-          <p className="animate-enter mt-6 max-w-xl text-[17px] leading-relaxed text-[#9CA9C0]" style={{ animationDelay: "160ms" }}>
-            Rutia es el centro de control de tu logística: pedidos, entregas, depósito,
-            vehículos, choferes y fletes, reprogramaciones y todo lo que pasó, registrado
-            y a la vista. Para que la operación deje de vivir en la cabeza de una sola persona.
+          <p className="animate-enter mt-6 max-w-[570px] text-[17px] leading-[1.65] text-[#AAB6C8] sm:text-lg" style={{ animationDelay: "160ms" }}>
+            Rutia reúne pedidos, depósito, vehículos, choferes y fletes en un solo lugar. Todos saben qué sale, quién lo lleva y qué pasó con cada entrega.
           </p>
           <div className="animate-enter" style={{ animationDelay: "240ms" }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#demo" onClick={trackClickDemo} className="bg-brand inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
-                Solicitar demo
+              <a href="#demo" onClick={trackClickDemo} className="button-primary group inline-flex min-h-13 items-center justify-center gap-2 px-6 text-base font-bold text-white">
+                Ver Rutia en acción
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/5 active:translate-y-0 active:scale-[0.98]">
-                <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#25D366]" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z"/></svg>
+              <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="button-ghost inline-flex min-h-13 items-center justify-center gap-2 px-6 text-base font-semibold text-white">
+                <WhatsappIcon className="h-5 w-5 text-[#25D366]" />
                 Escribinos por WhatsApp
               </a>
             </div>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-white/60">
-              {["Sin tarjeta", "Sin instalación", "Los que reparten no necesitan descargar ninguna app"].map((t) => (
+            <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-white/65">
+              {["Sin instalación", "Funciona en celular", "Acompañamiento humano"].map((t) => (
                 <span key={t} className="inline-flex items-center gap-1.5">
                   <CircleCheck className="h-4 w-4 text-[cyan]" />
                   {t}
@@ -212,27 +214,23 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div className="animate-enter relative lg:col-span-7" style={{ animationDelay: "220ms" }}>
-          <div className="animate-float-slow">
-            <DashboardMockup />
-          </div>
-        </div>
+        <div aria-hidden="true" className="hidden lg:col-span-5 lg:block" />
       </Shell>
       {/* Cifras de operación */}
       <div className="relative border-t border-white/10">
-        <Shell className="grid py-12 sm:grid-cols-3 sm:divide-x sm:divide-white/10 lg:py-14">
+        <Shell className="grid py-8 sm:grid-cols-3 sm:divide-x sm:divide-white/10 lg:py-10">
           {[
             { n: 2000, suffix: "+", label: "De 20 a 2.000 entregas por mes bajo control" },
             { n: 1, suffix: "", label: "solo lugar para toda la operación" },
             { n: 0, suffix: "", label: "apps que instalar" },
           ].map((m, i) => (
             <Reveal key={m.label} delay={i * 120}>
-              <div className={`py-4 sm:py-0 ${i > 0 ? "sm:pl-12" : ""} ${i < 2 ? "sm:pr-12" : ""}`}>
-                <div className="font-mono text-5xl font-semibold tracking-tight text-white lg:text-[3.4rem]">
+              <div className={`py-5 text-center sm:py-0 sm:text-left ${i > 0 ? "sm:pl-12" : ""} ${i < 2 ? "sm:pr-12" : ""}`}>
+                <div className="font-mono text-4xl font-semibold tracking-tight text-white lg:text-[3rem]">
                   <Counter to={m.n} suffix={m.suffix} />
                 </div>
-                <div className="bg-brand mt-3 h-[3px] w-10 rounded-full" />
-                <div className="mt-3 max-w-[26ch] text-[13.5px] leading-snug text-[#9CA9C0]">{m.label}</div>
+                <div className="bg-brand mx-auto mt-3 h-[3px] w-10 rounded-full sm:mx-0" />
+                <div className="mx-auto mt-3 max-w-[26ch] text-[13.5px] leading-snug text-[#9CA9C0] sm:mx-0">{m.label}</div>
               </div>
             </Reveal>
           ))}
@@ -247,9 +245,9 @@ function SectionIntro({ pill, title, desc, dark = false, center = false }: {
 }) {
   return (
     <div className={`max-w-3xl ${center ? "mx-auto text-center" : ""}`}>
-      <Reveal><span className={`pill ${dark ? "pill-dark" : ""}`}>{pill}</span></Reveal>
+      <Reveal><span className={`section-label ${dark ? "section-label-dark" : ""}`}>{pill}</span></Reveal>
       <Reveal delay={60}>
-        <h2 className={`mt-5 text-3xl font-extrabold leading-[1.08] sm:text-4xl ${dark ? "text-white" : "text-foreground"}`}>
+        <h2 className={`mt-5 text-[2.25rem] font-black leading-[1.02] tracking-[-0.045em] sm:text-[3.35rem] ${dark ? "text-white" : "text-foreground"}`}>
           {title}
         </h2>
       </Reveal>
@@ -264,26 +262,33 @@ function SectionIntro({ pill, title, desc, dark = false, center = false }: {
 
 function Problem() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-background py-20 lg:py-32">
       <Shell>
-        <SectionIntro pill="El problema" title="¿Tu logística funciona así?" />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-32">
+              <SectionIntro pill="El problema" title={<>Cuando todo depende de una persona, <span className="text-primary">no hay control.</span></>} />
+              <Reveal delay={150}>
+                <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted-foreground">Excel, papelitos y WhatsApp pueden alcanzar al principio. El problema aparece cuando la operación crece y la información queda repartida por todos lados.</p>
+              </Reveal>
+            </div>
+          </div>
+          <div className="problem-list lg:col-span-7">
           {PROBLEMS.map(({ icon: Icon, text }, i) => (
             <Reveal key={i} delay={i * 50}>
-              <div className="block-card block-card-hover h-full p-6">
-                <span className="icon-chip"><Icon className="h-5 w-5" strokeWidth={1.75} /></span>
-                <p className="mt-4 text-[15.5px] font-medium leading-relaxed">{text}</p>
+              <div className="problem-row group">
+                <span className="problem-number">0{i + 1}</span>
+                <span className="problem-icon"><Icon className="h-5 w-5" strokeWidth={1.75} /></span>
+                <p className="text-[16px] font-semibold leading-relaxed sm:text-[17px]">{text}</p>
               </div>
             </Reveal>
           ))}
+          </div>
         </div>
         <Reveal>
-          <div className="mt-12 rounded-2xl bg-surface-2 p-7 lg:p-9">
-            <p className="mx-auto max-w-3xl text-center text-xl leading-relaxed text-muted-foreground sm:text-2xl">
-              El verdadero problema no es la falta de tecnología. Es la falta de control.{" "}
-              <span className="font-bold text-foreground">
-                Rutia pasa tu operación de la memoria de una persona a un sistema que ve toda la empresa.
-              </span>
+          <div className="statement-band mt-14">
+            <p className="max-w-5xl text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-[2.6rem]">
+              Rutia pasa tu operación de la memoria de una persona a un sistema que <span className="text-[cyan]">ve toda la empresa.</span>
             </p>
           </div>
         </Reveal>
@@ -296,7 +301,9 @@ function Features() {
   const side = FEATURES.slice(0, 3);   // Pedidos, Calendario, Armado del día
   const below = FEATURES.slice(3);     // Depósito, Celular, Incidencias, Historial
   return (
-    <section id="producto" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-28">
+    <section id="producto" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-32">
+      <RouteMap className="product-route absolute -left-40 top-0 h-[720px] w-[1080px] text-cyan" />
+      <div aria-hidden="true" className="product-scan" />
       <Glow className="right-[-15%] top-[10%] h-[500px] w-[500px] opacity-60" />
       <Shell className="relative">
         <SectionIntro
@@ -310,7 +317,7 @@ function Features() {
           <div className="space-y-3 lg:order-1 lg:col-span-4">
             {side.map((f, i) => (
               <Reveal key={f.title} delay={i * 80}>
-                <div className={`flex gap-4 rounded-2xl p-5 ${i === 2 ? "ink-card border-primary/40 bg-primary/10" : "ink-card"}`}>
+                <div className={`flex flex-col items-center gap-4 rounded-2xl p-5 text-center sm:flex-row sm:items-start sm:text-left ${i === 2 ? "ink-card border-primary/40 bg-primary/10" : "ink-card"}`}>
                   <span className={`grid h-10 w-10 flex-none place-items-center rounded-lg ${i === 2 ? "bg-primary text-white" : "bg-white/8 text-[cyan]"}`}>
                     <f.icon className="h-5 w-5" strokeWidth={1.75} />
                   </span>
@@ -335,12 +342,12 @@ function Features() {
         <div className="mt-12 grid gap-x-10 gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {below.map((f, i) => (
             <Reveal key={f.title} delay={i * 60}>
-              <div>
-                <span className="grid h-10 w-10 place-items-center rounded-lg bg-white/8 text-[cyan]">
+              <div className="product-module group text-center sm:text-left">
+                <span className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-white/8 text-[cyan] transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-cyan/15 group-hover:shadow-[0_0_24px_rgba(57,217,255,.25)] sm:mx-0">
                   <f.icon className="h-5 w-5" strokeWidth={1.75} />
                 </span>
                 <h3 className="mt-3.5 text-[15.5px] font-semibold text-white">{f.title}</h3>
-                <p className="mt-1.5 text-[13.5px] leading-relaxed text-white/55">{f.text}</p>
+                <p className="mx-auto mt-1.5 max-w-sm text-[13.5px] leading-relaxed text-white/55 sm:mx-0">{f.text}</p>
               </div>
             </Reveal>
           ))}
@@ -358,18 +365,19 @@ function HowItWorks() {
     ["Mirá qué pasó", "Entregadas, fallidas, reprogramadas y por qué. Todo queda registrado para que decidas mejor mañana."],
   ];
   return (
-    <section id="como" className="scroll-mt-24 bg-white py-20 lg:py-28">
+    <section id="como" className="scroll-mt-24 bg-background py-20 lg:py-32">
       <Shell>
-        <SectionIntro center pill="Cómo funciona" title="Así de simple" />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <SectionIntro center pill="Cómo funciona" title="Del pedido a la entrega, sin vueltas" desc="Cuatro pasos claros. Ninguna app para instalar y ningún proceso complicado para aprender." />
+        <div className="relative mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+          <RouteConnector className="absolute left-[8%] right-[8%] top-8 hidden h-6 w-[84%] text-primary/35 lg:block" />
           {steps.map(([title, text], i) => (
             <Reveal key={title} delay={i * 80}>
-              <div className="block-card block-card-hover h-full p-6">
-                <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-sm font-bold text-white">
-                  {i + 1}
+              <div className="process-step group relative h-full p-6 text-center lg:px-7 lg:py-4 lg:text-left">
+                <span className="process-node relative z-10 mx-auto grid h-12 w-12 place-items-center rounded-full border-4 border-background bg-primary font-mono text-sm font-bold text-white shadow-[0_0_0_1px_rgba(36,93,255,.2)] transition-transform duration-300 group-hover:scale-110 lg:mx-0">
+                  0{i + 1}
                 </span>
-                <h3 className="mt-4 text-[16.5px] font-bold">{title}</h3>
-                <p className="mt-1.5 text-[14px] leading-relaxed text-muted-foreground">{text}</p>
+                <h3 className="mt-5 text-lg font-bold">{title}</h3>
+                <p className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">{text}</p>
               </div>
             </Reveal>
           ))}
@@ -392,29 +400,27 @@ function HowItWorks() {
 
 function ForWhom() {
   return (
-    <section id="para-quien" className="scroll-mt-24 bg-surface py-20 lg:py-28">
+    <section id="para-quien" className="scroll-mt-24 border-y border-border bg-surface py-20 lg:py-28">
       <Shell>
-        <SectionIntro
-          center
-          pill="Para quién"
-          title="Hecho para empresas que entregan lo que venden"
-          desc="No importa qué vendés ni con qué repartís: camión propio, camioneta, moto o fletes contratados."
-        />
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <SectionIntro pill="Para quién" title="Hecho para empresas que entregan lo que venden" desc="No importa qué vendés ni con qué repartís: camión propio, camioneta, moto o fletes contratados." />
+          </div>
+          <Reveal className="lg:col-span-5">
+            <div className="fit-callout">
+              <strong>¿Rutia es para vos?</strong>
+              <span>Si hacés más de 20 entregas por mes, probablemente sí.</span>
+            </div>
+          </Reveal>
+        </div>
         <Reveal>
-          <div className="mx-auto mt-10 flex max-w-4xl flex-wrap items-center justify-center gap-3">
+          <div className="mt-12 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
             {RUBROS.map(({ icon: Icon, name }) => (
-              <span key={name} className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-[14px] font-semibold shadow-[var(--shadow-card)]">
+              <span key={name} className="industry-chip">
                 <Icon className="h-4 w-4 text-primary" strokeWidth={1.75} />
                 {name}
               </span>
             ))}
-          </div>
-        </Reveal>
-        <Reveal>
-          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-border bg-white p-6 text-center text-[16px]">
-            Si hacés <span className="font-bold">más de 20 entregas por mes</span> con vehículos
-            propios o fletes, Rutia es para vos. Si hacés dos envíos por mes por moto,
-            probablemente no lo necesites (y preferimos decírtelo).
           </div>
         </Reveal>
       </Shell>
@@ -472,17 +478,20 @@ function Benefits() {
 
 function About() {
   return (
-    <section id="nosotros" className="scroll-mt-24 bg-white py-20 lg:py-28">
+    <section id="nosotros" className="scroll-mt-24 bg-background py-20 lg:py-32">
       <Shell>
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal><span className="pill">Quiénes somos</span></Reveal>
-          <Reveal delay={60}>
-            <h2 className="mt-5 text-3xl font-extrabold leading-[1.08] sm:text-4xl">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-20">
+          <div className="lg:col-span-5">
+            <Reveal><span className="section-label">Quiénes somos</span></Reveal>
+            <Reveal delay={60}>
+            <h2 className="mt-5 text-[2.4rem] font-black leading-[1.02] tracking-[-0.045em] sm:text-[3.4rem]">
               Rutia no se diseñó en una oficina. Se vivió en un depósito.
             </h2>
           </Reveal>
-          <Reveal delay={120}>
-            <p className="mt-7 text-[17px] leading-relaxed text-muted-foreground">
+          </div>
+          <div className="lg:col-span-7 lg:pt-10">
+            <Reveal delay={120}>
+            <p className="text-[17px] leading-[1.8] text-muted-foreground">
               Rutia nace adentro de una mueblería de Avenida Belgrano, en Buenos Aires, con
               entre 20 y 50 entregas por día, un camión propio y fletes contratados a diario.
               Creíamos que el problema eran las rutas. Pero vimos de primera mano que el
@@ -493,8 +502,9 @@ function About() {
             </p>
           </Reveal>
           <Reveal delay={180}>
-            <p className="mt-7 text-[14px] font-semibold">El equipo de Rutia — Buenos Aires, Argentina 🇦🇷</p>
+            <p className="mt-7 border-l-2 border-primary pl-4 text-[14px] font-bold">El equipo de Rutia — Buenos Aires, Argentina 🇦🇷</p>
           </Reveal>
+          </div>
         </div>
       </Shell>
     </section>
@@ -503,11 +513,12 @@ function About() {
 
 function Philosophy() {
   return (
-    <section className="relative overflow-hidden bg-ink py-28 text-white lg:py-40">
+    <section className="relative overflow-hidden bg-ink py-28 text-white lg:py-44">
+      <RouteMap className="absolute inset-y-0 right-0 h-full w-[900px] text-cyan opacity-[0.08]" />
       <Glow className="right-[10%] top-[-40%] h-[420px] w-[420px] opacity-60" />
       <Shell className="relative text-center">
         <Reveal>
-          <p className="mx-auto max-w-4xl text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[3rem]">
+          <p className="mx-auto max-w-5xl text-[2.5rem] font-black leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-[4.6rem]">
             Ninguna empresa puede optimizar una operación que todavía no{" "}
             <span className="text-brand">controla.</span>
           </p>
@@ -540,7 +551,7 @@ function Pricing() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-center">
           {plans.map((p, i) => (
             <Reveal key={p.name} delay={i * 80}>
-              <div className={`group relative flex flex-col rounded-2xl p-8 transition-all duration-300 ${
+              <div className={`group relative flex flex-col items-center rounded-2xl p-8 text-center transition-all duration-300 ${
                 p.featured
                   ? "bg-ink-2 py-10 text-white shadow-[0_30px_70px_-20px_rgba(47,107,255,.45)] ring-2 ring-primary/70 lg:-my-4 lg:scale-[1.03] hover:lg:scale-[1.05]"
                   : "block-card block-card-hover"
@@ -550,7 +561,6 @@ function Pricing() {
                     <span className="bg-brand absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-bold text-white shadow-lg shadow-primary/40">
                       Más elegido
                     </span>
-                    <div aria-hidden="true" className="bg-brand pointer-events-none absolute inset-x-0 top-0 h-[2px] rounded-t-2xl opacity-80" />
                   </>
                 )}
                 <div className={`text-sm font-semibold ${p.featured ? "text-[cyan]" : "text-muted-foreground"}`}>{p.name}</div>
@@ -559,13 +569,13 @@ function Pricing() {
                 <div className={`my-6 h-px w-full ${p.featured ? "bg-white/15" : "bg-border"}`} />
                 <ul className="flex-1 space-y-3">
                   {p.items.map((it) => (
-                    <li key={it} className="flex gap-2.5 text-[14px] leading-relaxed">
+                    <li key={it} className="flex justify-center gap-2.5 text-left text-[14px] leading-relaxed">
                       <CircleCheck className={`mt-0.5 h-4 w-4 flex-none ${p.featured ? "text-[cyan]" : "text-success"}`} />
                       <span className={p.featured ? "text-white/85" : "text-muted-foreground"}>{it}</span>
                     </li>
                   ))}
                 </ul>
-                <a href="#demo" onClick={trackClickDemo} className={`mt-8 inline-flex items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
+                <a href="#demo" onClick={trackClickDemo} className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
                   p.featured
                     ? "bg-brand text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.6)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_36px_-8px_rgba(47,107,255,.7)]"
                     : "bg-foreground text-white shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-primary"
@@ -591,7 +601,7 @@ function Pricing() {
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section id="faq" className="scroll-mt-24 bg-white py-20 lg:py-28">
       <Shell className="max-w-3xl">
         <SectionIntro center pill="Preguntas" title="Preguntas frecuentes" />
         <div className="mt-10 space-y-3">
@@ -637,33 +647,32 @@ function DemoCta() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
   return (
-    <section id="demo" className="relative scroll-mt-24 overflow-hidden bg-ink py-20 text-white lg:py-28">
-      <Glow className="left-[-10%] top-[-25%] h-[520px] w-[520px]" />
-      <Glow className="bottom-[-35%] right-[-8%] h-[480px] w-[480px] opacity-60" />
+    <section id="demo" className="relative scroll-mt-24 overflow-hidden bg-[#E8EEF1] py-20 text-foreground lg:py-28">
+      <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(36,93,255,.12),transparent_32%)]" />
       <Shell className="relative grid gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-6">
-          <Reveal><span className="pill pill-dark">Empezá hoy</span></Reveal>
+        <div className="text-center lg:col-span-6 lg:text-left">
+          <Reveal><span className="section-label">Empezá hoy</span></Reveal>
           <Reveal delay={80}>
             <h2 className="mt-5 text-3xl font-extrabold leading-[1.08] sm:text-4xl lg:text-[2.6rem]">
               Basta de Excel. Basta de papelitos. Empezá a controlar tu operación.
             </h2>
           </Reveal>
           <Reveal delay={140}>
-            <p className="mt-5 text-[17px] text-[#9CA9C0]">
+            <p className="mx-auto mt-5 max-w-xl text-[17px] text-muted-foreground lg:mx-0">
               Dejanos tus datos y coordinamos una reunión de 20 minutos: nos contás cómo trabajás, te mostramos Rutia funcionando con entregas como las tuyas, y vemos juntos si te sirve.
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <div className="mt-8 rounded-2xl border border-white/12 bg-white/[0.04] p-6">
+            <div className="mt-8 rounded-2xl border border-border bg-white/70 p-6 text-center shadow-[var(--shadow-card)] lg:text-left">
               <p className="font-semibold">¿Preferís hablar directo?</p>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap justify-center gap-3 lg:justify-start">
                 <a href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20conocer%20Rutia" target="_blank" rel="noopener noreferrer" onClick={trackClickWhatsApp} className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 font-semibold text-white shadow-[0_8px_24px_-6px_rgb(37_211_102/0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(37_211_102/0.6)] active:scale-[0.98]">
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.32-1.66a11.9 11.9 0 0 0 5.73 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.43-8.42Z"/></svg>
+                  <WhatsappIcon className="h-5 w-5 text-white" phoneColor="#25D366" />
                   Escribinos por WhatsApp
                   <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="mailto:contacto@rutia.com.ar" onClick={trackContact} className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/[0.06] px-5 py-3 font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/12 active:scale-[0.98]">
-                  <Mail className="h-4 w-4 text-[cyan]" />
+                <a href="mailto:contacto@rutia.com.ar" onClick={trackContact} className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-5 py-3 font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 active:scale-[0.98]">
+                  <Mail className="h-4 w-4 text-primary" />
                   contacto@rutia.com.ar
                 </a>
               </div>
@@ -671,7 +680,7 @@ function DemoCta() {
           </Reveal>
         </div>
         <Reveal delay={150} className="lg:col-span-5 lg:col-start-8">
-          <div className="rounded-2xl bg-white p-7 text-foreground shadow-[var(--shadow-pop)] sm:p-8">
+          <div className="rounded-2xl bg-white p-7 text-center text-foreground shadow-[var(--shadow-pop)] sm:p-8">
             {sent ? (
               <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
                 <span className="grid h-16 w-16 place-items-center rounded-full bg-success text-white">
@@ -766,7 +775,7 @@ const inputCls =
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <label className="block">
+    <label className="block text-left">
       <span className="mb-1.5 block text-[13px] font-semibold">{label}</span>
       {children}
     </label>

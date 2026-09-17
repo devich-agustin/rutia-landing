@@ -73,15 +73,26 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-// Google Search Console: pegar aquí el código de verificación cuando exista.
-// Ejemplo: const GOOGLE_SITE_VERIFICATION = "abc123...";
-const GOOGLE_SITE_VERIFICATION = "";
+// Google Search Console: configurar VITE_GOOGLE_SITE_VERIFICATION con el token
+// que entrega Google. Si no existe, la metaetiqueta no se publica.
+const GOOGLE_SITE_VERIFICATION = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION ?? "";
 
 const SITE_URL = "https://rutia.com.ar";
 const SITE_TITLE = "Rutia — El centro de control de tu logística";
 const SITE_DESCRIPTION =
   "Rutia es el centro de control de la logística de tu PyME: pedidos, entregas, depósito, vehículos, choferes y fletes en un solo lugar. Sin Excel, sin papelitos y sin apps para los que reparten.";
-const OG_IMAGE = `${SITE_URL}/og-image-v2.png`;
+const OG_IMAGE = `${SITE_URL}/og-rutia-control-v2.jpg`;
+
+const FAQ_SCHEMA_ITEMS = [
+  ["¿Tengo que instalar algo?", "No. Rutia funciona desde el navegador, en cualquier computadora. No hay nada que instalar ni mantener."],
+  ["¿Los que reparten necesitan una app?", "No. Choferes propios, cadetes o fletes abren sus entregas desde el celular que ya tienen y marcan entregada, parcial o fallida con un toque."],
+  ["¿Puedo importar mis pedidos desde Excel?", "Sí. Te damos una plantilla simple: la completás o pegás tus datos y los pedidos se cargan solos."],
+  ["¿Es difícil de aprender?", "Si sabés usar WhatsApp, sabés usar Rutia. La mayoría arma su primer día de entregas en menos de una hora."],
+  ["¿Sirve si trabajo con fletes contratados y no tengo vehículo propio?", "Sí. Podés asignar entregas a vehículos propios, a fletes, o mezclar ambos."],
+  ["¿Reemplaza mi sistema de facturación o de stock?", "No. Rutia se ocupa de tus entregas y convive con lo que ya usás para vender y facturar."],
+  ["¿Qué pasa si un cliente reclama por una entrega vieja?", "Buscás la entrega y ves toda su historia: quién la llevó, qué pasó y cuándo."],
+  ["¿Qué pasa si no me sirve?", "No hay permanencia. Cancelás cuando quieras y listo, sin letra chica."],
+] as const;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -182,6 +193,20 @@ const JSON_LD = {
       operatingSystem: "Web",
       inLanguage: "es-AR",
       provider: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      url: `${SITE_URL}/#faq`,
+      inLanguage: "es-AR",
+      mainEntity: FAQ_SCHEMA_ITEMS.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer,
+        },
+      })),
     },
   ],
 };
