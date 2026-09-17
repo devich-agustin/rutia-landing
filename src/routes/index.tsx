@@ -578,7 +578,7 @@ function Pricing() {
                 <a href="#demo" onClick={trackClickDemo} className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
                   p.featured
                     ? "bg-brand text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.6)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_36px_-8px_rgba(47,107,255,.7)]"
-                    : "bg-foreground text-white shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-primary"
+                    : "plan-cta shadow-[var(--shadow-card)] hover:-translate-y-0.5"
                 }`}>
                   Pedí una demo
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -640,6 +640,7 @@ function Faq() {
 // (ej. Formspree: "https://formspree.io/f/XXXXXXXX"). Con el valor vacío, el
 // formulario muestra la confirmación sin enviar datos a ningún servicio externo.
 const FORM_ENDPOINT = "https://formspree.io/f/xeebbylg";
+const CONTACT_ENDPOINT = "/api/contact";
 const CALENDLY_URL = "https://calendly.com/rutia-demo/30min";
 
 function DemoCta() {
@@ -711,12 +712,20 @@ function DemoCta() {
                     data.append("page_url", window.location.href);
                     const controller = new AbortController();
                     const timeout = window.setTimeout(() => controller.abort(), 15000);
-                    const res = await fetch(FORM_ENDPOINT, {
+                    let res = await fetch(CONTACT_ENDPOINT, {
                       method: "POST",
                       body: data,
                       headers: { Accept: "application/json" },
                       signal: controller.signal,
                     });
+                    if (!res.ok && res.status >= 500) {
+                      res = await fetch(FORM_ENDPOINT, {
+                        method: "POST",
+                        body: data,
+                        headers: { Accept: "application/json" },
+                        signal: controller.signal,
+                      });
+                    }
                     window.clearTimeout(timeout);
                     if (!res.ok) throw new Error(`HTTP ${res.status}`);
                     trackFormSubmit();

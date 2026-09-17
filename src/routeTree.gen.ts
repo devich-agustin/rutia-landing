@@ -16,6 +16,7 @@ import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as ApiContactRouteImport } from './routes/api.contact'
 import { Route as BlogCategoriaCategoriaRouteImport } from './routes/blog/categoria.$categoria'
 
 const TerminosRoute = TerminosRouteImport.update({
@@ -53,6 +54,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogCategoriaCategoriaRoute = BlogCategoriaCategoriaRouteImport.update({
   id: '/blog/categoria/$categoria',
   path: '/blog/categoria/$categoria',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/cookies': typeof CookiesRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/blog/categoria/$categoria': typeof BlogCategoriaCategoriaRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
   '/blog/categoria/$categoria': typeof BlogCategoriaCategoriaRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/cookies': typeof CookiesRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/blog/categoria/$categoria': typeof BlogCategoriaCategoriaRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/privacidad'
     | '/terminos'
+    | '/api/contact'
     | '/blog/$slug'
     | '/blog/'
     | '/blog/categoria/$categoria'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/privacidad'
     | '/terminos'
+    | '/api/contact'
     | '/blog/$slug'
     | '/blog'
     | '/blog/categoria/$categoria'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/privacidad'
     | '/terminos'
+    | '/api/contact'
     | '/blog/$slug'
     | '/blog/'
     | '/blog/categoria/$categoria'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   CookiesRoute: typeof CookiesRoute
   PrivacidadRoute: typeof PrivacidadRoute
   TerminosRoute: typeof TerminosRoute
+  ApiContactRoute: typeof ApiContactRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   BlogCategoriaCategoriaRoute: typeof BlogCategoriaCategoriaRoute
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/categoria/$categoria': {
       id: '/blog/categoria/$categoria'
       path: '/blog/categoria/$categoria'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   CookiesRoute: CookiesRoute,
   PrivacidadRoute: PrivacidadRoute,
   TerminosRoute: TerminosRoute,
+  ApiContactRoute: ApiContactRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   BlogCategoriaCategoriaRoute: BlogCategoriaCategoriaRoute,

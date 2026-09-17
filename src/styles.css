@@ -118,6 +118,20 @@
   fill: #ffffff !important;
 }
 
+/* Evita que el modo oscuro automático convierta en blancos los CTA de planes. */
+.plan-cta {
+  background-color: #081421 !important;
+  color: #ffffff !important;
+  border: 1px solid #081421 !important;
+  forced-color-adjust: none;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.plan-cta:hover {
+  background-color: #245dff !important;
+  border-color: #245dff !important;
+}
+
 /* ---------- Motion ---------- */
 
 @utility reveal {
