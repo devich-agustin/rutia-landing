@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TerminosRouteImport } from './routes/terminos'
 import { Route as PrivacidadRouteImport } from './routes/privacidad'
 import { Route as LogisticaParaMuebleriasRouteImport } from './routes/logistica-para-mueblerias'
+import { Route as LogisticaParaColchoneriasRouteImport } from './routes/logistica-para-colchonerias'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
@@ -35,6 +36,12 @@ const LogisticaParaMuebleriasRoute = LogisticaParaMuebleriasRouteImport.update({
   path: '/logistica-para-mueblerias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LogisticaParaColchoneriasRoute =
+  LogisticaParaColchoneriasRouteImport.update({
+    id: '/logistica-para-colchonerias',
+    path: '/logistica-para-colchonerias',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
@@ -75,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-colchonerias': typeof LogisticaParaColchoneriasRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
@@ -87,6 +95,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-colchonerias': typeof LogisticaParaColchoneriasRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
@@ -100,6 +109,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/cookies': typeof CookiesRoute
+  '/logistica-para-colchonerias': typeof LogisticaParaColchoneriasRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
   '/privacidad': typeof PrivacidadRoute
   '/terminos': typeof TerminosRoute
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-colchonerias'
     | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-colchonerias'
     | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
@@ -138,6 +150,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/cookies'
+    | '/logistica-para-colchonerias'
     | '/logistica-para-mueblerias'
     | '/privacidad'
     | '/terminos'
@@ -151,6 +164,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
   CookiesRoute: typeof CookiesRoute
+  LogisticaParaColchoneriasRoute: typeof LogisticaParaColchoneriasRoute
   LogisticaParaMuebleriasRoute: typeof LogisticaParaMuebleriasRoute
   PrivacidadRoute: typeof PrivacidadRoute
   TerminosRoute: typeof TerminosRoute
@@ -181,6 +195,13 @@ declare module '@tanstack/react-router' {
       path: '/logistica-para-mueblerias'
       fullPath: '/logistica-para-mueblerias'
       preLoaderRoute: typeof LogisticaParaMuebleriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-colchonerias': {
+      id: '/logistica-para-colchonerias'
+      path: '/logistica-para-colchonerias'
+      fullPath: '/logistica-para-colchonerias'
+      preLoaderRoute: typeof LogisticaParaColchoneriasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cookies': {
@@ -239,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
   CookiesRoute: CookiesRoute,
+  LogisticaParaColchoneriasRoute: LogisticaParaColchoneriasRoute,
   LogisticaParaMuebleriasRoute: LogisticaParaMuebleriasRoute,
   PrivacidadRoute: PrivacidadRoute,
   TerminosRoute: TerminosRoute,
