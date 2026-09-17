@@ -16,65 +16,66 @@ import {
 } from "@/components/VerticalLanding";
 
 const SITE_URL = "https://rutia.com.ar";
-const PAGE_URL = `${SITE_URL}/logistica-para-mueblerias`;
-const TITLE = "Software de logística para mueblerías | Rutia";
+const PAGE_URL = `${SITE_URL}/logistica-para-colchonerias`;
+const TITLE = "Software de logística para colchonerías | Rutia";
 const DESCRIPTION =
-  "Organizá pedidos, preparación, choferes, vehículos y entregas de tu mueblería en un solo lugar. Conocé cómo Rutia simplifica tu reparto.";
+  "Organizá pedidos, preparación, choferes, vehículos y entregas de tu colchonería en un solo lugar. Conocé cómo Rutia simplifica tu reparto.";
 
 const config: VerticalLandingConfig = {
-  breadcrumb: "Mueblerías",
-  eyebrow: "Rutia para mueblerías",
-  title: "Software de logística para mueblerías",
+  breadcrumb: "Colchonerías",
+  eyebrow: "Rutia para colchonerías",
+  title: "Software de logística para colchonerías",
   intro:
-    "Organizá los pedidos pendientes, la preparación en depósito, el armado del día y cada resultado de entrega desde un solo lugar. Con vehículos propios, fletes contratados o ambos.",
-  problemTitle: "Entregar muebles exige coordinar mucho más que una dirección",
+    "Organizá colchones y sommiers pendientes, la preparación, el armado del día y cada resultado de entrega desde un solo lugar. Con vehículos propios, fletes contratados o ambos.",
+  problemTitle:
+    "Entregar colchones y sommiers exige coordinar mucho más que una dirección",
   problemIntro:
-    "Ventas promete una fecha, depósito prepara el pedido y reparto necesita saber qué sale, con quién y qué pasó al llegar.",
+    "Ventas acuerda una fecha, el depósito prepara productos voluminosos y reparto necesita saber qué sale, con quién y qué ocurrió al llegar.",
   coordinationTitle: "Una sola vista para ventas, depósito y reparto",
   coordinationIntro:
-    "Rutia no reemplaza tu sistema de facturación ni tu stock. Ordena la operación de entregas y deja un historial claro para que todos trabajen con la misma información.",
-  featuresTitle: "Funciones útiles para el reparto de una mueblería",
+    "Rutia no reemplaza tu sistema de facturación ni el control de stock. Ordena la operación de entregas para que ventas, depósito y reparto trabajen con la misma información.",
+  featuresTitle: "Funciones útiles para el reparto de una colchonería",
   finalTitle:
-    "Tu mueblería puede crecer sin sumar más Excel, llamados y papelitos",
+    "Tu colchonería puede crecer sin sumar más Excel, papeles y mensajes sueltos",
   finalText:
     "Mostranos cómo organizás hoy tus entregas y te enseñamos Rutia con un flujo parecido al tuyo.",
   problems: [
     {
       icon: ClipboardList,
-      title: "Pedidos repartidos en varias planillas",
-      text: "Ventas anota una fecha, depósito maneja otra información y reparto termina confirmando todo por teléfono.",
+      title: "Pedidos y fechas en distintos lugares",
+      text: "La fecha prometida puede quedar en una planilla, un chat o el sistema de ventas, mientras depósito y reparto reciben otra versión.",
     },
     {
       icon: Warehouse,
-      title: "Muebles que salen sin estar preparados",
-      text: "Si depósito no sabe qué se entrega mañana, la carga se demora y el recorrido empieza tarde.",
+      title: "Productos voluminosos sin preparar",
+      text: "Colchones, bases y sommiers necesitan estar identificados y listos antes de que llegue el vehículo para cargar.",
     },
     {
       icon: CalendarDays,
-      title: "Fechas que cambian todo el tiempo",
-      text: "El cliente pide mover la entrega y el cambio queda en un chat, un papel o la memoria de alguien.",
+      title: "Muchas entregas coordinadas para el mismo día",
+      text: "Cuando se acumulan franjas y compromisos, cuesta ver si la jornada es realmente posible con los recursos disponibles.",
     },
     {
       icon: Truck,
-      title: "Vehículos y fletes difíciles de coordinar",
-      text: "Cada día hay que decidir qué entrega lleva el camión propio y cuál se asigna a un flete contratado.",
+      title: "Vehículos propios y fletes difíciles de combinar",
+      text: "Cada salida exige decidir qué pedidos lleva la flota propia y cuáles conviene asignar a un transportista contratado.",
     },
     {
       icon: UserRoundX,
-      title: "Clientes ausentes y entregas fallidas",
-      text: "Cuando nadie recibe, necesitás registrar qué ocurrió y reprogramar sin perder el pedido de vista.",
+      title: "Clientes ausentes o cambios de fecha",
+      text: "Una reprogramación puede alterar el armado del día y dejar el pedido perdido entre mensajes si no queda registrada.",
     },
     {
       icon: History,
-      title: "Reclamos sin una respuesta clara",
-      text: "Si preguntan por una entrega anterior, cuesta reconstruir quién la llevó, cuándo salió y cuál fue el resultado.",
+      title: "Poca claridad sobre lo que ya ocurrió",
+      text: "Ante un reclamo, necesitás distinguir rápido qué está pendiente, qué salió y cuál fue el resultado de la entrega.",
     },
   ],
   flow: [
     { title: "Pedido", text: "Cargás o importás lo pendiente de entrega." },
     {
       title: "Preparación",
-      text: "Depósito ve qué muebles tiene que dejar listos.",
+      text: "Depósito ve qué colchones y complementos debe dejar listos.",
     },
     {
       title: "Armado del día",
@@ -82,11 +83,11 @@ const config: VerticalLandingConfig = {
     },
     {
       title: "Chofer y vehículo",
-      text: "Asignás camión, camioneta, moto o flete contratado.",
+      text: "Asignás camión, camioneta o flete contratado.",
     },
     {
       title: "Entrega",
-      text: "Quien reparte ve el trabajo desde su celular, sin instalar una app.",
+      text: "Quien reparte consulta su trabajo desde el celular, sin instalar una app.",
     },
     {
       title: "Resultado",
@@ -95,20 +96,20 @@ const config: VerticalLandingConfig = {
   ],
   benefits: [
     {
-      title: "Menos dependencia de una sola persona",
-      text: "La operación queda visible y no atada a quien conoce la planilla o recuerda cada cambio.",
+      title: "Promesas de entrega más claras",
+      text: "Ventas puede consultar lo programado y evitar comprometer fechas sin conocer la carga real de la operación.",
     },
     {
       title: "Depósito prepara con anticipación",
-      text: "El equipo sabe qué pedidos deben estar listos antes de que llegue el momento de cargar.",
+      text: "El equipo sabe qué colchones, bases y accesorios deben estar identificados y listos para cada salida.",
     },
     {
-      title: "Cambios y reprogramaciones bajo control",
-      text: "Cada modificación queda registrada para que ventas, depósito y reparto trabajen con la misma fecha.",
+      title: "Flota y fletes mejor coordinados",
+      text: "Asignás cada pedido al recurso adecuado y todos ven la organización del día en un mismo lugar.",
     },
     {
-      title: "Respuestas rápidas ante un reclamo",
-      text: "Consultás el historial y ves qué ocurrió con la entrega sin reconstruir conversaciones viejas.",
+      title: "Reprogramaciones con historial",
+      text: "Los cambios de fecha y las visitas fallidas quedan asociados al pedido para retomarlo sin perder información.",
     },
   ],
   features: [
@@ -120,12 +121,12 @@ const config: VerticalLandingConfig = {
     {
       icon: CalendarDays,
       title: "Calendario de entregas",
-      text: "Visualizá lo programado para cada día y detectá jornadas sobrecargadas.",
+      text: "Visualizá lo programado para cada día y detectá jornadas con demasiados compromisos.",
     },
     {
       icon: PackageCheck,
       title: "Preparación en depósito",
-      text: "Marcá qué pedidos están listos antes de asignarlos a una salida.",
+      text: "Marcá qué colchones, sommiers y complementos están listos antes de asignarlos a una salida.",
     },
     {
       icon: Truck,
@@ -135,7 +136,7 @@ const config: VerticalLandingConfig = {
     {
       icon: Smartphone,
       title: "Entrega desde el celular",
-      text: "El repartidor recibe sus entregas y registra el resultado sin descargar una aplicación.",
+      text: "El repartidor recibe sus entregas y registra el resultado desde el navegador, sin descargar una aplicación.",
     },
     {
       icon: RefreshCcw,
@@ -145,12 +146,12 @@ const config: VerticalLandingConfig = {
   ],
   faq: [
     [
-      "¿Rutia reemplaza el sistema de facturación o stock de la mueblería?",
-      "No. Rutia se ocupa de organizar la operación de entregas y convive con el sistema que ya usás para vender, facturar o controlar stock.",
+      "¿Rutia reemplaza el sistema de facturación o stock de la colchonería?",
+      "No. Rutia organiza la operación de entregas y convive con el sistema que ya usás para vender, facturar o controlar stock.",
     ],
     [
-      "¿Puedo trabajar con camiones propios y fletes contratados?",
-      "Sí. Podés asignar entregas a vehículos propios, a fletes o combinar ambos según el día.",
+      "¿Puedo trabajar con vehículos propios y fletes contratados?",
+      "Sí. Podés asignar entregas a vehículos propios, a fletes o combinar ambos según la necesidad de cada jornada.",
     ],
     [
       "¿El chofer necesita instalar una aplicación?",
@@ -162,10 +163,10 @@ const config: VerticalLandingConfig = {
     ],
     [
       "¿Qué pasa si el cliente está ausente o pide cambiar la fecha?",
-      "Podés registrar la incidencia, dejar asentado el motivo y reprogramar la entrega para otra fecha.",
+      "Podés registrar la incidencia, dejar asentado el motivo y reprogramar la entrega sin perder el historial del pedido.",
     ],
     [
-      "¿Sirve para una mueblería con pocas entregas?",
+      "¿Sirve para una colchonería con pocas entregas?",
       "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa. Si realizás más de 20 entregas mensuales, probablemente ya puedas aprovecharla.",
     ],
   ],
@@ -196,7 +197,7 @@ const JSON_LD = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Logística para mueblerías",
+          name: "Logística para colchonerías",
           item: PAGE_URL,
         },
       ],
@@ -213,7 +214,7 @@ const JSON_LD = {
   ],
 };
 
-export const Route = createFileRoute("/logistica-para-mueblerias")({
+export const Route = createFileRoute("/logistica-para-colchonerias")({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -233,10 +234,10 @@ export const Route = createFileRoute("/logistica-para-mueblerias")({
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
   }),
-  component: MuebleriasPage,
+  component: ColchoneriasPage,
 });
 
-function MuebleriasPage() {
+function ColchoneriasPage() {
   return (
     <>
       <script
