@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   FileSpreadsheet, FileText, MessagesSquare, BrainCircuit, RotateCcw, PhoneIncoming,
@@ -12,14 +12,17 @@ import { CalendarMockup } from "@/components/CalendarMockup";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { RouteMap, RouteConnector } from "@/components/RouteMotif";
 
-export const Route = createFileRoute("/")({ component: Landing });
+export const Route = createFileRoute("/")({
+  head: () => ({ links: [{ rel: "canonical", href: "https://rutia.com.ar/" }] }),
+  component: Landing,
+});
 
 const NAV = [
-  ["Producto", "#producto"],
-  ["Cómo funciona", "#como"],
-  ["Para quién", "#para-quien"],
-  ["Planes", "#precios"],
-  ["Quiénes somos", "#nosotros"],
+  ["Producto", "/#producto"],
+  ["Cómo funciona", "/#como"],
+  ["Para quién", "/#para-quien"],
+  ["Planes", "/#precios"],
+  ["Quiénes somos", "/#nosotros"],
   ["Blog", "/blog"],
 ] as const;
 
@@ -43,7 +46,7 @@ const FEATURES = [
 ];
 
 const RUBROS = [
-  { icon: Sofa, name: "Mueblerías" },
+  { icon: Sofa, name: "Mueblerías", href: "/logistica-para-mueblerias" },
   { icon: BedDouble, name: "Colchonerías" },
   { icon: Tv, name: "Electrodomésticos" },
   { icon: Wrench, name: "Ferreterías" },
@@ -66,7 +69,7 @@ const FAQ_ITEMS = [
   ["¿Qué pasa si no me sirve?", "No hay permanencia. Cancelás cuando quieras y listo, sin letra chica."],
 ];
 
-function Logo({ lazy = false, className = "h-8" }: { lazy?: boolean; className?: string }) {
+export function Logo({ lazy = false, className = "h-8" }: { lazy?: boolean; className?: string }) {
   // El lockup oficial lleva el wordmark en blanco: pensado para fondos navy.
   return (
     <img
@@ -90,7 +93,7 @@ function WhatsappIcon({ className = "h-5 w-5", phoneColor = "white" }: { classNa
   );
 }
 
-function Shell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function Shell({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={`mx-auto max-w-[1280px] px-5 sm:px-7 lg:px-10 ${className}`}>{children}</div>;
 }
 
@@ -104,7 +107,7 @@ function Glow({ className = "" }: { className?: string }) {
   );
 }
 
-function Navbar() {
+export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
@@ -133,7 +136,7 @@ function Navbar() {
       className="fixed inset-x-0 top-0 z-40 bg-transparent px-3 pt-3"
     >
       <div className={`mx-auto flex max-w-[1000px] items-center justify-between rounded-full border px-4 py-2.5 backdrop-blur-xl transition-all duration-300 sm:px-5 ${scrolled ? "border-white/15 bg-ink/92 shadow-[0_16px_45px_-20px_rgba(0,0,0,.8)]" : "border-white/10 bg-ink/75"}`}>
-        <a href="#top" aria-label="Rutia — inicio"><Logo /></a>
+        <a href="/#top" aria-label="Rutia — inicio"><Logo /></a>
         <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map(([label, href]) => {
             const isActive = active === href;
@@ -151,7 +154,7 @@ function Navbar() {
           })}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
-          <a href="#demo" onClick={trackClickDemo} className="bg-brand rounded-full px-5 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
+          <a href="/#demo" onClick={trackClickDemo} className="bg-brand rounded-full px-5 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]">
             Solicitar demo
           </a>
         </div>
@@ -165,7 +168,7 @@ function Navbar() {
             {NAV.map(([label, href], i) => (
               <a key={href} href={href} onClick={() => setOpen(false)} className="mobile-menu-link rounded-xl px-4 py-3 text-center text-[16px] font-semibold text-white/85" style={{ animationDelay: `${i * 45}ms` }}>{label}</a>
             ))}
-            <a href="#demo" onClick={() => { setOpen(false); trackClickDemo(); }} className="mobile-menu-link bg-brand mt-2 rounded-xl px-5 py-3 text-center font-semibold text-white" style={{ animationDelay: `${NAV.length * 45}ms` }}>
+            <a href="/#demo" onClick={() => { setOpen(false); trackClickDemo(); }} className="mobile-menu-link bg-brand mt-2 rounded-xl px-5 py-3 text-center font-semibold text-white" style={{ animationDelay: `${NAV.length * 45}ms` }}>
               Solicitar demo
             </a>
           </div>
@@ -415,12 +418,19 @@ function ForWhom() {
         </div>
         <Reveal>
           <div className="mt-12 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-            {RUBROS.map(({ icon: Icon, name }) => (
-              <span key={name} className="industry-chip">
-                <Icon className="h-4 w-4 text-primary" strokeWidth={1.75} />
-                {name}
-              </span>
-            ))}
+            {RUBROS.map(({ icon: Icon, name, ...item }) =>
+              "href" in item ? (
+                <Link key={name} to={item.href} className="industry-chip cursor-pointer transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  <Icon className="h-4 w-4 text-primary" strokeWidth={1.75} />
+                  {name}
+                </Link>
+              ) : (
+                <span key={name} className="industry-chip">
+                  <Icon className="h-4 w-4 text-primary" strokeWidth={1.75} />
+                  {name}
+                </span>
+              ),
+            )}
           </div>
         </Reveal>
       </Shell>
@@ -797,7 +807,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-ink text-white">
       <Shell className="py-14">
@@ -811,7 +821,7 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 lg:col-span-2 lg:grid-cols-3">
             {[
-              ["Navegación", [["Producto", "#producto"], ["Planes", "#precios"], ["Quiénes somos", "#nosotros"], ["Blog", "/blog"], ["Contacto", "#demo"]]],
+              ["Navegación", [["Producto", "/#producto"], ["Planes", "/#precios"], ["Quiénes somos", "/#nosotros"], ["Blog", "/blog"], ["Contacto", "/#demo"]]],
               ["Contacto", [["contacto@rutia.com.ar", "mailto:contacto@rutia.com.ar"], ["WhatsApp", "https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia"]]],
               ["Seguinos", [["Instagram", "https://www.instagram.com/somosrutia"], ["LinkedIn", "https://www.linkedin.com/company/rutia"], ["Facebook", "https://www.facebook.com/profile.php?id=61591624718047"]]],
             ].map(([title, links]) => (

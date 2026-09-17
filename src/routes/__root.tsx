@@ -130,7 +130,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap",
       },
-      { rel: "canonical", href: `${SITE_URL}/` },
       { rel: "alternate", type: "application/rss+xml", title: "Blog de Rutia", href: `${SITE_URL}/rss.xml` },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
