@@ -35,6 +35,7 @@ const esc = s => String(s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").repl
 /* ---- sitemap.xml ---- */
 const staticUrls = [
   { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
+  { loc: `${SITE}/logistica-para-mueblerias`, priority: "0.8", changefreq: "monthly" },
   { loc: `${SITE}/blog`, priority: "0.8", changefreq: "weekly" },
   ...CATEGORIES.filter(c => posts.some(p => (p.category||"") === c))
     .map(c => ({ loc: `${SITE}/blog/categoria/${c}`, priority: "0.6", changefreq: "weekly" })),
