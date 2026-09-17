@@ -1,0 +1,137 @@
+import { CircleCheck } from "lucide-react";
+
+/**
+ * Dashboard oscuro estilo producto real: sidebar, KPIs, próximas entregas
+ * y panel de mapa con la ruta del día. Pensado para el hero.
+ */
+
+function RoutePanel() {
+  return (
+    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-ink-3">
+      <div className="flex items-center justify-between px-3 py-2 text-[10.5px] text-white/70">
+        <span className="font-semibold text-white">Ruta del día — Camión 01</span>
+        <span className="font-mono">7 paradas</span>
+      </div>
+      <svg viewBox="0 0 260 170" className="block w-full">
+        {/* calles */}
+        <g stroke="white" strokeOpacity="0.13" strokeWidth="1">
+          {[20, 55, 90, 125, 160].map((y) => <path key={y} d={`M0 ${y} H260`} />)}
+          {[40, 95, 150, 205].map((x) => <path key={x} d={`M${x} 0 V170`} />)}
+        </g>
+        {/* ruta */}
+        <defs>
+          <linearGradient id="ruta-brand" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor="#18D2FF" />
+            <stop offset="1" stopColor="#2F6BFF" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M28 140 C 60 120, 70 80, 105 78 S 160 110, 190 84 226 40, 236 34"
+          fill="none"
+          stroke="url(#ruta-brand)"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeDasharray="1 9"
+          className="animate-dash"
+        />
+        {[
+          [28, 140, "1"],
+          [105, 78, "2"],
+          [190, 84, "3"],
+          [236, 34, "4"],
+        ].map(([x, y, n]) => (
+          <g key={n as string}>
+            <g><circle cx={x as number} cy={y as number} r="11" fill="#2F6BFF" opacity="0.25" /><circle cx={x as number} cy={y as number} r="9" fill="#2F6BFF" /></g>
+            <text x={x as number} y={(y as number) + 3.5} textAnchor="middle" fontSize="9" fontWeight="700" fill="white">
+              {n}
+            </text>
+          </g>
+        ))}
+        {/* camión en tránsito */}
+        <g transform="translate(140 100)">
+          <rect x="-11" y="-8" width="22" height="16" rx="4" fill="white" />
+          <text x="0" y="4" textAnchor="middle" fontSize="10">🚚</text>
+        </g>
+      </svg>
+      {/* Chip flotante */}
+      <div className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1.5 rounded-full border border-success/40 bg-[oklch(0.17_0.05_155)] px-3 py-1.5 text-[11px] font-semibold text-[oklch(0.8_0.15_152)]">
+        <CircleCheck className="h-3.5 w-3.5" />
+        Entregado
+      </div>
+    </div>
+  );
+}
+
+export function DashboardMockup() {
+  const kpis = [
+    ["Pedidos hoy", "24", "text-white"],
+    ["Entregados", "12", "text-[#39D98A]"],
+    ["En camino", "9", "text-[#18D2FF]"],
+    ["Fallidos", "1", "text-[#FF6B6B]"],
+  ];
+  const next = [
+    ["10:00", "Juan Pérez", "Sofá 3 cuerpos"],
+    ["11:30", "María González", "Mesa + 6 sillas"],
+    ["13:00", "Roberto Sosa", "Rack TV"],
+    ["15:00", "Ana López", "Sommier 2 plazas"],
+  ];
+  return (
+    <div className="overflow-hidden rounded-2xl border border-white/12 bg-ink-2 shadow-[var(--shadow-pop)]">
+      {/* Top bar */}
+      <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5">
+        <img src="/rutia-logo.svg" alt="Rutia" className="h-4 w-auto" />
+        <span className="ml-3 text-[12px] text-white/45">Centro de control</span>
+        <span className="ml-auto font-mono text-[10px] text-white/40">hoy</span>
+      </div>
+      <div className="grid grid-cols-12">
+        {/* Sidebar */}
+        <aside className="col-span-3 hidden border-r border-white/10 p-3 lg:block">
+          {[
+            ["Tablero", true],
+            ["Pedidos", false],
+            ["Entregas del día", false],
+            ["Calendario", false],
+            ["Vehículos", false],
+            ["Incidencias", false],
+            ["Historial", false],
+          ].map(([label, active]) => (
+            <div
+              key={label as string}
+              className={`rounded-lg px-3 py-1.5 text-[11.5px] ${
+                active ? "bg-primary font-semibold text-white" : "text-white/55"
+              }`}
+            >
+              {label}
+            </div>
+          ))}
+        </aside>
+        {/* Main */}
+        <main className="col-span-12 space-y-3 p-3.5 lg:col-span-9">
+          <div className="grid grid-cols-4 gap-2">
+            {kpis.map(([label, n, color]) => (
+              <div key={label} className="rounded-lg border border-white/12 bg-white/[0.06] px-2.5 py-2">
+                <div className="text-[9.5px] text-white/50">{label}</div>
+                <div className={`font-mono text-lg font-semibold ${color}`}>{n}</div>
+              </div>
+            ))}
+          </div>
+          <div className="grid gap-3 lg:grid-cols-2">
+            <div className="rounded-lg border border-white/12 bg-white/[0.05] p-2.5">
+              <div className="mb-1.5 text-[10.5px] font-semibold text-white">Próximas entregas</div>
+              <div className="space-y-1">
+                {next.map(([h, who, what]) => (
+                  <div key={h} className="flex items-center gap-2 rounded-md bg-white/[0.07] px-2 py-1.5 ring-1 ring-white/[0.06]">
+                    <span className="font-mono text-[10px] text-[#18D2FF]">{h}</span>
+                    <span className="truncate text-[11px] font-medium text-white/85">{who}</span>
+                    <span className="ml-auto truncate text-[10px] text-white/40">{what}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <RoutePanel />
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
