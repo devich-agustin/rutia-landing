@@ -62,6 +62,20 @@ const staticUrls = [
     priority: "0.8",
     changefreq: "monthly",
   },
+  ...[
+    "electrodomesticos",
+    "ferreterias",
+    "corralones",
+    "casas-de-materiales",
+    "distribuidoras",
+    "bicicleterias",
+    "iluminacion",
+    "ecommerce",
+  ].map((vertical) => ({
+    loc: `${SITE}/logistica-para-${vertical}`,
+    priority: "0.8",
+    changefreq: "monthly",
+  })),
   { loc: `${SITE}/blog`, priority: "0.8", changefreq: "weekly" },
   ...CATEGORIES.filter((c) => posts.some((p) => (p.category || "") === c)).map(
     (c) => ({
