@@ -1,0 +1,63 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait for Vercel production deploy
+        run: sleep 90
+
+      - name: Read production sitemap and notify IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          python3 <<'PY'
+          import os
+          import json
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          key = os.environ["INDEXNOW_KEY"]
+          sitemap_url = "https://rutia.com.ar/sitemap.xml"
+
+          with urllib.request.urlopen(sitemap_url) as response:
+              xml = response.read()
+
+          root = ET.fromstring(xml)
+          namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+          urls = [
+              node.text.strip()
+              for node in root.findall("sm:url/sm:loc", namespace)
+              if node.text
+          ]
+
+          if not urls:
+              raise RuntimeError("No URLs found in production sitemap")
+
+          payload = {
+              "host": "rutia.com.ar",
+              "key": key,
+              "keyLocation": f"https://rutia.com.ar/{key}.txt",
+              "urlList": urls,
+          }
+
+          request = urllib.request.Request(
+              "https://api.indexnow.org/IndexNow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+
+          with urllib.request.urlopen(request) as response:
+              print("IndexNow HTTP status:", response.status)
+
+          print("URLs submitted:", len(urls))
+          PY
