@@ -262,11 +262,11 @@ entrega.
 
 <div style="margin: 2.5rem 0; padding: 2rem; border-radius: 1.25rem; background: #0b5cff; color: #ffffff;">
 
-<p style="margin: 0 0 .75rem; font-size: .85rem; font-weight: 700; letter-spacing: .06em;">PROBÁ RUTIA GRATIS</p>
+<p style="margin: 0 0 .75rem; font-size: .85rem; font-weight: 700; letter-spacing: .06em; color:#ffffff;">PROBÁ RUTIA GRATIS</p>
 
 <h3 style="margin: 0 0 .75rem; font-size: 1.65rem; line-height: 1.2; color: #ffffff;">¿Querés ordenar las entregas de tu empresa?</h3>
 
-<p style="margin: 0 0 1.25rem; font-size: 1.08rem; line-height: 1.6; color: #ffffff;">Centralizá pedidos, preparación, choferes y entregas en un solo lugar. <strong>Probá <a href="https://rutia.com.ar/" style="color:#ffffff; text-decoration:underline;">Rutia</a> gratis durante 1 mes, sin tarjeta.</strong></p>
+<p style="margin: 0 0 1.25rem; font-size: 1.08rem; line-height: 1.6; color: #ffffff;">Centralizá pedidos, preparación, choferes y entregas en un solo lugar. <strong style="color:#ffffff;">Probá Rutia gratis durante 1 mes, sin tarjeta.</strong></p>
 
 <a href="https://demo.rutia.com.ar/" style="display:inline-block; padding:.8rem 1.15rem; border-radius:.7rem; background:#ffffff; color:#0b5cff; font-weight:700; text-decoration:none;">Probar Rutia gratis →</a>
 
