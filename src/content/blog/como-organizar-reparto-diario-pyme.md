@@ -260,10 +260,15 @@ trabajo, [Rutia](https://rutia.com.ar/) centraliza la operación de
 empresas con reparto propio desde el pedido hasta el resultado de la
 entrega.
 
-> **¿Querés ordenar las entregas de tu empresa?**\
-> Probá [Rutia](https://rutia.com.ar/) gratis durante **1 mes**, sin
-> tarjeta.\
-> **[Probar Rutia gratis →](https://demo.rutia.com.ar/)**
+---
+
+### ¿Querés ordenar las entregas de tu empresa?
+
+**Probá [Rutia](https://rutia.com.ar/) gratis durante 1 mes, sin tarjeta.**
+
+### [→ Probar Rutia gratis](https://demo.rutia.com.ar/)
+
+---
 
 ## Preguntas frecuentes
 
