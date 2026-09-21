@@ -191,7 +191,7 @@ export function ArticleCta({ intent }: { intent: Post["intent"] }) {
           persona?
         </p>
         <p className="mt-2 text-[15px] text-[#9CA9C0]">
-          Pedí una demo de 20 minutos y vela funcionando con entregas como las tuyas.
+          Pedí una demo de 30 minutos y vela funcionando con entregas como las tuyas.
         </p>
         <a
           href="/#demo"

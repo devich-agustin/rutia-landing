@@ -19,7 +19,7 @@ const SESSION_KEY = "rutia_exit_intent_shown";
 const CALENDLY_URL = "https://calendly.com/rutia-demo/30min";
 
 const BENEFITS = [
-  "Demo personalizada de 20 minutos",
+  "Demo personalizada de 30 minutos",
   "Lo vemos con entregas reales como las tuyas",
   "1 mes de Rutia gratis, sin compromiso",
 ];
@@ -120,7 +120,7 @@ export function ExitIntentModal() {
           Probá Rutia gratis durante 1 mes
         </p>
         <p className="mt-2 text-[15px] text-[#9CA9C0]">
-          Agendá una demo de 20 minutos, conocé cómo Rutia puede ordenar tus
+          Agendá una demo de 30 minutos, conocé cómo Rutia puede ordenar tus
           entregas y te regalamos 1 mes completo para probarlo en tu empresa.
         </p>
 
