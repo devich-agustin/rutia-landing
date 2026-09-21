@@ -37,8 +37,8 @@ function LegalNoticePage() {
             <span className={legal.strong}>CUIT:</span> 20-40253699-4
           </li>
           <li>
-            <span className={legal.strong}>Domicilio:</span> Almagro, Ciudad Autónoma
-            de Buenos Aires, República Argentina
+            <span className={legal.strong}>Domicilio:</span> Antezana 547, Piso 1,
+            Dpto. B, Ciudad Autónoma de Buenos Aires, República Argentina
           </li>
           <li>
             <span className={legal.strong}>Dominio:</span> rutia.com.ar

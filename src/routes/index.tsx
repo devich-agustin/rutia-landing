@@ -939,7 +939,10 @@ function Pricing() {
       name: "Inicial",
       limit: "Hasta 150 entregas por mes",
       items: [
-        "Pedidos, calendario, armado del día y entrega desde el celular",
+        "Todas las funciones de Rutia incluidas",
+        "Pedidos, depósito, armado del día e incidencias",
+        "Entrega desde el celular e historial completo",
+        "Reportes, indicadores y varios depósitos",
         "Soporte por WhatsApp",
       ],
       featured: false,
@@ -948,11 +951,11 @@ function Pricing() {
       name: "PyME",
       limit: "Hasta 600 entregas por mes",
       items: [
-        "Todo lo de Inicial",
-        "Depósito y preparación",
-        "Incidencias y reprogramaciones",
-        "Historial completo",
-        "Tablero para dueños",
+        "Todas las funciones de Rutia incluidas",
+        "Pedidos, depósito, armado del día e incidencias",
+        "Entrega desde el celular e historial completo",
+        "Reportes, indicadores y varios depósitos",
+        "Soporte por WhatsApp",
       ],
       featured: true,
     },
@@ -960,10 +963,11 @@ function Pricing() {
       name: "Empresa",
       limit: "Hasta 2.000 entregas por mes",
       items: [
-        "Todo lo de PyME",
-        "Reportes e indicadores",
-        "Varios depósitos",
-        "Soporte prioritario",
+        "Todas las funciones de Rutia incluidas",
+        "Pedidos, depósito, armado del día e incidencias",
+        "Entrega desde el celular e historial completo",
+        "Reportes, indicadores y varios depósitos",
+        "Soporte prioritario por WhatsApp",
       ],
       featured: false,
     },
@@ -1144,7 +1148,7 @@ function DemoCta() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mx-auto mt-5 max-w-xl text-[17px] text-muted-foreground lg:mx-0">
-              Dejanos tus datos y coordinamos una reunión de 20 minutos: nos
+              Dejanos tus datos y coordinamos una reunión de 30 minutos: nos
               contás cómo trabajás, te mostramos Rutia funcionando con entregas
               como las tuyas, y vemos juntos si te sirve.
             </p>

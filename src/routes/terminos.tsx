@@ -36,8 +36,8 @@ function TermsPage() {
           funcionalidades y planes, y ofrecer canales para solicitar una demostración o
           ponerse en contacto con nosotros. El sitio es operado por{" "}
           <span className={legal.strong}>Agustín Ariel Devich</span>, CUIT 20-40253699-4,
-          con domicilio en Almagro, Ciudad Autónoma de Buenos Aires, República Argentina
-          («Rutia», «nosotros»).
+          con domicilio en Antezana 547, Piso 1, Dpto. B, Ciudad Autónoma de Buenos Aires,
+          República Argentina («Rutia», «nosotros»).
         </p>
       </section>
 
@@ -107,15 +107,20 @@ function TermsPage() {
       </section>
 
       <section aria-labelledby="registro">
-        <h2 id="registro" className={legal.h2}>5. Registro de usuarios</h2>
+        <h2 id="registro" className={legal.h2}>5. Registro y uso de la Plataforma</h2>
         <p className={legal.p}>
-          Actualmente el Sitio no ofrece la creación de cuentas de usuario. Cuando la
-          Plataforma esté disponible, el acceso al Servicio podrá requerir un registro,
-          que se regirá por términos de servicio específicos que publicaremos en su
-          momento e incluirán, entre otros aspectos, las condiciones de contratación,
-          precios, soporte y tratamiento de los datos cargados en la Plataforma. Nada de
-          lo dispuesto en estos términos implica que dichas funcionalidades estén hoy
-          operativas.
+          Estos términos regulan la navegación del <span className={legal.strong}>Sitio</span> rutia.com.ar.
+          El acceso, registro y uso de la <span className={legal.strong}>Plataforma</span> (la aplicación
+          app.rutia.com.ar) se rigen por los{" "}
+          <span className={legal.strong}>Términos y Condiciones de Uso y Contratación</span>, que la
+          empresa usuaria acepta expresamente al crear su cuenta, y que regulan —entre
+          otros aspectos— las condiciones de contratación, planes, período de prueba,
+          precios, pagos, soporte y el tratamiento de los datos cargados en la Plataforma.
+          El tratamiento de datos personales se rige por la{" "}
+          <a href="/privacidad" className={legal.link}>Política de Privacidad</a>, y el
+          tratamiento de los datos que la empresa usuaria carga de sus propios clientes se
+          rige, además, por el Acuerdo de Encargado de Tratamiento que se acepta al momento
+          del alta de la cuenta.
         </p>
         <h3 className={legal.h3}>Funcionalidades beta</h3>
         <p className={legal.p}>
