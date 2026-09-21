@@ -1016,11 +1016,11 @@ function Pricing() {
                 <div
                   className={`my-6 h-px w-full ${p.featured ? "bg-white/15" : "bg-border"}`}
                 />
-                <ul className="flex-1 space-y-3">
+                <ul className="mx-auto flex-1 space-y-3 text-left">
                   {p.items.map((it) => (
                     <li
                       key={it}
-                      className="flex justify-center gap-2.5 text-left text-[14px] leading-relaxed"
+                      className="flex items-start justify-start gap-2.5 text-[14px] leading-relaxed"
                     >
                       <CircleCheck
                         className={`mt-0.5 h-4 w-4 flex-none ${p.featured ? "text-[cyan]" : "text-success"}`}
