@@ -27,6 +27,7 @@ export function LegalLayout({
   title,
   version = "1.0",
   updated,
+  metaLine,
   intro,
   jsonLd,
   children,
@@ -34,6 +35,7 @@ export function LegalLayout({
   title: string;
   version?: string;
   updated: string;
+  metaLine?: string;
   intro: React.ReactNode;
   jsonLd: object;
   children: React.ReactNode;
@@ -71,7 +73,7 @@ export function LegalLayout({
           <header>
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{title}</h1>
             <p className="mt-3 font-mono text-[13px] text-muted-foreground">
-              Versión {version} · Vigente desde el {updated} · Última actualización: {updated}
+              {metaLine ?? `Versión ${version} · Vigente desde el ${updated} · Última actualización: ${updated}`}
             </p>
             <p className={legal.p}>{intro}</p>
           </header>
