@@ -17,7 +17,8 @@ function CookiesPage() {
   return (
     <LegalLayout
       title="Política de Cookies"
-      updated="septiembre de 2026"
+      updated="septiembre 2026"
+      metaLine="Última actualización: septiembre 2026"
       jsonLd={legalJsonLd(META)}
       intro={
         <>
