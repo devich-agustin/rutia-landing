@@ -11,7 +11,7 @@ draft: false
 
 Quizás lo viste dando vueltas estas semanas: "WhatsApp empieza a cobrar los mensajes". La frase, así suelta, asusta y confunde. Porque suena a que de un día para otro te van a facturar cada mensaje que le mandás a un cliente, y no es así.
 
-Vale la pena entenderlo bien, porque el cambio es real pero mucho más acotado de lo que parece, y a la mayoría de las PyMEs no las toca de la forma en que temen. Esta nota es parte del blog de [Rutia](https://www.rutia.com.ar/), el centro de control de entregas para PyMEs con reparto propio, y la escribimos para separar el dato del ruido.
+Vale la pena entenderlo bien, porque el cambio es real pero mucho más acotado de lo que parece, y a la mayoría de las PyMEs no las toca de la forma en que temen. Esta nota es parte del blog de [Rutia](https://rutia.com.ar/), el centro de control de entregas para PyMEs con reparto propio, y la escribimos para separar el dato del ruido.
 
 ## Qué es lo que realmente cambia
 
@@ -41,7 +41,7 @@ Ese último grupo es el que conviene que preste atención. Porque el razonamient
 
 ## Y esto qué tiene que ver con tu operación de entregas
 
-Acá es donde el tema conecta con algo que en [Rutia](https://www.rutia.com.ar/) vemos todos los días.
+Acá es donde el tema conecta con algo que en [Rutia](https://rutia.com.ar/) vemos todos los días.
 
 Muchísimas PyMEs con reparto propio usan WhatsApp como el sistema nervioso de toda su logística. Los pedidos entran por ahí, los cambios de último momento viajan por ahí, el "¿saliste?" y el "avisá cuando llegues" viven en los chats. Funciona, hasta que deja de funcionar: los mensajes importantes se pierden entre cien, nadie sabe con certeza qué se confirmó, y la coordinación depende de que cada persona lea el mensaje justo a tiempo.
 
@@ -49,7 +49,7 @@ Cuando esa empresa crece y quiere ordenar el caos, muchas veces la primera idea 
 
 El punto de fondo es este: WhatsApp es un excelente canal para hablar con el cliente, pero no es un buen lugar para coordinar tu operación interna. Confundir las dos cosas es lo que lleva a que la logística entera dependa de mensajes sueltos. La coordinación de las entregas —quién lleva qué, qué salió, qué falta, qué se reprogramó— necesita un lugar propio, ordenado y visible, separado del ida y vuelta de mensajes.
 
-> **Para llevar:** el cambio de precios de WhatsApp es un buen recordatorio de algo más profundo: apoyar toda tu operación sobre mensajes tiene un costo, aunque no siempre aparezca en una factura. A veces el costo es plata (la API), y a veces es el pedido que se perdió en el chat. [Rutia](https://www.rutia.com.ar/) existe para sacar la coordinación de las entregas de los mensajes y llevarla a un solo lugar. Podés verlo en 2 minutos en [Rutia](https://www.rutia.com.ar/).
+> **Para llevar:** el cambio de precios de WhatsApp es un buen recordatorio de algo más profundo: apoyar toda tu operación sobre mensajes tiene un costo, aunque no siempre aparezca en una factura. A veces el costo es plata (la API), y a veces es el pedido que se perdió en el chat. [Rutia](https://rutia.com.ar/) existe para sacar la coordinación de las entregas de los mensajes y llevarla a un solo lugar. Podés verlo en 2 minutos en [Rutia](https://rutia.com.ar/).
 
 ## Qué te conviene hacer ahora
 
@@ -63,7 +63,7 @@ Segundo, y más importante, separá mentalmente dos cosas que suelen ir juntas y
 
 El cambio de Meta pone un precio explícito a algo que muchas empresas ya venían pagando de otra forma. Si usás la API, ese precio ahora es una línea en tu factura desde octubre de 2026. Si usás el WhatsApp común, seguís sin pagar a Meta, pero pagás igual de otra manera: en los pedidos que se pierden entre mensajes, en las llamadas para reconstruir qué pasó, en el tiempo de coordinar todo a mano.
 
-En los dos casos, la conclusión es la misma. WhatsApp es para hablar con el cliente. Para ordenar tu operación de entregas hace falta otra cosa: un lugar donde la información esté junta, ordenada y a la vista de todos. Eso es lo que hace [Rutia](https://www.rutia.com.ar/), y podés verlo en [Rutia](https://www.rutia.com.ar/).
+En los dos casos, la conclusión es la misma. WhatsApp es para hablar con el cliente. Para ordenar tu operación de entregas hace falta otra cosa: un lugar donde la información esté junta, ordenada y a la vista de todos. Eso es lo que hace [Rutia](https://rutia.com.ar/), y podés verlo en [Rutia](https://rutia.com.ar/).
 
 ## Preguntas frecuentes
 
