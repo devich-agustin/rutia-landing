@@ -52,6 +52,7 @@ const esc = (s) =>
 /* ---- sitemap.xml ---- */
 const staticUrls = [
   { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
+  { loc: `${SITE}/software-de-reparto`, priority: "0.9", changefreq: "monthly" },
   {
     loc: `${SITE}/logistica-para-mueblerias`,
     priority: "0.8",
