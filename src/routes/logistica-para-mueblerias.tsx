@@ -19,7 +19,7 @@ const SITE_URL = "https://rutia.com.ar";
 const PAGE_URL = `${SITE_URL}/logistica-para-mueblerias`;
 const TITLE = "Software de logística para mueblerías | Rutia";
 const DESCRIPTION =
-  "Organizá pedidos, preparación, choferes, vehículos y entregas de tu mueblería en un solo lugar. Conocé cómo Rutia simplifica tu reparto.";
+  "Software de logística para mueblerías: organizá la entrega de muebles con camión propio o fletes y registrá cada entrega desde el celular del chofer.";
 
 const config: VerticalLandingConfig = {
   breadcrumb: "Mueblerías",

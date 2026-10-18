@@ -40,7 +40,7 @@ const PAGE_URL = `${SITE_URL}/software-de-reparto`;
 const TRIAL_URL = "https://demo.rutia.com.ar/";
 const TITLE = "Software de reparto para pymes | Rutia";
 const DESCRIPTION =
-  "Software de reparto para pymes que entregan lo que venden: pedidos, depósito, vehículos, choferes y fletes en un solo lugar. Probalo 1 mes gratis.";
+  "Software de reparto para PyMEs: armá el día de entregas en minutos, asignalas a camiones o fletes y seguí cada una desde el celular del chofer. Pedí tu demo.";
 
 const PROBLEMS = [
   {

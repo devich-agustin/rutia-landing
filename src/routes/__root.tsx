@@ -80,7 +80,7 @@ const GOOGLE_SITE_VERIFICATION = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION ?
 const SITE_URL = "https://rutia.com.ar";
 const SITE_TITLE = "Rutia — El centro de control de tu logística";
 const SITE_DESCRIPTION =
-  "Rutia es el centro de control de la logística de tu PyME: pedidos, entregas, depósito, vehículos, choferes y fletes en un solo lugar. Sin Excel, sin papelitos y sin apps para los que reparten.";
+  "Rutia es el software de gestión de entregas para PyMEs argentinas: pedidos, depósito, vehículos, choferes y fletes en un solo lugar, sin Excel ni papelitos.";
 const OG_IMAGE = `${SITE_URL}/og-rutia-control-v2.jpg`;
 
 const FAQ_SCHEMA_ITEMS = [
@@ -151,6 +151,9 @@ const JSON_LD = {
       url: `${SITE_URL}/`,
       logo: `${SITE_URL}/rutia-logo.svg`,
       email: "contacto@rutia.com.ar",
+      description: "Software argentino de gestión de entregas para PyMEs: pedidos, depósito, vehículos, choferes y fletes en un solo lugar.",
+      address: { "@type": "PostalAddress", addressLocality: "Buenos Aires", addressCountry: "AR" },
+      areaServed: "AR",
       foundingLocation: { "@type": "Place", name: "Buenos Aires, Argentina" },
       sameAs: [
         "https://www.linkedin.com/company/rutia",
@@ -160,6 +163,7 @@ const JSON_LD = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
+        telephone: "+54-9-11-7824-2630",
         email: "contacto@rutia.com.ar",
         availableLanguage: "Spanish",
       },
@@ -189,6 +193,8 @@ const JSON_LD = {
       url: `${SITE_URL}/`,
       description: SITE_DESCRIPTION,
       applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Software de gestión de entregas",
+      featureList: ["Carga de pedidos a mano o desde Excel", "Calendario de entregas", "Armado del día por vehículo o flete", "Preparación en depósito", "Entrega desde el celular del chofer sin instalar apps", "Incidencias y reprogramaciones", "Historial completo de cada entrega"],
       operatingSystem: "Web",
       inLanguage: "es-AR",
       provider: { "@id": `${SITE_URL}/#organization` },

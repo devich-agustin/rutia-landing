@@ -19,7 +19,7 @@ const SITE_URL = "https://rutia.com.ar";
 const PAGE_URL = `${SITE_URL}/logistica-para-colchonerias`;
 const TITLE = "Software de logística para colchonerías | Rutia";
 const DESCRIPTION =
-  "Organizá pedidos, preparación, choferes, vehículos y entregas de tu colchonería en un solo lugar. Conocé cómo Rutia simplifica tu reparto.";
+  "Software de entregas para colchonerías: organizá pedidos, franjas horarias y fletes, y sabé qué pasó con cada entrega sin llamar a nadie. Pedí tu demo gratis.";
 
 const config: VerticalLandingConfig = {
   breadcrumb: "Colchonerías",
