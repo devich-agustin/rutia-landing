@@ -72,7 +72,7 @@ export const electrodomesticos: VerticalSeoConfig = {
   path: "/logistica-para-electrodomesticos",
   title: "Software de logística para electrodomésticos | Rutia",
   description:
-    "Organizá pedidos, preparación, choferes, vehículos y entregas de electrodomésticos en un solo lugar. Conocé cómo Rutia simplifica tu reparto.",
+    "Software de entregas para casas de electrodomésticos: controlá qué sale del depósito, asigná cada entrega a un vehículo o flete y registrá entregas y fallidas.",
   schemaName: "Logística para electrodomésticos",
   landing: {
     breadcrumb: "Electrodomésticos",
@@ -177,7 +177,7 @@ export const ferreterias: VerticalSeoConfig = {
   path: "/logistica-para-ferreterias",
   title: "Software de logística para ferreterías | Rutia",
   description:
-    "Organizá pedidos, preparación y entregas de tu ferretería desde un solo lugar. Coordiná reparto, choferes y vehículos con Rutia.",
+    "Software de reparto para ferreterías: ordená pedidos, prepará en depósito, asigná entregas a camionetas o fletes y respondé al cliente al instante. Demo gratis.",
   schemaName: "Logística para ferreterías",
   landing: {
     breadcrumb: "Ferreterías",
@@ -282,7 +282,7 @@ export const corralones: VerticalSeoConfig = {
   path: "/logistica-para-corralones",
   title: "Software de logística para corralones | Rutia",
   description:
-    "Organizá pedidos, preparación, vehículos, fletes y entregas de tu corralón desde un solo lugar. Controlá tu reparto con Rutia.",
+    "Software de logística para corralones y sanitarios: organizá entregas en obra, carga del camión y fletes, y registrá cada entrega desde el celular del chofer.",
   schemaName: "Logística para corralones",
   landing: {
     breadcrumb: "Corralones y sanitarios",
@@ -388,7 +388,7 @@ export const casasMateriales: VerticalSeoConfig = {
   path: "/logistica-para-casas-de-materiales",
   title: "Software de logística para casas de materiales | Rutia",
   description:
-    "Centralizá pedidos, preparación y entregas de tu casa de materiales. Organizá vehículos, choferes y fletes con Rutia.",
+    "Software de entregas para casas de materiales: pedidos, preparación en depósito, camiones propios y fletes en un solo tablero. Sin Excel, sin papelitos.",
   schemaName: "Logística para casas de materiales",
   landing: {
     breadcrumb: "Casas de materiales",
@@ -493,7 +493,7 @@ export const distribuidoras: VerticalSeoConfig = {
   path: "/logistica-para-distribuidoras",
   title: "Software de logística para distribuidoras | Rutia",
   description:
-    "Organizá pedidos, recorridos, choferes y entregas de tu distribuidora desde un solo lugar. Controlá cada jornada de reparto con Rutia.",
+    "Software de reparto para distribuidoras: organizá entregas por zona, asigná cada pedido a un vehículo y controlá entregadas, parciales y fallidas al instante.",
   schemaName: "Logística para distribuidoras",
   landing: {
     breadcrumb: "Distribuidoras",
@@ -614,7 +614,7 @@ export const bicicleterias: VerticalSeoConfig = {
   path: "/logistica-para-bicicleterias",
   title: "Software de logística para bicicleterías | Rutia",
   description:
-    "Organizá pedidos y entregas de bicicletas y productos deportivos. Coordiná preparación, reparto y resultados desde Rutia.",
+    "Software de entregas para bicicleterías y casas de deportes: organizá pedidos, envíos en moto o camioneta y el estado de cada entrega desde el celular.",
   schemaName: "Logística para bicicleterías",
   landing: {
     breadcrumb: "Bicicleterías y deportes",
@@ -721,7 +721,7 @@ export const iluminacion: VerticalSeoConfig = {
   path: "/logistica-para-iluminacion",
   title: "Software de logística para tiendas de iluminación | Rutia",
   description:
-    "Organizá pedidos, preparación y entregas de productos de iluminación. Coordiná tu reparto y controlá cada entrega con Rutia.",
+    "Software de logística para casas de iluminación: controlá pedidos, preparación en depósito y entregas a clientes y obras desde un solo lugar. Pedí tu demo.",
   schemaName: "Logística para tiendas de iluminación",
   landing: {
     breadcrumb: "Iluminación",
@@ -825,7 +825,7 @@ export const ecommerce: VerticalSeoConfig = {
   path: "/logistica-para-ecommerce",
   title: "Software de logística para e-commerce con reparto propio | Rutia",
   description:
-    "Organizá los pedidos que tenés que entregar con tu propio reparto. Planificá entregas, choferes y resultados desde Rutia.",
+    "Software de última milla para e-commerce con reparto propio: organizá pedidos, asigná entregas a choferes o fletes y registrá cada entrega desde el celular.",
   schemaName: "Logística para e-commerce",
   landing: {
     breadcrumb: "E-commerce con reparto propio",
