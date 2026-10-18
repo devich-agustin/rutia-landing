@@ -14,15 +14,16 @@ export const Route = createFileRoute("/blog/")({
       {
         name: "description",
         content:
-          "Guías prácticas sobre organización de entregas, control operativo y logística para PyMEs argentinas: mueblerías, corralones, distribuidoras y más.",
+          "Guías prácticas para organizar la logística de tu PyME: reparto diario, reprogramaciones, fletes, Excel vs. software y cómo reducir las entregas fallidas.",
       },
       { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/blog` },
       { property: "og:title", content: "Blog de Rutia — Logística y entregas para PyMEs" },
-      { property: "og:description", content: "Guías prácticas sobre organización de entregas, control operativo y logística para PyMEs." },
+      { property: "og:description", content: "Guías prácticas para organizar la logística de tu PyME: reparto diario, reprogramaciones, fletes, Excel vs. software y cómo reducir las entregas fallidas." },
       { property: "og:image", content: `${SITE_URL}/og-image-v2.png` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:description", content: "Guías prácticas para organizar la logística de tu PyME: reparto diario, reprogramaciones, fletes, Excel vs. software y cómo reducir las entregas fallidas." },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/blog` }],
   }),
