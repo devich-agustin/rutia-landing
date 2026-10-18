@@ -49,36 +49,35 @@ export function Reveal({
 
 export function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [n, setN] = useState(0);
+  // Render the final value in server HTML and during hydration.
+  const [n, setN] = useState(to);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let frame = 0;
     let started = false;
     const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting && !started) {
-          started = true;
-          const duration = 1400;
-          const start = performance.now();
-          const tick = (t: number) => {
-            const p = Math.min(1, (t - start) / duration);
-            setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-          obs.disconnect();
-        }
-      });
+      if (!entries.some((entry) => entry.isIntersecting) || started) return;
+      started = true;
+      const duration = 1400;
+      const start = performance.now();
+      const tick = (t: number) => {
+        const p = Math.min(1, (t - start) / duration);
+        setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+      obs.disconnect();
     });
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      cancelAnimationFrame(frame);
+    };
   }, [to]);
 
-  return (
-    <span ref={ref}>
-      {n}
-      {suffix}
-    </span>
-  );
+  return <span ref={ref}>{n}{suffix}</span>;
 }
