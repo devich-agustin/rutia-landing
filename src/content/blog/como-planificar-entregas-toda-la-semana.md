@@ -95,3 +95,5 @@ Usando el calendario para fechas y carga futura, y una jornada operativa para la
 
 **¿Rutia permite organizar días de entrega?**  
 Sí. [Rutia](https://rutia.com.ar/) combina la gestión de pedidos y calendario con el Armado del Día para la ejecución.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

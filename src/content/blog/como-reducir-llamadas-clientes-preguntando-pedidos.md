@@ -89,3 +89,5 @@ Sí. Permite saber si la entrega se completó o necesita una nueva acción.
 
 **¿Cómo ayuda Rutia?**  
 [Rutia](https://rutia.com.ar/) centraliza pedidos, entregas, resultados y reprogramaciones para dar una referencia común al equipo.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

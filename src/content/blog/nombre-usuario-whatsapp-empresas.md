@@ -81,3 +81,5 @@ Depende. Reclamar tu nombre de Instagram o Facebook en WhatsApp requiere vincula
 
 **¿El nombre de usuario me ayuda a organizar las entregas de mi PyME?**  
 No. El nombre de usuario mejora cómo te contactan y protege tu número, pero no ordena tu operación logística. Coordinar entregas por WhatsApp —pedidos, cambios y avisos mezclados en chats— sigue siendo un problema aunque tengas un nombre prolijo. Para eso hace falta llevar la coordinación a un lugar único y visible, que es lo que resuelve un centro de control como [Rutia](https://www.rutia.com.ar/).
+
+[Conocé nuestro software de reparto](/software-de-reparto).

@@ -75,3 +75,5 @@ Las áreas que intervienen en venta, preparación y reparto necesitan una refere
 
 **¿Rutia sirve para distribuidoras?**  
 Sí. Podés consultar la propuesta de [Rutia para distribuidoras](https://rutia.com.ar/logistica-para-distribuidoras).
+
+[Conocé nuestro software de reparto](/software-de-reparto).

@@ -97,3 +97,5 @@ una nueva fecha cuando corresponda.
 **¿Rutia mantiene historial de las entregas?**\
 Sí. [Rutia](https://rutia.com.ar/) contempla historial, resultados y
 reprogramaciones dentro del flujo operativo.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

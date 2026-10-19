@@ -91,3 +91,5 @@ Pueden indicar que la planificación o la coordinación comercial necesita revis
 
 **¿Rutia permite organizar cambios en la jornada?**  
 [Rutia](https://rutia.com.ar/) permite trabajar el Armado del Día y mantener las entregas y asignaciones dentro de una operación visible.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

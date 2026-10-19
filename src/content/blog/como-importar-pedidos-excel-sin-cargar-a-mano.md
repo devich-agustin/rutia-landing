@@ -104,3 +104,5 @@ información de origen sea correcta.
 **¿Qué ventaja tiene importar en lugar de copiar y pegar?**\
 Reduce trabajo repetitivo, evita volver a escribir los mismos datos y
 facilita incorporar lotes de pedidos a la operación.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

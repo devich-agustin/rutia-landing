@@ -89,3 +89,5 @@ No necesariamente. Una visión clara de entregas y destinos ya permite mejorar m
 
 **¿Cómo ayuda Rutia a organizar zonas?**  
 [Rutia](https://rutia.com.ar/) centraliza la jornada y las asignaciones para que el responsable pueda organizar las entregas sobre información común.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

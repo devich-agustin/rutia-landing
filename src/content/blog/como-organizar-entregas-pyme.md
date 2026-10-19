@@ -258,3 +258,5 @@ Es la organización de la jornada de reparto: qué entregas salen, quién las ha
 
 **¿Cómo reduzco las reprogramaciones?**
 El primer paso es registrarlas bien: cada reprogramación con su motivo, elegido de una lista definida. Con algunas semanas de registro vas a poder ver si el patrón viene del cliente (ausencias, cambios de fecha), de la preparación (mercadería que no llega a tiempo) o de la planificación (días sobrecargados). Cada origen tiene una solución distinta, y sin el registro es imposible saber cuál atacar primero.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

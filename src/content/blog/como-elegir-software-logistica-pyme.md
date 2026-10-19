@@ -89,3 +89,5 @@ No es incompatible. Una herramienta puede permitir importar información existen
 
 **¿Rutia tiene prueba gratuita?**  
 Sí. Podés probar [Rutia](https://rutia.com.ar/) y el CTA de esta nota te lleva a la propuesta vigente de prueba.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

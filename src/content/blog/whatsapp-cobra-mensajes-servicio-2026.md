@@ -81,3 +81,5 @@ No. WhatsApp sigue siendo un canal excelente para comunicarte con tus clientes, 
 
 **¿Qué diferencia hay entre usar WhatsApp y usar un sistema para coordinar entregas?**
 WhatsApp es un canal de mensajes: sirve para avisar y conversar, pero no guarda el estado de cada entrega, no muestra qué salió y qué falta, y no deja un registro ordenado de qué pasó. Un sistema de coordinación de entregas centraliza esa información en un solo lugar visible para la oficina, la calle y el dueño. Uno es para hablar; el otro, para saber.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

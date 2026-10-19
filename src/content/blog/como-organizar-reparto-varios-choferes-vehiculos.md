@@ -95,3 +95,5 @@ No necesariamente. Para organizar reparto puede alcanzar con gestionar los recur
 
 **¿Rutia tiene Vista Chofer?**  
 Sí. La Vista Chofer de [Rutia](https://rutia.com.ar/) funciona desde el navegador y muestra la operación correspondiente al chofer.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

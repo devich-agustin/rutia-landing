@@ -114,3 +114,5 @@ reprogramaciones y nivel de servicio requerido.
 **¿Rutia sirve si uso fletes contratados?**\
 Sí. [Rutia](https://rutia.com.ar/) contempla la organización de recursos
 propios y fletes contratados dentro del flujo operativo.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

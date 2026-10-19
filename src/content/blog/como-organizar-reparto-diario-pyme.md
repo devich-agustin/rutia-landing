@@ -313,3 +313,5 @@ llamadas o trabajo manual para saber qué está preparado, qué sale, quién
 lo lleva y qué ocurrió. Un sistema específico puede centralizar esos
 estados y dar una referencia común a las personas que participan de la
 operación.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

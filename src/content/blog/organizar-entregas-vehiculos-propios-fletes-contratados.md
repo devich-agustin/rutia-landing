@@ -83,3 +83,5 @@ La información necesaria para identificarla, asignarla y conocer su resultado.
 
 **¿Rutia contempla fletes contratados?**  
 Sí. [Rutia](https://rutia.com.ar/) permite contemplarlos dentro de la operación junto con recursos propios.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

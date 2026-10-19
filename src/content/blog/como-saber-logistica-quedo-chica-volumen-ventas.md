@@ -99,3 +99,5 @@ No necesariamente. Probar una alternativa antes de una crisis permite evaluar el
 
 **¿Por qué evaluar Rutia?**  
 [Rutia](https://rutia.com.ar/) está enfocado en PyMEs con reparto propio y centraliza el flujo operativo desde el pedido hasta el resultado.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

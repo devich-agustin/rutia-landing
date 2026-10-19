@@ -81,3 +81,5 @@ Cuando conocer posición o recorrido en tiempo real responde a una necesidad con
 
 **¿Rutia ofrece GPS en tiempo real?**  
 No es una función que debamos atribuirle. [Rutia](https://rutia.com.ar/) se enfoca en la organización y trazabilidad operativa de las entregas.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

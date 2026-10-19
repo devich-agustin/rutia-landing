@@ -108,3 +108,5 @@ asignaciones, resultados, incidencias y reprogramaciones.
 No elimina la importancia de las personas, pero puede reducir la
 dependencia de su memoria al convertir decisiones y estados en
 información compartida.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

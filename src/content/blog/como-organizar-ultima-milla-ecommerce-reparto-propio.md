@@ -83,3 +83,5 @@ No debemos afirmar esas integraciones actualmente. La propuesta vigente se centr
 
 **¿Dónde veo Rutia para e-commerce?**  
 En la página de [logística para e-commerce con reparto propio](https://rutia.com.ar/logistica-para-ecommerce).
+
+[Conocé nuestro software de reparto](/software-de-reparto).

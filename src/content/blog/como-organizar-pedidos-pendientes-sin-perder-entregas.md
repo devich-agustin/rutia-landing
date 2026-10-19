@@ -95,3 +95,5 @@ Puede servir con poco volumen, pero cuando hay varias personas, cambios y estado
 
 **¿Cómo ayuda Rutia?**  
 [Rutia](https://rutia.com.ar/) centraliza pedidos, preparación, entregas, resultados y reprogramaciones para mantener una visión común de la operación.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

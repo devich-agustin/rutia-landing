@@ -105,3 +105,5 @@ concretas y ampliar cuando exista una necesidad real.
 **¿Rutia tiene indicadores y reportes?**\
 Sí. [Rutia](https://rutia.com.ar/) incluye indicadores y reportes sobre
 la operación registrada en el sistema.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

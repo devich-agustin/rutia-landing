@@ -97,3 +97,5 @@ Pedidos, preparación, jornada, responsables y resultados forman una buena base.
 
 **¿Rutia está pensado para este escenario?**  
 Sí. [Rutia](https://rutia.com.ar/) está orientado a PyMEs con reparto propio que necesitan centralizar y ordenar una operación en crecimiento.
+
+[Conocé nuestro software de reparto](/software-de-reparto).

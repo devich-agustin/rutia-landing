@@ -79,3 +79,5 @@ Registrando el cambio y reprogramándola de forma explícita para conservar el h
 
 **¿Dónde puedo ver la propuesta de Rutia para corralones?**  
 En la página de [logística para corralones de Rutia](https://rutia.com.ar/logistica-para-corralones).
+
+[Conocé nuestro software de reparto](/software-de-reparto).

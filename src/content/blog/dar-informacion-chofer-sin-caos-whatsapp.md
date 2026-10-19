@@ -107,3 +107,5 @@ información operativa principal vive en un lugar más estructurado.
 **¿Rutia requiere instalar una app para el chofer?**\
 No. La Vista Chofer de [Rutia](https://rutia.com.ar/) funciona desde el
 navegador.
+
+[Conocé nuestro software de reparto](/software-de-reparto).
