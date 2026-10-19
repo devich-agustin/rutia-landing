@@ -38,6 +38,16 @@ const config: VerticalLandingConfig = {
     "Tu mueblería puede crecer sin sumar más Excel, llamados y papelitos",
   finalText:
     "Mostranos cómo organizás hoy tus entregas y te enseñamos Rutia con un flujo parecido al tuyo.",
+  sectorExample: {
+    title: "Cómo coordinar una jornada de entrega de muebles",
+    paragraphs: [
+      "Una mueblería puede tener programadas la entrega de un sofá, una mesa con sillas y un dormitorio completo. Cada pedido tiene su domicilio, fecha acordada y necesidades de transporte.",
+      "Antes de salir, depósito necesita identificar los muebles preparados; operaciones debe asignar las entregas al camión o flete correspondiente; y ventas necesita poder responder cuando un cliente pregunta por su pedido.",
+      "Rutia reúne la información para organizar las entregas, asignarlas a vehículos y choferes y registrar entregas parciales, fallidas o reprogramadas. No calcula automáticamente el espacio disponible en el vehículo ni coordina por sí solo los horarios con el cliente.",
+    ],
+    blogHref: "/blog/como-organizar-reparto-muebleria",
+    blogLabel: "Leé cómo organizar el reparto de una mueblería",
+  },
   problems: [
     {
       icon: ClipboardList,
@@ -168,6 +178,9 @@ const config: VerticalLandingConfig = {
       "¿Sirve para una mueblería con pocas entregas?",
       "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa. Si realizás más de 20 entregas mensuales, probablemente ya puedas aprovecharla.",
     ],
+    ["¿Cómo organizo la entrega de muebles voluminosos?", "Podés registrar los pedidos, programar las fechas y asignar el camión o flete adecuado. La capacidad y el espacio del vehículo los comprueba tu equipo."],
+    ["¿Puedo repartir con un flete externo?", "Sí. Rutia permite asignar entregas a fletes contratados y que el repartidor consulte su trabajo desde el navegador del celular."],
+    ["¿Qué pasa si el cliente no está para recibir?", "El repartidor registra la entrega fallida y su motivo; después el equipo puede reprogramarla sin perder el historial."],
   ],
 };
 
