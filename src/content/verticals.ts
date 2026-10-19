@@ -303,6 +303,16 @@ export const corralones: VerticalSeoConfig = {
       "Menos llamados para saber qué material salió y cuál sigue pendiente",
     finalText:
       "Contanos cómo coordinan hoy obras, domicilios y transportistas y te mostramos Rutia aplicado a esa jornada.",
+    sectorExample: {
+      title: "Cómo organizar las entregas de un corralón",
+      paragraphs: [
+        "En una misma jornada pueden salir bolsas de cemento para una refacción, arena y piedra para una obra y materiales sanitarios para otro domicilio. Cada pedido tiene un destino, una fecha acordada y un transportista responsable.",
+        "Si una obra cambia su horario de recepción, un pedido todavía no está preparado o la entrega debe completarse en otra visita, la coordinación se complica cuando los cambios quedan entre planillas y mensajes.",
+        "Con Rutia, el equipo organiza los pedidos por fecha, identifica cuáles están preparados, asigna entregas a vehículos propios o fletes y registra el resultado de cada visita. La elección del vehículo y la comprobación de su capacidad siguen a cargo del equipo.",
+      ],
+      blogHref: "/blog/como-organizar-entregas-corralon",
+      blogLabel: "Leé cómo organizar las entregas de un corralón",
+    },
     problems: [
       {
         icon: ClipboardList,
@@ -380,6 +390,9 @@ export const corralones: VerticalSeoConfig = {
         "¿Rutia reemplaza el control de stock?",
         "No. Se enfoca en la preparación, organización, ejecución y resultado de las entregas.",
       ],
+      ["¿Cómo registro una entrega parcial de materiales?", "El repartidor puede marcar una entrega como parcial. El equipo consulta el resultado y coordina lo que queda pendiente."],
+      ["¿Qué hago si una obra cambia la fecha de recepción?", "Podés reprogramar la entrega y mantener el cambio registrado en la operación."],
+      ["¿Cómo coordino varios transportistas el mismo día?", "Asignás las entregas a cada vehículo propio o flete contratado desde el armado de la jornada."],
     ],
   },
 };
@@ -408,6 +421,16 @@ export const casasMateriales: VerticalSeoConfig = {
       "Que la coordinación no dependa de quien conoce todas las planillas",
     finalText:
       "Te mostramos cómo llevar fechas acordadas, preparación y reparto a un único flujo compartido.",
+    sectorExample: {
+      title: "Del pedido en mostrador a la entrega al cliente",
+      paragraphs: [
+        "Una casa de materiales puede recibir pedidos de pinturas, herramientas, revestimientos y sanitarios durante todo el día. Cada cliente puede necesitar una fecha de entrega distinta, aunque la venta ya esté cerrada.",
+        "Antes de despachar hay que coordinar la preparación, confirmar el domicilio, fijar la fecha y asignar un vehículo o flete. Cuando mostrador, depósito y reparto llevan registros separados, los cambios y los pedidos pendientes se vuelven difíciles de seguir.",
+        "Rutia permite cargar pedidos a mano o importarlos desde Excel, consultar el calendario, identificar la preparación y asignar entregas a los recursos disponibles. Después, quien reparte registra el resultado desde su celular. Rutia no sustituye el sistema de ventas ni el control de stock.",
+      ],
+      blogHref: "/blog/como-organizar-entregas-pyme",
+      blogLabel: "Leé cómo organizar las entregas de una PyME",
+    },
     problems: [
       {
         icon: ClipboardList,
@@ -485,6 +508,9 @@ export const casasMateriales: VerticalSeoConfig = {
         "¿Cómo consulto qué pasó con una entrega?",
         "Cada resultado, incidencia o reprogramación queda dentro del historial del pedido.",
       ],
+      ["¿Cómo organizo pedidos vendidos en mostrador?", "Podés cargarlos manualmente o importarlos desde Excel y asignarles fecha y destino para organizar su entrega."],
+      ["¿Cómo sé qué pedidos están preparados?", "El equipo de depósito puede marcar los pedidos listos para que operaciones consulte su estado antes del despacho."],
+      ["¿Qué puedo responder cuando llama un cliente por su entrega?", "Podés consultar el pedido y su historial para conocer el resultado registrado por reparto."],
     ],
   },
 };
