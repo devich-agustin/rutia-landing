@@ -18,6 +18,7 @@ export type VerticalLandingConfig = {
   featuresTitle: string;
   finalTitle: string;
   finalText: string;
+  sectorExample?: { title: string; paragraphs: string[]; blogHref: string; blogLabel: string };
   problems: Array<{ icon: LucideIcon; title: string; text: string }>;
   flow: Array<{ title: string; text: string }>;
   benefits: Array<{ title: string; text: string }>;
@@ -217,6 +218,27 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
             </div>
           </Shell>
         </section>
+
+        {config.sectorExample && (
+          <section className="bg-background py-20 lg:py-28" aria-labelledby="ejemplo-sector">
+            <Shell className="max-w-4xl">
+              <Reveal>
+                <span className="section-label">Un día en tu negocio</span>
+                <h2 id="ejemplo-sector" className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
+                  {config.sectorExample.title}
+                </h2>
+                <div className="mt-7 space-y-5 text-[16px] leading-relaxed text-muted-foreground">
+                  {config.sectorExample.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+                <a href={config.sectorExample.blogHref} className="mt-7 inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4 hover:opacity-80">
+                  {config.sectorExample.blogLabel} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </Reveal>
+            </Shell>
+          </section>
+        )}
 
         <section className="bg-background py-20 lg:py-28">
           <Shell>
