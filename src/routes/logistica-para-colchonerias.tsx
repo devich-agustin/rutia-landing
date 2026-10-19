@@ -22,7 +22,17 @@ const DESCRIPTION =
   "Software de entregas para colchonerías: organizá pedidos, franjas horarias y fletes, y sabé qué pasó con cada entrega sin llamar a nadie. Pedí tu demo gratis.";
 
 const config: VerticalLandingConfig = {
-  breadcrumb: "Colchonerías",
+  sectorExample: {
+    title: "Cómo organizar entregas de colchones y sommiers",
+    paragraphs: [
+      "En una jornada pueden salir colchones de una plaza, sommiers y conjuntos grandes con distintos domicilios y fechas acordadas. Depósito necesita confirmar qué pedidos están listos antes de que llegue el transporte.",
+      "Si el cliente no puede recibir o el flete cambia su disponibilidad, la entrega debe quedar pendiente o reprogramada con un registro claro de lo ocurrido.",
+      "Rutia permite planificar entregas, asignarlas a vehículos y choferes y registrar resultados. La manipulación, el armado y la capacidad del vehículo deben verificarse por fuera del sistema.",
+    ],
+    blogHref: "/blog/como-organizar-reparto-muebleria",
+    blogLabel: "Leé cómo organizar el reparto de productos voluminosos",
+  },
+    breadcrumb: "Colchonerías",
   eyebrow: "Rutia para colchonerías",
   title: "Software de logística para colchonerías",
   intro:
@@ -169,6 +179,8 @@ const config: VerticalLandingConfig = {
       "¿Sirve para una colchonería con pocas entregas?",
       "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa. Si realizás más de 20 entregas mensuales, probablemente ya puedas aprovecharla.",
     ],
+    ["¿Puedo trabajar con fletes contratados?", "Sí. Podés asignar las entregas a vehículos y choferes propios o contratados."],
+    ["¿Rutia calcula cuántos colchones entran en un camión?", "No. La capacidad de carga y la manipulación se verifican por el equipo antes de asignar la entrega."],
   ],
 };
 
