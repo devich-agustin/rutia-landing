@@ -542,6 +542,58 @@ function SoftwareDeRepartoPage() {
           </Shell>
         </section>
 
+        {/* Comparación práctica para equipos que hoy usan planillas y mensajes */}
+        <section className="bg-surface py-20 lg:py-28">
+          <Shell>
+            <Reveal>
+              <div className="max-w-3xl">
+                <span className="section-label">Cuándo dar el siguiente paso</span>
+                <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">
+                  Excel, WhatsApp o un software de reparto: ¿qué cambia?
+                </h2>
+                <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
+                  Una planilla y los mensajes pueden alcanzar cuando hay pocas entregas.
+                  A medida que crece el reparto, conviene tener fechas, responsables y
+                  resultados en un mismo lugar, sin depender de revisar varios chats.
+                </p>
+              </div>
+            </Reveal>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              <article className="block-card h-full p-6">
+                <FileSpreadsheet className="h-6 w-6 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">Excel</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Sirve para listar pedidos y ordenar datos, pero los cambios de fecha,
+                  las asignaciones y los resultados requieren actualización manual.
+                </p>
+              </article>
+              <article className="block-card h-full p-6">
+                <MessagesSquare className="h-6 w-6 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">WhatsApp</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Es útil para comunicarse con clientes y choferes, pero la información
+                  operativa puede quedar dispersa entre conversaciones.
+                </p>
+              </article>
+              <article className="block-card h-full p-6">
+                <ClipboardList className="h-6 w-6 text-primary" />
+                <h3 className="mt-4 text-xl font-bold">Rutia</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  Centraliza pedidos, calendario, preparación, vehículos, choferes y
+                  resultados de entregas. El repartidor consulta y actualiza desde el navegador.
+                </p>
+              </article>
+            </div>
+            <p className="mt-8 max-w-3xl leading-relaxed text-muted-foreground">
+              No hace falta abandonar Excel de golpe: podés importar pedidos usando
+              la plantilla de Rutia. Si querés evaluar cuándo conviene cambiar,
+              leé nuestra <a href="/blog/excel-vs-software-logistica-cuando-dejar-planilla" className="font-semibold text-primary underline underline-offset-4">comparación entre Excel y software logístico</a>.
+              Para organizar fechas y recursos, también podés consultar
+              <a href="/blog/como-planificar-entregas-toda-la-semana" className="ml-1 font-semibold text-primary underline underline-offset-4">cómo planificar entregas semanales</a>.
+            </p>
+          </Shell>
+        </section>
+
         {/* Planes */}
         <section className="bg-surface py-20 lg:py-28">
           <Shell>
