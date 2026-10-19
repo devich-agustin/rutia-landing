@@ -8,7 +8,10 @@ import { join } from "path";
 
 const SITE = "https://rutia.com.ar";
 const DIR = "src/content/blog";
-const TODAY = new Date().toISOString().slice(0, 10);
+// Última modificación editorial comprobada: enlaces internos y metadescripciones
+// actualizados en las notas publicadas el 19/10/2026.
+// No usar la fecha del build: no representa una modificación del contenido.
+const BLOG_CONTENT_UPDATE = "2026-10-19";
 
 const CATEGORIES = [
   "organizacion-operativa",
@@ -94,7 +97,7 @@ const postUrls = posts.map((p) => ({
   loc: `${SITE}/blog/${p.slug}`,
   priority: "0.7",
   changefreq: "monthly",
-  lastmod: p.updatedAt || p.publishedAt || TODAY,
+  lastmod: [p.updatedAt, p.publishedAt, BLOG_CONTENT_UPDATE].filter(Boolean).sort().at(-1),
 }));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -102,7 +105,7 @@ ${[...staticUrls, ...postUrls]
   .map(
     (u) => `  <url>
     <loc>${u.loc}</loc>
-    <lastmod>${u.lastmod || TODAY}</lastmod>
+    ${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ""}
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`,
