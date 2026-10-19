@@ -935,7 +935,7 @@ export const ecommerce: VerticalSeoConfig = {
       "Cuando crecen compradores y direcciones, una planilla y un grupo de chat dejan de mostrar qué fue entregado y qué sigue pendiente.",
     coordinationTitle: "Del pedido exportado a una jornada de reparto concreta",
     coordinationIntro:
-      "Rutia no es una plataforma de e-commerce ni sincroniza tiendas automáticamente. Podés importar pedidos desde Excel y organizar la operación posterior a la venta.",
+      "Rutia no reemplaza tu tienda online: podés conectar tu cuenta vendedora de Mercado Libre para gestionar las entregas y también importar pedidos desde Excel o cargarlos manualmente.",
     featuresTitle: "Control para la etapa que empieza después del checkout",
     finalTitle: "Que el crecimiento online no desordene tu reparto propio",
     finalText:
@@ -1019,8 +1019,8 @@ export const ecommerce: VerticalSeoConfig = {
     features: [...standardFeatures],
     faq: [
       [
-        "¿Rutia se integra automáticamente con Tiendanube, Mercado Libre, Shopify o WooCommerce?",
-        "No. Actualmente podés importar pedidos desde Excel o cargarlos manualmente para organizar la entrega.",
+        "¿Rutia se integra con Mercado Libre u otras plataformas de e-commerce?",
+        "Sí. Podés conectar tu cuenta vendedora de Mercado Libre con Rutia para gestionar las entregas. También podés importar pedidos desde Excel o cargarlos manualmente. No anunciamos una conexión directa con Tiendanube, Shopify o WooCommerce.",
       ],
       [
         "¿Rutia reemplaza mi plataforma de e-commerce?",
