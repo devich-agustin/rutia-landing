@@ -1074,6 +1074,31 @@ function Pricing() {
   );
 }
 
+function FreeTrialCta() {
+  return (
+    <section className="bg-background py-16 lg:py-20" aria-labelledby="trial-title">
+      <Shell>
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2rem] bg-ink px-7 py-12 text-white shadow-xl sm:px-12 lg:px-16 lg:py-14">
+            <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full bg-brand/20 blur-3xl" />
+            <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+              <div className="max-w-2xl">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-cyan">Empezá con Rutia</p>
+                <h2 id="trial-title" className="text-3xl font-black tracking-tight sm:text-4xl">Probá Rutia gratis durante 1 mes</h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">Organizá pedidos, vehículos, choferes y entregas desde un solo lugar. Conocé cómo funciona Rutia en tu operación.</p>
+              </div>
+              <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto">
+                <a href="https://demo.rutia.com.ar/" className="button-primary inline-flex min-h-13 items-center justify-center gap-2 px-6 text-center text-base font-bold text-white" target="_blank" rel="noopener noreferrer">Quiero probar Rutia gratis <ArrowRight className="h-4 w-4" /></a>
+                <a href="#demo" onClick={trackClickDemo} className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline">¿Preferís una demo? Agendá una reunión</a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </Shell>
+    </section>
+  );
+}
+
 function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
@@ -1525,6 +1550,7 @@ function Landing() {
         <About />
         <Philosophy />
         <Pricing />
+        <FreeTrialCta />
         <Faq />
         <DemoCta />
       </main>
