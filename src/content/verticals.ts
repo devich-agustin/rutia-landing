@@ -75,7 +75,17 @@ export const electrodomesticos: VerticalSeoConfig = {
     "Software de entregas para casas de electrodomésticos: controlá qué sale del depósito, asigná cada entrega a un vehículo o flete y registrá entregas y fallidas.",
   schemaName: "Logística para electrodomésticos",
   landing: {
-    breadcrumb: "Electrodomésticos",
+    sectorExample: {
+      title: "Cómo coordinar entregas de electrodomésticos grandes",
+      paragraphs: [
+        "En una misma jornada puede haber una heladera, un lavarropas y un televisor para domicilios distintos. Antes de asignar cada entrega, depósito debe confirmar que el producto correcto está preparado y que el equipo eligió el transporte adecuado.",
+        "Cuando el comprador cambia la fecha o no está para recibir, la entrega necesita un resultado registrado y una nueva planificación. Si esa información queda solo en mensajes, ventas no sabe qué responder.",
+        "Con Rutia podés organizar las fechas, identificar pedidos preparados, asignar vehículos y choferes y registrar incidencias. La instalación, la manipulación segura y la capacidad del vehículo deben coordinarse fuera del software.",
+      ],
+      blogHref: "/blog/como-evitar-retrasos-entregas-pyme",
+      blogLabel: "Leé cómo evitar retrasos en las entregas",
+    },
+        breadcrumb: "Electrodomésticos",
     eyebrow: "Rutia para electrodomésticos",
     title: "Software de logística para tiendas de electrodomésticos",
     intro:
@@ -169,6 +179,8 @@ export const electrodomesticos: VerticalSeoConfig = {
         "¿Puedo importar pedidos desde Excel?",
         "Sí. Rutia permite importarlos con una plantilla y luego organizar su preparación y entrega.",
       ],
+      ["¿Qué pasa si el comprador cambia el día de entrega?", "Podés reprogramar la entrega y conservar el registro del cambio para que el equipo trabaje con la fecha actual."],
+      ["¿Rutia organiza la instalación de una heladera o lavarropas?", "No. Organiza la entrega y su resultado, no la instalación ni el servicio técnico."],
     ],
   },
 };
@@ -180,7 +192,17 @@ export const ferreterias: VerticalSeoConfig = {
     "Software de reparto para ferreterías: ordená pedidos, prepará en depósito, asigná entregas a camionetas o fletes y respondé al cliente al instante. Demo gratis.",
   schemaName: "Logística para ferreterías",
   landing: {
-    breadcrumb: "Ferreterías",
+    sectorExample: {
+      title: "Del mostrador al reparto de una ferretería",
+      paragraphs: [
+        "Una ferretería puede reunir en un mismo día pedidos de herramientas, pinturas y materiales para pequeñas obras. Lo que se vende en mostrador no siempre está listo para salir de inmediato.",
+        "Si un cliente agrega productos después de la venta, el equipo necesita revisar la preparación y la fecha de entrega antes de confirmar la salida. El objetivo es evitar que el chofer reciba indicaciones contradictorias.",
+        "Rutia centraliza los pedidos a entregar, su preparación, la jornada y los recursos asignados. El stock, los cobros y la facturación continúan en los sistemas que ya usa la ferretería.",
+      ],
+      blogHref: "/blog/como-coordinar-ventas-y-logistica",
+      blogLabel: "Leé cómo coordinar ventas y logística",
+    },
+        breadcrumb: "Ferreterías",
     eyebrow: "Rutia para ferreterías",
     title: "Software de logística para ferreterías",
     intro:
@@ -274,6 +296,8 @@ export const ferreterias: VerticalSeoConfig = {
         "¿Queda registro de una entrega fallida?",
         "Sí. La incidencia y la posterior reprogramación quedan en el historial.",
       ],
+      ["¿Cómo organizo las entregas vendidas por mostrador?", "Podés cargar o importar los pedidos y asignarles una fecha de entrega, un vehículo y un responsable."],
+      ["¿Qué hago si un pedido todavía no está preparado?", "Mantenelo identificado como pendiente de preparación antes de incorporarlo a una salida."],
     ],
   },
 };
@@ -522,7 +546,17 @@ export const distribuidoras: VerticalSeoConfig = {
     "Software de reparto para distribuidoras: organizá entregas por zona, asigná cada pedido a un vehículo y controlá entregadas, parciales y fallidas al instante.",
   schemaName: "Logística para distribuidoras",
   landing: {
-    breadcrumb: "Distribuidoras",
+    sectorExample: {
+      title: "Cómo organizar una jornada con múltiples clientes",
+      paragraphs: [
+        "Una distribuidora puede tener pedidos para comercios de varias zonas, con diferentes cantidades y fechas de recepción. Antes de salir, hay que revisar qué pedidos están listos y qué recursos se usarán.",
+        "Cuando se suma un pedido urgente o un cliente modifica su disponibilidad, la planificación necesita actualizarse sin perder el resto de las entregas comprometidas.",
+        "Rutia permite ordenar pedidos por jornada, asignarlos a choferes y vehículos propios o contratados y registrar el resultado de cada visita. La elección de la secuencia de paradas sigue a cargo del equipo.",
+      ],
+      blogHref: "/blog/como-organizar-entregas-distribuidora",
+      blogLabel: "Leé cómo organizar entregas de una distribuidora",
+    },
+        breadcrumb: "Distribuidoras",
     eyebrow: "Rutia para distribuidoras",
     title: "Software de logística para distribuidoras",
     intro:
@@ -632,6 +666,8 @@ export const distribuidoras: VerticalSeoConfig = {
         "¿El repartidor instala una aplicación?",
         "No. Accede a sus entregas desde el navegador del celular.",
       ],
+      ["¿Puedo combinar vehículos propios y fletes?", "Sí. Podés asignar entregas a recursos propios o contratados según cómo organices la operación."],
+      ["¿Cómo registro un comercio que no pudo recibir?", "El repartidor puede registrar el resultado de la visita y el equipo puede gestionar una reprogramación."],
     ],
   },
 };
@@ -643,7 +679,17 @@ export const bicicleterias: VerticalSeoConfig = {
     "Software de entregas para bicicleterías y casas de deportes: organizá pedidos, envíos en moto o camioneta y el estado de cada entrega desde el celular.",
   schemaName: "Logística para bicicleterías",
   landing: {
-    breadcrumb: "Bicicleterías y deportes",
+    sectorExample: {
+      title: "Cómo coordinar bicicletas, accesorios y pedidos a domicilio",
+      paragraphs: [
+        "En una bicicletería, una entrega puede ser una bicicleta armada, un rodado infantil o un conjunto de accesorios. No todos los pedidos necesitan el mismo vehículo ni están listos al mismo tiempo.",
+        "Antes de programar la salida, el equipo debe confirmar qué está preparado y qué dirección corresponde a cada compra. Una modificación de último momento no debería perderse en un chat.",
+        "Rutia ayuda a organizar la fecha, el responsable y el resultado de cada entrega. El armado técnico de la bicicleta y la comprobación del espacio disponible en el transporte siguen a cargo del negocio.",
+      ],
+      blogHref: "/blog/como-organizar-entregas-clientes-distintas-zonas",
+      blogLabel: "Leé cómo organizar entregas por zonas",
+    },
+        breadcrumb: "Bicicleterías y deportes",
     eyebrow: "Rutia para bicicleterías",
     title: "Software de logística para bicicleterías y tiendas deportivas",
     intro:
@@ -739,6 +785,8 @@ export const bicicleterias: VerticalSeoConfig = {
         "¿Rutia controla inventario o reparaciones?",
         "No. No gestiona stock, servicio técnico ni taller.",
       ],
+      ["¿Puedo organizar bicicletas y accesorios en el mismo calendario?", "Sí. Los pedidos pueden programarse por fecha y asignarse al recurso que el equipo considere adecuado."],
+      ["¿Rutia calcula si una bicicleta entra en el vehículo?", "No. La selección del vehículo y la verificación de su capacidad son decisiones operativas del equipo."],
     ],
   },
 };
@@ -750,7 +798,17 @@ export const iluminacion: VerticalSeoConfig = {
     "Software de logística para casas de iluminación: controlá pedidos, preparación en depósito y entregas a clientes y obras desde un solo lugar. Pedí tu demo.",
   schemaName: "Logística para tiendas de iluminación",
   landing: {
-    breadcrumb: "Iluminación",
+    sectorExample: {
+      title: "Del depósito de iluminación a la entrega programada",
+      paragraphs: [
+        "Un negocio de iluminación puede repartir lámparas, artefactos y cajas de distintos tamaños. Algunos pedidos requieren especial cuidado y otros todavía están pendientes de preparación.",
+        "Si ventas acuerda una fecha que depósito no conoce, o un cliente cambia el domicilio, el reparto puede salir con información desactualizada.",
+        "Con Rutia, las entregas se centralizan en un calendario y se asignan a vehículos y choferes. El embalaje, la fragilidad de los productos y cualquier instalación eléctrica se gestionan fuera de la plataforma.",
+      ],
+      blogHref: "/blog/como-evitar-errores-direccion-entregas",
+      blogLabel: "Leé cómo evitar errores de dirección",
+    },
+        breadcrumb: "Iluminación",
     eyebrow: "Rutia para tiendas de iluminación",
     title: "Software de logística para tiendas de iluminación",
     intro:
@@ -843,6 +901,8 @@ export const iluminacion: VerticalSeoConfig = {
         "¿Rutia reemplaza mi control de stock?",
         "No. La función de Rutia comienza en la organización operativa de lo que debe entregarse.",
       ],
+      ["¿Cómo evito enviar un pedido a una dirección incorrecta?", "Registrá y verificá los datos del destinatario antes de asignar la entrega; Rutia centraliza esa información para el equipo."],
+      ["¿Rutia coordina instalaciones eléctricas?", "No. Rutia está enfocado en la logística de entrega, no en servicios de instalación."],
     ],
   },
 };
@@ -854,7 +914,17 @@ export const ecommerce: VerticalSeoConfig = {
     "Software de última milla para e-commerce con reparto propio: organizá pedidos, asigná entregas a choferes o fletes y registrá cada entrega desde el celular.",
   schemaName: "Logística para e-commerce",
   landing: {
-    breadcrumb: "E-commerce con reparto propio",
+    sectorExample: {
+      title: "De la compra online al reparto propio",
+      paragraphs: [
+        "Una tienda online puede acumular pedidos de distintas zonas durante el día. Antes de salir, necesita distinguir lo vendido de lo efectivamente preparado para despacho.",
+        "Cuando un comprador cambia la dirección o una visita falla, el equipo debe registrar qué ocurrió para evitar duplicar esfuerzos o perder el pedido.",
+        "Rutia permite organizar las entregas, asignarlas a choferes y vehículos y registrar resultados desde el celular. No reemplaza la tienda online ni procesa pagos; se ocupa de la coordinación del reparto.",
+      ],
+      blogHref: "/blog/como-organizar-ultima-milla-ecommerce-reparto-propio",
+      blogLabel: "Leé cómo organizar la última milla de tu e-commerce",
+    },
+        breadcrumb: "E-commerce con reparto propio",
     eyebrow: "Después de la venta online",
     title: "Software de logística para e-commerce con reparto propio",
     intro:
@@ -972,6 +1042,8 @@ export const ecommerce: VerticalSeoConfig = {
         "¿Puedo saber qué pedidos siguen pendientes?",
         "Sí. Los resultados y el historial permiten distinguir lo entregado de lo que aún necesita resolución.",
       ],
+      ["¿Necesito reemplazar mi tienda online?", "No. Rutia organiza las entregas posteriores a la venta; no reemplaza el carrito ni la gestión de pagos."],
+      ["¿El chofer necesita instalar una aplicación?", "No. Puede acceder a sus entregas desde el navegador de su celular."],
     ],
   },
 };
