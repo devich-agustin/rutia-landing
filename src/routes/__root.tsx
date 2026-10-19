@@ -78,7 +78,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const GOOGLE_SITE_VERIFICATION = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION ?? "";
 
 const SITE_URL = "https://rutia.com.ar";
-const SITE_TITLE = "Rutia — El centro de control de tu logística";
+const SITE_TITLE = "Software de Gestión de Entregas y Reparto | Rutia";
 const SITE_DESCRIPTION =
   "Rutia es el software de gestión de entregas para PyMEs argentinas: pedidos, depósito, vehículos, choferes y fletes en un solo lugar, sin Excel ni papelitos.";
 const OG_IMAGE = `${SITE_URL}/og-rutia-control-v2.jpg`;

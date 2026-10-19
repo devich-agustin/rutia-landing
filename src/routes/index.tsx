@@ -606,6 +606,13 @@ function Features() {
           title="Un solo lugar para toda tu operación"
           desc="Del pedido a la entrega, cada paso queda registrado, visible y bajo control. Como una torre de control, pero para tus entregas."
         />
+        <p className="mt-5 text-[14px] leading-relaxed text-white/65">
+          Conocé en detalle nuestro{" "}
+          <Link to="/software-de-reparto" className="font-semibold text-cyan underline underline-offset-4 hover:text-white">
+            software de reparto para PyMEs
+          </Link>
+          {" "}y cómo organizar las entregas desde un solo lugar.
+        </p>
         {/* La imagen manda: calendario grande a la izquierda, los módulos que muestra a su lado */}
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="space-y-3 lg:order-1 lg:col-span-4">
@@ -1410,6 +1417,7 @@ export function Footer() {
                 "Navegación",
                 [
                   ["Producto", "/#producto"],
+                  ["Software de reparto", "/software-de-reparto"],
                   ["Planes", "/#precios"],
                   ["Quiénes somos", "/#nosotros"],
                   ["Blog", "/blog"],
