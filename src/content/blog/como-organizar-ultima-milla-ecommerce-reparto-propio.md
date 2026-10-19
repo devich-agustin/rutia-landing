@@ -43,11 +43,11 @@ Una venta no debería quedar simplemente como “despachada” si internamente n
 
 Registrar el resultado conecta la última milla con la operación real.
 
-## No presupongas integraciones que todavía no existen
+## Conectá Mercado Libre y organizá tus entregas
 
-Una buena organización puede empezar con importación y procesos claros. No corresponde atribuir actualmente a [Rutia](https://rutia.com.ar/logistica-para-ecommerce) integraciones automáticas con Tiendanube, Mercado Libre, Shopify o WooCommerce.
+Si vendés por Mercado Libre, podés conectar tu cuenta vendedora con [Rutia](https://rutia.com.ar/logistica-para-ecommerce) para gestionar las entregas desde un solo lugar. También podés importar pedidos desde Excel o cargarlos manualmente.
 
-La necesidad de integraciones puede evaluarse después según el volumen y los canales reales de la empresa.
+Rutia no reemplaza tu tienda online: ayuda a organizar la preparación, los choferes, los recorridos y el resultado de cada entrega. No anunciamos una integración directa con Tiendanube, Shopify o WooCommerce.
 
 ## Conclusión
 
@@ -79,7 +79,7 @@ Depende de la operación. Cuando existe reparto propio, puede hacer falta una he
 No necesariamente. Es preferible darle una vista con la información operativa que necesita.
 
 **¿Rutia se integra hoy con Tiendanube o Mercado Libre?**  
-No debemos afirmar esas integraciones actualmente. La propuesta vigente se centra en la gestión operativa de pedidos y entregas.
+Sí, podés conectar tu cuenta vendedora de Mercado Libre con Rutia para gestionar las entregas. Para otros canales, podés cargar pedidos manualmente o importarlos desde Excel; no anunciamos una conexión directa con Tiendanube.
 
 **¿Dónde veo Rutia para e-commerce?**  
 En la página de [logística para e-commerce con reparto propio](https://rutia.com.ar/logistica-para-ecommerce).
