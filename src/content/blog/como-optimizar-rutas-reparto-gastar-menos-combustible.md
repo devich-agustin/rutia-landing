@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Una guía práctica para ordenar recorridos, reducir
+description: "Reducí kilómetros innecesarios en tus rutas de reparto: agrupá destinos por zona, evitá viajes fallidos y planificá recorridos según pedidos realmente listos."
   kilómetros innecesarios y gastar menos combustible en una operación de
   reparto.
 draft: false

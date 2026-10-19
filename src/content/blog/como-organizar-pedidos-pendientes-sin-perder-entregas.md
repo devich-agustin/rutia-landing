@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar pedidos pendientes sin perder entregas"
-description: "Cómo ordenar pedidos pendientes, preparación, fechas y entregas para evitar olvidos y mantener una operación de reparto clara en una PyME."
+description: "Evitá que los pedidos pendientes se pierdan entre planillas y mensajes: distinguí estados, preparación, fechas comprometidas y próximas entregas."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

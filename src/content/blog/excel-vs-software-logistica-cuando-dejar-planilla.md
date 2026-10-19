@@ -1,6 +1,6 @@
 ---
 title: "Excel vs. software de logística: cuándo conviene dejar la planilla"
-description: "Señales para saber cuándo Excel sigue siendo suficiente y cuándo conviene pasar la gestión de entregas a un software específico."
+description: "¿Excel todavía alcanza para gestionar tus entregas? Compará la planilla con un software logístico y detectá cuándo conviene centralizar pedidos y reparto."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: excel-y-planillas

@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Cómo ordenar la información de las entregas para que el
+description: "Dale a cada chofer la información necesaria para repartir sin cadenas de WhatsApp: direcciones, indicaciones, paradas asignadas y estados de entrega."
   chofer tenga lo necesario sin depender de mensajes dispersos en
   WhatsApp.
 draft: false

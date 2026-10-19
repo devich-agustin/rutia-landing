@@ -1,6 +1,6 @@
 ---
 title: "Qué debe tener un software para organizar repartos y entregas"
-description: "Las funciones esenciales que conviene evaluar en un software para organizar repartos: pedidos, preparación, recursos, ejecución e historial."
+description: "Conocé las funciones clave de un software para organizar repartos: pedidos, preparación, choferes, vehículos, seguimiento, reprogramaciones e historial."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: software-logistico

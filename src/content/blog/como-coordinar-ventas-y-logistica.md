@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Cómo ordenar el paso de información entre ventas,
+description: "Aprendé a coordinar ventas y logística sin prometer entregas imposibles: pedidos compartidos, fechas confirmadas, roles claros y cambios visibles para todos."
   preparación y reparto para evitar fechas imposibles, cambios perdidos
   y promesas difíciles de cumplir.
 draft: false

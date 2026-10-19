@@ -1,6 +1,6 @@
 ---
 title: "Qué hacer cuando aparecen entregas urgentes de último momento"
-description: "Cómo decidir si sumar una entrega urgente al reparto sin desordenar toda la jornada ni incumplir compromisos existentes."
+description: "¿Te piden una entrega urgente cuando el reparto ya salió? Evaluá preparación, prioridades y capacidad antes de alterar recorridos y compromisos."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

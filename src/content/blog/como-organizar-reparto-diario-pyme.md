@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Una guía práctica para organizar pedidos, preparación,
+description: "Organizá el reparto diario de tu PyME con pedidos listos, asignación de choferes y vehículos, recorridos claros y registro de entregas pendientes."
   choferes y entregas del día sin depender de planillas y mensajes
   sueltos.
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar el reparto cuando aumentan las ventas"
-description: "Qué cambiar en la logística cuando crecen las ventas y el método de reparto que antes funcionaba empieza a generar desorden."
+description: "¿Crecieron las ventas y el reparto se desordenó? Aprendé a organizar más pedidos, priorizar entregas y distribuir recursos sin depender de improvisaciones."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

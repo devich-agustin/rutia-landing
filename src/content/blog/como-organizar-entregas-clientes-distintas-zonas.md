@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar entregas a clientes de distintas zonas"
-description: "Cómo ordenar entregas distribuidas en distintas zonas sin cruzar recorridos innecesariamente ni perder prioridades operativas."
+description: "Aprendé a organizar entregas en distintas zonas sin cruzar recorridos: agrupá destinos, respetá prioridades y asigná choferes según la jornada real."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

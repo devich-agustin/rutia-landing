@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Qué revisar antes, durante y después del reparto para
+description: "Reducí las entregas fallidas de tu PyME revisando direcciones, preparación, coordinación con clientes y registro de incidencias para evitar nuevos intentos."
   reducir entregas fallidas, reprogramaciones y viajes repetidos en una
   PyME.
 draft: false

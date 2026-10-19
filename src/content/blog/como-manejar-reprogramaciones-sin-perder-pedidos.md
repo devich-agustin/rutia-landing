@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Un método simple para registrar, reprogramar y seguir
+description: "Organizá las reprogramaciones de entregas sin duplicar ni perder pedidos: registrá motivos, nuevas fechas, responsables e historial de cada intento."
   entregas que cambian de fecha sin perderlas entre chats y planillas.
 draft: false
 intent: tofu

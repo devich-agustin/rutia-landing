@@ -1,6 +1,6 @@
 ---
 title: "Cómo reducir las llamadas de clientes preguntando por sus pedidos"
-description: "Cómo mejorar la información interna para responder más rápido cuando los clientes preguntan por el estado de sus entregas."
+description: "¿Tus clientes llaman para saber dónde está su pedido? Mejorá la información interna sobre fechas, responsables y resultados para responder sin improvisar."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: control-y-trazabilidad

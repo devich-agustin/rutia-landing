@@ -1,6 +1,6 @@
 ---
 title: "Qué es un software de gestión de entregas y para qué sirve"
-description: "Qué hace un software de gestión de entregas, qué problemas resuelve y cuándo puede ser útil para una PyME con reparto propio."
+description: "Qué es un software de gestión de entregas, para qué sirve y cómo ayuda a una PyME a organizar pedidos, choferes, vehículos y resultados del reparto."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: software-logistico

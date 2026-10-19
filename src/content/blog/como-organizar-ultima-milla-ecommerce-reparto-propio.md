@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar la última milla de un e-commerce con reparto propio"
-description: "Cómo pasar de la venta online a una operación ordenada de preparación, reparto y resultado cuando un e-commerce realiza sus propias entregas."
+description: "Organizá la última milla de tu e-commerce con reparto propio: pedidos, preparación, asignación de entregas, recorridos y registro de resultados."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: logistica-por-sector

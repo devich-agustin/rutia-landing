@@ -1,6 +1,6 @@
 ---
 title: "10 señales de que tu logística ya quedó chica (aunque todavía funcione)"
-description: "¿Más llamadas, reprogramaciones y urgencias, pero todo sale? 10 señales de que tu operación creció más rápido que la forma de coordinarla."
+description: "Diez señales de que la logística de tu PyME quedó chica: reclamos, urgencias, reprogramaciones y falta de visibilidad aunque las entregas todavía salgan."
 slug: senales-logistica-pyme-quedo-chica
 publishedAt: 2026-07-21
 author: Equipo de Rutia

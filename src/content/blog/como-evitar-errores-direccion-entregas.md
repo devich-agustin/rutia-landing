@@ -1,6 +1,6 @@
 ---
 title: "Cómo evitar errores de dirección en las entregas"
-description: "Cómo reducir direcciones incompletas, datos contradictorios y viajes innecesarios antes de que el chofer salga a repartir."
+description: "Evitá entregas fallidas por direcciones incorrectas: qué datos pedir al cliente, cómo validarlos antes de salir y cómo registrar cambios sin confusiones."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: control-y-trazabilidad

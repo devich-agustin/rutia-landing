@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Cómo reducir la dependencia del encargado de logística y
+description: "¿Todo se frena cuando falta el encargado de logística? Centralizá pedidos, estados, responsables e historial para que el reparto no dependa de una sola persona."
   lograr que el reparto pueda continuar aunque una persona clave no esté
   disponible.
 draft: false

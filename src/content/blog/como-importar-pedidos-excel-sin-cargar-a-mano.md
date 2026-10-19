@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Cómo preparar una planilla e importar pedidos para reducir
+description: "¿Tenés tus pedidos en Excel? Aprendé a ordenar columnas, revisar direcciones y validar datos para importarlos sin volver a cargar cada entrega a mano."
   carga manual y errores cuando una PyME ya trabaja con Excel.
 draft: false
 intent: tofu

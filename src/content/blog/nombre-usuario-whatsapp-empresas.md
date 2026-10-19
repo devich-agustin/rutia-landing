@@ -1,6 +1,6 @@
 ---
 title: "Nombre de usuario de WhatsApp para empresas: cómo reservarlo"
-description: "WhatsApp permite reservar un nombre de usuario tipo @tuempresa. Qué es, cómo reservarlo y qué saber antes de vincularlo con Instagram."
+description: "Conocé qué es el nombre de usuario de WhatsApp para empresas, cómo reservar un @tuempresa y qué revisar antes de vincularlo con Instagram."
 publishedAt: 2026-07-22
 author: Equipo de Rutia
 category: control-y-trazabilidad

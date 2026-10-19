@@ -1,6 +1,6 @@
 ---
 title: "Cómo saber cuándo tu logística quedó chica para el volumen de ventas"
-description: "Señales de que la forma actual de organizar pedidos y entregas ya no acompaña el volumen de ventas de una PyME."
+description: "Descubrí cuándo la logística de tu PyME deja de acompañar las ventas: atrasos, reclamos, pedidos sin seguimiento y exceso de coordinación manual."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: software-logistico

@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar el reparto de una mueblería"
-description: "Cómo coordinar pedidos, preparación, fechas, choferes y entregas en una mueblería con reparto propio o fletes contratados."
+description: "Aprendé a organizar el reparto de una mueblería: pedidos voluminosos, preparación, fechas acordadas, vehículos, choferes y entregas reprogramadas."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: logistica-por-sector

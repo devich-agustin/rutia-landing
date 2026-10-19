@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar el reparto cuando tenés varios choferes y vehículos"
-description: "Cómo asignar entregas, choferes y vehículos sin depender de chats separados cuando una PyME empieza a manejar varios recursos."
+description: "Coordiná varios choferes y vehículos sin duplicar entregas: armá jornadas, asigná responsables y mantené visible qué lleva cada recurso y qué falta."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Qué indicadores simples puede mirar una PyME para entender
+description: "Medí la eficiencia de tu reparto con indicadores útiles para una PyME: entregas completadas, fallidas, reprogramaciones y evolución de los resultados."
   si su reparto funciona bien y dónde aparecen fallos o
   reprogramaciones.
 draft: false

@@ -1,7 +1,7 @@
 ---
 author: Equipo de Rutia
 category: control-y-trazabilidad
-description: Qué variables comparar para decidir entre reparto propio,
+description: "¿Reparto propio o entregas tercerizadas? Compará costos, volumen, zonas, flexibilidad y control operativo para decidir qué modelo conviene a tu PyME."
   fletes contratados o un esquema mixto de entregas en una PyME.
 draft: false
 intent: tofu

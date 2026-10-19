@@ -1,6 +1,6 @@
 ---
 title: "Cómo elegir un software de logística para una PyME"
-description: "Qué evaluar antes de elegir un software de logística para una PyME: operación real, facilidad de uso, roles, implementación y capacidad de seguimiento."
+description: "¿Buscás un software de logística para tu PyME? Compará facilidad de uso, gestión de pedidos, roles, reprogramaciones e historial antes de decidir."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: software-logistico

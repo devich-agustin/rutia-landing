@@ -1,6 +1,6 @@
 ---
 title: "Cómo hacer seguimiento de entregas sin GPS en tiempo real"
-description: "Cómo mejorar la trazabilidad de las entregas registrando estados, responsables y resultados aunque no uses seguimiento GPS en tiempo real."
+description: "Hacé seguimiento de entregas sin GPS en tiempo real: registrá responsables, estados, resultados e incidencias para saber qué salió y qué quedó pendiente."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: control-y-trazabilidad

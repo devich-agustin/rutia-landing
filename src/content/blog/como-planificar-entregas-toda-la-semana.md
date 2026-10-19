@@ -1,6 +1,6 @@
 ---
 title: "Cómo planificar las entregas de toda la semana sin perder el control del día a día"
-description: "Cómo combinar una visión semanal de entregas con la planificación diaria para anticipar carga de trabajo sin rigidizar la operación."
+description: "Planificá las entregas de toda la semana sin perder flexibilidad: fechas comprometidas, pedidos preparados, capacidad de reparto y ajustes diarios."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

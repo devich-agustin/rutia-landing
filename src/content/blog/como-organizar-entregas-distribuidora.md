@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar las entregas de una distribuidora"
-description: "Cómo ordenar muchos pedidos, destinos, preparación y jornadas de reparto en una distribuidora que realiza sus propias entregas."
+description: "Ordená las entregas de tu distribuidora aunque crezca el volumen: centralizá pedidos, prepará despachos y coordiná recorridos, choferes y resultados."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: logistica-por-sector

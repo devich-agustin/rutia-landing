@@ -1,6 +1,6 @@
 ---
 title: "Cómo evitar retrasos en las entregas de una PyME"
-description: "Qué revisar para reducir retrasos en las entregas: preparación, fechas, información, planificación diaria y seguimiento de resultados."
+description: "Descubrí cómo reducir retrasos en las entregas de tu PyME coordinando preparación, fechas prometidas, recorridos, cambios de último momento y resultados."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: control-y-trazabilidad

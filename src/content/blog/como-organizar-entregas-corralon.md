@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar las entregas de un corralón"
-description: "Cómo ordenar pedidos, preparación, destinos, vehículos y reprogramaciones en un corralón que realiza entregas a clientes y obras."
+description: "¿Tenés un corralón con reparto propio? Organizá pedidos para obras y clientes, preparación, vehículos, fechas y reprogramaciones desde una misma operación."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: logistica-por-sector

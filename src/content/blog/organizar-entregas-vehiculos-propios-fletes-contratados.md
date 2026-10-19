@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar entregas con vehículos propios y fletes contratados"
-description: "Cómo coordinar una operación mixta de reparto con vehículos propios y fletes contratados sin perder visibilidad de las entregas."
+description: "Aprendé a coordinar entregas con vehículos propios y fletes contratados: elegí recursos según la demanda y mantené pedidos, responsables y resultados visibles."
 publishedAt: 2026-09-18
 author: Equipo de Rutia
 category: organizacion-operativa

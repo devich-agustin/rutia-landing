@@ -1,6 +1,6 @@
 ---
 title: "WhatsApp va a cobrar los mensajes de servicio desde octubre de 2026: qué cambia para tu PyME"
-description: "Qué cambia con el cobro de los mensajes de servicio de la API de WhatsApp Business desde octubre de 2026, a quién afecta y qué no cambia."
+description: "Entendé qué cambia en octubre de 2026 con los mensajes de servicio de WhatsApp Business API, a qué empresas afecta y qué pasa con la app habitual."
 publishedAt: 2026-07-22
 author: Equipo de Rutia
 category: control-y-trazabilidad

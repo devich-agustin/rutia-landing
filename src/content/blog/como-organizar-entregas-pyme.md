@@ -1,6 +1,6 @@
 ---
 title: "Cómo organizar las entregas de una PyME: guía completa"
-description: "Guía paso a paso para ordenar las entregas de tu PyME: centralizar pedidos, armar el día, confirmar en la calle y registrar qué pasó. Con método, sin cambiar todo de golpe."
+description: "Guía para organizar las entregas de una PyME: desde el registro de pedidos y la preparación hasta la planificación diaria, los choferes y el seguimiento."
 slug: como-organizar-entregas-pyme
 publishedAt: 2026-07-14
 author: Equipo de Rutia
