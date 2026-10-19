@@ -405,18 +405,13 @@ function Hero() {
       />
       <Shell className="relative grid items-center gap-12 pb-16 pt-32 lg:min-h-[720px] lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-32">
         <div className="relative z-10 lg:col-span-7 lg:pr-6">
-          <div className="animate-enter">
-            <span className="eyebrow-dark">
-              <span className="status-dot" />
-              Para empresas que entregan lo que venden
-            </span>
-          </div>
           <h1
             className="animate-enter mt-6 text-[2.85rem] font-black leading-[0.98] tracking-[-0.055em] sm:text-[4.25rem] lg:text-[5.25rem]"
             style={{ animationDelay: "80ms" }}
           >
-            <span className="mb-4 block text-[12px] font-semibold uppercase leading-normal tracking-[0.12em] text-[#AAB6C8] sm:text-[13px]">
-              Software de gestión de entregas para PyMEs
+            <span className="mb-4 flex items-center gap-2 whitespace-nowrap text-[10px] font-semibold uppercase leading-normal tracking-[0.06em] text-[#AAB6C8] sm:text-[12px] sm:tracking-[0.12em]">
+              <span className="status-dot shrink-0" aria-hidden="true" />
+              Software de entregas para PyMEs
             </span>
             <span className="block max-w-[12ch]">
               Tus entregas. <span className="text-brand">Bajo control.</span>
