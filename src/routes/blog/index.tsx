@@ -8,7 +8,7 @@ export const Route = createFileRoute("/blog/")({
   validateSearch: (s: Record<string, unknown>): { p?: number } => ({
     p: s.p === undefined ? undefined : Math.max(1, Number(s.p) || 1),
   }),
-  head: () => ({
+  head: ({ match }) => ({
     meta: [
       { title: "Blog de Rutia — Logística y entregas para PyMEs" },
       {
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/blog/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:description", content: "Guías prácticas para organizar la logística de tu PyME: reparto diario, reprogramaciones, fletes, Excel vs. software y cómo reducir las entregas fallidas." },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/blog` }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/blog${(match.search.p ?? 1) > 1 ? `?p=${match.search.p}` : ""}` }],
   }),
 });
 
