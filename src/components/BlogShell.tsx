@@ -192,6 +192,10 @@ export function ArticleCta({ intent }: { intent: Post["intent"] }) {
         </p>
         <p className="mt-2 text-[15px] text-[#9CA9C0]">
           Pedí una demo de 30 minutos y vela funcionando con entregas como las tuyas.
+          También podés conocer primero nuestro{" "}
+          <Link to="/software-de-reparto" className="font-semibold text-white underline underline-offset-4 hover:text-cyan">
+            software de reparto
+          </Link>.
         </p>
         <a
           href="/#demo"
@@ -216,6 +220,12 @@ export function ArticleCta({ intent }: { intent: Post["intent"] }) {
         >
           Conocé el enfoque de Rutia <ArrowRight className="h-4 w-4" />
         </a>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Descubrí cómo funciona nuestro{" "}
+          <Link to="/software-de-reparto" className="font-semibold text-primary underline underline-offset-4">
+            software de reparto
+          </Link> para organizar pedidos, recorridos y choferes.
+        </p>
       </aside>
     );
   }

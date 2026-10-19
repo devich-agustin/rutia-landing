@@ -25,6 +25,50 @@ export type VerticalLandingConfig = {
   faq: Array<[string, string]>;
 };
 
+// Enlaces contextuales entre rubros. Un único componente sirve a las 10 landings.
+const verticalLinks: Record<string, Array<{ label: string; href: string }>> = {
+  "Mueblerías": [
+    { label: "Colchonerías", href: "/logistica-para-colchonerias" },
+    { label: "Electrodomésticos", href: "/logistica-para-electrodomesticos" },
+  ],
+  "Colchonerías": [
+    { label: "Mueblerías", href: "/logistica-para-mueblerias" },
+    { label: "Electrodomésticos", href: "/logistica-para-electrodomesticos" },
+  ],
+  "Electrodomésticos": [
+    { label: "Mueblerías", href: "/logistica-para-mueblerias" },
+    { label: "Iluminación", href: "/logistica-para-iluminacion" },
+  ],
+  "Ferreterías": [
+    { label: "Corralones y sanitarios", href: "/logistica-para-corralones" },
+    { label: "Casas de materiales", href: "/logistica-para-casas-de-materiales" },
+  ],
+  "Corralones y sanitarios": [
+    { label: "Casas de materiales", href: "/logistica-para-casas-de-materiales" },
+    { label: "Ferreterías", href: "/logistica-para-ferreterias" },
+  ],
+  "Casas de materiales": [
+    { label: "Corralones y sanitarios", href: "/logistica-para-corralones" },
+    { label: "Ferreterías", href: "/logistica-para-ferreterias" },
+  ],
+  "Distribuidoras": [
+    { label: "E-commerce con reparto propio", href: "/logistica-para-ecommerce" },
+    { label: "Electrodomésticos", href: "/logistica-para-electrodomesticos" },
+  ],
+  "Bicicleterías y deportes": [
+    { label: "E-commerce con reparto propio", href: "/logistica-para-ecommerce" },
+    { label: "Distribuidoras", href: "/logistica-para-distribuidoras" },
+  ],
+  "Iluminación": [
+    { label: "Ferreterías", href: "/logistica-para-ferreterias" },
+    { label: "Electrodomésticos", href: "/logistica-para-electrodomesticos" },
+  ],
+  "E-commerce con reparto propio": [
+    { label: "Distribuidoras", href: "/logistica-para-distribuidoras" },
+    { label: "Bicicleterías y deportes", href: "/logistica-para-bicicleterias" },
+  ],
+};
+
 export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -224,6 +268,34 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
                   </p>
                 </details>
               ))}
+            </div>
+          </Shell>
+        </section>
+
+        {/* Enlaces internos útiles para el visitante y para el rastreo SEO. */}
+        <section aria-labelledby="explorar-soluciones" className="border-t border-border bg-background py-14 lg:py-20">
+          <Shell>
+            <div className="mx-auto max-w-3xl">
+              <span className="section-label">Seguí explorando</span>
+              <h2 id="explorar-soluciones" className="mt-4 text-2xl font-extrabold sm:text-3xl">
+                Una solución para organizar tus entregas
+              </h2>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Rutia centraliza pedidos, preparación, vehículos y choferes. Conocé cómo funciona
+                nuestro <a href="/software-de-reparto" className="font-semibold text-primary underline underline-offset-4 hover:opacity-80">software de reparto</a> para empresas con entregas propias o fletes contratados.
+              </p>
+              {(verticalLinks[config.breadcrumb]?.length ?? 0) > 0 && (
+                <nav aria-label="Soluciones para otros rubros" className="mt-7">
+                  <p className="mb-3 text-sm font-bold text-foreground">También puede interesarte</p>
+                  <div className="flex flex-wrap gap-3">
+                    {verticalLinks[config.breadcrumb].map((item) => (
+                      <a key={item.href} href={item.href} className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">
+                        {item.label} <ArrowRight className="h-4 w-4" />
+                      </a>
+                    ))}
+                  </div>
+                </nav>
+              )}
             </div>
           </Shell>
         </section>
