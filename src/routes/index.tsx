@@ -412,10 +412,15 @@ function Hero() {
             </span>
           </div>
           <h1
-            className="animate-enter mt-6 max-w-[12ch] text-[2.85rem] font-black leading-[0.98] tracking-[-0.055em] sm:text-[4.25rem] lg:text-[5.25rem]"
+            className="animate-enter mt-6 text-[2.85rem] font-black leading-[0.98] tracking-[-0.055em] sm:text-[4.25rem] lg:text-[5.25rem]"
             style={{ animationDelay: "80ms" }}
           >
-            Tus entregas. <span className="text-brand">Bajo control.</span>
+            <span className="mb-4 block text-[12px] font-semibold uppercase leading-normal tracking-[0.12em] text-[#AAB6C8] sm:text-[13px]">
+              Software de gestión de entregas para PyMEs
+            </span>
+            <span className="block max-w-[12ch]">
+              Tus entregas. <span className="text-brand">Bajo control.</span>
+            </span>
           </h1>
           <p
             className="animate-enter mt-6 max-w-[570px] text-[17px] leading-[1.65] text-[#AAB6C8] sm:text-lg"
