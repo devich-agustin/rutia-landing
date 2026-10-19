@@ -2,7 +2,6 @@
 author: Equipo de Rutia
 category: control-y-trazabilidad
 description: "¿Reparto propio o entregas tercerizadas? Compará costos, volumen, zonas, flexibilidad y control operativo para decidir qué modelo conviene a tu PyME."
-  fletes contratados o un esquema mixto de entregas en una PyME.
 draft: false
 intent: tofu
 keywords:
@@ -56,6 +55,18 @@ cuánto cuesta cumplir el nivel de servicio que necesitás.
 Si hay semanas muy diferentes entre sí, un esquema rígido puede generar
 capacidad ociosa o falta de recursos. Muchas empresas encuentran valor
 en un modelo mixto: base propia y fletes contratados cuando hace falta.
+
+## Ejemplo práctico: reparto propio, fletes o un modelo mixto
+
+Pensá en una distribuidora que entrega pedidos todos los días dentro de su ciudad y, algunas veces por semana, recibe pedidos de localidades cercanas. Podría comparar tres alternativas:
+
+- **Reparto propio:** asignar sus vehículos a las zonas frecuentes, considerando también mantenimiento, combustible y tiempo del equipo.
+- **Fletes contratados:** cubrir entregas ocasionales o destinos que no justifican mantener un vehículo dedicado.
+- **Modelo mixto:** conservar una base de reparto propio y contratar fletes cuando sube el volumen o aparecen zonas nuevas.
+
+No alcanza con comparar el precio de un viaje. Durante varias semanas conviene registrar entregas realizadas, kilómetros o costos disponibles, demoras, incidencias y días de baja utilización. Así podés evaluar qué opción se adapta a tu operación, sin asumir que una siempre es más barata.
+
+Si necesitás distribuir el trabajo durante la semana, leé [cómo planificar entregas sin perder el control diario](/blog/como-planificar-entregas-toda-la-semana). Para coordinar vehículos y fletes desde un mismo lugar, conocé nuestro [software de reparto](/software-de-reparto).
 
 ## No pierdas el control aunque tercerices
 

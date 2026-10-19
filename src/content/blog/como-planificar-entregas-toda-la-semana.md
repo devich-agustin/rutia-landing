@@ -55,6 +55,21 @@ Si solamente el encargado entiende por qué cada pedido está en determinado dí
 
 Fechas, estados y asignaciones deberían ser comprensibles para las personas autorizadas que participan del proceso.
 
+## Ejemplo: una semana de entregas con cambios de último momento
+
+Imaginá una mueblería con entregas previstas para martes, jueves y viernes. El lunes, el equipo revisa los pedidos con fecha comprometida y detecta que el viernes concentra demasiadas entregas. Antes de asignar vehículos, consulta cuáles están preparados y cuáles siguen pendientes en depósito.
+
+El miércoles, un cliente pide mover su entrega al jueves. El equipo actualiza la fecha prevista y revisa la carga de ese día. Cuando llega el jueves, asigna las entregas listas a los vehículos y choferes disponibles. Al finalizar, registra las entregas completadas y las que necesitan reprogramación.
+
+**Lista breve para revisar cada mañana:**
+
+- ¿Qué pedidos tienen fecha comprometida hoy y cuáles están preparados?
+- ¿Qué vehículo o flete realizará cada entrega?
+- ¿Qué pedidos cambiaron de fecha desde ayer?
+- ¿Qué entregas fallidas o parciales requieren seguimiento?
+
+Si tu empresa combina vehículos propios con terceros, consultá también [cuándo conviene tener reparto propio o tercerizar las entregas](/blog/reparto-propio-o-tercerizar-entregas). Para centralizar calendario, asignaciones y resultados, conocé el [software de reparto de Rutia](/software-de-reparto).
+
 ## Rutia para conectar calendario y ejecución
 
 [Rutia](https://rutia.com.ar/) permite organizar pedidos y entregas con una visión temporal y luego trabajar la jornada operativa con recursos y resultados.
