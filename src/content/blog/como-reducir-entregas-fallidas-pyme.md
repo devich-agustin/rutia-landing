@@ -69,6 +69,20 @@ Si se repiten motivos similares, ya existe una señal operativa. Tal vez
 falte validar direcciones, coordinar mejor las fechas o mejorar el paso
 de información entre ventas, depósito y reparto.
 
+## Checklist antes de despachar
+
+- Confirmá que el pedido esté preparado y completo según lo acordado.
+- Revisá nombre, teléfono, dirección y referencias de acceso.
+- Verificá la fecha pactada y cualquier condición de recepción.
+- Asigná un chofer y un vehículo adecuados para el pedido.
+- Asegurate de que el repartidor pueda consultar la información necesaria.
+
+## Qué hacer después de una visita fallida
+
+Registrá el motivo de la visita fallida, verificá si los datos del cliente siguen vigentes y acordá una nueva fecha antes de reprogramar. Al cierre de la semana, agrupá los motivos: cliente ausente, dirección incorrecta, producto no preparado o problemas de coordinación.
+
+No todas las entregas fallidas se pueden evitar. Lo importante es que cada caso deje información útil para mejorar la próxima salida.
+
 ## Conclusión
 
 Ordenar el reparto no depende de una única herramienta ni de una fórmula

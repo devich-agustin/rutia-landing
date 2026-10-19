@@ -92,6 +92,21 @@ varias planillas y chats.
 No reemplaza el criterio operativo de la empresa: le da una base más
 ordenada para decidir.
 
+## Ejemplo: menos viajes innecesarios sin prometer rutas automáticas
+
+Supongamos que una PyME tiene seis entregas: tres en una zona, dos en otra y una que todavía no está preparada. Si la última se incorpora a la salida sin verificarlo, el vehículo puede hacer un viaje improductivo o necesitar volver al depósito.
+
+Una mejora operativa es confirmar preparación y domicilios, agrupar manualmente las entregas por zona y asignar los recursos disponibles antes de la salida. El recorrido final debe decidirlo el equipo según calles, tránsito, horarios y capacidad real del vehículo.
+
+## Indicadores simples para revisar cada semana
+
+- Entregas planificadas frente a entregas efectivamente realizadas.
+- Visitas fallidas y sus causas más frecuentes.
+- Reprogramaciones por falta de preparación o cambios del cliente.
+- Viajes adicionales que pudieron evitarse con mejor coordinación.
+
+Rutia ayuda a organizar y registrar la operación, pero no debe confundirse con un optimizador automático de recorridos ni con un sistema de medición de combustible.
+
 ## Conclusión
 
 Ordenar el reparto no depende de una única herramienta ni de una fórmula

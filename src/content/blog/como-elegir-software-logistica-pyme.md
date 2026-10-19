@@ -57,6 +57,20 @@ Si es posible, cargá pedidos reales o representativos. Ahí aparecen preguntas 
 
 [Rutia](https://rutia.com.ar/) permite trabajar el flujo desde el pedido y la preparación hasta el Armado del Día, la ejecución y el resultado de la entrega. Su propuesta está enfocada en PyMEs con reparto propio, sin exigir una app adicional al chofer.
 
+## Una prueba sencilla para comparar alternativas
+
+Antes de decidir, armá una jornada ficticia con ocho pedidos: dos pendientes de preparación, cuatro listos, uno con dirección corregida y otro que necesitará reprogramación. Pedí que te muestren cómo se resuelve cada caso.
+
+Evaluá cuánto tarda el equipo en encontrar un pedido, quién puede cambiar una fecha y cómo ve el chofer sus entregas. Anotá también qué tareas siguen siendo manuales: por ejemplo, elegir el vehículo adecuado o decidir el orden de las paradas.
+
+## Preguntas que conviene hacer en una demo
+
+- ¿Se pueden importar los pedidos que hoy tenemos en Excel?
+- ¿Qué necesita instalar el chofer?
+- ¿Cómo se registran una visita fallida y una reprogramación?
+- ¿Qué ve ventas cuando un cliente pregunta por su entrega?
+- ¿Qué funciones no están incluidas y requieren otro sistema?
+
 ## Conclusión
 
 Elegí por ajuste operativo, no por cantidad de módulos. Una buena herramienta debería reducir la dependencia de chats, planillas y memoria sin obligarte a rediseñar toda la empresa para adaptarte al software.

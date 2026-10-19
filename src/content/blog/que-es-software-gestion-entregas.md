@@ -55,6 +55,22 @@ En esos casos, centralizar puede tener más valor que seguir agregando columnas 
 
 El foco está en el control diario de las entregas, no en convertirse en un ERP generalista.
 
+## Ejemplo práctico: de un pedido a una entrega registrada
+
+Imaginá una PyME que vende muebles y tiene cinco entregas comprometidas para el jueves. Ventas carga los pedidos y sus direcciones; depósito identifica cuáles están preparados; operaciones define qué sale y asigna cada entrega a un chofer y vehículo.
+
+Al terminar la jornada, tres entregas pueden figurar como realizadas, una como fallida por ausencia del cliente y otra como reprogramada. La diferencia frente a una lista de direcciones es que cada resultado queda vinculado al pedido y puede consultarse después.
+
+Este ejemplo describe un flujo de trabajo posible: no supone que el sistema elija automáticamente el vehículo ni optimice el recorrido.
+
+## Lista de verificación antes de adoptar un software
+
+- ¿Permite saber qué pedidos están pendientes y cuáles están preparados?
+- ¿El equipo puede asignar responsables y vehículos a cada entrega?
+- ¿El chofer puede registrar lo ocurrido desde el celular?
+- ¿Las entregas fallidas y reprogramadas conservan su historial?
+- ¿El sistema acompaña el reparto propio y los fletes contratados?
+
 ## Conclusión
 
 Un software de gestión de entregas sirve cuando la dificultad ya no es anotar un pedido, sino coordinar todo lo que tiene que ocurrir para entregarlo y conservar una visión clara del resultado.

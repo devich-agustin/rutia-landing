@@ -232,6 +232,20 @@ Otras señales de que ese punto está cerca:
 
 Si varias de estas señales te suenan, el problema ya no es de disciplina: es que la herramienta quedó chica para la operación. (Enlaces internos futuros: *10 señales de que tu logística ya quedó chica* y *Cómo dejar de depender de Excel para gestionar las entregas*.)
 
+## Ejemplo de una jornada de entregas para una PyME
+
+Una empresa tiene diez pedidos para repartir: seis preparados, dos que todavía esperan productos y otros dos con fecha para la semana siguiente. En lugar de asignar los diez a un vehículo, operaciones separa los seis listos, confirma sus domicilios y organiza la salida con los recursos disponibles.
+
+Al finalizar, el equipo registra cuáles se entregaron, cuáles necesitan una nueva visita y qué pedidos siguen pendientes de preparación. Así ventas puede responder consultas sin depender de mensajes aislados.
+
+## Qué revisar al cerrar cada día
+
+- Pedidos que salieron y resultado de cada visita.
+- Entregas fallidas con motivo registrado.
+- Reprogramaciones que requieren confirmar una nueva fecha.
+- Pedidos que depósito debe preparar para la próxima jornada.
+- Disponibilidad de choferes, vehículos y fletes para el día siguiente.
+
 ## Conclusión: primero ordenar, después optimizar
 
 Organizar las entregas de una PyME no requiere una transformación enorme ni parecerse a una multinacional. Requiere un método sostenido: pedidos centralizados en un solo lugar, entregas separadas de los pedidos y con estados claros, preparación coordinada con el depósito, cada entrega con responsable, un plan del día visible para todos, resultados registrados con sus motivos y reprogramaciones que no dependan de un audio.

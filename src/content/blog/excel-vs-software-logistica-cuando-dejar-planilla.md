@@ -53,6 +53,21 @@ La decisión no tiene que ser “Excel o nada”. Podés conservarlo donde aport
 
 El cambio importante es dejar de usar una planilla como única combinación de agenda, estados, asignaciones, historial y comunicación.
 
+## Comparación práctica: qué cambia en una jornada
+
+| Situación | Con una planilla aislada | Con una herramienta de entregas |
+| --- | --- | --- |
+| Cambia la fecha de un pedido | Hay que avisar y actualizar las copias correctas | La fecha queda vinculada al pedido en una vista común |
+| El chofer no encuentra al cliente | Suele informar por mensaje o llamada | Puede registrar el resultado para que operaciones lo consulte |
+| Ventas pregunta qué pasó | Alguien reconstruye el estado entre mensajes | El equipo consulta el estado registrado de la entrega |
+| Se usa un flete contratado | La asignación puede quedar en una columna o chat | El pedido se asocia al recurso asignado |
+
+La comparación describe formas de trabajo habituales, no garantiza que cualquier software tenga todas estas funciones.
+
+## Cómo migrar sin dejar de usar Excel de golpe
+
+Elegí una jornada representativa, depurá nombres, teléfonos y direcciones, y probá importar los pedidos. Mantené la planilla original como respaldo mientras el equipo aprende el nuevo flujo. Revisá los resultados al cierre del día antes de extender el uso al resto de las entregas.
+
 ## Conclusión
 
 Excel queda chico cuando el problema ya no es almacenar información sino mantener coordinadas a varias personas alrededor de una operación que cambia durante el día.
