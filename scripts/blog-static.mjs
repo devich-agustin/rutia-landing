@@ -56,6 +56,7 @@ const esc = (s) =>
 const staticUrls = [
   { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
   { loc: `${SITE}/software-de-reparto`, priority: "0.9", changefreq: "monthly" },
+  { loc: `${SITE}/preguntas-frecuentes`, priority: "0.7", changefreq: "monthly" },
   {
     loc: `${SITE}/logistica-para-mueblerias`,
     priority: "0.8",
