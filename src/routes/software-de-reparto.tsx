@@ -33,7 +33,6 @@ import { Footer, Navbar, Shell } from "@/routes/index";
 import { Reveal } from "@/components/Reveal";
 import { RouteMap } from "@/components/RouteMotif";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
-import { trackClickDemo } from "@/lib/analytics";
 
 const SITE_URL = "https://rutia.com.ar";
 const PAGE_URL = `${SITE_URL}/software-de-reparto`;
@@ -327,7 +326,6 @@ function TrialButton({ children }: { children: ReactNode }) {
   return (
     <a
       href={TRIAL_URL}
-      onClick={trackClickDemo}
       className="button-primary inline-flex min-h-13 items-center justify-center gap-2 px-6 text-base font-bold text-white"
     >
       {children}
@@ -380,7 +378,6 @@ function SoftwareDeRepartoPage() {
                 <TrialButton>Probá Rutia 1 mes gratis</TrialButton>
                 <a
                   href="/#demo"
-                  onClick={trackClickDemo}
                   className="button-ghost inline-flex min-h-13 items-center justify-center px-6 font-semibold text-white"
                 >
                   Pedir una demo
@@ -666,7 +663,6 @@ function SoftwareDeRepartoPage() {
                     </ul>
                     <a
                       href={TRIAL_URL}
-                      onClick={trackClickDemo}
                       className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 font-semibold transition-all duration-200 active:scale-[0.98] ${
                         plan.featured
                           ? "bg-brand text-white hover:brightness-110"
@@ -737,7 +733,6 @@ function SoftwareDeRepartoPage() {
               <TrialButton>Empezar 1 mes gratis</TrialButton>
               <a
                 href="/#demo"
-                onClick={trackClickDemo}
                 className="button-ghost inline-flex min-h-13 items-center justify-center px-6 font-semibold text-white"
               >
                 Pedir una demo

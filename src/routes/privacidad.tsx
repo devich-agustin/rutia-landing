@@ -11,6 +11,20 @@ export const Route = createFileRoute("/privacidad")({
           "Cómo Rutia recopila, usa y protege los datos personales conforme a la Ley 25.326 de Argentina.",
       },
       { name: "robots", content: "index, follow" },
+      { property: "og:url", content: "https://rutia.com.ar/privacidad" },
+      { property: "og:title", content: "Política de Privacidad — Rutia" },
+      {
+        property: "og:description",
+        content:
+          "Cómo Rutia recopila, usa y protege los datos personales conforme a la Ley 25.326 de Argentina.",
+      },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Política de Privacidad — Rutia" },
+      {
+        name: "twitter:description",
+        content:
+          "Cómo Rutia recopila, usa y protege los datos personales conforme a la Ley 25.326 de Argentina.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://rutia.com.ar/privacidad" }],
   }),
@@ -130,7 +144,10 @@ function PrivacyPage() {
             <p className={pCls}>
               Recopilamos: nombre, email, y la información que la persona complete
               voluntariamente al solicitar una demostración o agendar una reunión comercial
-              a través del sitio.
+              a través del sitio. Junto con la consulta también recibimos datos sobre el
+              origen de la visita (por ejemplo, la campaña, el anuncio o el sitio desde el
+              que llegó y la primera página que visitó), que se guardan solo durante la
+              sesión del navegador y se usan para saber qué canales generan consultas.
             </p>
           </section>
 

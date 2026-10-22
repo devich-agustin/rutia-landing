@@ -1,41 +1,20 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
-  Link,
   createRootRouteWithContext,
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { CookieConsent } from "../components/CookieConsent";
 import { ExitIntentModal } from "../components/ExitIntentModal";
+import { ConversionTracking } from "../components/ConversionTracking";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-function NotFoundComponent() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -43,31 +22,32 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
-        </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center text-white">
+      <img src="/rutia-logo.svg" alt="Rutia" className="h-9 w-auto" />
+      <h1 className="mt-8 text-2xl font-extrabold sm:text-3xl">
+        No pudimos cargar esta página
+      </h1>
+      <p className="mt-3 max-w-md text-[15.5px] text-[#9CA9C0]">
+        Algo falló de nuestro lado. Probá de nuevo en unos segundos o volvé al
+        inicio. Si el problema sigue, escribinos a contacto@rutia.com.ar.
+      </p>
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <button
+          type="button"
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
+          className="rounded-xl bg-primary px-6 py-3 font-semibold text-white transition-colors hover:brightness-110"
+        >
+          Intentar de nuevo
+        </button>
+        <a
+          href="/"
+          className="rounded-xl border border-white/25 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+        >
+          Ir al inicio
+        </a>
       </div>
     </div>
   );
@@ -77,22 +57,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 // que entrega Google. Si no existe, la metaetiqueta no se publica.
 const GOOGLE_SITE_VERIFICATION = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION ?? "";
 
-const SITE_URL = "https://rutia.com.ar";
-const SITE_TITLE = "Software de Gestión de Entregas y Reparto | Rutia";
-const SITE_DESCRIPTION =
+export const SITE_URL = "https://rutia.com.ar";
+export const SITE_TITLE = "Software de Gestión de Entregas y Reparto | Rutia";
+export const SITE_DESCRIPTION =
   "Rutia es el software de gestión de entregas para PyMEs argentinas: pedidos, depósito, vehículos, choferes y fletes en un solo lugar, sin Excel ni papelitos.";
 const OG_IMAGE = `${SITE_URL}/og-rutia-control-v2.jpg`;
 
-const FAQ_SCHEMA_ITEMS = [
-  ["¿Tengo que instalar algo?", "No. Rutia funciona desde el navegador, en cualquier computadora. No hay nada que instalar ni mantener."],
-  ["¿Los que reparten necesitan una app?", "No. Choferes propios, cadetes o fletes abren sus entregas desde el celular que ya tienen y marcan entregada, parcial o fallida con un toque."],
-  ["¿Puedo importar mis pedidos desde Excel?", "Sí. Te damos una plantilla simple: la completás o pegás tus datos y los pedidos se cargan solos."],
-  ["¿Es difícil de aprender?", "Si sabés usar WhatsApp, sabés usar Rutia. La mayoría arma su primer día de entregas en menos de una hora."],
-  ["¿Sirve si trabajo con fletes contratados y no tengo vehículo propio?", "Sí. Podés asignar entregas a vehículos propios, a fletes, o mezclar ambos."],
-  ["¿Reemplaza mi sistema de facturación o de stock?", "No. Rutia se ocupa de tus entregas y convive con lo que ya usás para vender y facturar."],
-  ["¿Qué pasa si un cliente reclama por una entrega vieja?", "Buscás la entrega y ves toda su historia: quién la llevó, qué pasó y cuándo."],
-  ["¿Qué pasa si no me sirve?", "No hay permanencia. Cancelás cuando quieras y listo, sin letra chica."],
-] as const;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -122,14 +92,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
-      { rel: "stylesheet", href: appCss },
+      // Fuentes servidas desde el propio sitio (antes: Google Fonts, que
+      // bloqueaba el renderizado). Se precarga solo la fuente principal.
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap",
+        rel: "preload",
+        href: "/fonts/geist-latin-wght-normal.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
+      { rel: "stylesheet", href: appCss },
       { rel: "alternate", type: "application/rss+xml", title: "Blog de Rutia", href: `${SITE_URL}/rss.xml` },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
@@ -177,16 +149,6 @@ const JSON_LD = {
       publisher: { "@id": `${SITE_URL}/#organization` },
     },
     {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/#webpage`,
-      url: `${SITE_URL}/`,
-      name: SITE_TITLE,
-      description: SITE_DESCRIPTION,
-      inLanguage: "es-AR",
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      about: { "@id": `${SITE_URL}/#software` },
-    },
-    {
       "@type": "SoftwareApplication",
       "@id": `${SITE_URL}/#software`,
       name: "Rutia",
@@ -199,27 +161,19 @@ const JSON_LD = {
       inLanguage: "es-AR",
       provider: { "@id": `${SITE_URL}/#organization` },
     },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}/#faq`,
-      url: `${SITE_URL}/#faq`,
-      inLanguage: "es-AR",
-      mainEntity: FAQ_SCHEMA_ITEMS.map(([question, answer]) => ({
-        "@type": "Question",
-        name: question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: answer,
-        },
-      })),
-    },
   ],
 };
 
+const PRE_PAINT_SCRIPT = `(function(){var d=document.documentElement;d.classList.add("js");try{var c=localStorage.getItem("rutia_cookie_consent");if(c==="accepted"||c==="rejected"){d.setAttribute("data-cookie-consent",c)}}catch(e){}})();`;
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="es-AR">
       <head>
+        {/* Antes del primer pintado: si la persona ya eligió sobre cookies, se
+            marca <html> para ocultar el aviso por CSS (sin parpadeo) y se
+            habilitan las animaciones de aparición solo cuando hay JavaScript. */}
+        <script dangerouslySetInnerHTML={{ __html: PRE_PAINT_SCRIPT }} />
         <HeadContent />
         <script
           type="application/ld+json"
@@ -264,6 +218,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <ConversionTracking />
       <CookieConsent />
       <ExitIntentModal />
     </QueryClientProvider>

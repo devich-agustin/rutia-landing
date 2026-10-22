@@ -35,13 +35,9 @@ import {
   Mail,
 } from "lucide-react";
 import { Reveal, Counter } from "@/components/Reveal";
-import {
-  trackClickDemo,
-  trackClickWhatsApp,
-  trackContact,
-  trackFormSubmit,
-  trackLead,
-} from "@/lib/analytics";
+import { trackLead } from "@/lib/analytics";
+import { appendAttribution } from "@/lib/attribution";
+import { EXPERIENCIAS, type Experiencia } from "@/content/experiencias";
 import { CalendarMockup } from "@/components/CalendarMockup";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { RouteMap, RouteConnector } from "@/components/RouteMotif";
@@ -52,6 +48,8 @@ export const Route = createFileRoute("/")({
   }),
   component: Landing,
 });
+
+const TRIAL_URL = "https://demo.rutia.com.ar/";
 
 const NAV = [
   ["Producto", "/#producto"],
@@ -110,7 +108,7 @@ const FEATURES = [
   {
     icon: Smartphone,
     title: "Entrega desde el celular",
-    text: "Chofer propio, cadete o flete: recibe sus entregas en el celular que ya tiene y marca entregada, parcial o fallida con un toque. Sin apps, sin capacitación.",
+    text: "Chofer propio, cadete o flete: recibe sus entregas en el celular que ya tiene y marca entregada, parcial o fallida con un toque, con quién recibió y observaciones. Sin apps, sin capacitación.",
   },
   {
     icon: RefreshCcw,
@@ -325,7 +323,6 @@ export function Navbar() {
         <div className="hidden items-center gap-2 lg:flex">
           <a
             href="/#demo"
-            onClick={trackClickDemo}
             className="bg-brand rounded-full px-5 py-2.5 text-[13.5px] font-semibold text-white shadow-[0_4px_16px_-4px_rgba(47,107,255,.5)] transition-all duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 active:scale-[0.98]"
           >
             Solicitar demo
@@ -365,10 +362,7 @@ export function Navbar() {
             ))}
             <a
               href="/#demo"
-              onClick={() => {
-                setOpen(false);
-                trackClickDemo();
-              }}
+              onClick={() => setOpen(false)}
               className="mobile-menu-link bg-brand mt-2 rounded-xl px-5 py-3 text-center font-semibold text-white"
               style={{ animationDelay: `${NAV.length * 45}ms` }}
             >
@@ -388,7 +382,7 @@ function Hero() {
       className="hero-stage relative overflow-hidden bg-ink text-white"
     >
       <img
-        src="/rutia-warehouse-hero.jpg"
+        src="/rutia-warehouse-hero.webp"
         alt=""
         aria-hidden="true"
         width={1600}
@@ -428,22 +422,21 @@ function Hero() {
           <div className="animate-enter" style={{ animationDelay: "240ms" }}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#demo"
-                onClick={trackClickDemo}
+                href={TRIAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta-location="hero"
                 className="button-primary group inline-flex min-h-13 items-center justify-center gap-2 px-6 text-base font-bold text-white"
               >
-                Ver Rutia en acción
+                Probá Rutia gratis 1 mes
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20una%20demo%20de%20Rutia"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackClickWhatsApp}
+                href="#demo"
+                data-cta-location="hero"
                 className="button-ghost inline-flex min-h-13 items-center justify-center gap-2 px-6 text-base font-semibold text-white"
               >
-                <WhatsappIcon className="h-5 w-5 text-[#25D366]" />
-                Escribinos por WhatsApp
+                Pedí una demo
               </a>
             </div>
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-white/65">
@@ -816,7 +809,7 @@ function Benefits() {
       icon: Users,
       title: "Para tus clientes",
       items: [
-        "Saben cuándo llega su entrega",
+        "Reciben una fecha y una franja de entrega más confiables",
         "Menos reprogramaciones sorpresa",
         "Si preguntan, tu equipo responde al instante",
       ],
@@ -873,6 +866,108 @@ function Benefits() {
   );
 }
 
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .map((p) => p[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+function ExperienceCard({ e }: { e: Experiencia }) {
+  const isExample = e.tipo === "ejemplo";
+  return (
+    <article className="block-card block-card-hover flex h-full flex-col p-7">
+      <div className="flex items-center gap-3.5">
+        {e.foto ? (
+          <img
+            src={e.foto}
+            alt={`Foto de ${e.nombre}`}
+            width={48}
+            height={48}
+            loading="lazy"
+            className="h-12 w-12 flex-none rounded-full object-cover"
+          />
+        ) : (
+          <span
+            aria-hidden="true"
+            className="bg-brand grid h-12 w-12 flex-none place-items-center rounded-full font-mono text-[15px] font-bold text-white"
+          >
+            {initials(e.nombre)}
+          </span>
+        )}
+        <div className="min-w-0 text-left">
+          <h3 className="text-[17px] font-bold leading-tight">{e.nombre}</h3>
+          <p className="mt-0.5 text-[13.5px] leading-snug text-muted-foreground">
+            {e.perfil}
+            {e.empresa ? ` · ${e.empresa}` : ""}
+          </p>
+        </div>
+      </div>
+      {e.cita && (
+        <blockquote className="mt-5 border-l-2 border-primary pl-4 text-left text-[15px] font-medium leading-relaxed">
+          “{e.cita}”
+        </blockquote>
+      )}
+      <dl className="mt-5 space-y-4 text-left">
+        <div>
+          <dt className="text-[12px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            El desafío
+          </dt>
+          <dd className="mt-1 text-[14.5px] leading-relaxed">{e.desafio}</dd>
+        </div>
+        <div>
+          <dt className="text-[12px] font-bold uppercase tracking-[0.08em] text-primary">
+            Con Rutia
+          </dt>
+          <dd className="mt-1 text-[14.5px] leading-relaxed text-muted-foreground">
+            {e.conRutia}
+          </dd>
+        </div>
+      </dl>
+      <p className="mt-auto pt-6 text-left text-[12px] font-semibold text-muted-foreground">
+        {isExample ? "Ejemplo ilustrativo" : "Testimonio de cliente"}
+      </p>
+    </article>
+  );
+}
+
+function Experiences() {
+  const allExamples = EXPERIENCIAS.every((e) => e.tipo === "ejemplo");
+  return (
+    <section
+      id="experiencias"
+      aria-labelledby="experiencias-title"
+      className="scroll-mt-24 border-b border-border bg-surface py-20 lg:py-28"
+    >
+      <Shell>
+        <SectionIntro
+          center
+          pill={allExamples ? "Cómo se usa" : "Experiencias"}
+          title={
+            <span id="experiencias-title">
+              Así se ve Rutia en distintas operaciones
+            </span>
+          }
+          desc={
+            allExamples
+              ? "Ejemplos ilustrativos basados en situaciones habituales de los rubros con los que trabajamos. No son testimonios de clientes."
+              : "Lo que cuentan quienes ya organizan sus entregas con Rutia."
+          }
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {EXPERIENCIAS.map((e, i) => (
+            <Reveal key={e.nombre} delay={i * 70} className="h-full">
+              <ExperienceCard e={e} />
+            </Reveal>
+          ))}
+        </div>
+      </Shell>
+    </section>
+  );
+}
+
 function About() {
   return (
     <section
@@ -901,7 +996,7 @@ function About() {
                 problema era otro: toda la operación dependía del Excel, los
                 remitos y la memoria del encargado — y el día que esa persona
                 faltaba, aparecía el caos. Construimos Rutia para resolver ese
-                problema: el nuestro primero, y ahora el de miles de pymes que
+                problema: el nuestro primero, y ahora el de las pymes que
                 trabajan igual.
               </p>
             </Reveal>
@@ -1044,7 +1139,6 @@ function Pricing() {
                 </ul>
                 <a
                   href="#demo"
-                  onClick={trackClickDemo}
                   className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-center font-semibold transition-all duration-200 active:scale-[0.98] ${
                     p.featured
                       ? "bg-brand text-[15.5px] text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.6)] hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_36px_-8px_rgba(47,107,255,.7)]"
@@ -1088,8 +1182,8 @@ function FreeTrialCta() {
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">Organizá pedidos, vehículos, choferes y entregas desde un solo lugar. Conocé cómo funciona Rutia en tu operación.</p>
               </div>
               <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto">
-                <a href="https://demo.rutia.com.ar/" className="button-primary inline-flex min-h-13 items-center justify-center gap-2 px-6 text-center text-base font-bold text-white" target="_blank" rel="noopener noreferrer">Quiero probar Rutia gratis <ArrowRight className="h-4 w-4" /></a>
-                <a href="#demo" onClick={trackClickDemo} className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline">¿Preferís una demo? Agendá una reunión</a>
+                <a href={TRIAL_URL} data-cta-location="prueba-gratis" className="button-primary inline-flex min-h-13 items-center justify-center gap-2 px-6 text-center text-base font-bold text-white" target="_blank" rel="noopener noreferrer">Quiero probar Rutia gratis <ArrowRight className="h-4 w-4" /></a>
+                <a href="#demo" className="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline">¿Preferís una demo? Agendá una reunión</a>
               </div>
             </div>
           </div>
@@ -1142,6 +1236,15 @@ function Faq() {
             );
           })}
         </div>
+        <p className="mt-8 text-center text-[14.5px] text-muted-foreground">
+          ¿Tenés otra duda?{" "}
+          <Link
+            to="/preguntas-frecuentes"
+            className="font-semibold text-primary hover:underline"
+          >
+            Mirá todas las preguntas frecuentes
+          </Link>
+        </p>
       </Shell>
     </section>
   );
@@ -1193,7 +1296,6 @@ function DemoCta() {
                   href="https://wa.me/5491178242630?text=Hola%2C%20quiero%20conocer%20Rutia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={trackClickWhatsApp}
                   className="whatsapp-action inline-flex items-center gap-2 rounded-xl px-5 py-3 font-semibold shadow-[0_8px_24px_-6px_rgb(18_140_74/0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgb(18_140_74/0.65)] active:scale-[0.98]"
                 >
                   <WhatsappIcon className="h-5 w-5" phoneColor="#128C4A" />
@@ -1202,7 +1304,6 @@ function DemoCta() {
                 </a>
                 <a
                   href="mailto:contacto@rutia.com.ar"
-                  onClick={trackContact}
                   className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-5 py-3 font-semibold text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 active:scale-[0.98]"
                 >
                   <Mail className="h-4 w-4 text-primary" />
@@ -1230,7 +1331,6 @@ function DemoCta() {
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={trackClickDemo}
                   className="bg-brand group mt-6 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]"
                 >
                   Agendá tu reunión
@@ -1250,6 +1350,7 @@ function DemoCta() {
                   try {
                     const data = new FormData(form);
                     data.append("page_url", window.location.href);
+                    appendAttribution(data);
                     const controller = new AbortController();
                     const timeout = window.setTimeout(
                       () => controller.abort(),
@@ -1271,8 +1372,7 @@ function DemoCta() {
                     }
                     window.clearTimeout(timeout);
                     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                    trackFormSubmit();
-                    trackLead();
+                    trackLead("demo");
                     setSent(true);
                   } catch (err) {
                     console.error("Error al enviar el formulario:", err);
@@ -1446,6 +1546,7 @@ export function Footer() {
                   ["Planes", "/#precios"],
                   ["Quiénes somos", "/#nosotros"],
                   ["Blog", "/blog"],
+                  ["Preguntas frecuentes", "/preguntas-frecuentes"],
                   ["Contacto", "/#demo"],
                 ],
               ],
@@ -1536,9 +1637,43 @@ export function Footer() {
   );
 }
 
+const HOME_URL = "https://rutia.com.ar/";
+
+const HOME_JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${HOME_URL}#webpage`,
+      url: HOME_URL,
+      name: "Software de Gestión de Entregas y Reparto | Rutia",
+      description:
+        "Rutia es el software de gestión de entregas para PyMEs argentinas: pedidos, depósito, vehículos, choferes y fletes en un solo lugar, sin Excel ni papelitos.",
+      inLanguage: "es-AR",
+      isPartOf: { "@id": `${HOME_URL}#website` },
+      about: { "@id": `${HOME_URL}#software` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${HOME_URL}#faq`,
+      url: `${HOME_URL}#faq`,
+      inLanguage: "es-AR",
+      mainEntity: FAQ_ITEMS.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+    },
+  ],
+};
+
 function Landing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_JSON_LD) }}
+      />
       <Navbar />
       <main>
         <Hero />
@@ -1547,6 +1682,7 @@ function Landing() {
         <HowItWorks />
         <ForWhom />
         <Benefits />
+        <Experiences />
         <About />
         <Philosophy />
         <Pricing />
