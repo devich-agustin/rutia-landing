@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { BlogShell, PostCard, Breadcrumbs, breadcrumbJsonLd } from "@/components/BlogShell";
-import { CATEGORIES, getCategory, listablePosts, SITE_URL } from "@/lib/blog";
+import { CATEGORIES, getCategory, SITE_URL } from "@/lib/blog-meta";
+import { listablePosts } from "@/lib/blog";
 
 export const Route = createFileRoute("/blog/categoria/$categoria")({
   loader: ({ params }) => {
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/blog/categoria/$categoria")({
         { property: "og:description", content: desc },
         { property: "og:image", content: `${SITE_URL}/og-image.png` },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
       ],
       links: [{ rel: "canonical", href: url }],
     };

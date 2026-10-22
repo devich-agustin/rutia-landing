@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { BlogShell, PostCard, Breadcrumbs, breadcrumbJsonLd } from "@/components/BlogShell";
-import { CATEGORIES, listablePosts, POSTS_PER_PAGE, SITE_URL } from "@/lib/blog";
+import { CATEGORIES, POSTS_PER_PAGE, SITE_URL } from "@/lib/blog-meta";
+import { listablePosts } from "@/lib/blog";
 
 export const Route = createFileRoute("/blog/")({
   component: BlogIndex,
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:description", content: "Guías prácticas para organizar la logística de tu PyME: reparto diario, reprogramaciones, fletes, Excel vs. software y cómo reducir las entregas fallidas." },
       { property: "og:image", content: `${SITE_URL}/og-image-v2.png` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Blog de Rutia — Logística y entregas para PyMEs" },
       { name: "twitter:description", content: "Guías prácticas para organizar la logística de tu PyME: reparto diario, reprogramaciones, fletes, Excel vs. software y cómo reducir las entregas fallidas." },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/blog${(match.search.p ?? 1) > 1 ? `?p=${match.search.p}` : ""}` }],

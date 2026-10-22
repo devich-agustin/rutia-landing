@@ -1,9 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { BlogShell, EditorialCover, PostCard, Breadcrumbs, breadcrumbJsonLd, ArticleCta } from "@/components/BlogShell";
-import { formatDate, getPost, relatedPosts, SITE_URL } from "@/lib/blog";
+import { formatDate, SITE_URL } from "@/lib/blog-meta";
+import { relatedPosts } from "@/lib/blog";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  // Import dinámico: las notas y el procesador de Markdown se cargan solo en
+  // las páginas del blog, no en la home ni en el resto del sitio.
+  loader: async ({ params }) => {
+    const { getPost } = await import("@/lib/blog");
     const post = getPost(params.slug);
     if (!post) throw notFound();
     return { post };
