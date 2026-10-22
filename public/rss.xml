@@ -7,32 +7,242 @@
     <language>es-AR</language>
     <atom:link href="https://rutia.com.ar/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Cómo coordinar ventas y logística para que no se pisen</title>
+      <link>https://rutia.com.ar/blog/como-coordinar-ventas-y-logistica</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-coordinar-ventas-y-logistica</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Aprendé a coordinar ventas y logística sin prometer entregas imposibles: pedidos compartidos, fechas confirmadas, roles claros y cambios visibles para todos.</description>
+    </item>
+    <item>
+      <title>Cómo elegir un software de logística para una PyME</title>
+      <link>https://rutia.com.ar/blog/como-elegir-software-logistica-pyme</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-elegir-software-logistica-pyme</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Buscás un software de logística para tu PyME? Compará facilidad de uso, gestión de pedidos, roles, reprogramaciones e historial antes de decidir.</description>
+    </item>
+    <item>
+      <title>Cómo evitar errores de dirección en las entregas</title>
+      <link>https://rutia.com.ar/blog/como-evitar-errores-direccion-entregas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-evitar-errores-direccion-entregas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Evitá entregas fallidas por direcciones incorrectas: qué datos pedir al cliente, cómo validarlos antes de salir y cómo registrar cambios sin confusiones.</description>
+    </item>
+    <item>
+      <title>Cómo evitar retrasos en las entregas de una PyME</title>
+      <link>https://rutia.com.ar/blog/como-evitar-retrasos-entregas-pyme</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-evitar-retrasos-entregas-pyme</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Descubrí cómo reducir retrasos en las entregas de tu PyME coordinando preparación, fechas prometidas, recorridos, cambios de último momento y resultados.</description>
+    </item>
+    <item>
+      <title>Cómo importar tus pedidos desde Excel sin cargar todo a mano</title>
+      <link>https://rutia.com.ar/blog/como-importar-pedidos-excel-sin-cargar-a-mano</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-importar-pedidos-excel-sin-cargar-a-mano</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Tenés tus pedidos en Excel? Aprendé a ordenar columnas, revisar direcciones y validar datos para importarlos sin volver a cargar cada entrega a mano.</description>
+    </item>
+    <item>
+      <title>Cómo manejar las reprogramaciones sin perder pedidos</title>
+      <link>https://rutia.com.ar/blog/como-manejar-reprogramaciones-sin-perder-pedidos</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-manejar-reprogramaciones-sin-perder-pedidos</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Organizá las reprogramaciones de entregas sin duplicar ni perder pedidos: registrá motivos, nuevas fechas, responsables e historial de cada intento.</description>
+    </item>
+    <item>
+      <title>Cómo medir si tu operación de reparto es eficiente: qué</title>
+      <link>https://rutia.com.ar/blog/como-medir-eficiencia-operacion-reparto-indicadores</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-medir-eficiencia-operacion-reparto-indicadores</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Medí la eficiencia de tu reparto con indicadores útiles para una PyME: entregas completadas, fallidas, reprogramaciones y evolución de los resultados.</description>
+    </item>
+    <item>
+      <title>Cómo optimizar las rutas de reparto para gastar menos combustible</title>
+      <link>https://rutia.com.ar/blog/como-optimizar-rutas-reparto-gastar-menos-combustible</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-optimizar-rutas-reparto-gastar-menos-combustible</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Reducí kilómetros innecesarios en tus rutas de reparto: agrupá destinos por zona, evitá viajes fallidos y planificá recorridos según pedidos realmente listos.</description>
+    </item>
+    <item>
+      <title>Cómo organizar entregas a clientes de distintas zonas</title>
+      <link>https://rutia.com.ar/blog/como-organizar-entregas-clientes-distintas-zonas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-entregas-clientes-distintas-zonas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Aprendé a organizar entregas en distintas zonas sin cruzar recorridos: agrupá destinos, respetá prioridades y asigná choferes según la jornada real.</description>
+    </item>
+    <item>
+      <title>Cómo organizar las entregas de un corralón</title>
+      <link>https://rutia.com.ar/blog/como-organizar-entregas-corralon</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-entregas-corralon</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Tenés un corralón con reparto propio? Organizá pedidos para obras y clientes, preparación, vehículos, fechas y reprogramaciones desde una misma operación.</description>
+    </item>
+    <item>
+      <title>Cómo organizar las entregas de una distribuidora</title>
+      <link>https://rutia.com.ar/blog/como-organizar-entregas-distribuidora</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-entregas-distribuidora</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Ordená las entregas de tu distribuidora aunque crezca el volumen: centralizá pedidos, prepará despachos y coordiná recorridos, choferes y resultados.</description>
+    </item>
+    <item>
+      <title>Cómo organizar pedidos pendientes sin perder entregas</title>
+      <link>https://rutia.com.ar/blog/como-organizar-pedidos-pendientes-sin-perder-entregas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-pedidos-pendientes-sin-perder-entregas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Evitá que los pedidos pendientes se pierdan entre planillas y mensajes: distinguí estados, preparación, fechas comprometidas y próximas entregas.</description>
+    </item>
+    <item>
+      <title>Cómo organizar el reparto cuando aumentan las ventas</title>
+      <link>https://rutia.com.ar/blog/como-organizar-reparto-cuando-aumentan-ventas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-reparto-cuando-aumentan-ventas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Crecieron las ventas y el reparto se desordenó? Aprendé a organizar más pedidos, priorizar entregas y distribuir recursos sin depender de improvisaciones.</description>
+    </item>
+    <item>
+      <title>Cómo organizar el reparto diario de una PyME sin depender de</title>
+      <link>https://rutia.com.ar/blog/como-organizar-reparto-diario-pyme</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-reparto-diario-pyme</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Organizá el reparto diario de tu PyME con pedidos listos, asignación de choferes y vehículos, recorridos claros y registro de entregas pendientes.</description>
+    </item>
+    <item>
+      <title>Cómo organizar el reparto de una mueblería</title>
+      <link>https://rutia.com.ar/blog/como-organizar-reparto-muebleria</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-reparto-muebleria</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Aprendé a organizar el reparto de una mueblería: pedidos voluminosos, preparación, fechas acordadas, vehículos, choferes y entregas reprogramadas.</description>
+    </item>
+    <item>
+      <title>Cómo organizar el reparto cuando tenés varios choferes y vehículos</title>
+      <link>https://rutia.com.ar/blog/como-organizar-reparto-varios-choferes-vehiculos</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-reparto-varios-choferes-vehiculos</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Coordiná varios choferes y vehículos sin duplicar entregas: armá jornadas, asigná responsables y mantené visible qué lleva cada recurso y qué falta.</description>
+    </item>
+    <item>
+      <title>Cómo organizar la última milla de un e-commerce con reparto propio</title>
+      <link>https://rutia.com.ar/blog/como-organizar-ultima-milla-ecommerce-reparto-propio</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-ultima-milla-ecommerce-reparto-propio</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Organizá la última milla de tu e-commerce con reparto propio: pedidos, preparación, asignación de entregas, recorridos y registro de resultados.</description>
+    </item>
+    <item>
+      <title>Cómo planificar las entregas de toda la semana sin perder el control del día a día</title>
+      <link>https://rutia.com.ar/blog/como-planificar-entregas-toda-la-semana</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-planificar-entregas-toda-la-semana</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Planificá las entregas de toda la semana sin perder flexibilidad: fechas comprometidas, pedidos preparados, capacidad de reparto y ajustes diarios.</description>
+    </item>
+    <item>
+      <title>Cómo reducir las entregas fallidas en una PyME</title>
+      <link>https://rutia.com.ar/blog/como-reducir-entregas-fallidas-pyme</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-reducir-entregas-fallidas-pyme</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Reducí las entregas fallidas de tu PyME revisando direcciones, preparación, coordinación con clientes y registro de incidencias para evitar nuevos intentos.</description>
+    </item>
+    <item>
+      <title>Cómo reducir las llamadas de clientes preguntando por sus pedidos</title>
+      <link>https://rutia.com.ar/blog/como-reducir-llamadas-clientes-preguntando-pedidos</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-reducir-llamadas-clientes-preguntando-pedidos</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Tus clientes llaman para saber dónde está su pedido? Mejorá la información interna sobre fechas, responsables y resultados para responder sin improvisar.</description>
+    </item>
+    <item>
+      <title>Cómo saber cuándo tu logística quedó chica para el volumen de ventas</title>
+      <link>https://rutia.com.ar/blog/como-saber-logistica-quedo-chica-volumen-ventas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/como-saber-logistica-quedo-chica-volumen-ventas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Descubrí cuándo la logística de tu PyME deja de acompañar las ventas: atrasos, reclamos, pedidos sin seguimiento y exceso de coordinación manual.</description>
+    </item>
+    <item>
+      <title>Cómo darle al chofer la información que necesita sin caos de</title>
+      <link>https://rutia.com.ar/blog/dar-informacion-chofer-sin-caos-whatsapp</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/dar-informacion-chofer-sin-caos-whatsapp</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Dale a cada chofer la información necesaria para repartir sin cadenas de WhatsApp: direcciones, indicaciones, paradas asignadas y estados de entrega.</description>
+    </item>
+    <item>
+      <title>Excel vs. software de logística: cuándo conviene dejar la planilla</title>
+      <link>https://rutia.com.ar/blog/excel-vs-software-logistica-cuando-dejar-planilla</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/excel-vs-software-logistica-cuando-dejar-planilla</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Excel todavía alcanza para gestionar tus entregas? Compará la planilla con un software logístico y detectá cuándo conviene centralizar pedidos y reparto.</description>
+    </item>
+    <item>
+      <title>Cómo organizar entregas con vehículos propios y fletes contratados</title>
+      <link>https://rutia.com.ar/blog/organizar-entregas-vehiculos-propios-fletes-contratados</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/organizar-entregas-vehiculos-propios-fletes-contratados</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Aprendé a coordinar entregas con vehículos propios y fletes contratados: elegí recursos según la demanda y mantené pedidos, responsables y resultados visibles.</description>
+    </item>
+    <item>
+      <title>Qué debe tener un software para organizar repartos y entregas</title>
+      <link>https://rutia.com.ar/blog/que-debe-tener-software-organizar-repartos</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/que-debe-tener-software-organizar-repartos</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Conocé las funciones clave de un software para organizar repartos: pedidos, preparación, choferes, vehículos, seguimiento, reprogramaciones e historial.</description>
+    </item>
+    <item>
+      <title>Qué es un software de gestión de entregas y para qué sirve</title>
+      <link>https://rutia.com.ar/blog/que-es-software-gestion-entregas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/que-es-software-gestion-entregas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Qué es un software de gestión de entregas, para qué sirve y cómo ayuda a una PyME a organizar pedidos, choferes, vehículos y resultados del reparto.</description>
+    </item>
+    <item>
+      <title>Qué hacer cuando el encargado de logística falta y toda la</title>
+      <link>https://rutia.com.ar/blog/que-hacer-cuando-falta-encargado-logistica</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/que-hacer-cuando-falta-encargado-logistica</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Todo se frena cuando falta el encargado de logística? Centralizá pedidos, estados, responsables e historial para que el reparto no dependa de una sola persona.</description>
+    </item>
+    <item>
+      <title>Qué hacer cuando aparecen entregas urgentes de último momento</title>
+      <link>https://rutia.com.ar/blog/que-hacer-entregas-urgentes-ultimo-momento</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/que-hacer-entregas-urgentes-ultimo-momento</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Te piden una entrega urgente cuando el reparto ya salió? Evaluá preparación, prioridades y capacidad antes de alterar recorridos y compromisos.</description>
+    </item>
+    <item>
+      <title>Cómo saber si te conviene tener reparto propio o tercerizar las</title>
+      <link>https://rutia.com.ar/blog/reparto-propio-o-tercerizar-entregas</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/reparto-propio-o-tercerizar-entregas</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>¿Reparto propio o entregas tercerizadas? Compará costos, volumen, zonas, flexibilidad y control operativo para decidir qué modelo conviene a tu PyME.</description>
+    </item>
+    <item>
+      <title>Cómo hacer seguimiento de entregas sin GPS en tiempo real</title>
+      <link>https://rutia.com.ar/blog/seguimiento-entregas-sin-gps-tiempo-real</link>
+      <guid isPermaLink="true">https://rutia.com.ar/blog/seguimiento-entregas-sin-gps-tiempo-real</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Hacé seguimiento de entregas sin GPS en tiempo real: registrá responsables, estados, resultados e incidencias para saber qué salió y qué quedó pendiente.</description>
+    </item>
+    <item>
       <title>Nombre de usuario de WhatsApp para empresas: cómo reservarlo</title>
       <link>https://rutia.com.ar/blog/nombre-usuario-whatsapp-empresas</link>
       <guid isPermaLink="true">https://rutia.com.ar/blog/nombre-usuario-whatsapp-empresas</guid>
       <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
-      <description>WhatsApp permite reservar un nombre de usuario tipo @tuempresa. Qué es, cómo reservarlo y qué saber antes de vincularlo con Instagram.</description>
+      <description>Conocé qué es el nombre de usuario de WhatsApp para empresas, cómo reservar un @tuempresa y qué revisar antes de vincularlo con Instagram.</description>
     </item>
     <item>
       <title>WhatsApp va a cobrar los mensajes de servicio desde octubre de 2026: qué cambia para tu PyME</title>
       <link>https://rutia.com.ar/blog/whatsapp-cobra-mensajes-servicio-2026</link>
       <guid isPermaLink="true">https://rutia.com.ar/blog/whatsapp-cobra-mensajes-servicio-2026</guid>
       <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Qué cambia con el cobro de los mensajes de servicio de la API de WhatsApp Business desde octubre de 2026, a quién afecta y qué no cambia.</description>
+      <description>Entendé qué cambia en octubre de 2026 con los mensajes de servicio de WhatsApp Business API, a qué empresas afecta y qué pasa con la app habitual.</description>
     </item>
     <item>
       <title>10 señales de que tu logística ya quedó chica (aunque todavía funcione)</title>
       <link>https://rutia.com.ar/blog/senales-logistica-pyme-quedo-chica</link>
       <guid isPermaLink="true">https://rutia.com.ar/blog/senales-logistica-pyme-quedo-chica</guid>
       <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
-      <description>¿Más llamadas, reprogramaciones y urgencias, pero todo sale? 10 señales de que tu operación creció más rápido que la forma de coordinarla.</description>
+      <description>Diez señales de que la logística de tu PyME quedó chica: reclamos, urgencias, reprogramaciones y falta de visibilidad aunque las entregas todavía salgan.</description>
     </item>
     <item>
       <title>Cómo organizar las entregas de una PyME: guía completa</title>
       <link>https://rutia.com.ar/blog/como-organizar-entregas-pyme</link>
       <guid isPermaLink="true">https://rutia.com.ar/blog/como-organizar-entregas-pyme</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
-      <description>Guía paso a paso para ordenar las entregas de tu PyME: centralizar pedidos, armar el día, confirmar en la calle y registrar qué pasó. Con método, sin cambiar todo de golpe.</description>
+      <description>Guía para organizar las entregas de una PyME: desde el registro de pedidos y la preparación hasta la planificación diaria, los choferes y el seguimiento.</description>
     </item>
   </channel>
 </rss>
