@@ -9,79 +9,47 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TerminosRouteImport } from './routes/terminos'
-import { Route as PrivacidadRouteImport } from './routes/privacidad'
-import { Route as LogisticaParaMuebleriasRouteImport } from './routes/logistica-para-mueblerias'
-import { Route as LogisticaParaIluminacionRouteImport } from './routes/logistica-para-iluminacion'
-import { Route as LogisticaParaFerreteriasRouteImport } from './routes/logistica-para-ferreterias'
-import { Route as LogisticaParaElectrodomesticosRouteImport } from './routes/logistica-para-electrodomesticos'
-import { Route as LogisticaParaEcommerceRouteImport } from './routes/logistica-para-ecommerce'
-import { Route as LogisticaParaDistribuidorasRouteImport } from './routes/logistica-para-distribuidoras'
-import { Route as LogisticaParaCorralonesRouteImport } from './routes/logistica-para-corralones'
-import { Route as LogisticaParaColchoneriasRouteImport } from './routes/logistica-para-colchonerias'
-import { Route as LogisticaParaCasasDeMaterialesRouteImport } from './routes/logistica-para-casas-de-materiales'
-import { Route as LogisticaParaBicicleteriasRouteImport } from './routes/logistica-para-bicicleterias'
-import { Route as CookiesRouteImport } from './routes/cookies'
-import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as LogisticaParaBicicleteriasRouteImport } from './routes/logistica-para-bicicleterias'
+import { Route as LogisticaParaCasasDeMaterialesRouteImport } from './routes/logistica-para-casas-de-materiales'
+import { Route as LogisticaParaColchoneriasRouteImport } from './routes/logistica-para-colchonerias'
+import { Route as LogisticaParaCorralonesRouteImport } from './routes/logistica-para-corralones'
+import { Route as LogisticaParaDistribuidorasRouteImport } from './routes/logistica-para-distribuidoras'
+import { Route as LogisticaParaEcommerceRouteImport } from './routes/logistica-para-ecommerce'
+import { Route as LogisticaParaElectrodomesticosRouteImport } from './routes/logistica-para-electrodomesticos'
+import { Route as LogisticaParaFerreteriasRouteImport } from './routes/logistica-para-ferreterias'
+import { Route as LogisticaParaIluminacionRouteImport } from './routes/logistica-para-iluminacion'
+import { Route as LogisticaParaMuebleriasRouteImport } from './routes/logistica-para-mueblerias'
+import { Route as PreguntasFrecuentesRouteImport } from './routes/preguntas-frecuentes'
+import { Route as PrivacidadRouteImport } from './routes/privacidad'
+import { Route as SoftwareDeRepartoRouteImport } from './routes/software-de-reparto'
+import { Route as TerminosRouteImport } from './routes/terminos'
+import { Route as ApiContactRouteImport } from './routes/api.contact'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
-import { Route as ApiContactRouteImport } from './routes/api.contact'
 import { Route as BlogCategoriaCategoriaRouteImport } from './routes/blog/categoria.$categoria'
 
-const TerminosRoute = TerminosRouteImport.update({
-  id: '/terminos',
-  path: '/terminos',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivacidadRoute = PrivacidadRouteImport.update({
-  id: '/privacidad',
-  path: '/privacidad',
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LogisticaParaMuebleriasRoute = LogisticaParaMuebleriasRouteImport.update({
-  id: '/logistica-para-mueblerias',
-  path: '/logistica-para-mueblerias',
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LogisticaParaIluminacionRoute =
-  LogisticaParaIluminacionRouteImport.update({
-    id: '/logistica-para-iluminacion',
-    path: '/logistica-para-iluminacion',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const LogisticaParaFerreteriasRoute =
-  LogisticaParaFerreteriasRouteImport.update({
-    id: '/logistica-para-ferreterias',
-    path: '/logistica-para-ferreterias',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const LogisticaParaElectrodomesticosRoute =
-  LogisticaParaElectrodomesticosRouteImport.update({
-    id: '/logistica-para-electrodomesticos',
-    path: '/logistica-para-electrodomesticos',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const LogisticaParaEcommerceRoute = LogisticaParaEcommerceRouteImport.update({
-  id: '/logistica-para-ecommerce',
-  path: '/logistica-para-ecommerce',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LogisticaParaDistribuidorasRoute =
-  LogisticaParaDistribuidorasRouteImport.update({
-    id: '/logistica-para-distribuidoras',
-    path: '/logistica-para-distribuidoras',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const LogisticaParaCorralonesRoute = LogisticaParaCorralonesRouteImport.update({
-  id: '/logistica-para-corralones',
-  path: '/logistica-para-corralones',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LogisticaParaColchoneriasRoute =
-  LogisticaParaColchoneriasRouteImport.update({
-    id: '/logistica-para-colchonerias',
-    path: '/logistica-para-colchonerias',
+const LogisticaParaBicicleteriasRoute =
+  LogisticaParaBicicleteriasRouteImport.update({
+    id: '/logistica-para-bicicleterias',
+    path: '/logistica-para-bicicleterias',
     getParentRoute: () => rootRouteImport,
   } as any)
 const LogisticaParaCasasDeMaterialesRoute =
@@ -90,25 +58,74 @@ const LogisticaParaCasasDeMaterialesRoute =
     path: '/logistica-para-casas-de-materiales',
     getParentRoute: () => rootRouteImport,
   } as any)
-const LogisticaParaBicicleteriasRoute =
-  LogisticaParaBicicleteriasRouteImport.update({
-    id: '/logistica-para-bicicleterias',
-    path: '/logistica-para-bicicleterias',
+const LogisticaParaColchoneriasRoute =
+  LogisticaParaColchoneriasRouteImport.update({
+    id: '/logistica-para-colchonerias',
+    path: '/logistica-para-colchonerias',
     getParentRoute: () => rootRouteImport,
   } as any)
-const CookiesRoute = CookiesRouteImport.update({
-  id: '/cookies',
-  path: '/cookies',
+const LogisticaParaCorralonesRoute = LogisticaParaCorralonesRouteImport.update({
+  id: '/logistica-para-corralones',
+  path: '/logistica-para-corralones',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AvisoLegalRoute = AvisoLegalRouteImport.update({
-  id: '/aviso-legal',
-  path: '/aviso-legal',
+const LogisticaParaDistribuidorasRoute =
+  LogisticaParaDistribuidorasRouteImport.update({
+    id: '/logistica-para-distribuidoras',
+    path: '/logistica-para-distribuidoras',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaEcommerceRoute = LogisticaParaEcommerceRouteImport.update({
+  id: '/logistica-para-ecommerce',
+  path: '/logistica-para-ecommerce',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const LogisticaParaElectrodomesticosRoute =
+  LogisticaParaElectrodomesticosRouteImport.update({
+    id: '/logistica-para-electrodomesticos',
+    path: '/logistica-para-electrodomesticos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaFerreteriasRoute =
+  LogisticaParaFerreteriasRouteImport.update({
+    id: '/logistica-para-ferreterias',
+    path: '/logistica-para-ferreterias',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaIluminacionRoute =
+  LogisticaParaIluminacionRouteImport.update({
+    id: '/logistica-para-iluminacion',
+    path: '/logistica-para-iluminacion',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogisticaParaMuebleriasRoute = LogisticaParaMuebleriasRouteImport.update({
+  id: '/logistica-para-mueblerias',
+  path: '/logistica-para-mueblerias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreguntasFrecuentesRoute = PreguntasFrecuentesRouteImport.update({
+  id: '/preguntas-frecuentes',
+  path: '/preguntas-frecuentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadRoute = PrivacidadRouteImport.update({
+  id: '/privacidad',
+  path: '/privacidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareDeRepartoRoute = SoftwareDeRepartoRouteImport.update({
+  id: '/software-de-reparto',
+  path: '/software-de-reparto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminosRoute = TerminosRouteImport.update({
+  id: '/terminos',
+  path: '/terminos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -119,11 +136,6 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiContactRoute = ApiContactRouteImport.update({
-  id: '/api/contact',
-  path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogCategoriaCategoriaRoute = BlogCategoriaCategoriaRouteImport.update({
@@ -146,7 +158,9 @@ export interface FileRoutesByFullPath {
   '/logistica-para-ferreterias': typeof LogisticaParaFerreteriasRoute
   '/logistica-para-iluminacion': typeof LogisticaParaIluminacionRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/privacidad': typeof PrivacidadRoute
+  '/software-de-reparto': typeof SoftwareDeRepartoRoute
   '/terminos': typeof TerminosRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -167,7 +181,9 @@ export interface FileRoutesByTo {
   '/logistica-para-ferreterias': typeof LogisticaParaFerreteriasRoute
   '/logistica-para-iluminacion': typeof LogisticaParaIluminacionRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/privacidad': typeof PrivacidadRoute
+  '/software-de-reparto': typeof SoftwareDeRepartoRoute
   '/terminos': typeof TerminosRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -189,7 +205,9 @@ export interface FileRoutesById {
   '/logistica-para-ferreterias': typeof LogisticaParaFerreteriasRoute
   '/logistica-para-iluminacion': typeof LogisticaParaIluminacionRoute
   '/logistica-para-mueblerias': typeof LogisticaParaMuebleriasRoute
+  '/preguntas-frecuentes': typeof PreguntasFrecuentesRoute
   '/privacidad': typeof PrivacidadRoute
+  '/software-de-reparto': typeof SoftwareDeRepartoRoute
   '/terminos': typeof TerminosRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -212,7 +230,9 @@ export interface FileRouteTypes {
     | '/logistica-para-ferreterias'
     | '/logistica-para-iluminacion'
     | '/logistica-para-mueblerias'
+    | '/preguntas-frecuentes'
     | '/privacidad'
+    | '/software-de-reparto'
     | '/terminos'
     | '/api/contact'
     | '/blog/$slug'
@@ -233,7 +253,9 @@ export interface FileRouteTypes {
     | '/logistica-para-ferreterias'
     | '/logistica-para-iluminacion'
     | '/logistica-para-mueblerias'
+    | '/preguntas-frecuentes'
     | '/privacidad'
+    | '/software-de-reparto'
     | '/terminos'
     | '/api/contact'
     | '/blog/$slug'
@@ -254,7 +276,9 @@ export interface FileRouteTypes {
     | '/logistica-para-ferreterias'
     | '/logistica-para-iluminacion'
     | '/logistica-para-mueblerias'
+    | '/preguntas-frecuentes'
     | '/privacidad'
+    | '/software-de-reparto'
     | '/terminos'
     | '/api/contact'
     | '/blog/$slug'
@@ -276,7 +300,9 @@ export interface RootRouteChildren {
   LogisticaParaFerreteriasRoute: typeof LogisticaParaFerreteriasRoute
   LogisticaParaIluminacionRoute: typeof LogisticaParaIluminacionRoute
   LogisticaParaMuebleriasRoute: typeof LogisticaParaMuebleriasRoute
+  PreguntasFrecuentesRoute: typeof PreguntasFrecuentesRoute
   PrivacidadRoute: typeof PrivacidadRoute
+  SoftwareDeRepartoRoute: typeof SoftwareDeRepartoRoute
   TerminosRoute: typeof TerminosRoute
   ApiContactRoute: typeof ApiContactRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -286,95 +312,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terminos': {
-      id: '/terminos'
-      path: '/terminos'
-      fullPath: '/terminos'
-      preLoaderRoute: typeof TerminosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacidad': {
-      id: '/privacidad'
-      path: '/privacidad'
-      fullPath: '/privacidad'
-      preLoaderRoute: typeof PrivacidadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-mueblerias': {
-      id: '/logistica-para-mueblerias'
-      path: '/logistica-para-mueblerias'
-      fullPath: '/logistica-para-mueblerias'
-      preLoaderRoute: typeof LogisticaParaMuebleriasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-iluminacion': {
-      id: '/logistica-para-iluminacion'
-      path: '/logistica-para-iluminacion'
-      fullPath: '/logistica-para-iluminacion'
-      preLoaderRoute: typeof LogisticaParaIluminacionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-ferreterias': {
-      id: '/logistica-para-ferreterias'
-      path: '/logistica-para-ferreterias'
-      fullPath: '/logistica-para-ferreterias'
-      preLoaderRoute: typeof LogisticaParaFerreteriasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-electrodomesticos': {
-      id: '/logistica-para-electrodomesticos'
-      path: '/logistica-para-electrodomesticos'
-      fullPath: '/logistica-para-electrodomesticos'
-      preLoaderRoute: typeof LogisticaParaElectrodomesticosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-ecommerce': {
-      id: '/logistica-para-ecommerce'
-      path: '/logistica-para-ecommerce'
-      fullPath: '/logistica-para-ecommerce'
-      preLoaderRoute: typeof LogisticaParaEcommerceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-distribuidoras': {
-      id: '/logistica-para-distribuidoras'
-      path: '/logistica-para-distribuidoras'
-      fullPath: '/logistica-para-distribuidoras'
-      preLoaderRoute: typeof LogisticaParaDistribuidorasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-corralones': {
-      id: '/logistica-para-corralones'
-      path: '/logistica-para-corralones'
-      fullPath: '/logistica-para-corralones'
-      preLoaderRoute: typeof LogisticaParaCorralonesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-colchonerias': {
-      id: '/logistica-para-colchonerias'
-      path: '/logistica-para-colchonerias'
-      fullPath: '/logistica-para-colchonerias'
-      preLoaderRoute: typeof LogisticaParaColchoneriasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-casas-de-materiales': {
-      id: '/logistica-para-casas-de-materiales'
-      path: '/logistica-para-casas-de-materiales'
-      fullPath: '/logistica-para-casas-de-materiales'
-      preLoaderRoute: typeof LogisticaParaCasasDeMaterialesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/logistica-para-bicicleterias': {
-      id: '/logistica-para-bicicleterias'
-      path: '/logistica-para-bicicleterias'
-      fullPath: '/logistica-para-bicicleterias'
-      preLoaderRoute: typeof LogisticaParaBicicleteriasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cookies': {
-      id: '/cookies'
-      path: '/cookies'
-      fullPath: '/cookies'
-      preLoaderRoute: typeof CookiesRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/aviso-legal': {
@@ -384,11 +326,116 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AvisoLegalRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-bicicleterias': {
+      id: '/logistica-para-bicicleterias'
+      path: '/logistica-para-bicicleterias'
+      fullPath: '/logistica-para-bicicleterias'
+      preLoaderRoute: typeof LogisticaParaBicicleteriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-casas-de-materiales': {
+      id: '/logistica-para-casas-de-materiales'
+      path: '/logistica-para-casas-de-materiales'
+      fullPath: '/logistica-para-casas-de-materiales'
+      preLoaderRoute: typeof LogisticaParaCasasDeMaterialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-colchonerias': {
+      id: '/logistica-para-colchonerias'
+      path: '/logistica-para-colchonerias'
+      fullPath: '/logistica-para-colchonerias'
+      preLoaderRoute: typeof LogisticaParaColchoneriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-corralones': {
+      id: '/logistica-para-corralones'
+      path: '/logistica-para-corralones'
+      fullPath: '/logistica-para-corralones'
+      preLoaderRoute: typeof LogisticaParaCorralonesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-distribuidoras': {
+      id: '/logistica-para-distribuidoras'
+      path: '/logistica-para-distribuidoras'
+      fullPath: '/logistica-para-distribuidoras'
+      preLoaderRoute: typeof LogisticaParaDistribuidorasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-ecommerce': {
+      id: '/logistica-para-ecommerce'
+      path: '/logistica-para-ecommerce'
+      fullPath: '/logistica-para-ecommerce'
+      preLoaderRoute: typeof LogisticaParaEcommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-electrodomesticos': {
+      id: '/logistica-para-electrodomesticos'
+      path: '/logistica-para-electrodomesticos'
+      fullPath: '/logistica-para-electrodomesticos'
+      preLoaderRoute: typeof LogisticaParaElectrodomesticosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-ferreterias': {
+      id: '/logistica-para-ferreterias'
+      path: '/logistica-para-ferreterias'
+      fullPath: '/logistica-para-ferreterias'
+      preLoaderRoute: typeof LogisticaParaFerreteriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-iluminacion': {
+      id: '/logistica-para-iluminacion'
+      path: '/logistica-para-iluminacion'
+      fullPath: '/logistica-para-iluminacion'
+      preLoaderRoute: typeof LogisticaParaIluminacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistica-para-mueblerias': {
+      id: '/logistica-para-mueblerias'
+      path: '/logistica-para-mueblerias'
+      fullPath: '/logistica-para-mueblerias'
+      preLoaderRoute: typeof LogisticaParaMuebleriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preguntas-frecuentes': {
+      id: '/preguntas-frecuentes'
+      path: '/preguntas-frecuentes'
+      fullPath: '/preguntas-frecuentes'
+      preLoaderRoute: typeof PreguntasFrecuentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidad': {
+      id: '/privacidad'
+      path: '/privacidad'
+      fullPath: '/privacidad'
+      preLoaderRoute: typeof PrivacidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software-de-reparto': {
+      id: '/software-de-reparto'
+      path: '/software-de-reparto'
+      fullPath: '/software-de-reparto'
+      preLoaderRoute: typeof SoftwareDeRepartoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terminos': {
+      id: '/terminos'
+      path: '/terminos'
+      fullPath: '/terminos'
+      preLoaderRoute: typeof TerminosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -403,13 +450,6 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/contact': {
-      id: '/api/contact'
-      path: '/api/contact'
-      fullPath: '/api/contact'
-      preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/categoria/$categoria': {
@@ -436,7 +476,9 @@ const rootRouteChildren: RootRouteChildren = {
   LogisticaParaFerreteriasRoute: LogisticaParaFerreteriasRoute,
   LogisticaParaIluminacionRoute: LogisticaParaIluminacionRoute,
   LogisticaParaMuebleriasRoute: LogisticaParaMuebleriasRoute,
+  PreguntasFrecuentesRoute: PreguntasFrecuentesRoute,
   PrivacidadRoute: PrivacidadRoute,
+  SoftwareDeRepartoRoute: SoftwareDeRepartoRoute,
   TerminosRoute: TerminosRoute,
   ApiContactRoute: ApiContactRoute,
   BlogSlugRoute: BlogSlugRoute,
