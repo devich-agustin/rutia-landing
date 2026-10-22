@@ -65,40 +65,84 @@ function ga(event: string, params?: Record<string, unknown>) {
   }
 }
 
-function fb(event: string, standard = false) {
+function fb(
+  event: string,
+  standard = false,
+  params?: Record<string, unknown>,
+) {
   if (META_PIXEL_ID && typeof window !== "undefined" && window.fbq) {
-    window.fbq(standard ? "track" : "trackCustom", event);
+    window.fbq(standard ? "track" : "trackCustom", event, params ?? {});
   }
 }
 
-/* ---------------- Eventos ---------------- */
+/**
+ * Evita contar dos veces el mismo evento si un mismo clic dispara más de un
+ * listener (por ejemplo, un botón dentro de otro elemento rastreado).
+ */
+const lastFired = new Map<string, number>();
+function once(key: string, windowMs = 800) {
+  const now = Date.now();
+  const prev = lastFired.get(key) ?? 0;
+  lastFired.set(key, now);
+  return now - prev > windowMs;
+}
 
-export const trackPageView = () => {
-  ga("page_view");
-  fb("PageView", true);
-};
+/* ---------------- Eventos ----------------
+ * Nombres de GA4 (marcar como "evento clave" en GA4 los de conversión):
+ *   generate_lead   → formulario de demo enviado con éxito (conversión principal)
+ *   click_trial     → clic hacia la prueba gratuita (demo.rutia.com.ar)
+ *   click_whatsapp  → clic a WhatsApp
+ *   click_calendly  → clic para agendar en Calendly
+ *   click_demo      → clic a un botón que lleva al formulario de demo
+ *   contact         → clic al correo de contacto
+ *
+ * Meta Pixel: Lead (formulario), Contact (WhatsApp y correo) y eventos
+ * personalizados ClickTrial, ClickCalendly y ClickDemo.
+ *
+ * Todos son no-op hasta que la persona acepta cookies (initAnalytics).
+ */
 
-export const trackLead = () => {
-  ga("generate_lead");
-  fb("Lead", true);
+export const trackLead = (formName = "demo") => {
+  if (!once(`lead:${formName}`, 3000)) return;
+  ga("generate_lead", { form_name: formName });
+  fb("Lead", true, { content_name: formName });
 };
 
 export const trackContact = () => {
-  ga("contact");
-  fb("Contact", true);
+  if (!once("contact")) return;
+  ga("contact", { method: "email" });
+  fb("Contact", true, { content_name: "email" });
 };
 
-export const trackFormSubmit = () => {
-  ga("form_submit", { form_name: "demo" });
-  fb("FormSubmit");
+export const trackClickWhatsApp = (location = "") => {
+  if (!once("whatsapp")) return;
+  ga("click_whatsapp", { link_location: location });
+  fb("Contact", true, { content_name: "whatsapp" });
 };
 
-export const trackClickWhatsApp = () => {
-  ga("click_whatsapp");
-  fb("ClickWhatsApp");
-};
-
-export const trackClickDemo = () => {
-  ga("click_demo");
+export const trackClickDemo = (location = "") => {
+  if (!once("demo")) return;
+  ga("click_demo", { link_location: location });
   fb("ClickDemo");
+};
+
+export const trackClickTrial = (location = "") => {
+  if (!once("trial")) return;
+  ga("click_trial", { link_location: location });
+  fb("ClickTrial");
+};
+
+export const trackClickCalendly = (location = "") => {
+  if (!once("calendly")) return;
+  ga("click_calendly", { link_location: location });
+  fb("ClickCalendly");
+};
+
+/**
+ * PageView de Meta en navegaciones internas (sin recarga). GA4 ya las mide
+ * con la medición mejorada ("Cambios de página según el historial del
+ * navegador"), por eso acá no se envía page_view a GA4 para no duplicar.
+ */
+export const trackMetaPageView = () => {
+  fb("PageView", true);
 };
