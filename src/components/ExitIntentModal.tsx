@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Check, ArrowRight, X } from "lucide-react";
-import { trackClickDemo } from "@/lib/analytics";
 
 /**
  * Popup de intención de salida (exit-intent) de Rutia.
@@ -142,10 +141,7 @@ export function ExitIntentModal() {
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => {
-            trackClickDemo();
-            close();
-          }}
+          onClick={close}
           className="bg-brand group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-bold text-white shadow-[0_10px_30px_-8px_rgba(47,107,255,.55)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 active:scale-[0.98]"
         >
           Quiero mi mes gratis

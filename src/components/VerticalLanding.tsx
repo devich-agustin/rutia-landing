@@ -4,7 +4,6 @@ import { Footer, Navbar, Shell } from "@/routes/index";
 import { Reveal } from "@/components/Reveal";
 import { RouteMap } from "@/components/RouteMotif";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
-import { trackClickDemo } from "@/lib/analytics";
 
 export type VerticalLandingConfig = {
   breadcrumb: string;
@@ -105,7 +104,6 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/#demo"
-                  onClick={trackClickDemo}
                   className="button-primary inline-flex min-h-13 items-center justify-center gap-2 px-6 text-base font-bold text-white"
                 >
                   Pedí una demo
@@ -333,7 +331,6 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
             </p>
             <a
               href="/#demo"
-              onClick={trackClickDemo}
               className="button-primary mt-8 inline-flex min-h-13 items-center justify-center gap-2 px-7 text-base font-bold text-white"
             >
               Quiero ver una demo

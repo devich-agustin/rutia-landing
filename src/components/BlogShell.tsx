@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import type { Post } from "@/lib/blog";
-import { formatDate, SITE_URL } from "@/lib/blog";
-import { trackClickDemo } from "@/lib/analytics";
+import type { Post } from "@/lib/blog-meta";
+import { formatDate, SITE_URL } from "@/lib/blog-meta";
 
 /* ============================================================
    Piezas visuales del blog, sobre la identidad existente.
@@ -29,7 +28,6 @@ export function BlogShell({ children }: { children: React.ReactNode }) {
             </Link>
             <a
               href="/#demo"
-              onClick={trackClickDemo}
               className="rounded-lg bg-primary px-4 py-2 font-semibold text-white transition-colors hover:brightness-110"
             >
               Solicitar demo
@@ -43,6 +41,10 @@ export function BlogShell({ children }: { children: React.ReactNode }) {
           <span>© 2026 Rutia — Buenos Aires, Argentina</span>
           <nav className="flex flex-wrap gap-x-3 gap-y-1" aria-label="Enlaces">
             <Link to="/blog" className="hover:text-foreground">Blog</Link>
+            <span aria-hidden="true">·</span>
+            <a href="/software-de-reparto" className="hover:text-foreground">Software de reparto</a>
+            <span aria-hidden="true">·</span>
+            <a href="/preguntas-frecuentes" className="hover:text-foreground">Preguntas frecuentes</a>
             <span aria-hidden="true">·</span>
             <a href="/privacidad" className="hover:text-foreground">Privacidad</a>
             <span aria-hidden="true">·</span>
@@ -199,7 +201,6 @@ export function ArticleCta({ intent }: { intent: Post["intent"] }) {
         </p>
         <a
           href="/#demo"
-          onClick={trackClickDemo}
           className="bg-brand mt-5 inline-flex items-center gap-2 rounded-xl px-6 py-3 font-bold text-white transition-all hover:-translate-y-0.5 hover:brightness-110"
         >
           Solicitar una demo <ArrowRight className="h-4 w-4" />

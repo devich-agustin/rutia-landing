@@ -14,7 +14,13 @@ import { initAnalytics } from "@/lib/analytics";
  *    (por ejemplo, desde un link "Configurar cookies" en el footer).
  *
  * IMPORTANTE: para que esto tenga validez, initAnalytics() SOLO debe llamarse
- * desde acá. En __root.tsx hay que quitar la llamada directa a initAnalytics().
+ * desde acá.
+ *
+ * Rendimiento: el aviso se incluye en el HTML del servidor para que se pinte
+ * junto con el resto de la página (antes aparecía recién al cargar React y
+ * era el elemento LCP, con varios segundos de demora). Si la persona ya eligió,
+ * un script en el <head> (ver __root.tsx) marca <html data-cookie-consent> y
+ * el CSS lo oculta antes del primer pintado, sin parpadeo.
  */
 
 const STORAGE_KEY = "rutia_cookie_consent"; // valores: "accepted" | "rejected"
@@ -37,10 +43,13 @@ function writeConsent(value: "accepted" | "rejected") {
   } catch {
     /* si localStorage no está disponible, seguimos sin persistir */
   }
+  document.documentElement.setAttribute("data-cookie-consent", value);
 }
 
 export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+  // Visible por defecto en el HTML del servidor; si ya hay una elección, el
+  // CSS lo oculta antes de pintar y este efecto lo desmonta.
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const consent = readConsent();
@@ -48,13 +57,16 @@ export function CookieConsent() {
     if (consent === "accepted") {
       // Ya había aceptado antes: cargamos analítica sin mostrar el banner.
       initAnalytics();
-    } else if (consent === null) {
-      // Todavía no eligió: mostramos el banner. (si "rejected", queda oculto)
-      setVisible(true);
+      setVisible(false);
+    } else if (consent === "rejected") {
+      setVisible(false);
     }
 
     // Permite reabrir el banner para cambiar la elección más adelante.
-    const reopen = () => setVisible(true);
+    const reopen = () => {
+      document.documentElement.removeAttribute("data-cookie-consent");
+      setVisible(true);
+    };
     window.addEventListener("rutia:open-cookie-preferences", reopen);
     return () =>
       window.removeEventListener("rutia:open-cookie-preferences", reopen);
@@ -81,6 +93,7 @@ export function CookieConsent() {
 
   return (
     <div
+      data-cookie-banner=""
       role="dialog"
       aria-live="polite"
       aria-label="Aviso de cookies"
