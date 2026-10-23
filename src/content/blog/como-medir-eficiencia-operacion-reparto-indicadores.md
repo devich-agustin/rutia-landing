@@ -42,13 +42,13 @@ hay que mirar también por qué no se completó el resto.
 
 ## Entregas fallidas
 
-Contar fallos y registrar sus causas permite saber si el problema está
+[Contar fallos y registrar sus causas](/blog/como-reducir-entregas-fallidas-pyme) permite saber si el problema está
 concentrado en direcciones, coordinación con clientes, preparación u
 otras situaciones.
 
 ## Reprogramaciones
 
-Una reprogramación puede ser normal, pero si crece de forma sostenida
+[Una reprogramación puede ser normal](/blog/como-manejar-reprogramaciones-sin-perder-pedidos), pero si crece de forma sostenida
 consume capacidad futura y vuelve más difícil planificar. Medirla ayuda
 a dimensionar ese trabajo oculto.
 

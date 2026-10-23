@@ -51,7 +51,7 @@ planificación original y la conversación posterior.
 
 ## Permití registrar el resultado desde la misma jornada
 
-Entregado, fallido o reprogramado no deberían depender de una llamada al
+[Entregado, fallido o reprogramado](/blog/seguimiento-entregas-sin-gps-tiempo-real) no deberían depender de una llamada al
 final del día. Registrar el resultado cerca del momento en que ocurre
 mejora la calidad del historial.
 
@@ -59,7 +59,7 @@ mejora la calidad del historial.
 
 No hace falta eliminar WhatsApp. Puede seguir sirviendo para
 conversaciones, consultas o situaciones excepcionales. La diferencia es
-que la operación principal no debería quedar enterrada dentro del chat.
+que [la operación principal no debería quedar enterrada dentro del chat](/blog/como-saber-logistica-quedo-chica-volumen-ventas).
 
 ## Una vista de chofer sin instalar otra app
 

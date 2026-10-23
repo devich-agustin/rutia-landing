@@ -21,13 +21,13 @@ Cuando esas preguntas se repiten durante todo el día, la información existe pe
 
 ## Señal 2: falta una persona y se frena todo
 
-Si el encargado de logística necesita responder mensajes incluso cuando no está trabajando, existe una dependencia fuerte de conocimiento personal.
+[Si el encargado de logística necesita responder mensajes](/blog/que-hacer-cuando-falta-encargado-logistica) incluso cuando no está trabajando, existe una dependencia fuerte de conocimiento personal.
 
 La operación debería poder continuar con estados, asignaciones e historial comprensibles para otros usuarios autorizados.
 
 ## Señal 3: Excel necesita demasiadas explicaciones
 
-Una planilla puede crecer con nuevas columnas, colores y fórmulas. El límite aparece cuando para entenderla hay que conocer convenciones que nunca quedaron formalizadas.
+[Una planilla puede crecer con nuevas columnas, colores y fórmulas](/blog/excel-vs-software-logistica-cuando-dejar-planilla). El límite aparece cuando para entenderla hay que conocer convenciones que nunca quedaron formalizadas.
 
 En ese punto, agregar otra columna puede resolver el síntoma pero no el problema de coordinación.
 
@@ -39,7 +39,7 @@ WhatsApp sigue siendo excelente para conversar, pero no fue diseñado como una b
 
 ## Señal 5: las reprogramaciones empiezan a perderse
 
-Con más volumen también aumentan las excepciones. Si una entrega fallida vuelve a mezclarse con los pedidos nuevos, resulta difícil distinguir prioridades e intentos anteriores.
+Con más volumen también aumentan las excepciones. Si [una entrega fallida vuelve a mezclarse con los pedidos nuevos](/blog/como-manejar-reprogramaciones-sin-perder-pedidos), resulta difícil distinguir prioridades e intentos anteriores.
 
 ## Señal 6: ventas crece más rápido que la capacidad de organizar
 

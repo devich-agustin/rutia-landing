@@ -15,7 +15,7 @@ Su objetivo no es reemplazar todos los sistemas de una empresa. Es resolver una 
 
 ## Qué problema intenta resolver
 
-Muchas PyMEs empiezan organizando el reparto con Excel, WhatsApp, llamadas y conocimiento de las personas que coordinan la operación. Eso puede funcionar durante bastante tiempo.
+Muchas PyMEs empiezan [organizando el reparto con Excel](/blog/excel-vs-software-logistica-cuando-dejar-planilla), WhatsApp, llamadas y conocimiento de las personas que coordinan la operación. Eso puede funcionar durante bastante tiempo.
 
 La dificultad aparece cuando crecen los pedidos, intervienen más personas y los cambios empiezan a multiplicarse. Una fecha se modifica en un chat, depósito todavía no terminó un pedido, el chofer recibe una indicación por teléfono y después nadie sabe con certeza cómo terminó la entrega.
 
@@ -25,9 +25,9 @@ Un software específico busca que esas decisiones dejen de estar dispersas.
 
 El núcleo de una operación de entregas incluye los pedidos pendientes, clientes y direcciones, estado de preparación, jornada de reparto, choferes, vehículos y resultados.
 
-No todos los productos del mercado hacen exactamente lo mismo. Algunos están orientados a grandes flotas, otros a última milla tercerizada y otros a empresas que entregan lo que venden.
+[No todos los productos del mercado hacen exactamente lo mismo](/blog/que-debe-tener-software-organizar-repartos). Algunos están orientados a grandes flotas, otros a última milla tercerizada y otros a empresas que entregan lo que venden.
 
-Por eso conviene evaluar el software según el tipo de operación real de la empresa y no por la cantidad de funciones de una lista comercial.
+Por eso conviene [evaluar el software según el tipo de operación real de la empresa](/blog/como-elegir-software-logistica-pyme) y no por la cantidad de funciones de una lista comercial.
 
 ## La diferencia entre comunicar y gestionar
 
@@ -45,7 +45,7 @@ Antes de contratar una herramienta conviene entender qué problema se quiere res
 
 ## Cuándo empieza a tener sentido
 
-Algunas señales son bastante concretas: varias personas preguntan por el estado de los pedidos, la jornada depende de una persona, hay reprogramaciones difíciles de seguir, el chofer recibe demasiada información por chat o reconstruir lo que pasó ayer lleva tiempo.
+[Algunas señales son bastante concretas](/blog/senales-logistica-pyme-quedo-chica): varias personas preguntan por el estado de los pedidos, la jornada depende de una persona, hay reprogramaciones difíciles de seguir, el chofer recibe demasiada información por chat o reconstruir lo que pasó ayer lleva tiempo.
 
 En esos casos, centralizar puede tener más valor que seguir agregando columnas a una planilla.
 

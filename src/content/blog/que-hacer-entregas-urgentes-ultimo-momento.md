@@ -15,13 +15,13 @@ La clave no es prohibir las urgencias: es **evaluarlas como un cambio operativo 
 
 ## Primero confirmá que el pedido puede salir
 
-Antes de hablar de vehículo o recorrido, revisá si el pedido está preparado y si la información del cliente está completa.
+Antes de hablar de vehículo o recorrido, revisá si el pedido está preparado y [si la información del cliente está completa](/blog/como-evitar-errores-direccion-entregas).
 
 Una urgencia comercial que todavía necesita preparación puede generar más desorden que valor.
 
 ## Mirá la jornada actual
 
-¿Qué entregas ya están asignadas? ¿Qué recurso podría tomar la nueva? ¿En qué zona se encuentra? ¿Hay compromisos que podrían verse afectados?
+¿Qué entregas ya están asignadas? ¿Qué recurso podría tomar la nueva? ¿[En qué zona se encuentra](/blog/como-organizar-entregas-clientes-distintas-zonas)? ¿Hay compromisos que podrían verse afectados?
 
 Sin esa visión, la decisión se toma por intuición y la consecuencia aparece después.
 
@@ -43,11 +43,11 @@ Así queda visible para operaciones y también tendrá un resultado al cierre.
 
 Rechazar la urgencia de hoy no debería significar perder el pedido. Definí cuándo se revisará o qué fecha corresponde.
 
-La diferencia entre “no entra hoy” y “quedó olvidado” es tener un pendiente visible.
+La diferencia entre “no entra hoy” y “quedó olvidado” es [tener un pendiente visible](/blog/como-organizar-pedidos-pendientes-sin-perder-entregas).
 
 ## Registrá el impacto de las urgencias
 
-Si aparecen todos los días, quizá dejaron de ser excepciones. Puede existir un problema en la coordinación comercial, en la preparación o en la forma de planificar capacidad.
+Si aparecen todos los días, quizá dejaron de ser excepciones. Puede existir [un problema en la coordinación comercial](/blog/como-coordinar-ventas-y-logistica), en la preparación o en la forma de planificar capacidad.
 
 Mirar el patrón ayuda a atacar la causa y no solo resolver cada caso.
 

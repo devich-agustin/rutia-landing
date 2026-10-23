@@ -37,7 +37,7 @@ el desorden suele haberse generado antes.
 
 Ventas prometió una fecha que depósito no conocía. Un pedido figuraba
 para hoy pero todavía no estaba preparado. Un cliente pidió cambiar el
-día y el mensaje quedó perdido en un chat. Apareció una entrega urgente
+día y el mensaje quedó perdido en un chat. [Apareció una entrega urgente](/blog/que-hacer-entregas-urgentes-ultimo-momento)
 cuando los vehículos ya estaban organizados.
 
 Por separado son situaciones normales. El problema es no tener un lugar
@@ -142,7 +142,7 @@ La organización no termina cuando el vehículo sale.
 Al final de la jornada necesitás saber qué ocurrió.
 
 Una entrega puede haberse completado correctamente, puede haber fallado
-porque el cliente no estaba o puede necesitar una nueva fecha. Lo
+[porque el cliente no estaba](/blog/como-reducir-entregas-fallidas-pyme) o puede necesitar una nueva fecha. Lo
 importante es que el resultado quede registrado.
 
 Si no se registra, al día siguiente aparece la pregunta clásica:
@@ -161,7 +161,7 @@ Una buena organización diaria también facilita el día de mañana.
 
 Las entregas completadas deberían quedar en el historial. Las que
 fallaron deberían tener un resultado claro. Las que necesitan otra fecha
-deberían volver al flujo como reprogramaciones y no mezclarse
+deberían [volver al flujo como reprogramaciones](/blog/como-manejar-reprogramaciones-sin-perder-pedidos) y no mezclarse
 silenciosamente con pedidos nuevos.
 
 Así no hace falta empezar cada mañana reconstruyendo lo que ocurrió
@@ -175,7 +175,7 @@ atención.
 
 Excel y WhatsApp no son malas herramientas.
 
-Una planilla puede funcionar perfectamente cuando hay pocas entregas y
+[Una planilla puede funcionar perfectamente](/blog/excel-vs-software-logistica-cuando-dejar-planilla) cuando hay pocas entregas y
 una sola persona organiza todo. WhatsApp es excelente para hablar con un
 cliente, avisarle algo a un chofer o resolver una situación puntual.
 

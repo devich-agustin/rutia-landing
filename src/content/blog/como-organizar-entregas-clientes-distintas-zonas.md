@@ -33,19 +33,19 @@ La agrupación por zona debe servir a la operación, no reemplazar el criterio d
 
 ## Evitá agregar urgencias sin mirar el recorrido
 
-Una entrega “que queda más o menos cerca” puede generar un desvío importante dependiendo del momento de la jornada.
+Una entrega “que queda más o menos cerca” [puede generar un desvío importante](/blog/como-optimizar-rutas-reparto-gastar-menos-combustible) dependiendo del momento de la jornada.
 
 Antes de sumarla, revisá qué otras entregas tiene el recurso y si el cambio afecta compromisos existentes.
 
 ## Distribuí recursos con una visión común
 
-Si tenés varios choferes o vehículos, la planificación debería permitir comparar las entregas antes de repartirlas.
+[Si tenés varios choferes o vehículos](/blog/como-organizar-reparto-varios-choferes-vehiculos), la planificación debería permitir comparar las entregas antes de repartirlas.
 
 Cuando cada chofer arma su recorrido desde mensajes separados, es más difícil detectar duplicaciones o zonas mal distribuidas.
 
 ## Aprendé de lo que pasó
 
-Al cierre, revisá fallos y reprogramaciones. Una zona que genera dificultades recurrentes puede requerir otra forma de planificación o más atención en la coordinación previa.
+Al cierre, [revisá fallos y reprogramaciones](/blog/como-medir-eficiencia-operacion-reparto-indicadores). Una zona que genera dificultades recurrentes puede requerir otra forma de planificación o más atención en la coordinación previa.
 
 No hace falta medir todo desde el primer día; empezar por resultados ya aporta información.
 

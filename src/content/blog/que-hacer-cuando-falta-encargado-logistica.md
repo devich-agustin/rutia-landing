@@ -36,7 +36,7 @@ para documentar mejor la operación.
 
 ## Construí una única fuente de información operativa
 
-No alcanza con tener datos si están repartidos entre planillas, chats y
+No alcanza con tener datos si están [repartidos entre planillas](/blog/excel-vs-software-logistica-cuando-dejar-planilla), chats y
 notas. La operación necesita un lugar común donde las personas
 autorizadas puedan entender el estado actual sin reconstruirlo.
 
@@ -48,13 +48,13 @@ otra persona continúe el trabajo sin necesitar todo el contexto previo.
 
 ## Dejá visible la organización del día
 
-La jornada debería mostrar qué entregas salen y con qué chofer, vehículo
+[La jornada debería mostrar qué entregas salen](/blog/como-organizar-reparto-diario-pyme) y con qué chofer, vehículo
 o flete. Si esa información existe solamente en conversaciones privadas,
 el reemplazo del encargado empieza desde cero.
 
 ## Guardá historial, no solo el presente
 
-Saber qué pasó ayer es parte de poder operar hoy. Un historial de
+[Saber qué pasó ayer es parte de poder operar hoy](/blog/seguimiento-entregas-sin-gps-tiempo-real). Un historial de
 resultados y reprogramaciones evita depender de la memoria de quien
 coordinó la jornada anterior.
 

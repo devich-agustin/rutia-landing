@@ -38,12 +38,12 @@ patrones.
 ## Definí la nueva fecha de forma explícita
 
 No alcanza con escribir "ver después". Una reprogramación debería volver
-a quedar visible dentro de los pendientes con una próxima acción clara.
+a quedar [visible dentro de los pendientes](/blog/como-organizar-pedidos-pendientes-sin-perder-entregas) con una próxima acción clara.
 
 ## Conservá el historial anterior
 
 Cambiar de fecha no debería borrar lo que pasó. El historial permite
-entender cuántos intentos tuvo una entrega y cómo evolucionó.
+entender [cuántos intentos tuvo una entrega](/blog/como-reducir-entregas-fallidas-pyme) y cómo evolucionó.
 
 ## Evitá que el cambio viva solo en WhatsApp
 

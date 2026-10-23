@@ -15,7 +15,7 @@ Para una PyME con reparto propio, lo importante suele ser poder centralizar pedi
 
 ## Empezá por el problema, no por la herramienta
 
-Anotá qué situaciones consumen tiempo hoy. Puede ser que ventas y logística trabajen con información diferente, que el reparto dependa de una persona, que haya demasiados cambios por WhatsApp o que las reprogramaciones se pierdan.
+Anotá qué situaciones consumen tiempo hoy. Puede ser que ventas y logística trabajen con información diferente, [que el reparto dependa de una persona](/blog/que-hacer-cuando-falta-encargado-logistica), que haya [demasiados cambios por WhatsApp](/blog/dar-informacion-chofer-sin-caos-whatsapp) o que las reprogramaciones se pierdan.
 
 Esa lista es más útil para evaluar alternativas que una comparación genérica de funcionalidades.
 
@@ -65,7 +65,7 @@ Evaluá cuánto tarda el equipo en encontrar un pedido, quién puede cambiar una
 
 ## Preguntas que conviene hacer en una demo
 
-- ¿Se pueden importar los pedidos que hoy tenemos en Excel?
+- ¿Se pueden [importar los pedidos que hoy tenemos en Excel](/blog/como-importar-pedidos-excel-sin-cargar-a-mano)?
 - ¿Qué necesita instalar el chofer?
 - ¿Cómo se registran una visita fallida y una reprogramación?
 - ¿Qué ve ventas cuando un cliente pregunta por su entrega?

@@ -25,7 +25,7 @@ En esta guía vamos a ver cómo organizar las entregas de una PyME paso a paso: 
 
 Casi ninguna PyME empezó pensando en logística. Empezó vendiendo.
 
-Una mueblería que arranca entregando cuatro o cinco muebles por semana no necesita un sistema: el dueño se acuerda de todo, coordina por teléfono y listo. Lo mismo un corralón que reparte materiales a tres o cuatro obras conocidas, o una distribuidora que recién arma su cartera de clientes.
+[Una mueblería que arranca](/logistica-para-mueblerias) entregando cuatro o cinco muebles por semana no necesita un sistema: el dueño se acuerda de todo, coordina por teléfono y listo. Lo mismo [un corralón que reparte materiales](/logistica-para-corralones) a tres o cuatro obras conocidas, o [una distribuidora que recién arma su cartera de clientes](/logistica-para-distribuidoras).
 
 El desorden no aparece porque alguien trabaje mal. Aparece porque la operación crece más rápido que las herramientas que la sostienen.
 
@@ -61,7 +61,7 @@ Si esas preguntas no tienen respuesta clara, optimizar la ruta es optimizar info
 
 > **Para llevar:** no se puede optimizar una operación que todavía no se controla. Primero ordenar. Después optimizar.
 
-Por eso el orden correcto es ese y no el inverso: primero lograr que toda la información de las entregas exista en un solo lugar, con estados claros y responsables definidos. Recién sobre esa base tiene sentido pensar en recorridos, zonas y eficiencia de kilómetros. (Enlace interno futuro: *Por qué el problema no son las rutas*.)
+Por eso el orden correcto es ese y no el inverso: primero lograr que toda la información de las entregas exista en un solo lugar, con estados claros y responsables definidos. Recién sobre esa base tiene sentido pensar en recorridos, zonas y eficiencia de kilómetros. (Lo desarrollamos en [cómo optimizar las rutas de reparto](/blog/como-optimizar-rutas-reparto-gastar-menos-combustible).)
 
 Esta guía se ocupa de la primera parte. Que, curiosamente, es la que casi nadie explica.
 
@@ -73,7 +73,7 @@ Porque antes que la herramienta, lo que ordena es el criterio.
 
 ### Paso 1 — Centralizar los pedidos en un solo lugar
 
-La primera regla es simple de enunciar y difícil de sostener: **todo pedido que implique una entrega tiene que quedar registrado en un único lugar**, sin importar por dónde entró. El que se tomó en el mostrador, el que llegó por teléfono, el de la tienda online, el que cerró un vendedor por WhatsApp.
+La primera regla es simple de enunciar y difícil de sostener: **todo pedido que implique una entrega tiene que quedar registrado en un único lugar**, sin importar por dónde entró. El que se tomó en el mostrador, el que llegó por teléfono, [el de la tienda online](/logistica-para-ecommerce), el que cerró un vendedor por WhatsApp.
 
 Mientras los pedidos entren por cinco canales y se anoten en tres lugares distintos, cualquier esfuerzo posterior de organización se construye sobre arena. El depósito prepara según lo que le avisaron, no según una lista completa. Y el pedido que quedó solo en un chat es el candidato perfecto a olvidarse.
 
@@ -132,11 +132,11 @@ Acá va una de las convicciones que más repetimos: **las entregas sin asignar n
 
 Por eso conviene tratarlas como una categoría propia que alguien revisa todos los días: ¿qué entregas de hoy y de mañana todavía no tienen responsable?
 
-Un matiz para las operaciones que tercerizan parte del reparto: que la entrega la haga un flete externo no significa que deje de necesitar asignación y seguimiento. Frente al cliente, la responsable sigue siendo tu empresa.
+Un matiz para las [operaciones que tercerizan parte del reparto](/blog/reparto-propio-o-tercerizar-entregas): que la entrega la haga un flete externo no significa que deje de necesitar asignación y seguimiento. Frente al cliente, la responsable sigue siendo tu empresa.
 
 ### Paso 6 — Armar el plan del día (y por qué no es lo mismo que una ruta)
 
-El plan del día responde tres preguntas: **quién hace qué, cuándo y en qué orden**. La ruta —el recorrido sobre el mapa— es apenas una consecuencia del plan, no el plan en sí. (Enlace interno futuro: *Cómo armar el plan diario de entregas*.)
+El plan del día responde tres preguntas: **quién hace qué, cuándo y en qué orden**. La ruta —el recorrido sobre el mapa— es apenas una consecuencia del plan, no el plan en sí. (Lo desarrollamos en [cómo organizar el reparto diario de una PyME](/blog/como-organizar-reparto-diario-pyme).)
 
 La diferencia no es teórica. Una ruta puede estar perfectamente optimizada y el día salir mal igual: porque una entrega del recorrido no estaba preparada, porque el cliente de la tercera parada nunca confirmó, o porque dos entregas urgentes quedaron afuera del armado.
 
@@ -188,15 +188,15 @@ En una operación ordenada, el dueño debería poder responder, mirando un solo 
 
 > **Vale la pena recordar:** ver la operación no es vigilar al equipo. La visibilidad no reemplaza la confianza; le saca el peso de tener que sostenerse a ciegas.
 
-De hecho, el más beneficiado suele ser el propio encargado: cuando el dueño puede ver el estado de las cosas por sí mismo, deja de interrumpirlo diez veces por día para preguntar. (Enlace interno futuro: *Qué debería poder ver un dueño sin preguntarle al encargado*.)
+De hecho, el más beneficiado suele ser el propio encargado: cuando el dueño puede ver el estado de las cosas por sí mismo, deja de interrumpirlo diez veces por día para preguntar.
 
 ## Los errores que más caro cuestan al organizar el reparto
 
 Durante el desarrollo de Rutia, al observar cómo trabajan operaciones de distintos rubros, algunos errores aparecían una y otra vez. No son errores de gente descuidada: son consecuencias naturales de operar con herramientas informales. Conviene conocerlos porque son los que más cuestan, y los que más se repiten.
 
-**Depender de una sola persona.** El encargado que tiene todo en la cabeza es un activo enorme y un riesgo enorme al mismo tiempo. Si se toma un día, la operación se complica; si se toma vacaciones, se vuelve un problema serio. La solución no es reemplazar su criterio, sino lograr que ese criterio quede registrado y deje de vivir en una sola cabeza. Una operación ordenada depende menos de la memoria y más del método. (Enlace interno futuro: *Cómo dejar de depender de la memoria del encargado de logística*.)
+**Depender de una sola persona.** El encargado que tiene todo en la cabeza es un activo enorme y un riesgo enorme al mismo tiempo. Si se toma un día, la operación se complica; si se toma vacaciones, se vuelve un problema serio. La solución no es reemplazar su criterio, sino lograr que ese criterio quede registrado y deje de vivir en una sola cabeza. Una operación ordenada depende menos de la memoria y más del método. (Más en [qué hacer cuando falta el encargado de logística](/blog/que-hacer-cuando-falta-encargado-logistica).)
 
-**Tener varias versiones de la misma planilla.** Una copia en la compu del encargado, otra impresa en el depósito, otra que alguien se mandó por mail. Cuando hay dos versiones, hay dos verdades. Y alguien va a actuar sobre la equivocada. (Enlace interno futuro: *Los errores más comunes al gestionar entregas con Excel*.)
+**Tener varias versiones de la misma planilla.** Una copia en la compu del encargado, otra impresa en el depósito, otra que alguien se mandó por mail. Cuando hay dos versiones, hay dos verdades. Y alguien va a actuar sobre la equivocada. (Más en [Excel o software de logística: cuándo dejar la planilla](/blog/excel-vs-software-logistica-cuando-dejar-planilla).)
 
 **Avisar los cambios por audio.** No se puede buscar, no queda asociado a la entrega, y depende de que todos lo escuchen a tiempo. Ya lo dijimos: rápido para el que lo manda, caro para la operación.
 
@@ -230,7 +230,7 @@ Otras señales de que ese punto está cerca:
 - La empresa vende más, pero cada pico de ventas se convierte en una crisis operativa.
 - La pregunta "¿qué salió hoy?" tiene respuestas distintas según a quién le preguntes.
 
-Si varias de estas señales te suenan, el problema ya no es de disciplina: es que la herramienta quedó chica para la operación. (Enlaces internos futuros: *10 señales de que tu logística ya quedó chica* y *Cómo dejar de depender de Excel para gestionar las entregas*.)
+Si varias de estas señales te suenan, el problema ya no es de disciplina: es que la herramienta quedó chica para la operación. (Te puede servir: [10 señales de que la logística de tu PyME quedó chica](/blog/senales-logistica-pyme-quedo-chica).)
 
 ## Ejemplo de una jornada de entregas para una PyME
 

@@ -27,7 +27,7 @@ Depósito necesita poder indicar cuándo la preparación está completa para que
 
 ## Organizá el día según la operación real
 
-Las entregas a domicilios y obras pueden involucrar zonas, prioridades y recursos diferentes. El encargado necesita una visión del conjunto para decidir qué sale y con qué vehículo o flete.
+Las entregas a domicilios y obras pueden involucrar zonas, prioridades y recursos diferentes. El encargado necesita una visión del conjunto para decidir qué sale y [con qué vehículo o flete](/blog/organizar-entregas-vehiculos-propios-fletes-contratados).
 
 Esto no implica prometer optimización automática por peso, volumen o cubicaje. Esas decisiones pueden seguir dependiendo del criterio operativo de la empresa.
 
@@ -39,7 +39,7 @@ La información vigente debería reflejarse en el pedido o entrega correspondien
 
 ## Registrá fallos y reprogramaciones
 
-Una obra cerrada, un cliente ausente o un cambio de fecha pueden obligar a reprogramar. Conservar el motivo y el historial evita perder el pedido entre los pendientes nuevos.
+Una obra cerrada, un cliente ausente o un cambio de fecha pueden obligar a reprogramar. Conservar el motivo y el historial [evita perder el pedido entre los pendientes nuevos](/blog/como-manejar-reprogramaciones-sin-perder-pedidos).
 
 ## Una herramienta enfocada en la entrega
 
@@ -47,7 +47,7 @@ Una obra cerrada, un cliente ausente o un cambio de fecha pueden obligar a repro
 
 ## Conclusión
 
-La logística de un corralón se vuelve más manejable cuando ventas, depósito y reparto comparten la misma información pero mantienen responsabilidades claras.
+La logística de un corralón se vuelve más manejable cuando [ventas, depósito y reparto comparten la misma información](/blog/como-coordinar-ventas-y-logistica) pero mantienen responsabilidades claras.
 
 No se trata de automatizar cada decisión: se trata de que cada decisión se tome sobre una operación visible.
 

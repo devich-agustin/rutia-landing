@@ -43,7 +43,7 @@ Ese último grupo es el que conviene que preste atención. Porque el razonamient
 
 Acá es donde el tema conecta con algo que en [Rutia](https://rutia.com.ar/) vemos todos los días.
 
-Muchísimas PyMEs con reparto propio usan WhatsApp como el sistema nervioso de toda su logística. Los pedidos entran por ahí, los cambios de último momento viajan por ahí, el "¿saliste?" y el "avisá cuando llegues" viven en los chats. Funciona, hasta que deja de funcionar: los mensajes importantes se pierden entre cien, nadie sabe con certeza qué se confirmó, y la coordinación depende de que cada persona lea el mensaje justo a tiempo.
+Muchísimas PyMEs con reparto propio [usan WhatsApp como el sistema nervioso de toda su logística](/blog/dar-informacion-chofer-sin-caos-whatsapp). Los pedidos entran por ahí, los cambios de último momento viajan por ahí, el "¿saliste?" y el "avisá cuando llegues" viven en los chats. Funciona, hasta que deja de funcionar: los mensajes importantes se pierden entre cien, nadie sabe con certeza qué se confirmó, y la coordinación depende de que cada persona lea el mensaje justo a tiempo.
 
 Cuando esa empresa crece y quiere ordenar el caos, muchas veces la primera idea es "profesionalicemos el WhatsApp": contratar la API, automatizar los avisos. Y es entonces cuando el WhatsApp, que parecía gratis, empieza a tener una factura. Este cambio de Meta hace ese costo más visible que antes.
 

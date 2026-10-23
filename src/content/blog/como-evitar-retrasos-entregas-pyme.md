@@ -15,9 +15,9 @@ Reducir demoras exige mirar el flujo completo: **pedido, preparación, planifica
 
 ## No prometas fechas sin mirar la operación
 
-Ventas necesita responderle al cliente, pero una fecha solo es sostenible si preparación y reparto pueden acompañarla.
+Ventas necesita responderle al cliente, pero [una fecha solo es sostenible si preparación y reparto pueden acompañarla](/blog/como-coordinar-ventas-y-logistica).
 
-Cuando las promesas comerciales viven separadas de la logística, el equipo operativo recibe compromisos ya asumidos y tiene que encontrar cómo cumplirlos. Eso suele generar urgencias, cambios de último momento y jornadas difíciles de ejecutar.
+Cuando las promesas comerciales viven separadas de la logística, el equipo operativo recibe compromisos ya asumidos y tiene que encontrar cómo cumplirlos. Eso suele generar urgencias, [cambios de último momento](/blog/que-hacer-entregas-urgentes-ultimo-momento) y jornadas difíciles de ejecutar.
 
 Compartir información no significa que ventas deba organizar los vehículos. Significa que las áreas trabajen sobre una realidad común.
 
@@ -35,7 +35,7 @@ No siempre se trata de hacer la mayor cantidad posible. Una planificación reali
 
 ## Revisá direcciones e indicaciones
 
-Una dirección incompleta puede generar llamadas, vueltas innecesarias y tiempo perdido. Los datos operativos deberían estar disponibles antes de la salida.
+[Una dirección incompleta puede generar llamadas](/blog/como-evitar-errores-direccion-entregas), vueltas innecesarias y tiempo perdido. Los datos operativos deberían estar disponibles antes de la salida.
 
 Cuando existe una duda, es preferible detectarla mientras el pedido está en preparación que cuando el chofer ya está buscando el destino.
 

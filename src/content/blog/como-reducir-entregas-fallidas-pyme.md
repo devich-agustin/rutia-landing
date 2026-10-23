@@ -27,7 +27,7 @@ el chofer y un registro preciso del motivo cuando algo sale mal.
 ## Identificá por qué están fallando las entregas
 
 No todas las entregas fallan por el mismo motivo. El cliente puede no
-estar, la dirección puede estar incompleta, el pedido puede no haber
+estar, [la dirección puede estar incompleta](/blog/como-evitar-errores-direccion-entregas), el pedido puede no haber
 salido preparado o puede existir un cambio de fecha que no llegó a
 reparto.
 
@@ -50,14 +50,14 @@ con pedidos que todavía no pueden salir.
 ## Dale al chofer información suficiente y concreta
 
 El responsable de la entrega necesita encontrar fácilmente dirección,
-cliente, pedido e indicaciones operativas. Si cada dato está en un chat
+cliente, pedido e indicaciones operativas. [Si cada dato está en un chat](/blog/dar-informacion-chofer-sin-caos-whatsapp)
 distinto, aumenta la posibilidad de errores y llamadas durante el
 recorrido.
 
 ## Registrá el resultado y reprogramá de forma explícita
 
 Cuando una entrega falla, registrá qué pasó. Si necesita una nueva
-fecha, tratala como una reprogramación y no como un pedido que
+fecha, [tratala como una reprogramación](/blog/como-manejar-reprogramaciones-sin-perder-pedidos) y no como un pedido que
 simplemente vuelve a mezclarse con todos los pendientes.
 
 [Rutia](https://rutia.com.ar/) permite mantener resultados, incidencias,
@@ -79,7 +79,7 @@ de información entre ventas, depósito y reparto.
 
 ## Qué hacer después de una visita fallida
 
-Registrá el motivo de la visita fallida, verificá si los datos del cliente siguen vigentes y acordá una nueva fecha antes de reprogramar. Al cierre de la semana, agrupá los motivos: cliente ausente, dirección incorrecta, producto no preparado o problemas de coordinación.
+Registrá el motivo de la visita fallida, verificá si los datos del cliente siguen vigentes y acordá una nueva fecha antes de reprogramar. Al cierre de la semana, [agrupá los motivos](/blog/como-medir-eficiencia-operacion-reparto-indicadores): cliente ausente, dirección incorrecta, producto no preparado o problemas de coordinación.
 
 No todas las entregas fallidas se pueden evitar. Lo importante es que cada caso deje información útil para mejorar la próxima salida.
 

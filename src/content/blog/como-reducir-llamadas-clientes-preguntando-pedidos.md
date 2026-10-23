@@ -33,13 +33,13 @@ Una fuente operativa común permite responder sobre un estado registrado y, cuan
 
 ## Registrá los cambios de fecha
 
-Si el cliente reprogramó y solo una persona recibió el mensaje, otra área puede seguir informando la fecha anterior.
+[Si el cliente reprogramó](/blog/como-manejar-reprogramaciones-sin-perder-pedidos) y solo una persona recibió el mensaje, otra área puede seguir informando la fecha anterior.
 
 Actualizar la entrega evita contradicciones y nuevas llamadas.
 
 ## Cerrá el resultado
 
-Cuando el chofer completa o no puede completar una entrega, ese dato debería volver a la operación.
+Cuando el chofer completa o no puede completar una entrega, [ese dato debería volver a la operación](/blog/seguimiento-entregas-sin-gps-tiempo-real).
 
 Si el resultado queda únicamente en el teléfono del chofer, la empresa sigue sin poder responder aunque físicamente ya sepa qué ocurrió.
 
@@ -59,7 +59,7 @@ Una mejor visibilidad interna no elimina toda consulta del cliente, pero reduce 
 
 Antes de pensar en automatizar mensajes, asegurate de que la empresa tenga una respuesta confiable.
 
-Cuando ventas, depósito y logística comparten el estado de la entrega, atender al cliente deja de ser una investigación interna.
+Cuando [ventas, depósito y logística comparten el estado de la entrega](/blog/como-coordinar-ventas-y-logistica), atender al cliente deja de ser una investigación interna.
 
 <div style="margin: 2.5rem 0; padding: 2rem; border-radius: 1.25rem; background: #0b5cff; color: #ffffff;">
 

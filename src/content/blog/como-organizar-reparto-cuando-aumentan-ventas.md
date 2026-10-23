@@ -19,7 +19,7 @@ Puede ser la carga de pedidos, la preparación, la coordinación de fechas, la a
 
 No conviene cambiar todo al mismo tiempo. Identificá dónde aparecen más preguntas, duplicaciones y errores.
 
-Una señal muy clara es que el equipo pasa cada vez más tiempo preguntando por el estado de la operación en lugar de ejecutarla.
+[Una señal muy clara](/blog/senales-logistica-pyme-quedo-chica) es que el equipo pasa cada vez más tiempo preguntando por el estado de la operación en lugar de ejecutarla.
 
 ## Centralizá antes de sumar más personas
 
@@ -41,13 +41,13 @@ Cuando había pocas entregas, una lista podía alcanzar. Con más volumen, la jo
 
 ## Mantené las excepciones bajo control
 
-El crecimiento también multiplica clientes ausentes, cambios de fecha y reprogramaciones. Si cada excepción vive en un chat, el volumen de conversaciones crece junto con las ventas.
+El crecimiento también multiplica [clientes ausentes, cambios de fecha y reprogramaciones](/blog/como-manejar-reprogramaciones-sin-perder-pedidos). Si cada excepción vive en un chat, el volumen de conversaciones crece junto con las ventas.
 
 Registrar resultados e incidencias permite que los casos problemáticos no desaparezcan entre los pedidos nuevos.
 
 ## No agregues tecnología que todavía no necesitás
 
-Escalar no significa comprar todas las funciones posibles. GPS en vivo, motores complejos de capacidad, integraciones o automatizaciones pueden tener sentido en determinados contextos, pero primero conviene resolver el núcleo operativo.
+Escalar no significa comprar todas las funciones posibles. [GPS en vivo](/blog/seguimiento-entregas-sin-gps-tiempo-real), motores complejos de capacidad, integraciones o automatizaciones pueden tener sentido en determinados contextos, pero primero conviene resolver el núcleo operativo.
 
 Una base clara de pedidos, preparación, jornada, recursos y resultados suele ser el paso más importante.
 

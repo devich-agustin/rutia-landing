@@ -9,7 +9,7 @@ intent: tofu
 draft: false
 ---
 
-Una dirección incorrecta puede parecer un error pequeño hasta que el vehículo ya está en la calle. Ahí se transforma en llamadas, tiempo perdido, kilómetros adicionales y, en algunos casos, una entrega fallida que deberá repetirse.
+Una dirección incorrecta puede parecer un error pequeño hasta que el vehículo ya está en la calle. Ahí se transforma en llamadas, tiempo perdido, kilómetros adicionales y, en algunos casos, [una entrega fallida que deberá repetirse](/blog/como-reducir-entregas-fallidas-pyme).
 
 Reducir estos problemas empieza por tratar la dirección como **un dato operativo que debe poder revisarse**, no como un texto que se copia de un mensaje y se da por válido.
 
@@ -35,7 +35,7 @@ Convertir esa revisión en parte del proceso reduce interrupciones durante el re
 
 Si ventas corrige la dirección pero el chofer conserva una captura anterior, el problema sigue existiendo.
 
-La modificación debería quedar reflejada en la información operativa que utiliza la jornada. WhatsApp puede servir para avisar, pero no debería ser el único lugar donde vive la corrección.
+La modificación debería quedar reflejada en la información operativa que utiliza la jornada. [WhatsApp puede servir para avisar](/blog/dar-informacion-chofer-sin-caos-whatsapp), pero no debería ser el único lugar donde vive la corrección.
 
 ## Separá dirección de indicaciones
 

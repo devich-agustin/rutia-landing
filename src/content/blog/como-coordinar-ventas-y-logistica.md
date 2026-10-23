@@ -28,7 +28,7 @@ operación de reparto.
 
 ## Definí qué puede prometer ventas
 
-Una fecha comercial debería considerar la capacidad real de preparación
+Una fecha comercial debería considerar la [capacidad real de preparación](/blog/como-evitar-retrasos-entregas-pyme)
 y reparto. Si ventas promete sin visibilidad y logística se entera
 después, la operación empieza el día con una deuda difícil de resolver.
 
@@ -53,7 +53,7 @@ modifiquen la jornada sin coordinación.
 
 ## Registrá los cambios donde todos puedan verlos
 
-Si el cliente cambia la fecha, el dato debe actualizarse en la
+Si [el cliente cambia la fecha](/blog/como-manejar-reprogramaciones-sin-perder-pedidos), el dato debe actualizarse en la
 operación. Un mensaje privado a una persona no alcanza cuando varias
 áreas dependen de esa decisión.
 

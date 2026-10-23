@@ -17,7 +17,7 @@ El objetivo no es convertir la PyME en una gran empresa de transporte. Es **hace
 
 Primero definí qué entregas realmente deben salir. Después distribuí esas entregas entre los recursos disponibles.
 
-Si cada chofer recibe pedidos por separado antes de que exista una visión general, es más difícil detectar zonas duplicadas, prioridades incompatibles o entregas olvidadas.
+Si cada chofer recibe pedidos por separado antes de que exista una visión general, es más difícil [detectar zonas duplicadas](/blog/como-organizar-entregas-clientes-distintas-zonas), prioridades incompatibles o entregas olvidadas.
 
 ## Mantené una ficha clara de los recursos
 
@@ -45,13 +45,13 @@ Eso permite distinguir completadas, fallidas y reprogramadas y deja el historial
 
 ## Evitá grupos paralelos como sistema
 
-Podés seguir usando WhatsApp para consultas. El problema aparece cuando cada vehículo tiene un chat diferente y la única visión global está en la cabeza de quien participa de todos.
+Podés seguir usando WhatsApp para consultas. El problema aparece cuando [cada vehículo tiene un chat diferente](/blog/dar-informacion-chofer-sin-caos-whatsapp) y la única visión global está en la cabeza de quien participa de todos.
 
 La planificación debería existir fuera de esos chats.
 
 ## Revisá la distribución después de operar
 
-Con varios recursos, el historial puede mostrar si ciertas jornadas quedan desbalanceadas o si aparecen problemas repetidos.
+Con varios recursos, [el historial puede mostrar si ciertas jornadas quedan desbalanceadas](/blog/como-medir-eficiencia-operacion-reparto-indicadores) o si aparecen problemas repetidos.
 
 No hace falta automatizar todas las decisiones desde el principio. Primero asegurate de poder verlas.
 

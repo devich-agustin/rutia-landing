@@ -27,7 +27,7 @@ Cuando varias personas necesitan modificar información y no está claro cuál e
 
 ## Señal 2: la planilla necesita WhatsApp para entenderse
 
-Una celda dice jueves, pero en el grupo avisaron que pasó al viernes. El pedido figura pendiente, pero depósito confirmó por mensaje que ya está listo.
+Una celda dice jueves, pero [en el grupo avisaron que pasó al viernes](/blog/dar-informacion-chofer-sin-caos-whatsapp). El pedido figura pendiente, pero depósito confirmó por mensaje que ya está listo.
 
 Cuando para interpretar la planilla hay que leer conversaciones paralelas, dejó de ser una fuente completa de la operación.
 
@@ -35,17 +35,17 @@ Cuando para interpretar la planilla hay que leer conversaciones paralelas, dejó
 
 Colores, abreviaturas, comentarios y columnas ocultas pueden convertir una planilla útil en conocimiento personal.
 
-Si la ausencia de quien la diseñó dificulta organizar el reparto, existe una dependencia operativa.
+Si la ausencia de quien la diseñó dificulta organizar el reparto, [existe una dependencia operativa](/blog/que-hacer-cuando-falta-encargado-logistica).
 
 ## Señal 4: cuesta conservar historial
 
-Modificar una fila para reflejar el presente puede borrar el contexto anterior. En logística importa saber no solo cómo está una entrega, sino también qué ocurrió cuando falló o se reprogramó.
+Modificar una fila para reflejar el presente puede borrar el contexto anterior. En logística importa saber no solo cómo está una entrega, sino también qué ocurrió [cuando falló o se reprogramó](/blog/como-manejar-reprogramaciones-sin-perder-pedidos).
 
 ## Señal 5: cargar datos se volvió repetitivo
 
 Pasar pedidos de otra planilla o sistema a la hoja de logística manualmente consume tiempo y puede introducir errores.
 
-Una alternativa es mantener Excel como origen e importar los pedidos al sistema de entregas. [Rutia](https://rutia.com.ar/) permite importar pedidos desde Excel y mapear columnas de archivos externos.
+Una alternativa es [mantener Excel como origen e importar los pedidos](/blog/como-importar-pedidos-excel-sin-cargar-a-mano) al sistema de entregas. [Rutia](https://rutia.com.ar/) permite importar pedidos desde Excel y mapear columnas de archivos externos.
 
 ## No hace falta abandonar Excel
 

@@ -9,13 +9,13 @@ intent: tofu
 draft: false
 ---
 
-Muchas PyMEs no trabajan con un único modelo de reparto. Tienen uno o más vehículos propios y recurren a fletes contratados cuando aumenta el volumen, aparece una zona especial o falta capacidad.
+Muchas PyMEs no trabajan con un único modelo de reparto. Tienen uno o más vehículos propios y [recurren a fletes contratados cuando aumenta el volumen](/blog/reparto-propio-o-tercerizar-entregas), aparece una zona especial o falta capacidad.
 
 El desafío de ese esquema mixto no es solamente conseguir transporte: es **mantener una única visión de las entregas aunque la ejecución se reparta entre recursos diferentes**.
 
 ## Organizá primero las entregas, después los recursos
 
-Antes de decidir qué va en vehículo propio y qué se terceriza, necesitás saber qué pedidos están preparados y cuáles deben salir ese día.
+Antes de decidir qué va en vehículo propio y qué se terceriza, necesitás saber qué pedidos están preparados y [cuáles deben salir ese día](/blog/como-organizar-reparto-diario-pyme).
 
 Asignar recursos sobre una lista todavía inestable genera cambios y llamadas posteriores.
 
@@ -41,7 +41,7 @@ Tercerizar la ejecución no debería obligarte a perder el control del pedido.
 
 Al cierre del día necesitás saber qué pasó con todas las entregas, no solo con las propias.
 
-Eso permite reprogramar fallos y evaluar cómo se está usando cada tipo de recurso.
+Eso permite [reprogramar fallos](/blog/como-manejar-reprogramaciones-sin-perder-pedidos) y evaluar cómo se está usando cada tipo de recurso.
 
 ## Centralizá el esquema mixto
 

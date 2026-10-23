@@ -57,7 +57,7 @@ Lo que se suele creer: es un tema de personas; habría que formar un segundo, bu
 
 > **Vale la pena recordar:** el problema nunca es el encargado. El problema es que la empresa nunca le dio un lugar donde dejar registrado lo que sabe. Su criterio es un activo; que sea el único registro, es el riesgo.
 
-(Enlace interno futuro: *Cómo dejar de depender de la memoria del encargado de logística*.)
+(Más en [qué hacer cuando falta el encargado de logística](/blog/que-hacer-cuando-falta-encargado-logistica).)
 
 ### Señal 3 — Los reclamos se resuelven haciendo arqueología
 
@@ -77,7 +77,7 @@ Se naturaliza como conflicto de personalidades: "ventas es así". Cada área ter
 
 Lo que se suele creer: es un problema de gente que no se comunica. Lo que es en realidad: ventas promete a ciegas **porque no tiene dónde mirar**. Nadie puede consultar la capacidad real de la operación —qué días están cargados, qué está preparado— así que promete con la mejor intención y la peor información.
 
-El criterio para llevarse: el conflicto entre ventas y logística casi siempre es un problema de visibilidad disfrazado de problema de personas. Dale a ventas un lugar donde mirar, y buena parte de la pelea desaparece sola.
+El criterio para llevarse: [el conflicto entre ventas y logística casi siempre es un problema de visibilidad](/blog/como-coordinar-ventas-y-logistica) disfrazado de problema de personas. Dale a ventas un lugar donde mirar, y buena parte de la pelea desaparece sola.
 
 ### Señal 5 — Las mismas fallas se repiten todas las semanas (y ya nadie se sorprende)
 
@@ -85,7 +85,7 @@ Otra vez un cliente ausente en la misma zona. Otra vez salió un pedido incomple
 
 Lo que se suele creer: mala suerte, clientes complicados, gajes del oficio. Lo que es en realidad: las fallas no se registran con un motivo claro, entonces no existe patrón visible. Cada semana, el mismo problema llega como si fuera nuevo, se resuelve como si fuera único, y no deja rastro. La empresa tropieza con la misma piedra sin saber que es la misma piedra.
 
-El criterio: no hace falta resolver las fallas primero. Hace falta **contarlas** primero. Un mes de registrar cada falla con su motivo suele revelar que el 80% del dolor viene de dos o tres causas concretas. (Enlace interno futuro: *Cómo reducir las reprogramaciones de entregas*.)
+El criterio: no hace falta resolver las fallas primero. Hace falta **contarlas** primero. Un mes de registrar cada falla con su motivo suele revelar que el 80% del dolor viene de dos o tres causas concretas. (Más en [cómo manejar reprogramaciones sin perder pedidos](/blog/como-manejar-reprogramaciones-sin-perder-pedidos).)
 
 ### Señal 6 — Cada cambio genera una cadena de llamadas
 
@@ -103,11 +103,11 @@ Son las 7:30. Los choferes esperan, el depósito pregunta qué priorizar, el tel
 
 La naturalización viene con su propia lógica: "acá todo cambia a último momento, no tiene sentido planificar antes". Y tiene algo de razón, que es lo que la hace resistente.
 
-Lo que se suele creer: nuestra operación es demasiado dinámica para planificar. Lo que es en realidad: un círculo vicioso. Como los cambios del día no quedan registrados en ningún plan, planificar antes parece inútil; y como no se planifica antes, cada mañana es una improvisación donde los cambios duelen el doble. El problema no es que el plan cambie —el plan siempre cambia—: es no tener un plan visible sobre el cual administrar los cambios.
+Lo que se suele creer: nuestra operación es demasiado dinámica para planificar. Lo que es en realidad: un círculo vicioso. Como los cambios del día no quedan registrados en ningún plan, planificar antes parece inútil; y como no se planifica antes, cada mañana es una improvisación donde los cambios duelen el doble. El problema no es que el plan cambie —el plan siempre cambia—: es [no tener un plan visible sobre el cual administrar los cambios](/blog/como-planificar-entregas-toda-la-semana).
 
 ### Señal 8 — Hay entregas de las que nadie se acuerda hasta que llama el cliente
 
-Seis de la tarde. Llama un cliente: "¿y mi pedido?". Del otro lado, un silencio breve, una mano tapando el teléfono, alguien preguntando en voz baja. "Te llamamos en cinco minutos."
+Seis de la tarde. [Llama un cliente](/blog/como-reducir-llamadas-clientes-preguntando-pedidos): "¿y mi pedido?". Del otro lado, un silencio breve, una mano tapando el teléfono, alguien preguntando en voz baja. "Te llamamos en cinco minutos."
 
 Se naturaliza porque pasa "cada tanto", y porque después de cada episodio se encuentra un culpable puntual: alguien se olvidó de cargarla, alguien no la pasó, alguien pensó que la tenía otro.
 
@@ -131,7 +131,7 @@ Esta es la señal que resume a todas las demás. El canal de información más c
 
 Se naturaliza porque parece un sistema razonable: "cuando hay un problema, me entero". Pero fijate lo que esconde: los problemas que no llegan a reclamo no es que no existan. Es que alguien los absorbió en silencio —con una llamada, una vuelta extra, una hora más— y el costo quedó repartido en el día a día, invisible.
 
-Lo que se suele creer: ausencia de noticias es buena noticia. Lo que es en realidad: ausencia de noticias es ausencia de visibilidad. Un dueño debería poder ver qué salió, qué falló y qué necesita atención sin depender de que un cliente se enoje lo suficiente como para llamar. (Enlace interno futuro: *Qué debería poder ver un dueño sin preguntarle al encargado*.)
+Lo que se suele creer: ausencia de noticias es buena noticia. Lo que es en realidad: ausencia de noticias es ausencia de visibilidad. Un dueño debería poder ver qué salió, qué falló y qué necesita atención sin depender de que un cliente se enoje lo suficiente como para llamar.
 
 ## Cómo leer el resultado: no es un examen, es un mapa
 

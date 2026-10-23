@@ -29,7 +29,7 @@ Es ahí donde se transforma una lista de pendientes en una operación concreta.
 
 ## Choferes, vehículos y otros recursos
 
-Cada entrega necesita un responsable. Según la empresa puede tratarse de choferes y vehículos propios o de fletes contratados.
+Cada entrega necesita un responsable. Según la empresa puede tratarse de [choferes y vehículos propios o de fletes contratados](/blog/organizar-entregas-vehiculos-propios-fletes-contratados).
 
 La asignación debería quedar visible y no depender de conversaciones privadas.
 
@@ -43,7 +43,7 @@ El chofer necesita ejecutar, no administrar toda la empresa. Una vista enfocada 
 
 La logística no termina con “salió”. La herramienta debería permitir saber si se entregó, falló o necesita una nueva fecha.
 
-Registrar estas excepciones es clave para no perder pedidos y construir historial.
+[Registrar estas excepciones](/blog/como-manejar-reprogramaciones-sin-perder-pedidos) es clave para no perder pedidos y construir historial.
 
 ## Historial e indicadores
 
@@ -51,11 +51,11 @@ Una operación ordenada también debería permitir mirar hacia atrás. Qué ocur
 
 ## Importación para evitar doble carga
 
-Si la empresa ya recibe pedidos en Excel, una importación puede ahorrar trabajo. La facilidad para incorporar información existente es especialmente importante durante la adopción.
+Si la empresa ya recibe pedidos en Excel, [una importación puede ahorrar trabajo](/blog/como-importar-pedidos-excel-sin-cargar-a-mano). La facilidad para incorporar información existente es especialmente importante durante la adopción.
 
 ## Conclusión
 
-Antes de evaluar GPS, inteligencia artificial o módulos avanzados, comprobá que el software resuelva bien el núcleo: **pedido → preparación → jornada → asignación → ejecución → resultado**.
+[Antes de evaluar GPS](/blog/seguimiento-entregas-sin-gps-tiempo-real), inteligencia artificial o módulos avanzados, comprobá que el software resuelva bien el núcleo: **pedido → preparación → jornada → asignación → ejecución → resultado**.
 
 Si ese flujo es claro, la herramienta tiene una base útil para acompañar la operación.
 

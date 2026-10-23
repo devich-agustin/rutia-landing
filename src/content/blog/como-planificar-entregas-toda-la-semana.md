@@ -39,7 +39,7 @@ En [Rutia](https://rutia.com.ar/), la combinación entre calendario y **Armado d
 
 ## Dejá margen para cambios
 
-Las PyMEs suelen tener pedidos urgentes, clientes que reprograman y ventas que se incorporan durante la semana.
+Las PyMEs suelen tener [pedidos urgentes](/blog/que-hacer-entregas-urgentes-ultimo-momento), clientes que reprograman y ventas que se incorporan durante la semana.
 
 Una buena planificación no elimina esos cambios: hace visible su impacto. Si agregás una entrega al jueves, deberías poder entender qué más estaba previsto para ese día.
 
@@ -51,7 +51,7 @@ Así la semana no se convierte en un calendario que se diseñó una vez y nadie 
 
 ## Evitá depender de una sola persona
 
-Si solamente el encargado entiende por qué cada pedido está en determinado día, la planificación sigue siendo frágil.
+[Si solamente el encargado entiende](/blog/que-hacer-cuando-falta-encargado-logistica) por qué cada pedido está en determinado día, la planificación sigue siendo frágil.
 
 Fechas, estados y asignaciones deberían ser comprensibles para las personas autorizadas que participan del proceso.
 

@@ -28,7 +28,7 @@ Esto evita organizar la jornada directamente desde una lista de ventas sin conte
 
 ## Armá el día con destinos reales
 
-Con varios compradores y direcciones, conviene definir qué entregas salen hoy antes de asignar choferes o vehículos.
+Con varios compradores y direcciones, conviene [definir qué entregas salen hoy](/blog/como-organizar-reparto-diario-pyme) antes de asignar choferes o vehículos.
 
 Una jornada clara facilita incorporar cambios sin perder el resto de los pedidos.
 
@@ -40,13 +40,13 @@ El chofer necesita la información de sus entregas, no acceso a toda la tienda o
 
 ## Cerrá el circuito con el resultado
 
-Una venta no debería quedar simplemente como “despachada” si internamente necesitás saber si la entrega se completó, falló o fue reprogramada.
+Una venta no debería quedar simplemente como “despachada” si internamente necesitás saber si la entrega se completó, [falló o fue reprogramada](/blog/como-manejar-reprogramaciones-sin-perder-pedidos).
 
 Registrar el resultado conecta la última milla con la operación real.
 
 ## Conectá Mercado Libre y organizá tus entregas
 
-Si vendés por Mercado Libre, podés conectar tu cuenta vendedora con [Rutia](https://rutia.com.ar/logistica-para-ecommerce) para gestionar las entregas desde un solo lugar. También podés importar pedidos desde Excel o cargarlos manualmente.
+Si vendés por Mercado Libre, podés conectar tu cuenta vendedora con [Rutia](https://rutia.com.ar/logistica-para-ecommerce) para gestionar las entregas desde un solo lugar. También podés [importar pedidos desde Excel](/blog/como-importar-pedidos-excel-sin-cargar-a-mano) o cargarlos manualmente.
 
 Rutia no reemplaza tu tienda online: ayuda a organizar la preparación, los choferes, los recorridos y el resultado de cada entrega. Ya podés conectar tu cuenta vendedora de Mercado Libre, y estamos trabajando en integraciones con Tiendanube, Empretienda y Tienda Negocio, que van a estar disponibles próximamente.
 

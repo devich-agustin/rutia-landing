@@ -18,7 +18,7 @@ Si tu empresa ya tiene los pedidos en Excel, volver a escribir cliente,
 dirección y productos uno por uno agrega trabajo y aumenta la
 posibilidad de errores.
 
-La mejor transición no es abandonar la planilla de un día para otro,
+La mejor transición no es [abandonar la planilla de un día para otro](/blog/excel-vs-software-logistica-cuando-dejar-planilla),
 sino aprovechar esos datos: ordenar las columnas, revisar la información
 básica e importar los pedidos al sistema que va a gestionar las
 entregas.
@@ -35,7 +35,7 @@ el proceso desde allí.
 ## Revisá la calidad de los datos antes de importar
 
 Antes de subir una planilla conviene verificar nombres, teléfonos,
-direcciones y datos del pedido. Importar rápido información incorrecta
+[direcciones y datos del pedido](/blog/como-evitar-errores-direccion-entregas). Importar rápido información incorrecta
 solo traslada el problema a la siguiente etapa.
 
 ## Mantené columnas claras y consistentes

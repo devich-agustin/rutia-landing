@@ -53,7 +53,7 @@ Un extra de seguridad que quizás te interese si manejás una cuenta comercial: 
 
 Reservar tu nombre de usuario es una buena movida de identidad y privacidad. Pero conviene no confundirlo con lo que no es: sigue siendo un canal de contacto, no una forma de ordenar tu operación.
 
-En [Rutia](https://www.rutia.com.ar/) vemos algo todos los días: muchas PyMEs con reparto propio coordinan toda su logística por WhatsApp. Los pedidos, los cambios de último momento, el "saliste ya", el "avisá cuando llegues", todo vive en chats. Y ahí es donde las cosas se pierden, porque un mensaje importante compite con otros cien y nadie sabe con certeza qué se confirmó y qué no.
+En [Rutia](https://www.rutia.com.ar/) vemos algo todos los días: muchas PyMEs con reparto propio [coordinan toda su logística por WhatsApp](/blog/dar-informacion-chofer-sin-caos-whatsapp). Los pedidos, los cambios de último momento, el "saliste ya", el "avisá cuando llegues", todo vive en chats. Y ahí es donde las cosas se pierden, porque un mensaje importante compite con otros cien y nadie sabe con certeza qué se confirmó y qué no.
 
 Un nombre de usuario más prolijo no resuelve eso. Lo que lo resuelve es sacar la coordinación de las entregas de los chats y llevarla a un lugar donde la información esté ordenada y a la vista. Es la misma idea que planteamos en la guía sobre [cómo organizar las entregas de una PyME](https://www.rutia.com.ar/blog/como-organizar-entregas-pyme): la herramienta cómoda y conocida alcanza hasta cierto punto, y después empieza a costar más de lo que ayuda.
 

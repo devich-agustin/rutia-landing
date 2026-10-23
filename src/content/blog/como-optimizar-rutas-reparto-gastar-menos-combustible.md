@@ -34,7 +34,7 @@ pedidos que no correspondían a esa jornada. Primero definí qué entregas
 efectivamente salen. Recién con esa lista estable tiene sentido ordenar
 el recorrido.
 
-Una buena planificación separa pedidos pendientes, pedidos preparados y
+Una buena planificación [separa pedidos pendientes](/blog/como-organizar-pedidos-pendientes-sin-perder-entregas), pedidos preparados y
 entregas asignadas al día. Eso reduce modificaciones posteriores que
 suelen traducirse en kilómetros extra.
 
@@ -42,7 +42,7 @@ suelen traducirse en kilómetros extra.
 
 Cuando hay varias direcciones, una primera mejora es evitar saltos
 innecesarios entre zonas alejadas. Mirar los destinos en conjunto
-permite detectar entregas cercanas y construir recorridos más
+permite [detectar entregas cercanas](/blog/como-organizar-entregas-clientes-distintas-zonas) y construir recorridos más
 coherentes.
 
 La cercanía geográfica no es el único criterio: también importan
@@ -52,7 +52,7 @@ cumplir el día con menos movimientos innecesarios.
 
 ## Evitá agregar entregas a último momento sin evaluar el impacto
 
-Una entrega urgente puede parecer pequeña, pero si obliga a desviar un
+[Una entrega urgente puede parecer pequeña](/blog/que-hacer-entregas-urgentes-ultimo-momento), pero si obliga a desviar un
 vehículo varios kilómetros puede alterar toda la jornada. Antes de
 incorporarla conviene revisar dónde está el chofer, qué le queda por
 entregar y si realmente entra en el recorrido previsto.
@@ -62,7 +62,7 @@ decidir si conviene sumarlo hoy o programarlo para otra jornada.
 
 ## Reducí los viajes que terminan en una entrega fallida
 
-Una visita fallida también consume combustible. Direcciones incompletas,
+[Una visita fallida también consume combustible](/blog/como-reducir-entregas-fallidas-pyme). Direcciones incompletas,
 fechas mal coordinadas o cambios que no llegaron al responsable pueden
 generar kilómetros que después habrá que repetir.
 

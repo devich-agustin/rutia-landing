@@ -25,19 +25,19 @@ Un mueble vendido puede requerir preparación antes de salir. Separar el estado 
 
 ## Coordiná las fechas con la capacidad real
 
-Ventas necesita dar respuestas al cliente, pero logística también necesita una jornada posible de ejecutar.
+Ventas necesita dar respuestas al cliente, pero [logística también necesita una jornada posible de ejecutar](/blog/como-coordinar-ventas-y-logistica).
 
 Compartir la información ayuda a detectar compromisos difíciles antes de que el vehículo esté cargado.
 
 ## Armá cada día con una visión del conjunto
 
-Una vez que sabés qué está listo, podés decidir qué entregas salen y asignar chofer, vehículo o flete.
+Una vez que sabés qué está listo, podés decidir qué entregas salen y [asignar chofer, vehículo o flete](/blog/organizar-entregas-vehiculos-propios-fletes-contratados).
 
 La planificación debería poder modificarse cuando aparece una excepción sin perder de vista el resto del día.
 
 ## Registrá qué ocurrió
 
-Si el cliente no estaba o la entrega necesita otra fecha, el pedido no debería volver silenciosamente a una lista general.
+Si el cliente no estaba o [la entrega necesita otra fecha](/blog/como-manejar-reprogramaciones-sin-perder-pedidos), el pedido no debería volver silenciosamente a una lista general.
 
 Resultado, incidencia y reprogramación forman parte de la historia de esa entrega.
 

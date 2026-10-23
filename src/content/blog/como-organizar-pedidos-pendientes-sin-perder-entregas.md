@@ -39,19 +39,19 @@ En [Rutia](https://rutia.com.ar/), este paso se trabaja desde el **Armado del D�
 
 ## No mezcles reprogramaciones con pedidos nuevos
 
-Una entrega que ya salió y falló tiene una historia diferente de un pedido que nunca fue asignado. Si ambos vuelven a la misma lista sin contexto, después resulta difícil saber qué necesita una nueva fecha y qué todavía espera su primera planificación.
+[Una entrega que ya salió y falló](/blog/como-manejar-reprogramaciones-sin-perder-pedidos) tiene una historia diferente de un pedido que nunca fue asignado. Si ambos vuelven a la misma lista sin contexto, después resulta difícil saber qué necesita una nueva fecha y qué todavía espera su primera planificación.
 
 Registrar el resultado y reprogramar explícitamente mantiene esa diferencia visible.
 
 ## Dejá de depender de colores y comentarios privados
 
-Muchas planillas terminan desarrollando su propio lenguaje: amarillo significa una cosa, rojo otra, un asterisco indica que hay que llamar al cliente y una columna que solo entiende el encargado contiene la información importante.
+[Muchas planillas terminan desarrollando su propio lenguaje](/blog/excel-vs-software-logistica-cuando-dejar-planilla): amarillo significa una cosa, rojo otra, un asterisco indica que hay que llamar al cliente y una columna que solo entiende el encargado contiene la información importante.
 
 Puede funcionar, pero escala mal. Los estados deberían poder ser entendidos por cualquier persona autorizada que necesite continuar la operación.
 
 ## Revisá los pendientes al cierre del día
 
-Cerrar la jornada no es solamente confirmar lo entregado. También conviene saber qué quedó sin salir, qué falló y qué debe reprogramarse.
+[Cerrar la jornada](/blog/como-organizar-reparto-diario-pyme) no es solamente confirmar lo entregado. También conviene saber qué quedó sin salir, qué falló y qué debe reprogramarse.
 
 Ese cierre deja el día siguiente preparado y evita que la mañana comience reconstruyendo lo que pasó.
 

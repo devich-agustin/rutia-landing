@@ -43,7 +43,7 @@ el proveedor.
 
 ## Compará costo total, no solamente precio por viaje
 
-Para reparto propio considerá vehículo, combustible, tiempo,
+Para reparto propio considerá vehículo, [combustible](/blog/como-optimizar-rutas-reparto-gastar-menos-combustible), tiempo,
 disponibilidad y otros costos operativos reales. Para terceros, observá
 tarifas, mínimos, extras y el trabajo interno que requiere coordinar.
 
@@ -54,11 +54,11 @@ cuánto cuesta cumplir el nivel de servicio que necesitás.
 
 Si hay semanas muy diferentes entre sí, un esquema rígido puede generar
 capacidad ociosa o falta de recursos. Muchas empresas encuentran valor
-en un modelo mixto: base propia y fletes contratados cuando hace falta.
+en un modelo mixto: [base propia y fletes contratados cuando hace falta](/blog/organizar-entregas-vehiculos-propios-fletes-contratados).
 
 ## Ejemplo práctico: reparto propio, fletes o un modelo mixto
 
-Pensá en una distribuidora que entrega pedidos todos los días dentro de su ciudad y, algunas veces por semana, recibe pedidos de localidades cercanas. Podría comparar tres alternativas:
+[Pensá en una distribuidora](/logistica-para-distribuidoras) que entrega pedidos todos los días dentro de su ciudad y, algunas veces por semana, recibe pedidos de localidades cercanas. Podría comparar tres alternativas:
 
 - **Reparto propio:** asignar sus vehículos a las zonas frecuentes, considerando también mantenimiento, combustible y tiempo del equipo.
 - **Fletes contratados:** cubrir entregas ocasionales o destinos que no justifican mantener un vehículo dedicado.

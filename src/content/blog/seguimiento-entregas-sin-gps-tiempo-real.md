@@ -15,13 +15,13 @@ Esa trazabilidad puede construirse con estados, responsables, resultados e histo
 
 ## Definí qué querés saber
 
-“Seguimiento” puede significar cosas diferentes. Un cliente puede querer saber si su pedido está en reparto. Operaciones puede necesitar conocer qué entregas siguen pendientes. Administración puede querer revisar qué pasó ayer.
+“Seguimiento” puede significar cosas diferentes. [Un cliente puede querer saber si su pedido está en reparto](/blog/como-reducir-llamadas-clientes-preguntando-pedidos). Operaciones puede necesitar conocer qué entregas siguen pendientes. Administración puede querer revisar qué pasó ayer.
 
 Antes de buscar tecnología, definí las preguntas que necesitás responder.
 
 ## Registrá cuándo una entrega entra en la jornada
 
-Una lista de pedidos pendientes no alcanza. Conviene identificar cuáles fueron incorporados al día operativo y cuáles quedaron para después.
+[Una lista de pedidos pendientes no alcanza](/blog/como-organizar-pedidos-pendientes-sin-perder-entregas). Conviene identificar cuáles fueron incorporados al día operativo y cuáles quedaron para después.
 
 Ese paso permite comparar lo planificado con el resultado.
 
@@ -35,7 +35,7 @@ Entregado, fallido o reprogramado son datos básicos pero muy valiosos. Si el re
 
 ## Conservá incidencias e historial
 
-Una entrega que falló puede volver a salir otro día. Mantener el contexto evita tratar cada intento como si fuera un pedido nuevo.
+[Una entrega que falló puede volver a salir otro día](/blog/como-manejar-reprogramaciones-sin-perder-pedidos). Mantener el contexto evita tratar cada intento como si fuera un pedido nuevo.
 
 También permite responder consultas posteriores sin depender de la memoria del equipo.
 

@@ -9,13 +9,13 @@ intent: tofu
 draft: false
 ---
 
-Una distribuidora puede acumular muchos pedidos y destinos en poco tiempo. Cuando el volumen aumenta, el desafío deja de ser recordar una entrega puntual y pasa a ser organizar el conjunto sin perder pedidos ni depender de una sola persona.
+Una distribuidora puede acumular muchos pedidos y destinos en poco tiempo. Cuando el volumen aumenta, el desafío deja de ser recordar una entrega puntual y pasa a ser organizar el conjunto sin perder pedidos ni [depender de una sola persona](/blog/que-hacer-cuando-falta-encargado-logistica).
 
 La base es mantener un flujo común desde el pedido hasta el resultado de la entrega.
 
 ## Consolidá los pedidos pendientes
 
-Si los pedidos llegan por diferentes canales, logística necesita una lista central para saber qué está realmente pendiente.
+Si los pedidos llegan por diferentes canales, logística necesita [una lista central para saber qué está realmente pendiente](/blog/como-organizar-pedidos-pendientes-sin-perder-entregas).
 
 La información debería ser suficiente para identificar cliente, destino, pedido y fecha prevista.
 
@@ -29,7 +29,7 @@ Una lista larga no dice qué debe ocurrir hoy. El paso operativo consiste en sel
 
 ## Reducí la dependencia de mensajes
 
-Con muchos destinos, los cambios enviados por chat son difíciles de seguir. Una modificación debería actualizar la fuente operativa que usa el equipo.
+Con muchos destinos, [los cambios enviados por chat son difíciles de seguir](/blog/dar-informacion-chofer-sin-caos-whatsapp). Una modificación debería actualizar la fuente operativa que usa el equipo.
 
 ## Registrá el resultado para no arrastrar incertidumbre
 
