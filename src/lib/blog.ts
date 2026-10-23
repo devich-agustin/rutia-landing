@@ -125,8 +125,31 @@ export function getPost(slug: string): Post | undefined {
   return ALL_POSTS.find((p) => p.slug === slug);
 }
 
+/**
+ * Notas relacionadas: las "vecinas" de la nota dentro de su categoría, en
+ * forma circular (la siguiente, la anterior, la subsiguiente...). Así cada
+ * nota recibe enlaces de otras, en lugar de que todas apunten siempre a las
+ * 3 más nuevas. Si la categoría no alcanza, se completa con vecinas del
+ * blog completo.
+ */
 export function relatedPosts(post: Post, limit = 3): Post[] {
-  return publishedPosts()
-    .filter((p) => p.slug !== post.slug && p.category.slug === post.category.slug)
-    .slice(0, limit);
+  const all = publishedPosts();
+  const picked: Post[] = [];
+  const add = (p: Post) => {
+    if (picked.length < limit && p.slug !== post.slug && !picked.some((x) => x.slug === p.slug)) {
+      picked.push(p);
+    }
+  };
+  const ring = (list: Post[]) => {
+    const i = list.findIndex((p) => p.slug === post.slug);
+    if (i === -1) return;
+    for (let step = 1; step < list.length && picked.length < limit; step++) {
+      // +1, -1, +2, -2, ...
+      const offset = step % 2 === 1 ? Math.ceil(step / 2) : -step / 2;
+      add(list[(i + offset + list.length) % list.length]);
+    }
+  };
+  ring(all.filter((p) => p.category.slug === post.category.slug));
+  ring(all);
+  return picked;
 }
