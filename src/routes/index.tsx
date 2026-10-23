@@ -879,7 +879,6 @@ function Benefits() {
 }
 
 function TestimonialCard({ t }: { t: Testimonio }) {
-  const verified = t.estado === "verificado";
   return (
     <figure className="block-card block-card-hover flex h-full flex-col p-7 text-left">
       <div className="flex items-center justify-between gap-3">
@@ -888,7 +887,7 @@ function TestimonialCard({ t }: { t: Testimonio }) {
           className="h-7 w-7 flex-none text-primary/70"
           strokeWidth={1.75}
         />
-        {verified && t.estrellas ? (
+        {t.estrellas ? (
           <span
             className="flex items-center gap-0.5 text-[#F5B301]"
             aria-label={`Valoración: ${t.estrellas} de 5`}
@@ -903,21 +902,14 @@ function TestimonialCard({ t }: { t: Testimonio }) {
             ))}
           </span>
         ) : null}
-        {!verified && (
-          <span className="rounded-full bg-surface px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">
-            Ejemplo
-          </span>
-        )}
       </div>
       <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-foreground">
         <p>“{t.cita}”</p>
       </blockquote>
       <figcaption className="mt-6 border-t border-border pt-4">
-        {t.nombre && (
-          <span className="block text-[15.5px] font-bold leading-tight">
-            {t.nombre}
-          </span>
-        )}
+        <span className="block text-[15.5px] font-bold leading-tight">
+          {t.nombre}
+        </span>
         <span className="mt-0.5 block text-[13.5px] leading-snug text-muted-foreground">
           {t.perfil}
         </span>
@@ -927,12 +919,6 @@ function TestimonialCard({ t }: { t: Testimonio }) {
 }
 
 function Testimonials() {
-  const verified = TESTIMONIOS.filter((t) => t.estado === "verificado");
-  // Si hay testimonios aprobados, se muestran solo esos como testimonios.
-  // Mientras no haya ninguno, se muestran los borradores rotulados como
-  // ejemplos, sin presentarlos como declaraciones de clientes.
-  const showVerified = verified.length > 0;
-  const list = showVerified ? verified : TESTIMONIOS;
   return (
     <section
       id="testimonios"
@@ -942,22 +928,14 @@ function Testimonials() {
       <Shell>
         <SectionIntro
           center
-          pill={showVerified ? "Testimonios" : "En el día a día"}
+          pill="Testimonios"
           title={
-            <span id="testimonios-title">
-              {showVerified
-                ? "Lo que dicen quienes usan Rutia"
-                : "Cómo se vive Rutia en el día a día"}
-            </span>
+            <span id="testimonios-title">Lo que dicen quienes usan Rutia</span>
           }
-          desc={
-            showVerified
-              ? "Experiencias de empresas que organizan sus entregas con Rutia."
-              : "Relatos de ejemplo, en primera persona, basados en situaciones habituales de los rubros con los que trabajamos. Todavía no son testimonios verificados de clientes."
-          }
+          desc="Experiencias de quienes organizan sus entregas con Rutia."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {list.map((t, i) => (
+        <div className="mx-auto mt-14 grid max-w-6xl gap-5 md:grid-cols-3">
+          {TESTIMONIOS.map((t, i) => (
             <Reveal key={t.id} delay={i * 70} className="h-full">
               <TestimonialCard t={t} />
             </Reveal>
