@@ -303,6 +303,7 @@ export function VerticalLanding({ config }: { config: VerticalLandingConfig }) {
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 Rutia centraliza pedidos, preparación, vehículos y choferes. Conocé cómo funciona
                 nuestro <a href="/software-de-reparto" className="font-semibold text-primary underline underline-offset-4 hover:opacity-80">software de reparto</a> para empresas con entregas propias o fletes contratados.
+                Si te quedan dudas, revisá las <a href="/preguntas-frecuentes" className="font-semibold text-primary underline underline-offset-4 hover:opacity-80">preguntas frecuentes sobre Rutia</a>.
               </p>
               {(verticalLinks[config.breadcrumb]?.length ?? 0) > 0 && (
                 <nav aria-label="Soluciones para otros rubros" className="mt-7">
