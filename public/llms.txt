@@ -7,10 +7,11 @@
 - Contacto: contacto@rutia.com.ar
 - WhatsApp: https://wa.me/5491178242630
 - Rubros: mueblerías, colchonerías, electrodomésticos, ferreterías, corralones y sanitarios, casas de materiales, distribuidoras, bicicleterías, iluminación y e-commerce con reparto propio.
-- Integraciones: conexión con la cuenta vendedora de Mercado Libre e importación de pedidos desde Excel. No hay conexión directa con Tiendanube, Shopify ni WooCommerce.
+- Integraciones: integración con Mercado Libre disponible (se conecta la cuenta vendedora para gestionar esos pedidos y sus entregas) e importación de pedidos desde Excel. Próximamente: integraciones con Tiendanube, Empretienda y Tienda Negocio (todavía no disponibles).
 - Qué no hace: no reemplaza facturación, stock ni cobranza; no optimiza rutas automáticamente ni calcula peso o volumen.
-- Planes: Inicial (hasta 150 entregas por mes), PyME (hasta 600) y Empresa (hasta 2.000), todos con todas las funciones y sin permanencia. Para más de 2.000 entregas, plan a medida. Precios: a consultar.
-- Prueba gratuita: 1 mes (https://demo.rutia.com.ar/). Demo de 30 minutos sin costo.
+- Planes mensuales (pesos argentinos): Inicial $45.000/mes, hasta 150 entregas; PyME $79.000/mes, hasta 600 entregas; Empresa $145.000/mes, hasta 2.000 entregas. Las entregas son el máximo incluido, no un mínimo: sirve también para negocios con pocas entregas. Todos los planes tienen todas las funciones y no tienen permanencia. Más de 2.000 entregas: propuesta personalizada.
+- Prueba gratuita: 1 mes, sin cargar un medio de pago (https://demo.rutia.com.ar/). Demo de 30 minutos sin costo.
+- Registro de entregas: el chofer marca entregada, parcial o fallida desde el navegador del celular y registra quién recibió; con el comprobante digital, también fotos y firma.
 
 ## Páginas principales
 - Software de reparto para PyMEs: https://rutia.com.ar/software-de-reparto
