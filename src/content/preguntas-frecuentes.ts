@@ -5,6 +5,8 @@
  * que ya se comunica en el sitio (home, /software-de-reparto o páginas por
  * rubro). No agregar promesas de funciones futuras.
  */
+import { PRICING_FAQ_ANSWER } from "@/content/planes";
+
 export type FaqLink = { href: string; label: string };
 
 export type FaqItem = {
@@ -34,11 +36,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "¿Para qué tipo de empresas sirve?",
-        a: "Para empresas que entregan lo que venden con vehículos propios, fletes contratados o ambos: mueblerías, colchonerías, casas de electrodomésticos, ferreterías, corralones, casas de materiales, distribuidoras, bicicleterías, comercios de iluminación y e-commerce con reparto propio. Si hacés más de 20 entregas por mes, probablemente te sirva.",
+        a: "Para empresas que entregan lo que venden con vehículos propios, fletes contratados o ambos: mueblerías, colchonerías, casas de electrodomésticos, ferreterías, corralones, casas de materiales, distribuidoras, bicicleterías, comercios de iluminación y e-commerce con reparto propio. No importa si hacés pocas o muchas entregas por mes: lo importante es que entregues lo que vendés, con reparto propio o contratado.",
       },
       {
         q: "¿Sirve para una PyME chica?",
-        a: "Sí. Está pensada para operaciones que hoy se coordinan con planillas, papeles y mensajes. Los planes van desde 150 entregas por mes.",
+        a: "Sí. Rutia también está pensado para negocios que realizan pocas entregas. Si hacés 20, 50 u 80 entregas al mes, podés usarlo perfectamente. El plan Inicial incluye hasta 150 entregas mensuales.",
       },
       {
         q: "¿Reemplaza mi sistema de facturación o de stock?",
@@ -64,15 +66,15 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "¿Rutia se integra con Mercado Libre?",
-        a: "Sí. Podés conectar tu cuenta vendedora de Mercado Libre para gestionar las entregas. También podés importar pedidos desde Excel o cargarlos manualmente.",
+        a: "Sí, la integración con Mercado Libre ya está disponible. Conectás tu cuenta vendedora y gestionás esos pedidos y sus entregas desde Rutia, junto con los que cargás a mano o importás desde Excel.",
         link: {
           href: "/logistica-para-ecommerce",
           label: "Logística para e-commerce con reparto propio",
         },
       },
       {
-        q: "¿Se conecta con Tiendanube, Shopify o WooCommerce?",
-        a: "Hoy no hay una conexión directa con esas plataformas. Podés importar los pedidos desde Excel o cargarlos a mano.",
+        q: "¿Se integra con Tiendanube, Empretienda o Tienda Negocio?",
+        a: "Estamos trabajando en nuevas integraciones con Tiendanube, Empretienda y Tienda Negocio. Próximamente estarán disponibles. Mientras tanto, podés cargar tus pedidos manualmente o importarlos desde Excel.",
       },
       {
         q: "¿Puedo ver cuántas entregas tengo cada día?",
@@ -135,8 +137,8 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         a: "Quien reparte marca cada entrega desde su celular como entregada, parcial o fallida, y vos ves el estado desde el tablero a medida que se actualiza.",
       },
       {
-        q: "¿Queda registrado quién recibió?",
-        a: "Sí. Al registrar el resultado, quien reparte puede indicar quién recibió y agregar observaciones.",
+        q: "¿Qué queda registrado sobre quién recibió?",
+        a: "Al registrar la entrega, quien reparte anota el nombre de quien recibe y puede agregar observaciones. Además, si usás la función de comprobante digital, puede adjuntar fotos y la firma de quien recibe como prueba de entrega.",
       },
       {
         q: "¿Necesito GPS o rastreo satelital?",
@@ -170,15 +172,15 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "¿Es difícil de aprender?",
-        a: "Si sabés usar WhatsApp, sabés usar Rutia. La mayoría arma su primer día de entregas en menos de una hora.",
+        a: "No. Rutia está diseñado para ser simple e intuitivo, para que todo el equipo lo adopte sin complicaciones: si sabés usar WhatsApp, vas a sentirte cómodo. Y te acompañamos en la puesta en marcha.",
       },
       {
         q: "¿Puedo trabajar con más de un depósito?",
-        a: "Sí. Todos los planes incluyen la posibilidad de trabajar con varios depósitos.",
+        a: "Sí. Podés registrar varios puntos de retiro, como depósitos, una fábrica o un centro de distribución, y elegir desde cuál sale cada recorrido. Está incluido en todos los planes.",
       },
       {
         q: "¿Qué soporte tengo?",
-        a: "Acompañamiento humano y soporte por WhatsApp en todos los planes; el plan Empresa tiene soporte prioritario.",
+        a: "Todos los planes incluyen soporte por WhatsApp. El plan Empresa cuenta con soporte prioritario.",
       },
     ],
   },
@@ -188,7 +190,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     items: [
       {
         q: "¿Puedo probar Rutia gratis?",
-        a: "Sí. Podés probar Rutia gratis durante 1 mes para conocer cómo funciona en tu operación.",
+        a: "Sí. Podés probar Rutia gratis durante 1 mes para conocer cómo funciona en tu operación, sin cargar un medio de pago.",
       },
       {
         q: "¿Cómo es la demo?",
@@ -196,11 +198,21 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "¿Cuánto cuesta Rutia?",
-        a: "El precio depende de cuántas entregas hacés por mes: hay planes de hasta 150, 600 y 2.000 entregas mensuales, todos con todas las funciones. Si hacés más de 2.000 entregas o tenés varias sucursales, armamos un plan a medida. Consultanos el precio de tu plan.",
+        a: PRICING_FAQ_ANSWER,
+        link: { href: "/#precios", label: "Ver los planes" },
+      },
+      {
+        q: "¿Las entregas del plan son un mínimo?",
+        a: "No. Son el máximo de entregas incluidas por mes en cada plan: podés hacer menos sin ningún problema. Todos los planes incluyen todas las funciones.",
+      },
+      {
+        q: "¿Qué cuenta como una entrega?",
+        a: "Cuenta como entrega la que entra efectivamente a la planificación operativa, no la simple carga o importación de un pedido. Una reprogramación que genere una nueva asignación puede contarse nuevamente.",
+        link: { href: "/terminos", label: "Ver los términos y condiciones" },
       },
       {
         q: "¿Hay permanencia mínima?",
-        a: "No. Cancelás cuando quieras, sin letra chica.",
+        a: "No. La suscripción es mensual y podés cancelarla cuando quieras, sin costo adicional.",
       },
     ],
   },

@@ -1,63 +1,60 @@
 /**
- * Experiencias de uso que se muestran en la home.
+ * Testimonios de la home ("Lo que dicen quienes usan Rutia").
  *
- * IMPORTANTE: hoy son EJEMPLOS ILUSTRATIVOS (tipo: "ejemplo"), basados en
- * situaciones típicas de los rubros de Rutia. No son testimonios de clientes y
- * la página los rotula como tales. No agregar cifras, resultados, empresas ni
- * valoraciones que no estén confirmados.
+ * Estados:
+ *  - "borrador":   texto preparado para que la persona lo revise. Se publica
+ *                  rotulado como ejemplo, SIN atribuirlo como declaración real.
+ *  - "verificado": la persona aprobó el texto por escrito. Recién ahí se
+ *                  muestra como testimonio, sin rótulo de ejemplo.
  *
- * Para publicar un testimonio real: cambiar `tipo` a "testimonio", completar
- * `empresa` y `cita` con el texto aprobado por el cliente (por escrito) y,
- * solo si hay autorización, `foto` con la ruta de la imagen en /public.
- * El diseño de la tarjeta se adapta solo.
+ * Reglas:
+ *  - `estrellas` solo se muestra si estado === "verificado" y la persona
+ *    confirmó expresamente esa valoración.
+ *  - `nombre` y `perfil` solo con datos confirmados. Si el nombre no está
+ *    confirmado, dejarlo sin definir: la tarjeta muestra solo el perfil.
+ *  - No agregar empresas, cargos ni resultados medibles no confirmados.
+ *  - Guardar la aprobación (mail o mensaje) y anotar abajo la fecha en
+ *    `aprobadoEl` al pasar un testimonio a "verificado".
  */
-export type Experiencia = {
-  tipo: "ejemplo" | "testimonio";
-  nombre: string;
+export type Testimonio = {
+  id: string;
+  estado: "borrador" | "verificado";
+  nombre?: string;
   perfil: string;
-  desafio: string;
-  conRutia: string;
-  /** Solo para testimonios reales y autorizados. */
-  empresa?: string;
-  cita?: string;
-  foto?: string;
+  cita: string;
+  /** Solo testimonios verificados con valoración confirmada (1 a 5). */
+  estrellas?: 1 | 2 | 3 | 4 | 5;
+  /** Fecha de la aprobación escrita (aaaa-mm-dd). Obligatoria si "verificado". */
+  aprobadoEl?: string;
 };
 
-export const EXPERIENCIAS: Experiencia[] = [
+export const TESTIMONIOS: Testimonio[] = [
   {
-    tipo: "ejemplo",
+    id: "gerardo",
+    estado: "borrador",
     nombre: "Gerardo",
-    perfil: "Comisionista, responsable de tres camionetas",
-    desafio:
-      "Recibe pedidos de distintos clientes por WhatsApp y por teléfono, y cada mañana arma a mano qué lleva cada camioneta.",
-    conRutia:
-      "Centraliza los pedidos en un solo lugar, reparte las entregas entre las tres camionetas en el armado del día y ve qué se entregó, qué falló y qué quedó pendiente a medida que los choferes lo marcan desde el celular.",
+    perfil: "Comisionista · tres camionetas",
+    cita: "Con tres camionetas en la calle, los pedidos me llegaban por WhatsApp, por teléfono y anotados en papel, y cada mañana armaba el reparto a mano. Ahora cargo todo en Rutia, reparto las entregas entre las camionetas y, a medida que los choferes las marcan desde el celular, veo qué se entregó y qué quedó pendiente.",
   },
   {
-    tipo: "ejemplo",
+    id: "tomas",
+    estado: "borrador",
     nombre: "Tomás",
     perfil: "E-commerce con reparto propio",
-    desafio:
-      "Las ventas online se acumulan y hay que prepararlas, despacharlas y responder a los clientes que preguntan por su pedido.",
-    conRutia:
-      "Conecta su cuenta de Mercado Libre o importa los pedidos desde Excel, el depósito marca qué está preparado y después revisa entregadas, parciales, fallidas y reprogramadas con sus motivos para ajustar la operación.",
+    cita: "Cuando crecieron las ventas online, preparar y despachar se empezó a desordenar. Con Rutia traemos los pedidos de Mercado Libre, el depósito marca lo que está listo y coordinamos las entregas desde un solo lugar. Después revisamos los reportes de entregadas y fallidas, con sus motivos, para ir ajustando la operación.",
   },
   {
-    tipo: "ejemplo",
+    id: "ornella",
+    estado: "borrador",
     nombre: "Ornella",
-    perfil: "Local de ropa y flores con entregas propias",
-    desafio:
-      "En fechas especiales se juntan muchos pedidos con dirección y horario, y anotarlos en un cuaderno deja de alcanzar.",
-    conRutia:
-      "Carga cada pedido con su fecha, franja horaria y dirección, mira en el calendario qué días vienen cargados y, si el cliente no está, la reprogramación queda registrada con su motivo.",
+    perfil: "Local de ropa y flores",
+    cita: "En fechas como el Día de la Madre se nos juntan muchísimos pedidos, cada uno con su dirección y su horario. Con Rutia cargamos cada entrega con su fecha y su franja, vemos qué días vienen más cargados y, si alguien no está, la reprogramación queda anotada.",
   },
   {
-    tipo: "ejemplo",
-    nombre: "Valeria",
-    perfil: "Responsable de operaciones en una distribuidora",
-    desafio:
-      "Con varios choferes en la calle, la información queda repartida entre planillas, chats y llamadas.",
-    conRutia:
-      "Ve en una sola pantalla los pedidos, la preparación, qué lleva cada chofer y el estado de cada entrega, con el historial completo para responder un reclamo sin buscar en conversaciones.",
+    id: "distribuidora",
+    estado: "borrador",
+    // Nombre y cargo pendientes de confirmación.
+    perfil: "Responsable de operaciones de una distribuidora",
+    cita: "Con varios choferes en la calle, la información estaba repartida entre planillas, chats y llamadas. Hoy veo en una sola pantalla qué lleva cada chofer y en qué estado está cada entrega, y si un cliente reclama, tengo el historial a mano.",
   },
 ];

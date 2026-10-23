@@ -1020,7 +1020,7 @@ export const ecommerce: VerticalSeoConfig = {
     faq: [
       [
         "¿Rutia se integra con Mercado Libre u otras plataformas de e-commerce?",
-        "Sí. Podés conectar tu cuenta vendedora de Mercado Libre con Rutia para gestionar las entregas. También podés importar pedidos desde Excel o cargarlos manualmente. No anunciamos una conexión directa con Tiendanube, Shopify o WooCommerce.",
+        "Sí, la integración con Mercado Libre ya está disponible: conectás tu cuenta vendedora y gestionás esos pedidos y sus entregas desde Rutia. Estamos trabajando en nuevas integraciones con Tiendanube, Empretienda y Tienda Negocio, que van a estar disponibles próximamente. Mientras tanto, podés cargar los pedidos manualmente o importarlos desde Excel.",
       ],
       [
         "¿Rutia reemplaza mi plataforma de e-commerce?",
