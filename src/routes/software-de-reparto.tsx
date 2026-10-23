@@ -712,6 +712,15 @@ function SoftwareDeRepartoPage() {
                 </details>
               ))}
             </div>
+            <p className="mt-8 text-center text-[15px] text-muted-foreground">
+              ¿Tenés otra duda?{" "}
+              <a
+                href="/preguntas-frecuentes"
+                className="font-semibold text-primary underline underline-offset-4 hover:opacity-80"
+              >
+                Mirá todas las preguntas frecuentes
+              </a>
+            </p>
           </Shell>
         </section>
 
