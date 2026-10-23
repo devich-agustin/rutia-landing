@@ -33,6 +33,14 @@ import { Footer, Navbar, Shell } from "@/routes/index";
 import { Reveal } from "@/components/Reveal";
 import { RouteMap } from "@/components/RouteMotif";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import {
+  CUSTOM_PLAN_TEXT,
+  PLANS,
+  PRICE_NOTE,
+  PRICING_FAQ_ANSWER,
+  formatPrice,
+  planLimit,
+} from "@/content/planes";
 
 const SITE_URL = "https://rutia.com.ar";
 const PAGE_URL = `${SITE_URL}/software-de-reparto`;
@@ -201,26 +209,6 @@ const PLAN_ITEMS = [
   "Reportes, indicadores y varios depósitos",
 ];
 
-const PLANS = [
-  {
-    name: "Inicial",
-    limit: "Hasta 150 entregas por mes",
-    support: "Soporte por WhatsApp",
-    featured: false,
-  },
-  {
-    name: "PyME",
-    limit: "Hasta 600 entregas por mes",
-    support: "Soporte por WhatsApp",
-    featured: true,
-  },
-  {
-    name: "Empresa",
-    limit: "Hasta 2.000 entregas por mes",
-    support: "Soporte prioritario por WhatsApp",
-    featured: false,
-  },
-];
 
 const FAQ: Array<[string, string]> = [
   [
@@ -229,7 +217,7 @@ const FAQ: Array<[string, string]> = [
   ],
   [
     "¿Rutia sirve para una pyme chica?",
-    "Sí. Está pensada para empresas que entregan lo que venden y hoy coordinan con planillas y mensajes. Si hacés más de 20 entregas por mes, probablemente ya le saques provecho.",
+    "Sí. Rutia también está pensado para negocios que realizan pocas entregas. Si hacés 20, 50 u 80 entregas al mes, podés usarlo perfectamente. El plan Inicial incluye hasta 150 entregas mensuales.",
   ],
   [
     "¿Los choferes tienen que instalar una aplicación?",
@@ -253,7 +241,7 @@ const FAQ: Array<[string, string]> = [
   ],
   [
     "¿Cuánto cuesta Rutia?",
-    "El precio depende de cuántas entregas hacés por mes: hay planes hasta 150, 600 y 2.000 entregas mensuales, todos con todas las funciones y sin permanencia. Podés probarlo 1 mes gratis y consultarnos el precio de tu plan.",
+    PRICING_FAQ_ANSWER,
   ],
 ];
 
@@ -480,8 +468,8 @@ function SoftwareDeRepartoPage() {
                   Cuatro pasos, sin instalar nada
                 </h2>
                 <p className="mt-5 text-[#9CA9C0]">
-                  La mayoría arma su primer día de entregas en menos de una
-                  hora. Si sabés usar WhatsApp, sabés usar Rutia.
+                  Rutia está diseñado para ser simple: si sabés usar WhatsApp,
+                  vas a sentirte cómodo. Y te acompañamos en la puesta en marcha.
                 </p>
               </div>
             </Reveal>
@@ -602,8 +590,8 @@ function SoftwareDeRepartoPage() {
                 </h2>
                 <p className="mt-5 text-[17px] text-muted-foreground">
                   Todos los planes incluyen todas las funciones. Sin
-                  permanencia: cancelás cuando quieras. Empezá con 1 mes gratis
-                  y consultanos el precio de tu plan.
+                  permanencia: cancelás cuando quieras. Empezá con 1 mes
+                  gratis.
                 </p>
               </div>
             </Reveal>
@@ -628,14 +616,21 @@ function SoftwareDeRepartoPage() {
                       {plan.name}
                     </h3>
                     <p
-                      className={`mt-3 text-2xl font-extrabold tracking-tight ${plan.featured ? "text-[cyan]" : "text-primary"}`}
+                      className={`mt-3 flex items-baseline justify-center gap-1 ${plan.featured ? "text-[cyan]" : "text-primary"}`}
                     >
-                      Consultar precio
+                      <span className="text-[2.1rem] font-extrabold tracking-tight">
+                        {formatPrice(plan.price)}
+                      </span>
+                      <span
+                        className={`text-[14px] font-semibold ${plan.featured ? "text-white/70" : "text-muted-foreground"}`}
+                      >
+                        /mes
+                      </span>
                     </p>
                     <p
                       className={`mt-1.5 text-[13.5px] font-medium ${plan.featured ? "text-white/80" : "text-foreground"}`}
                     >
-                      {plan.limit}
+                      {planLimit(plan)}
                     </p>
                     <div
                       className={`my-6 h-px w-full ${plan.featured ? "bg-white/15" : "bg-border"}`}
@@ -676,13 +671,16 @@ function SoftwareDeRepartoPage() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-12 text-center text-[14.5px] text-muted-foreground">
-              ¿Más de 2.000 entregas por mes o varias sucursales?{" "}
+            <p className="mt-12 text-center text-[13.5px] text-muted-foreground">
+              {PRICE_NOTE}
+            </p>
+            <p className="mt-3 text-center text-[14.5px] text-muted-foreground">
+              {CUSTOM_PLAN_TEXT}{" "}
               <a
                 href="/#demo"
                 className="font-semibold text-primary hover:underline"
               >
-                Escribinos y armamos un plan a medida.
+                Pedí una propuesta personalizada.
               </a>
             </p>
           </Shell>

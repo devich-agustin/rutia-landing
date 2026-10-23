@@ -33,11 +33,21 @@ import {
   ChevronDown,
   ArrowRight,
   Mail,
+  Quote,
+  Star,
 } from "lucide-react";
 import { Reveal, Counter } from "@/components/Reveal";
 import { trackLead } from "@/lib/analytics";
 import { appendAttribution } from "@/lib/attribution";
-import { EXPERIENCIAS, type Experiencia } from "@/content/experiencias";
+import { TESTIMONIOS, type Testimonio } from "@/content/experiencias";
+import {
+  CUSTOM_PLAN_TEXT,
+  PLANS,
+  PRICE_NOTE,
+  PRICING_FAQ_ANSWER,
+  formatPrice,
+  planLimit,
+} from "@/content/planes";
 import { CalendarMockup } from "@/components/CalendarMockup";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { RouteMap, RouteConnector } from "@/components/RouteMotif";
@@ -108,7 +118,7 @@ const FEATURES = [
   {
     icon: Smartphone,
     title: "Entrega desde el celular",
-    text: "Chofer propio, cadete o flete: recibe sus entregas en el celular que ya tiene y marca entregada, parcial o fallida con un toque, con quién recibió y observaciones. Sin apps, sin capacitación.",
+    text: "Chofer propio, cadete o flete: recibe sus entregas en el celular que ya tiene y marca entregada, parcial o fallida con un toque. Queda registrado quién recibió y, con el comprobante digital, fotos y firma. Sin apps, sin capacitación.",
   },
   {
     icon: RefreshCcw,
@@ -178,7 +188,7 @@ const FAQ_ITEMS = [
   ],
   [
     "¿Es difícil de aprender?",
-    "Si sabés usar WhatsApp, sabés usar Rutia. La mayoría arma su primer día de entregas en menos de una hora.",
+    "No. Rutia está diseñado para ser simple e intuitivo, para que todo el equipo lo adopte sin complicaciones: si sabés usar WhatsApp, vas a sentirte cómodo. Y te acompañamos en la puesta en marcha.",
   ],
   [
     "¿Sirve si trabajo con fletes contratados y no tengo vehículo propio?",
@@ -192,6 +202,7 @@ const FAQ_ITEMS = [
     "¿Qué pasa si un cliente reclama por una entrega vieja?",
     "Buscás la entrega y ves toda su historia: quién la llevó, qué pasó y cuándo. La respuesta está a un clic.",
   ],
+  ["¿Cuánto cuesta Rutia?", PRICING_FAQ_ANSWER],
   [
     "¿Qué pasa si no me sirve?",
     "No hay permanencia. Cancelás cuando quieras y listo, sin letra chica.",
@@ -462,7 +473,7 @@ function Hero() {
             {
               n: 2000,
               suffix: "+",
-              label: "De 20 a 2.000 entregas por mes bajo control",
+              label: "Desde pocas hasta más de 2.000 entregas por mes, bajo control",
             },
             { n: 1, suffix: "", label: "solo lugar para toda la operación" },
             { n: 0, suffix: "", label: "apps que instalar" },
@@ -745,7 +756,8 @@ function ForWhom() {
             <div className="fit-callout">
               <strong>¿Rutia es para vos?</strong>
               <span>
-                Si hacés más de 20 entregas por mes, probablemente sí.
+                Si entregás lo que vendés, sí: hagas pocas o muchas entregas por
+                mes, con vehículos propios o fletes.
               </span>
             </div>
           </Reveal>
@@ -866,100 +878,88 @@ function Benefits() {
   );
 }
 
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .map((p) => p[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
-
-function ExperienceCard({ e }: { e: Experiencia }) {
-  const isExample = e.tipo === "ejemplo";
+function TestimonialCard({ t }: { t: Testimonio }) {
+  const verified = t.estado === "verificado";
   return (
-    <article className="block-card block-card-hover flex h-full flex-col p-7">
-      <div className="flex items-center gap-3.5">
-        {e.foto ? (
-          <img
-            src={e.foto}
-            alt={`Foto de ${e.nombre}`}
-            width={48}
-            height={48}
-            loading="lazy"
-            className="h-12 w-12 flex-none rounded-full object-cover"
-          />
-        ) : (
+    <figure className="block-card block-card-hover flex h-full flex-col p-7 text-left">
+      <div className="flex items-center justify-between gap-3">
+        <Quote
+          aria-hidden="true"
+          className="h-7 w-7 flex-none text-primary/70"
+          strokeWidth={1.75}
+        />
+        {verified && t.estrellas ? (
           <span
-            aria-hidden="true"
-            className="bg-brand grid h-12 w-12 flex-none place-items-center rounded-full font-mono text-[15px] font-bold text-white"
+            className="flex items-center gap-0.5 text-[#F5B301]"
+            aria-label={`Valoración: ${t.estrellas} de 5`}
+            role="img"
           >
-            {initials(e.nombre)}
+            {Array.from({ length: t.estrellas }).map((_, i) => (
+              <Star
+                key={i}
+                aria-hidden="true"
+                className="h-4 w-4 fill-current"
+              />
+            ))}
+          </span>
+        ) : null}
+        {!verified && (
+          <span className="rounded-full bg-surface px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">
+            Ejemplo
           </span>
         )}
-        <div className="min-w-0 text-left">
-          <h3 className="text-[17px] font-bold leading-tight">{e.nombre}</h3>
-          <p className="mt-0.5 text-[13.5px] leading-snug text-muted-foreground">
-            {e.perfil}
-            {e.empresa ? ` · ${e.empresa}` : ""}
-          </p>
-        </div>
       </div>
-      {e.cita && (
-        <blockquote className="mt-5 border-l-2 border-primary pl-4 text-left text-[15px] font-medium leading-relaxed">
-          “{e.cita}”
-        </blockquote>
-      )}
-      <dl className="mt-5 space-y-4 text-left">
-        <div>
-          <dt className="text-[12px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-            El desafío
-          </dt>
-          <dd className="mt-1 text-[14.5px] leading-relaxed">{e.desafio}</dd>
-        </div>
-        <div>
-          <dt className="text-[12px] font-bold uppercase tracking-[0.08em] text-primary">
-            Con Rutia
-          </dt>
-          <dd className="mt-1 text-[14.5px] leading-relaxed text-muted-foreground">
-            {e.conRutia}
-          </dd>
-        </div>
-      </dl>
-      <p className="mt-auto pt-6 text-left text-[12px] font-semibold text-muted-foreground">
-        {isExample ? "Ejemplo ilustrativo" : "Testimonio de cliente"}
-      </p>
-    </article>
+      <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-foreground">
+        <p>“{t.cita}”</p>
+      </blockquote>
+      <figcaption className="mt-6 border-t border-border pt-4">
+        {t.nombre && (
+          <span className="block text-[15.5px] font-bold leading-tight">
+            {t.nombre}
+          </span>
+        )}
+        <span className="mt-0.5 block text-[13.5px] leading-snug text-muted-foreground">
+          {t.perfil}
+        </span>
+      </figcaption>
+    </figure>
   );
 }
 
-function Experiences() {
-  const allExamples = EXPERIENCIAS.every((e) => e.tipo === "ejemplo");
+function Testimonials() {
+  const verified = TESTIMONIOS.filter((t) => t.estado === "verificado");
+  // Si hay testimonios aprobados, se muestran solo esos como testimonios.
+  // Mientras no haya ninguno, se muestran los borradores rotulados como
+  // ejemplos, sin presentarlos como declaraciones de clientes.
+  const showVerified = verified.length > 0;
+  const list = showVerified ? verified : TESTIMONIOS;
   return (
     <section
-      id="experiencias"
-      aria-labelledby="experiencias-title"
+      id="testimonios"
+      aria-labelledby="testimonios-title"
       className="scroll-mt-24 border-b border-border bg-surface py-20 lg:py-28"
     >
       <Shell>
         <SectionIntro
           center
-          pill={allExamples ? "Cómo se usa" : "Experiencias"}
+          pill={showVerified ? "Testimonios" : "En el día a día"}
           title={
-            <span id="experiencias-title">
-              Así se ve Rutia en distintas operaciones
+            <span id="testimonios-title">
+              {showVerified
+                ? "Lo que dicen quienes usan Rutia"
+                : "Cómo se vive Rutia en el día a día"}
             </span>
           }
           desc={
-            allExamples
-              ? "Ejemplos ilustrativos basados en situaciones habituales de los rubros con los que trabajamos. No son testimonios de clientes."
-              : "Lo que cuentan quienes ya organizan sus entregas con Rutia."
+            showVerified
+              ? "Experiencias de empresas que organizan sus entregas con Rutia."
+              : "Relatos de ejemplo, en primera persona, basados en situaciones habituales de los rubros con los que trabajamos. Todavía no son testimonios verificados de clientes."
           }
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {EXPERIENCIAS.map((e, i) => (
-            <Reveal key={e.nombre} delay={i * 70} className="h-full">
-              <ExperienceCard e={e} />
+          {list.map((t, i) => (
+            <Reveal key={t.id} delay={i * 70} className="h-full">
+              <TestimonialCard t={t} />
             </Reveal>
           ))}
         </div>
@@ -1036,43 +1036,12 @@ function Philosophy() {
 }
 
 function Pricing() {
-  const plans = [
-    {
-      name: "Inicial",
-      limit: "Hasta 150 entregas por mes",
-      items: [
-        "Todas las funciones de Rutia incluidas",
-        "Pedidos, depósito, armado del día e incidencias",
-        "Entrega desde el celular e historial completo",
-        "Reportes, indicadores y varios depósitos",
-        "Soporte por WhatsApp",
-      ],
-      featured: false,
-    },
-    {
-      name: "PyME",
-      limit: "Hasta 600 entregas por mes",
-      items: [
-        "Todas las funciones de Rutia incluidas",
-        "Pedidos, depósito, armado del día e incidencias",
-        "Entrega desde el celular e historial completo",
-        "Reportes, indicadores y varios depósitos",
-        "Soporte por WhatsApp",
-      ],
-      featured: true,
-    },
-    {
-      name: "Empresa",
-      limit: "Hasta 2.000 entregas por mes",
-      items: [
-        "Todas las funciones de Rutia incluidas",
-        "Pedidos, depósito, armado del día e incidencias",
-        "Entrega desde el celular e historial completo",
-        "Reportes, indicadores y varios depósitos",
-        "Soporte prioritario por WhatsApp",
-      ],
-      featured: false,
-    },
+  const items = (support: string) => [
+    "Todas las funciones de Rutia incluidas",
+    "Pedidos, depósito, armado del día e incidencias",
+    "Entrega desde el celular e historial completo",
+    "Reportes, indicadores y varios depósitos",
+    support,
   ];
   return (
     <section id="precios" className="scroll-mt-24 bg-surface py-20 lg:py-28">
@@ -1084,7 +1053,7 @@ function Pricing() {
           desc="Todos los planes incluyen todos los módulos y acceso desde el celular para los que reparten. Sin permanencia: cancelás cuando quieras."
         />
         <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-center">
-          {plans.map((p, i) => (
+          {PLANS.map((p, i) => (
             <Reveal key={p.name} delay={i * 80}>
               <div
                 className={`group relative flex flex-col items-center rounded-2xl p-8 text-center transition-all duration-300 ${
@@ -1106,20 +1075,27 @@ function Pricing() {
                   {p.name}
                 </div>
                 <div
-                  className={`mt-3 text-2xl font-extrabold tracking-tight ${p.featured ? "text-[cyan]" : "text-primary"}`}
+                  className={`mt-3 flex items-baseline justify-center gap-1 ${p.featured ? "text-[cyan]" : "text-primary"}`}
                 >
-                  Pedí tu demo gratuita
+                  <span className="text-[2.1rem] font-extrabold tracking-tight">
+                    {formatPrice(p.price)}
+                  </span>
+                  <span
+                    className={`text-[14px] font-semibold ${p.featured ? "text-white/70" : "text-muted-foreground"}`}
+                  >
+                    /mes
+                  </span>
                 </div>
                 <div
                   className={`mt-1.5 text-[13.5px] font-medium ${p.featured ? "text-white/80" : "text-foreground"}`}
                 >
-                  {p.limit}
+                  {planLimit(p)}
                 </div>
                 <div
                   className={`my-6 h-px w-full ${p.featured ? "bg-white/15" : "bg-border"}`}
                 />
                 <ul className="mx-auto flex-1 space-y-3 text-left">
-                  {p.items.map((it) => (
+                  {items(p.support).map((it) => (
                     <li
                       key={it}
                       className="flex items-start justify-start gap-2.5 text-[14px] leading-relaxed"
@@ -1153,13 +1129,16 @@ function Pricing() {
           ))}
         </div>
         <Reveal>
-          <p className="mt-12 text-center text-[14.5px] text-muted-foreground">
-            ¿Más de 2.000 entregas por mes o varias sucursales?{" "}
+          <p className="mt-12 text-center text-[13.5px] text-muted-foreground">
+            {PRICE_NOTE}
+          </p>
+          <p className="mt-3 text-center text-[14.5px] text-muted-foreground">
+            {CUSTOM_PLAN_TEXT}{" "}
             <a
               href="#demo"
               className="font-semibold text-primary hover:underline"
             >
-              Escribinos y armamos un plan a medida.
+              Pedí una propuesta personalizada.
             </a>
           </p>
         </Reveal>
@@ -1682,7 +1661,7 @@ function Landing() {
         <HowItWorks />
         <ForWhom />
         <Benefits />
-        <Experiences />
+        <Testimonials />
         <About />
         <Philosophy />
         <Pricing />

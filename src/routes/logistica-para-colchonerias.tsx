@@ -177,7 +177,7 @@ const config: VerticalLandingConfig = {
     ],
     [
       "¿Sirve para una colchonería con pocas entregas?",
-      "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa. Si realizás más de 20 entregas mensuales, probablemente ya puedas aprovecharla.",
+      "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa, hagan pocas o muchas entregas por mes. El plan Inicial incluye hasta 150 entregas mensuales.",
     ],
     ["¿Puedo trabajar con fletes contratados?", "Sí. Podés asignar las entregas a vehículos y choferes propios o contratados."],
     ["¿Rutia calcula cuántos colchones entran en un camión?", "No. La capacidad de carga y la manipulación se verifican por el equipo antes de asignar la entrega."],

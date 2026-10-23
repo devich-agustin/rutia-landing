@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import { CookieConsent } from "../components/CookieConsent";
 import { ExitIntentModal } from "../components/ExitIntentModal";
 import { ConversionTracking } from "../components/ConversionTracking";
+import { planOffers } from "../content/planes";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -160,6 +161,8 @@ const JSON_LD = {
       operatingSystem: "Web",
       inLanguage: "es-AR",
       provider: { "@id": `${SITE_URL}/#organization` },
+      // Mismos precios que se publican en la sección de planes (content/planes.ts).
+      offers: planOffers(SITE_URL),
     },
   ],
 };

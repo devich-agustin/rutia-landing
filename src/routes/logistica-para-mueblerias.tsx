@@ -176,7 +176,7 @@ const config: VerticalLandingConfig = {
     ],
     [
       "¿Sirve para una mueblería con pocas entregas?",
-      "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa. Si realizás más de 20 entregas mensuales, probablemente ya puedas aprovecharla.",
+      "Rutia está pensada para empresas que necesitan dejar atrás la coordinación dispersa, hagan pocas o muchas entregas por mes. El plan Inicial incluye hasta 150 entregas mensuales.",
     ],
     ["¿Cómo organizo la entrega de muebles voluminosos?", "Podés registrar los pedidos, programar las fechas y asignar el camión o flete adecuado. La capacidad y el espacio del vehículo los comprueba tu equipo."],
     ["¿Puedo repartir con un flete externo?", "Sí. Rutia permite asignar entregas a fletes contratados y que el repartidor consulte su trabajo desde el navegador del celular."],
