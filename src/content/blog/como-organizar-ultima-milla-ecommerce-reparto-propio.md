@@ -2,6 +2,7 @@
 title: "Cómo organizar la última milla de un e-commerce con reparto propio"
 description: "Organizá la última milla de tu e-commerce con reparto propio: pedidos, preparación, asignación de entregas, recorridos y registro de resultados."
 publishedAt: 2026-09-18
+updatedAt: 2026-10-22
 author: Equipo de Rutia
 category: logistica-por-sector
 keywords: [última milla ecommerce, reparto propio ecommerce, entregas ecommerce, logística ecommerce]
@@ -47,7 +48,7 @@ Registrar el resultado conecta la última milla con la operación real.
 
 Si vendés por Mercado Libre, podés conectar tu cuenta vendedora con [Rutia](https://rutia.com.ar/logistica-para-ecommerce) para gestionar las entregas desde un solo lugar. También podés importar pedidos desde Excel o cargarlos manualmente.
 
-Rutia no reemplaza tu tienda online: ayuda a organizar la preparación, los choferes, los recorridos y el resultado de cada entrega. No anunciamos una integración directa con Tiendanube, Shopify o WooCommerce.
+Rutia no reemplaza tu tienda online: ayuda a organizar la preparación, los choferes, los recorridos y el resultado de cada entrega. Ya podés conectar tu cuenta vendedora de Mercado Libre, y estamos trabajando en integraciones con Tiendanube, Empretienda y Tienda Negocio, que van a estar disponibles próximamente.
 
 ## Conclusión
 
@@ -79,7 +80,7 @@ Depende de la operación. Cuando existe reparto propio, puede hacer falta una he
 No necesariamente. Es preferible darle una vista con la información operativa que necesita.
 
 **¿Rutia se integra hoy con Tiendanube o Mercado Libre?**  
-Sí, podés conectar tu cuenta vendedora de Mercado Libre con Rutia para gestionar las entregas. Para otros canales, podés cargar pedidos manualmente o importarlos desde Excel; no anunciamos una conexión directa con Tiendanube.
+Con Mercado Libre, sí: la integración ya está disponible y podés conectar tu cuenta vendedora para gestionar esos pedidos y sus entregas desde Rutia. Con Tiendanube, Empretienda y Tienda Negocio estamos trabajando en nuevas integraciones que van a estar disponibles próximamente; mientras tanto, podés cargar los pedidos manualmente o importarlos desde Excel.
 
 **¿Dónde veo Rutia para e-commerce?**  
 En la página de [logística para e-commerce con reparto propio](https://rutia.com.ar/logistica-para-ecommerce).
