@@ -538,6 +538,51 @@ function SectionIntro({
   );
 }
 
+/**
+ * Franja de integraciones debajo del hero.
+ * Logos oficiales en /public/integraciones (reemplazar los marcadores por los
+ * archivos de cada marca, mismo nombre). Cada logo ocupa la misma caja y
+ * conserva sus proporciones con object-contain.
+ */
+const INTEGRATIONS = [
+  { name: "Mercado Libre", src: "/integraciones/mercadolibre.webp", w: 455 },
+  { name: "Tiendanube", src: "/integraciones/tiendanube.webp", w: 666 },
+  { name: "Tienda Negocio", src: "/integraciones/tiendanegocio.webp", w: 423 },
+];
+
+function Integrations() {
+  return (
+    <section
+      aria-labelledby="integraciones-title"
+      className="border-b border-border bg-background py-10 lg:py-12"
+    >
+      <Shell>
+        <p
+          id="integraciones-title"
+          className="text-center text-[10.5px] font-bold uppercase tracking-[0.1em] text-muted-foreground sm:text-[11.5px] sm:tracking-[0.16em]"
+        >
+          Integraciones con tus plataformas de venta
+        </p>
+        <ul className="mx-auto mt-7 grid max-w-3xl grid-cols-3 items-center gap-4 sm:gap-10">
+          {INTEGRATIONS.map((it) => (
+            <li key={it.name} className="flex h-10 items-center justify-center sm:h-14">
+              <img
+                src={it.src}
+                alt={it.name}
+                width={it.w}
+                height={112}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-auto max-w-full object-contain"
+              />
+            </li>
+          ))}
+        </ul>
+      </Shell>
+    </section>
+  );
+}
+
 function Problem() {
   return (
     <section className="bg-background py-20 lg:py-32">
@@ -1634,6 +1679,7 @@ function Landing() {
       <Navbar />
       <main>
         <Hero />
+        <Integrations />
         <Problem />
         <Features />
         <HowItWorks />
